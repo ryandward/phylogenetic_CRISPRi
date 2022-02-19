@@ -78,3 +78,5 @@ rownames(typas_data_matrix) <- typas_data$b_name
 
 typas_data_matrix <- typas_data_matrix[complete.cases(typas_data_matrix),]
 
+typas_cor <- cor(typas_data_matrix, use = "complete.obs")
+
