@@ -10,6 +10,13 @@ typas_data <- melt(typas_data,
                    value = "score", 
                    id.vars = "Gene")
 
+typas_data[, condition := gsub('UNSPECIFIED', "", condition)]
+
+typas_data[, condition := gsub(' - $', "", condition)]
+typas_data[, condition := gsub(' -$', "", condition)]
+
+
+
 typas_data[, c("ECK_name", paste0(rep("extra",5), c(1:5))) := tstrsplit(Gene, "-", type.convert = TRUE, fixed = TRUE)]
 
 typas_conversion <- melt(typas_data[, .(ECK_name, extra1, extra2, extra3, extra4, extra5)], id.vars = "ECK_name", variable.name = "extra", value.name = "synonym")[!is.na(synonym)]
@@ -80,3 +87,57 @@ typas_data_matrix <- typas_data_matrix[complete.cases(typas_data_matrix),]
 
 typas_cor <- cor(typas_data_matrix, use = "complete.obs")
 
+plot_matrix <- typas_cor
+
+break_halves <- length(unique(as.vector(plot_matrix)))
+
+breaks <- c(
+  seq(min(plot_matrix),
+      median(plot_matrix),
+      length.out = break_halves)[-break_halves],
+  seq(median(plot_matrix),
+      max(plot_matrix),
+      length.out = break_halves))
+
+breaks <- breaks[-length(breaks)]
+
+breaks <- c(breaks, 0.99999999)
+
+plot_colors <-
+  c(colorRampPalette(c("#ba000d", "white"))(break_halves)[-break_halves],
+    colorRampPalette(c("white", "#007ac1"))(break_halves)[-c(1, break_halves)])
+
+plot_colors <-
+  colorRampPalette(c("white", "#007ac1"))(break_halves * 2 - 1)[-c(1, break_halves)]
+
+plot_colors <- c(plot_colors, "dark grey")
+
+to_plot_title <- paste("Raw Count Condition Correlations")
+
+to_plot <- pheatmap(
+  plot_matrix,
+  col = plot_colors,
+  breaks = breaks,
+  border_color = NA,
+  # cellwidth = 20,
+  # cellheight = 20,
+  main = to_plot_title,
+  angle_col = 315,
+  # fontsize_col = 10,
+  # fontsize_row = 10,
+  # cluster_cols = FALSE,
+  show_rownames = TRUE,
+  show_colnames = TRUE,
+  clustering_method = "ward.D2",
+  # clustering_distance_rows = "maximum",
+  # clustering_distance_cols = "maximum"
+)
+
+plot(to_plot$tree_row, cex = 0.35)
+abline(h=10, col="red", lty=2, lwd=2)
+
+condition_groups <- data.matrix(sort(cutree(to_plot$tree_row, h=10)))
+condition_groups <- data.table(condition_groups, keep.rownames = "condition")
+setnames(condition_groups, "V1", "group")
+
+fwrite(condition_groups, "condition_groups.tsv", sep = "\t")
