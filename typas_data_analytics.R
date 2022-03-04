@@ -1,6 +1,10 @@
 library(pacman)
-
 p_load(data.table, pheatmap)
+
+################################################################################
+# how many groups for k-means? 
+target_k = 20
+################################################################################
 
 #https://www.cell.com/fulltext/S0092-8674(10)01374-7
 typas_data <- fread("mmc2.tsv")
@@ -9,6 +13,13 @@ typas_data <- melt(typas_data,
                    variable.name = "condition", 
                    value = "score", 
                    id.vars = "Gene")
+
+# get rid of multiple drug treatment conditions
+typas_data <- typas_data[!condition %like% ","]
+typas_data <- typas_data[!condition %like% "/"]
+typas_data <- typas_data[!condition %like% "^PH"]
+typas_data <- typas_data[!condition %like% "^ETHIDIUM"]
+
 
 typas_data[, condition := gsub('UNSPECIFIED', "", condition)]
 
@@ -89,55 +100,82 @@ typas_cor <- cor(typas_data_matrix, use = "complete.obs")
 
 plot_matrix <- typas_cor
 
-break_halves <- length(unique(as.vector(plot_matrix)))
-
-breaks <- c(
-  seq(min(plot_matrix),
-      median(plot_matrix),
-      length.out = break_halves)[-break_halves],
-  seq(median(plot_matrix),
-      max(plot_matrix),
-      length.out = break_halves))
-
-breaks <- breaks[-length(breaks)]
-
-breaks <- c(breaks, 0.99999999)
-
-plot_colors <-
-  c(colorRampPalette(c("#ba000d", "white"))(break_halves)[-break_halves],
-    colorRampPalette(c("white", "#007ac1"))(break_halves)[-c(1, break_halves)])
-
-plot_colors <-
-  colorRampPalette(c("white", "#007ac1"))(break_halves * 2 - 1)[-c(1, break_halves)]
-
-plot_colors <- c(plot_colors, "dark grey")
-
-to_plot_title <- paste("Raw Count Condition Correlations")
-
 to_plot <- pheatmap(
   plot_matrix,
-  col = plot_colors,
-  breaks = breaks,
-  border_color = NA,
-  # cellwidth = 20,
-  # cellheight = 20,
-  main = to_plot_title,
-  angle_col = 315,
-  # fontsize_col = 10,
-  # fontsize_row = 10,
-  # cluster_cols = FALSE,
-  show_rownames = TRUE,
-  show_colnames = TRUE,
   clustering_method = "ward.D2",
-  # clustering_distance_rows = "maximum",
-  # clustering_distance_cols = "maximum"
+  clustering_distance_rows = "maximum",
+  clustering_distance_cols = "maximum"
 )
 
-plot(to_plot$tree_row, cex = 0.35)
-abline(h=10, col="red", lty=2, lwd=2)
 
-condition_groups <- data.matrix(sort(cutree(to_plot$tree_row, h=10)))
-condition_groups <- data.table(condition_groups, keep.rownames = "condition")
-setnames(condition_groups, "V1", "group")
+target_h <-
+  sort(
+    to_plot$tree_row$height, 
+    decreasing = T)[target_k]
 
-fwrite(condition_groups, "condition_groups.tsv", sep = "\t")
+plot(
+  to_plot$tree_row, 
+  cex = 0.35)
+
+abline(
+  h = target_h, 
+  col="red", 
+  lty = 2, 
+  lwd = 2)
+
+condition_groups <- 
+  data.matrix(
+    sort(
+      cutree(
+        to_plot$tree_row, 
+        h = target_h)))
+
+condition_groups <- 
+  data.table(
+    condition_groups, 
+    keep.rownames = "condition")
+
+setnames(
+  condition_groups, 
+  "V1", 
+  "group")
+
+condition_groups[, c("condition", "dose") := tstrsplit(condition, "-")]
+
+fwrite(
+  condition_groups, 
+  "condition_groups.tsv", 
+  sep = "\t")
+
+
+melted_typas <- 
+  melt(
+    # typas_data[complete.cases(typas_data)],
+    typas_data,
+    id.vars = 'b_name', 
+    variable.name = 'condition', 
+    value.name = 'score')
+
+melted_typas <- 
+  melted_typas[, c("condition", "dose") := tstrsplit(condition, "-")]
+
+
+significant_conditions <- 
+  melted_typas[
+    abs(score) > (1 * sd(melted_typas$score, na.rm = T)), 
+    .N, 
+    by = .(condition, dose)]
+
+
+setorder(significant_conditions, N)
+
+
+significant_conditions <- 
+  significant_conditions[condition_groups, on = .(condition, dose)]
+
+significant_conditions <- 
+  significant_conditions[, .(condition, dose, N, group)]
+
+most_phenotypes_by_group <-
+  significant_conditions[significant_conditions[, .(N = max(N)), by = .(group)], on = .(group, N)]
+
