@@ -1,0 +1,4314 @@
+protein	STEPdb_letter_code	STEPdb_loc_code
+A5A605	B	IM_integral
+C1P5Z9	B	IM_integral
+C1P600	A	Cytoplasm
+C1P604	A, F1	IM_cyto
+C1P612	A	Cytoplasm
+C1P613	A	Cytoplasm
+P00452	A, F1	IM_cyto
+P00579	A, N, F1	IM_cyto
+P00803	B	IM_integral
+P00804	B	IM_integral
+P00954	A	Cytoplasm
+P00956	A	Cytoplasm
+P00957	A, N, F1	IM_cyto
+P00959	A, F1	IM_cyto
+P00960	A, F1	IM_cyto
+P00961	A, F1	IM_cyto
+P00962	A	Cytoplasm
+P02358	A, r	Cytoplasm
+P02359	A, r	Cytoplasm
+P02413	A, r	Cytoplasm
+P02929	B	IM_integral
+P03004	A, N, F1	IM_cyto
+P04036	A	Cytoplasm
+P04079	A, F1	IM_cyto
+P04805	A	Cytoplasm
+P04951	A	Cytoplasm
+P05852	A	Cytoplasm
+P06136	B	IM_integral
+P06612	A, N	Cytoplasm
+P0A6P9	A, F1, F4	IM_cyto
+P06616	A, F1, r	IM_cyto
+P06710	A, N	Cytoplasm
+P06959	A, F1	IM_cyto
+P06961	A	Cytoplasm
+P06966	A, N	Cytoplasm
+P06968	A	Cytoplasm
+P06983	A	Cytoplasm
+P07012	A, r	Cytoplasm
+P07013	A	Cytoplasm
+P07118	A	Cytoplasm
+P07395	A, F1	IM_cyto
+P07813	A	Cytoplasm
+P08192	A	Cytoplasm
+P08312	A, F1	IM_cyto
+P08373	A	Cytoplasm
+P08839	A, F1	IM_cyto
+P09126	A	Cytoplasm
+P09372	A, F1	IM_cyto
+P0A6A0	B	IM_integral
+P0A6A8	A, F1	IM_cyto
+P0A6B7	A, F1	IM_cyto
+P0A6F5	A, F1	IM_cyto
+P0A6F9	A, F1	IM_cyto
+P0A6I3	A	Cytoplasm
+P0A6I6	A	Cytoplasm
+P0A6I9	A	Cytoplasm
+P0A6K1	A	Cytoplasm
+P0A6K3	A, F1	IM_cyto
+P0A6L2	A	Cytoplasm
+P0A6M8	A, F1	IM_cyto
+P0A6P1	A, F1	IM_cyto
+P0A6P5	A, F1, r	IM_cyto
+P0A6P7	A, F1	IM_cyto
+P0A705	A, F1, r	IM_cyto
+P0A6Q3	A	Cytoplasm
+P0A6Q6	A, F1	IM_cyto
+P0A6R0	A	Cytoplasm
+P0A6S5	B	IM_integral
+P0A6S7	A	Cytoplasm
+P0A6T5	A	Cytoplasm
+P0A6W3	B	IM_integral
+P0A6X1	A, F1	IM_cyto
+P0A6X7	A, N, F1	IM_cyto
+P0A6Z1	A	Cytoplasm
+P0A707	A, F1, r	IM_cyto
+P0A7X6	A, F1, r	IM_cyto
+P0A715	A	Cytoplasm
+P0A717	A, F1	IM_cyto
+P0A720	A	Cytoplasm
+P0A722	A	Cytoplasm
+P0A725	A	Cytoplasm
+P0A749	A	Cytoplasm
+P0A752	A	Cytoplasm
+P0A780	A	Cytoplasm
+P0A784	A, F1	IM_cyto
+P0A799	A, F1	IM_cyto
+P0A7A7	A, F1	IM_cyto
+P0A7A9	A	Cytoplasm
+P0A7B3	A, F1	IM_cyto
+P0A7C2	A, N	Cytoplasm
+P0A7D1	A	Cytoplasm
+P0A7E5	A, F1	IM_cyto
+P0A7E9	A, F1	IM_cyto
+P0A7G2	A, F1	IM_cyto
+P0A7I0	A	Cytoplasm
+P0A7I7	A	Cytoplasm
+P0A7J3	A, r	Cytoplasm
+P0A7J7	A, r	Cytoplasm
+P0A7K2	A, r	Cytoplasm
+P0A7K6	A, r	Cytoplasm
+P0A7L0	A, r	Cytoplasm
+P0A7L3	A, r	Cytoplasm
+P0A7L8	A, r	Cytoplasm
+P0A7M2	A, r	Cytoplasm
+P0A7M6	A, r	Cytoplasm
+P0A7N4	A, r	Cytoplasm
+P0A7P5	A, r	Cytoplasm
+P0A7Q1	A, r	Cytoplasm
+P0A7R5	A, r	Cytoplasm
+P0A7R9	A, r	Cytoplasm
+P0A7S3	A, r	Cytoplasm
+P0A7S9	A, r	Cytoplasm
+P0A7T3	A, r	Cytoplasm
+P0A7T7	A, r	Cytoplasm
+P0A7U3	A, r	Cytoplasm
+P0A7U7	A, r	Cytoplasm
+P0A7V0	A, r	Cytoplasm
+P0A7V3	A, r	Cytoplasm
+P0A7V8	A, r	Cytoplasm
+P0A7W1	A, r	Cytoplasm
+P0A7W7	A, r	Cytoplasm
+P0A7X3	A, r	Cytoplasm
+P39286	A, F1, r	IM_cyto
+P0A7Y8	A	Cytoplasm
+P0A7Z4	A, N, F1	IM_cyto
+P0A805	A, F1	IM_cyto
+P0A817	A, F1	IM_cyto
+P0A825	A, F1	IM_cyto
+P0A873	A	Cytoplasm
+P0A884	A	Cytoplasm
+P0A887	A	Cytoplasm
+P0A898	A	Cytoplasm
+P0A8I1	A	Cytoplasm
+P0A8J2	A, N	Cytoplasm
+P0A8K1	A, F1	IM_cyto
+P0A8L1	A, F1	IM_cyto
+P0A8M0	A, F1	IM_cyto
+P0A8M3	A, F1	IM_cyto
+P0A8N3	A	Cytoplasm
+P0A8T7	A, N, F1	IM_cyto
+P0A8V2	A, N, F1	IM_cyto
+P0A940	H	OMP
+P0A953	A, F1	IM_cyto
+P0A988	A, N	Cytoplasm
+P0A9A6	A, F1	IM_cyto
+P0A9B2	A, F1	IM_cyto
+P0A9D8	A, F1	IM_cyto
+P0A9P0	A, F1	IM_cyto
+P0A9Q5	A, F1	IM_cyto
+P0A9Q9	A, F1	IM_cyto
+P0A9R4	A	Cytoplasm
+P0A9V1	A, F1	IM_cyto
+P0A9X4	A, F1	IM_cyto
+P0AA10	A, r	Cytoplasm
+P0AAB4	A, F1	IM_cyto
+P0AAI3	B	IM_integral
+P0AAI9	A	Cytoplasm
+P0AAZ7	A	Cytoplasm
+P0AB18	A	Cytoplasm
+P0AB71	A, F1	IM_cyto
+P0AB89	A, F1	IM_cyto
+P0ABD5	A, F1	IM_cyto
+P0ABD8	A	Cytoplasm
+P0ABF8	B	IM_integral
+P0ABG1	B	IM_integral
+P0ABG4	B	IM_integral
+P0ABG7	B	IM_integral
+P0ABH0	A, F1	IM_cyto
+P0ABH4	B	IM_integral
+P0ABJ9	B	IM_integral
+P0ABK2	B	IM_integral
+P0ABQ0	A	Cytoplasm
+P0ABQ4	A	Cytoplasm
+P0ABS5	A, N	Cytoplasm
+P0AC02	I	OMLP
+P0AC13	A	Cytoplasm
+P0AC16	A	Cytoplasm
+P0AC75	B	IM_integral
+P0ACB0	A, N, F1	IM_cyto
+P0ACB2	A	Cytoplasm
+P0ACB4	A, F1	IM_cyto
+P0ACC1	A	Cytoplasm
+P0ACC3	A, F1	IM_cyto
+P0ACC7	A, F1	IM_cyto
+P0ACD4	A, F1	IM_cyto
+P0ACV0	B	IM_integral
+P0ACV4	B	IM_integral
+P0AD57	A	Cytoplasm
+P0AD65	B	IM_integral
+P0AD68	B	IM_integral
+P0AD74	A	Cytoplasm
+P0AD92	A	Cytoplasm
+P0ADC1	I	OMLP
+P0ADC3	B	IM_integral
+P0ADC6	B	IM_integral
+P0A8X0	A, F1, r	IM_cyto
+P0ADG4	A, F1	IM_cyto
+P0ADV1	G	Periplasm
+P0ADY3	A, r	Cytoplasm
+P0ADY7	A, r	Cytoplasm
+P0ADZ0	A, r	Cytoplasm
+P0ADZ4	A, r	Cytoplasm
+P0AE18	A, F1	IM_cyto
+P0AED7	A	Cytoplasm
+P0AEF0	A, N	Cytoplasm
+P0AEK2	A, F1	IM_cyto
+P0AEK4	A, F1	IM_cyto
+P0AEN4	E	IMLP
+P0AES4	A, N, F1	IM_cyto
+P0AES6	A, N, F1	IM_cyto
+P0AF16	B	IM_integral
+P0AF67	A	Cytoplasm
+P0AF98	B	IM_integral
+P0AFF6	A, N, F1	IM_cyto
+P0AFG0	A, F1	IM_cyto
+P0AFG3	A, F1	IM_cyto
+P0AFG6	A, F1	IM_cyto
+P0AFI2	A, N, F1	IM_cyto
+P0AFI7	A, F1	IM_cyto
+P0AFU8	A	Cytoplasm
+P0AG03	A	Cytoplasm
+P0AG07	A	Cytoplasm
+P0AG30	A, F1	IM_cyto
+P0AG40	A	Cytoplasm
+P0AG44	A, r	Cytoplasm
+P0AG48	A, r	Cytoplasm
+P0AG51	A, r	Cytoplasm
+P0AG55	A, r	Cytoplasm
+P0AG59	A, r	Cytoplasm
+P0AG63	A, r	Cytoplasm
+P0AG67	A, r	Cytoplasm
+P0AG96	B	IM_integral
+P0AGA2	B	IM_integral
+P0AGB3	A, N	Cytoplasm
+P0AGB6	A, N, F1	IM_cyto
+P0AGD7	A, F1	IM_cyto
+P0AGE0	A	Cytoplasm
+P0AGG0	A	Cytoplasm
+P0AGJ9	A, F1	IM_cyto
+P0AGK1	B	IM_integral
+P0C018	A, r	Cytoplasm
+P0C079	A, N	Cytoplasm
+P10121	A, F1	IM_cyto
+P10408	A, F1	IM_cyto
+P10441	A, F1	IM_cyto
+P10443	A, N	Cytoplasm
+P11875	A	Cytoplasm
+P11880	A	Cytoplasm
+P14900	A	Cytoplasm
+P15042	A, N	Cytoplasm
+P16659	A, F1	IM_cyto
+P16926	B	IM_integral
+P17169	A, F1	IM_cyto
+P17443	A, F1	IM_cyto
+P17952	A, F1	IM_cyto
+P17993	A	Cytoplasm
+P18843	A, F1	IM_cyto
+P20083	A, N	Cytoplasm
+P21645	A	Cytoplasm
+P21888	A	Cytoplasm
+P21889	A, F1	IM_cyto
+P22188	A	Cytoplasm
+P22523	A, N, F1	IM_cyto
+P22524	A, N, F1	IM_cyto
+P22634	A	Cytoplasm
+P22939	A	Cytoplasm
+P23830	A, F1	IM_cyto
+P23871	A, F1	IM_cyto
+P23873	A, N	Cytoplasm
+P23882	A	Cytoplasm
+P23886	B	IM_integral
+P23893	A, F1	IM_cyto
+P23930	B	IM_integral
+P24182	A, F1	IM_cyto
+P24186	A	Cytoplasm
+P24224	A	Cytoplasm
+P25534	A, F1	IM_cyto
+P25539	A	Cytoplasm
+P25714	B	IM_integral
+P25745	A	Cytoplasm
+P26647	B	IM_integral
+P27300	B	IM_integral
+P27302	A, F1	IM_cyto
+P27835	B	IM_integral
+P28248	A	Cytoplasm
+P28630	A, N	Cytoplasm
+P28631	A, N	Cytoplasm
+P28632	A, N	Cytoplasm
+P29018	B	IM_integral
+P29680	A	Cytoplasm
+P30014	A	Cytoplasm
+P31120	A	Cytoplasm
+P31554	H	OMP
+P31991	B	IM_integral
+P33643	A	Cytoplasm
+P38394	A	Cytoplasm
+P0ADE8	A, G	Cytoplasm
+P42641	A, F1	IM_cyto
+P43341	A, F1	IM_cyto
+P45568	A	Cytoplasm
+P45748	A	Cytoplasm
+P45800	B	IM_integral
+P52097	A	Cytoplasm
+P56100	B	IM_integral
+P58036	A	Cytoplasm
+P60293	A, N, F1	IM_cyto
+P60422	A, r	Cytoplasm
+P60438	A, r	Cytoplasm
+P60472	A	Cytoplasm
+P60546	A	Cytoplasm
+P60624	A, r	Cytoplasm
+P60716	A	Cytoplasm
+P60723	A, r	Cytoplasm
+P60752	B	IM_integral
+P60906	A, F1	IM_cyto
+P60955	B	IM_integral
+P61175	A, r	Cytoplasm
+P61316	G	Periplasm
+P61320	I	OMLP
+P61517	A	Cytoplasm
+P61714	A, F1	IM_cyto
+P61949	A	Cytoplasm
+P62399	A, r	Cytoplasm
+P62615	A	Cytoplasm
+P62617	A	Cytoplasm
+P62620	A, F1	IM_cyto
+P62623	A	Cytoplasm
+P64474	A	Cytoplasm
+P67701	A, N	Cytoplasm
+P68398	A	Cytoplasm
+P68679	A, r	Cytoplasm
+P68919	A, r	Cytoplasm
+P69222	A	Cytoplasm
+P69441	A, F1	IM_cyto
+P69913	A	Cytoplasm
+P69924	A	Cytoplasm
+P69931	A, N, F1	IM_cyto
+P75957	A, F1	IM_cyto
+P75958	B	IM_integral
+P75968	B	IM_integral
+P75974	A	Cytoplasm
+P75987	A	Cytoplasm
+P76062	A, N	Cytoplasm
+P76063	A, N	Cytoplasm
+P76118	G	Periplasm
+P76136	B	IM_integral
+P76156	A	Cytoplasm
+P76256	A	Cytoplasm
+P76550	A, N	Cytoplasm
+P77173	B	IM_integral
+P77488	A, F1	IM_cyto
+P77519	H	OMP
+Q46786	A	Cytoplasm
+Q46787	A	Cytoplasm
+Q46793	A	Cytoplasm
+Q46893	A	Cytoplasm
+A5A607	A	Cytoplasm
+A5A611	A	Cytoplasm
+A5A612	G	Periplasm
+A5A613	A	Cytoplasm
+A5A614	A	Cytoplasm
+A5A615	B	IM_integral
+A5A616	B	IM_integral
+A5A617	B	IM_integral
+A5A618	B	IM_integral
+A5A619	A	Cytoplasm
+A5A621	A	Cytoplasm
+A5A624	B	IM_integral
+A5A625	A	Cytoplasm
+A5A627	B	IM_integral
+A5A628	G	Periplasm
+A5A630	B	IM_integral
+A8DYP9	A	Cytoplasm
+A8DYQ1	B	IM_integral
+C1P5Z7	A, F1	IM_cyto
+C1P5Z8	B	IM_integral
+C1P601	E	IMLP
+C1P602	B	IM_integral
+C1P603	B	IM_integral
+C1P605	A, F1	IM_cyto
+C1P606	A	Cytoplasm
+C1P607	A	Cytoplasm
+C1P608	A	Cytoplasm
+C1P609	B	IM_integral
+C1P610	B	IM_integral
+C1P611	B	IM_integral
+C1P614	B	IM_integral
+C1P615	A	Cytoplasm
+C1P616	B	IM_integral
+C1P617	A	Cytoplasm
+C1P618	A, N	Cytoplasm
+C1P619	A	Cytoplasm
+C1P620	A, F1	IM_cyto
+C1P621	A	Cytoplasm
+E2JKY7	A	Cytoplasm
+G3MTW7	B	IM_integral
+O32528	I	OMLP
+O32583	A	Cytoplasm
+O52982	E	IMLP
+P00350	A, F1	IM_cyto
+P00363	A, F1	IM_cyto
+P00370	A	Cytoplasm
+P00393	A, F1	IM_cyto
+P00448	G	Periplasm
+P00490	B	IM_integral
+P00509	A, F1	IM_cyto
+P00547	A	Cytoplasm
+P00550	B	IM_integral
+P00561	A, F1	IM_cyto
+P00562	A, F1	IM_cyto
+P00582	A, N, F1	IM_cyto
+P00634	G	Periplasm
+P00722	A	Cytoplasm
+P00805	G	Periplasm
+P00811	G	Periplasm
+P00816	A	Cytoplasm
+P00861	A	Cytoplasm
+P00864	A, F1	IM_cyto
+P00887	A	Cytoplasm
+P00888	A	Cytoplasm
+P00893	A	Cytoplasm
+P00894	A	Cytoplasm
+P00895	A, F1	IM_cyto
+P00903	A	Cytoplasm
+P00904	A, F1	IM_cyto
+P00909	A	Cytoplasm
+P00914	A, N	Cytoplasm
+P00926	A	Cytoplasm
+P00934	A	Cytoplasm
+P00935	A	Cytoplasm
+P00936	A	Cytoplasm
+P00944	A	Cytoplasm
+P00946	A	Cytoplasm
+P00963	A	Cytoplasm
+P00968	A, F1	IM_cyto
+P02338	A	Cytoplasm
+P02916	B	IM_integral
+P02918	B	IM_integral
+P02919	B	IM_integral
+P02920	B	IM_integral
+P02921	B	IM_integral
+P02924	G	Periplasm
+P02925	G	Periplasm
+P02930	H	OMP
+P02931	H	OMP
+P02932	H	OMP
+P02942	B	IM_integral
+P02943	H	OMP
+P03007	A, N	Cytoplasm
+P03014	A, N	Cytoplasm
+P03018	A, N	Cytoplasm
+P03023	A, F1	IM_cyto
+P03024	A, N	Cytoplasm
+P03030	A, N	Cytoplasm
+P03061	A	Cytoplasm
+P03813	A	Cytoplasm
+P03817	A	Cytoplasm
+P03819	B	IM_integral
+P03825	B	IM_integral
+P03835	A	Cytoplasm
+P03841	G	Periplasm
+P03959	B	IM_integral
+P03960	B	IM_integral
+P03961	B	IM_integral
+P04128	F4	Secreted
+P04152	A, N	Cytoplasm
+P04335	A	Cytoplasm
+P04391	A	Cytoplasm
+P04395	A, N	Cytoplasm
+P04425	A	Cytoplasm
+P04693	A	Cytoplasm
+P04816	G	Periplasm
+P04825	A, F1	IM_cyto
+P04846	E	IMLP
+P04949	F4	Secreted
+P04968	A	Cytoplasm
+P04982	A	Cytoplasm
+P04983	A, F1	IM_cyto
+P04993	A, N	Cytoplasm
+P04994	A, N	Cytoplasm
+P04995	A	Cytoplasm
+P05020	A	Cytoplasm
+P05041	A	Cytoplasm
+P05042	A, F1	IM_cyto
+P05050	A, N	Cytoplasm
+P05052	A, N	Cytoplasm
+P05055	A, F1	IM_cyto
+P05100	A, N	Cytoplasm
+P05194	A	Cytoplasm
+P05458	G	Periplasm
+P05459	A	Cytoplasm
+P05523	A, N	Cytoplasm
+P05637	A	Cytoplasm
+P05704	B	IM_integral
+P05706	A, F1	IM_cyto
+P05707	A	Cytoplasm
+P05719	A	Cytoplasm
+P05791	A, F1	IM_cyto
+P05793	A, F1	IM_cyto
+P05804	A, F1	IM_cyto
+P05824	A, N	Cytoplasm
+P05825	H	OMP
+P05827	A, N	Cytoplasm
+P05847	A	Cytoplasm
+P06129	H	OMP
+P06134	A, N	Cytoplasm
+P06149	A, F1	IM_cyto
+P06282	G	Periplasm
+P06609	B	IM_integral
+P06610	A	Cytoplasm
+P06611	A, F1	IM_cyto
+P06715	A	Cytoplasm
+P06720	A	Cytoplasm
+P06721	A	Cytoplasm
+P06722	A, N	Cytoplasm
+P06846	A, N	Cytoplasm
+P06864	A	Cytoplasm
+P06960	A	Cytoplasm
+P06965	A, N	Cytoplasm
+P06971	H	OMP
+P06972	B	IM_integral
+P06974	A, F1	IM_cyto
+P06986	A	Cytoplasm
+P06987	A, F1	IM_cyto
+P06988	A	Cytoplasm
+P06989	A	Cytoplasm
+P06992	A, F1	IM_cyto
+P06993	A, N, F1	IM_cyto
+P06996	H	OMP
+P06999	A	Cytoplasm
+P07000	A, F1	IM_cyto
+P07001	B	IM_integral
+P07003	A, F1	IM_cyto
+P07004	A, F1	IM_cyto
+P07010	A	Cytoplasm
+P07014	A, F1	IM_cyto
+P07017	B	IM_integral
+P07018	B	IM_integral
+P07021	I	OMLP
+P07023	A	Cytoplasm
+P07024	G	Periplasm
+P07026	A, N	Cytoplasm
+P07102	G	Periplasm
+P07109	A, F1	IM_cyto
+P07117	B	IM_integral
+P07330	A	Cytoplasm
+P07363	A, F1	IM_cyto
+P07364	A	Cytoplasm
+P07464	A	Cytoplasm
+P07604	A, N	Cytoplasm
+P07623	A	Cytoplasm
+P07639	A	Cytoplasm
+P07648	A	Cytoplasm
+P07649	A	Cytoplasm
+P07650	A, F1	IM_cyto
+P07654	B	IM_integral
+P07658	A	Cytoplasm
+P07762	A	Cytoplasm
+P07821	A, F1	IM_cyto
+P07822	G	Periplasm
+P07862	A	Cytoplasm
+P07913	A	Cytoplasm
+P08142	A	Cytoplasm
+P08178	A	Cytoplasm
+P08179	A	Cytoplasm
+P08189	F4	Secreted
+P08190	F4	Secreted
+P08191	F4	Secreted
+P08194	B	IM_integral
+P08200	A, F1	IM_cyto
+P08201	A	Cytoplasm
+P08202	A	Cytoplasm
+P08203	A	Cytoplasm
+P08204	A	Cytoplasm
+P08244	A	Cytoplasm
+P08245	A, r	Cytoplasm
+P08331	G	Periplasm
+P08337	A	Cytoplasm
+P08339	A, N	Cytoplasm
+P08365	A, N	Cytoplasm
+P08368	A, N	Cytoplasm
+P08369	B	IM_integral
+P08370	G	Periplasm
+P08371	B	IM_integral
+P08372	B	IM_integral
+P08390	A	Cytoplasm
+P08394	A, N	Cytoplasm
+P08395	B	IM_integral
+P08400	B	IM_integral
+P08401	B	IM_integral
+P08506	F2	IM_peri
+P08550	B	IM_integral
+P08555	B	IM_integral
+P08622	A, F1	IM_cyto
+P08660	A	Cytoplasm
+P08722	B	IM_integral
+P08956	A	Cytoplasm
+P08957	A	Cytoplasm
+P08997	A	Cytoplasm
+P09029	A	Cytoplasm
+P09030	A, N	Cytoplasm
+P09053	A	Cytoplasm
+P09099	A	Cytoplasm
+P09127	B	IM_integral
+P09147	A	Cytoplasm
+P09148	A	Cytoplasm
+P09151	A	Cytoplasm
+P09152	A, F1	IM_cyto
+P09153	A	Cytoplasm
+P09154	A	Cytoplasm
+P09155	A	Cytoplasm
+P09158	A	Cytoplasm
+P09162	A	Cytoplasm
+P09163	A	Cytoplasm
+P09169	H	OMP
+P09184	A, N	Cytoplasm
+P09323	B	IM_integral
+P09348	B	IM_integral
+P09373	A, F1	IM_cyto
+P09377	A, N	Cytoplasm
+P09378	A, N	Cytoplasm
+P09391	B	IM_integral
+P09394	G	Periplasm
+P09424	A	Cytoplasm
+P09546	A, N, F1	IM_cyto
+P09549	B	IM_integral
+P09551	G	Periplasm
+P09557	A	Cytoplasm
+P09831	A, F1	IM_cyto
+P09832	A	Cytoplasm
+P09833	A, F1	IM_cyto
+P09835	B	IM_integral
+P09836	B	IM_integral
+P09980	A, N	Cytoplasm
+P09996	A	Cytoplasm
+P0A698	A, F1	IM_cyto
+P0A6A3	A, F1	IM_cyto
+P0A6A6	A	Cytoplasm
+P0A6B4	A	Cytoplasm
+P0A6C1	A	Cytoplasm
+P0A6C5	A	Cytoplasm
+P0A6C8	A, F1	IM_cyto
+P0A6D0	A, N	Cytoplasm
+P0A6D3	A	Cytoplasm
+P0A6D5	A	Cytoplasm
+P0A6D7	A	Cytoplasm
+P0A6E1	A	Cytoplasm
+P0A6E4	A, F1	IM_cyto
+P0A6E6	A, F1	IM_cyto
+P0A6E9	A	Cytoplasm
+P0A6F1	A, F1	IM_cyto
+P0A6F3	A, F1	IM_cyto
+P0A6G3	A	Cytoplasm
+P0A6G5	A	Cytoplasm
+P0A6G7	A	Cytoplasm
+P0A6H1	A	Cytoplasm
+P0A6H5	A, F1	IM_cyto
+P0A6H8	B	IM_integral
+P0A6I0	A	Cytoplasm
+P0A6J1	A	Cytoplasm
+P0A6J3	B	IM_integral
+P0A6J5	A, F1	IM_cyto
+P0A6J8	A	Cytoplasm
+P0A6K6	A, F1	IM_cyto
+P0A6L0	A, F1	IM_cyto
+P0A6L4	A	Cytoplasm
+P0A6L7	A	Cytoplasm
+P0A6L9	A	Cytoplasm
+P0A6M2	B	IM_integral
+P0A6M4	A	Cytoplasm
+P0A6N4	A	Cytoplasm
+P0A6N8	A	Cytoplasm
+P0A6R3	A, N, F1	IM_cyto
+P0A6S0	I	OMLP
+P0A6S3	G	Periplasm
+P0A6T1	A	Cytoplasm
+P0A6T3	A	Cytoplasm
+P0A6T9	A	Cytoplasm
+P0A6U3	A, F1	IM_cyto
+P0A6U5	A	Cytoplasm
+P0A6U8	A, F1	IM_cyto
+P0A6V1	A	Cytoplasm
+P0A6V5	A	Cytoplasm
+P0A6V8	A	Cytoplasm
+P0A6W0	A	Cytoplasm
+P0A6W5	A	Cytoplasm
+P0A6W9	A	Cytoplasm
+P0A6X3	A, N, F1	IM_cyto
+P0A6Y1	A, N, F1	IM_cyto
+P0A6Y5	A, F1	IM_cyto
+P0A6Y8	A, F1	IM_cyto
+P0A6Z3	A, F1	IM_cyto
+P0A6Z6	A, N	Cytoplasm
+P0A700	A	Cytoplasm
+P0A703	A	Cytoplasm
+P0A710	B	IM_integral
+P0A712	B	IM_integral
+P0A729	A	Cytoplasm
+P0A731	A	Cytoplasm
+P0A734	A, F1	IM_cyto
+P0A738	A	Cytoplasm
+P0A742	B	IM_integral
+P0A744	A	Cytoplasm
+P0A746	A	Cytoplasm
+P0A754	A, F1	IM_cyto
+P0A756	A, F1	IM_cyto
+P0A759	A, F1	IM_cyto
+P0A761	A	Cytoplasm
+P0A763	A, F1	IM_cyto
+P0A766	B	IM_integral
+P0A769	B	IM_integral
+P0A772	A	Cytoplasm
+P0A776	A, N, F1	IM_cyto
+P0A786	A	Cytoplasm
+P0A790	A	Cytoplasm
+P0A794	A	Cytoplasm
+P0A796	A, F1	IM_cyto
+P0A7A2	B	IM_integral
+P0A7A5	A	Cytoplasm
+P0A7B1	A, F1	IM_cyto
+P0A7B5	A	Cytoplasm
+P0A7B8	A	Cytoplasm
+P0A7C6	A	Cytoplasm
+P0A7C8	B	IM_integral
+P0A7D4	A, F1	IM_cyto
+P0A7D7	A, F1	IM_cyto
+P0A7E1	A, F1	IM_cyto
+P0A7E3	A	Cytoplasm
+P0A7F3	A	Cytoplasm
+P0A7F6	A	Cytoplasm
+P0A7F9	A	Cytoplasm
+P0A7G6	A, F1	IM_cyto
+P0A7H0	A, N, F1	IM_cyto
+P0A7H3	A, N	Cytoplasm
+P0A7H6	A	Cytoplasm
+P0A7I4	A	Cytoplasm
+P0A7J0	A, F1	IM_cyto
+P0A7M9	A, r	Cytoplasm
+P0A7N1	A, r	Cytoplasm
+P0A7N9	A, r	Cytoplasm
+P0A7Q6	A, r	Cytoplasm
+P0A7R1	A, r	Cytoplasm
+P0A7Y0	A, N, F1	IM_cyto
+P0A7Y4	A	Cytoplasm
+P0A7Z0	A	Cytoplasm
+P0A800	A, N, F1	IM_cyto
+P0A809	A, N	Cytoplasm
+P0A812	A, N	Cytoplasm
+P0A814	A, N	Cytoplasm
+P0A821	A	Cytoplasm
+P0A823	A	Cytoplasm
+P0A828	A	Cytoplasm
+P0A830	B	IM_integral
+P0A832	A	Cytoplasm
+P0A836	A, F1	IM_cyto
+P0A840	A	Cytoplasm
+P0A843	B	IM_integral
+P0A847	A	Cytoplasm
+P0A850	A, F1	IM_cyto
+P0A853	A	Cytoplasm
+P62395	A, G	Periplasm
+P0A858	A, F1	IM_cyto
+P0A862	A, F1	IM_cyto
+P0A867	A	Cytoplasm
+P0A870	A, F1	IM_cyto
+P0A877	A	Cytoplasm
+P0A879	A	Cytoplasm
+P0A881	A, N	Cytoplasm
+P0A890	A	Cytoplasm
+P0A894	A, F1	IM_cyto
+P0A8A0	A	Cytoplasm
+P0A8A2	A	Cytoplasm
+P0A8A4	A	Cytoplasm
+P0A8A8	A, F1	IM_cyto
+P0A8B2	A	Cytoplasm
+P0A8B5	A	Cytoplasm
+P0A8C1	A	Cytoplasm
+P0A8C4	A	Cytoplasm
+P0A8C8	A, F1	IM_cyto
+P0A8D0	A, N	Cytoplasm
+P0A8D3	A	Cytoplasm
+P0A8D6	A	Cytoplasm
+P0A8D9	B	IM_integral
+P0A8E1	A	Cytoplasm
+P0A8E5	A	Cytoplasm
+P0A8E7	A	Cytoplasm
+P0A8F0	A	Cytoplasm
+P0A8F4	A	Cytoplasm
+P0A8F8	A, N	Cytoplasm
+P0A8G0	A	Cytoplasm
+P0A8G3	A	Cytoplasm
+P0A8G6	A	Cytoplasm
+P0A8G9	A, N	Cytoplasm
+P0A8H3	B	IM_integral
+P0A8H6	A, F1	IM_cyto
+P0A8H8	A	Cytoplasm
+P0A8I3	A	Cytoplasm
+P0A8I5	A	Cytoplasm
+P0A8I8	A	Cytoplasm
+P0A8J4	A	Cytoplasm
+P0A8J8	A, N, F1	IM_cyto
+P0A8K5	A	Cytoplasm
+P0A8K8	B	IM_integral
+P0A8L5	A	Cytoplasm
+P0A8L7	A	Cytoplasm
+P0A8M6	A	Cytoplasm
+P0A8N0	A, N, F1	IM_cyto
+P0A8N5	A	Cytoplasm
+P0A8N7	A	Cytoplasm
+P0A8P1	A	Cytoplasm
+P0A8P3	A, F1	IM_cyto
+P0A8P6	A, N	Cytoplasm
+P0A8P8	A, N	Cytoplasm
+P0A8Q0	B	IM_integral
+P0A8Q3	B	IM_integral
+P0A8Q6	A	Cytoplasm
+P0A8R0	A, N, F1	IM_cyto
+P0A8R4	A	Cytoplasm
+P0A8R7	B	IM_integral
+P0A8R9	A, N	Cytoplasm
+P0A8S1	A, N	Cytoplasm
+P0A8S5	B	IM_integral
+P0A8S9	A, N	Cytoplasm
+P0A8T1	A	Cytoplasm
+P0A8T5	F2	IM_peri
+P0A8U0	A, F1	IM_cyto
+P0A8U2	A	Cytoplasm
+P0A8U6	A, N	Cytoplasm
+P0A8V0	A	Cytoplasm
+P0A8V6	A, N	Cytoplasm
+P0A8W0	A, N	Cytoplasm
+P0A8W2	A, N	Cytoplasm
+P0A8W5	A	Cytoplasm
+P0A8W8	A	Cytoplasm
+P0AEM4	A, X	Secreted
+P0A8X2	G	Periplasm
+P0A8X4	G	Periplasm
+P0A8Y1	A	Cytoplasm
+P0A8Y3	A	Cytoplasm
+P0A8Y5	A	Cytoplasm
+P0A8Y8	A	Cytoplasm
+P0A8Z0	A	Cytoplasm
+P0A8Z3	A, F1	IM_cyto
+P0A8Z7	A	Cytoplasm
+P0A901	I	OMLP
+P0A903	I	OMLP
+P0A905	I	OMLP
+P0A908	H	OMP
+P0A910	H	OMP
+P0A912	I	OMLP
+P0A915	H	OMP
+P0A917	H	OMP
+P0A921	H	OMP
+P0A924	B	IM_integral
+P0A927	H	OMP
+P0A930	I, F4	OMLP
+P0A932	I	OMLP
+P0A935	I	OMLP
+P0A937	I	OMLP
+P0A944	A	Cytoplasm
+P0A948	A, F1	IM_cyto
+P0A951	A	Cytoplasm
+P0A955	A, F1	IM_cyto
+P0A959	A	Cytoplasm
+P0A962	A	Cytoplasm
+P0A964	A	Cytoplasm
+P0A968	A	Cytoplasm
+P0A972	A	Cytoplasm
+P0A976	A	Cytoplasm
+P0A978	A	Cytoplasm
+P0A982	A	Cytoplasm
+P0A986	A	Cytoplasm
+P0A991	A, F1	IM_cyto
+P0A993	A	Cytoplasm
+P0A996	A, F1	IM_cyto
+P0A998	A	Cytoplasm
+P0A9A2	A, F1	IM_cyto
+P0A9A9	A, N	Cytoplasm
+P0A9B6	A	Cytoplasm
+P0A9C0	A, F1	IM_cyto
+P0A9C3	A	Cytoplasm
+P0A9C5	A	Cytoplasm
+P0A9C9	A	Cytoplasm
+P0A9D2	A	Cytoplasm
+P0A9D4	A	Cytoplasm
+P0A9E0	A, N	Cytoplasm
+P0A9E2	A, N	Cytoplasm
+P0A9E5	A, N	Cytoplasm
+P0A9E9	A, N	Cytoplasm
+P0A9F1	A, N	Cytoplasm
+P0A9F3	A, N, F1	IM_cyto
+P0A9F6	A, N	Cytoplasm
+P0A9F9	A, N	Cytoplasm
+P0A9G2	A, N	Cytoplasm
+P0A9G4	A, N	Cytoplasm
+P0A9G6	A, F1	IM_cyto
+P0A9G8	A, N	Cytoplasm
+P0A9H1	A, N	Cytoplasm
+P0A9H3	A	Cytoplasm
+P0A9H5	A	Cytoplasm
+P0A9H7	A, F1	IM_cyto
+P0A9H9	A, F1	IM_cyto
+P0A9I1	A	Cytoplasm
+P0A9I3	A	Cytoplasm
+P0A9I5	A	Cytoplasm
+P0A9I8	A	Cytoplasm
+P0A9J0	A	Cytoplasm
+P0A9J4	A	Cytoplasm
+P0A9J6	A	Cytoplasm
+P0A9J8	A	Cytoplasm
+P0A9K1	A	Cytoplasm
+P0A9K3	A, F1	IM_cyto
+P0A9K7	A, F1	IM_cyto
+P0A9K9	A, F1	IM_cyto
+P0A9L3	A	Cytoplasm
+P0A9L5	A	Cytoplasm
+P0A9L8	A	Cytoplasm
+P0A9M0	A, N	Cytoplasm
+P0A9M2	A	Cytoplasm
+P0A9M5	A, F1	IM_cyto
+P0A9M8	A	Cytoplasm
+P0A9N0	A	Cytoplasm
+P0A9N4	A	Cytoplasm
+P0A9N8	A	Cytoplasm
+P0A9P4	A	Cytoplasm
+P0A9P6	A, F1	IM_cyto
+P0A9P9	A	Cytoplasm
+P0A9Q1	A, N, F1	IM_cyto
+P0A9Q7	A, F1	IM_cyto
+P0A9R2	B	IM_integral
+P0A9R7	A, F1	IM_cyto
+P0A9S1	A	Cytoplasm
+P0A9S3	A, F1	IM_cyto
+P0A9S5	A	Cytoplasm
+P0A9S7	A, F1	IM_cyto
+P0A9T0	A	Cytoplasm
+P0A9T4	A	Cytoplasm
+P0A9T6	A, N	Cytoplasm
+P0A9T8	A, F1	IM_cyto
+P0A9U1	A, F1	IM_cyto
+P0A9U3	A, F1	IM_cyto
+P0A9U6	A, N	Cytoplasm
+P0A9U8	A	Cytoplasm
+P0A9V5	A, N	Cytoplasm
+P0A9V8	A	Cytoplasm
+P0A9W0	A, N	Cytoplasm
+P0A9W3	A, F1	IM_cyto
+P0A9W6	A	Cytoplasm
+P0A9W9	A	Cytoplasm
+P0A9X1	A, F1	IM_cyto
+P0A9X9	A, N	Cytoplasm
+P0A9Y6	A, N	Cytoplasm
+P0A9Z1	A	Cytoplasm
+P0AA04	A, F1	IM_cyto
+P0AA16	A, N, F1	IM_cyto
+P0AA25	A, F1	IM_cyto
+P0AA31	A	Cytoplasm
+P0AA37	A	Cytoplasm
+P0AA39	A	Cytoplasm
+P0AA41	A	Cytoplasm
+P0AA43	A	Cytoplasm
+P0AA47	B	IM_integral
+P0AA49	B	IM_integral
+P0AA53	B	IM_integral
+P0AA57	G	Periplasm
+P0AA60	B	IM_integral
+P0AA63	B	IM_integral
+P0AA67	B	IM_integral
+P0AA70	B	IM_integral
+P0AA73	B	IM_integral
+P0AA76	B	IM_integral
+P0AA78	B	IM_integral
+P0AA80	B	IM_integral
+P0AA82	B	IM_integral
+P0AA84	A, F1	IM_cyto
+P0AA86	B	IM_integral
+P0AA89	A	Cytoplasm
+P0AA91	I	OMLP
+P0AA93	B	IM_integral
+P0AA95	G	Periplasm
+P0AA97	A	Cytoplasm
+P0AA99	G	Periplasm
+P0AAA1	B	IM_integral
+P0AAA3	G	Periplasm
+P0AAA5	B	IM_integral
+P0AAA7	B	IM_integral
+P0AAA9	G	Periplasm
+P0AAB2	A	Cytoplasm
+P0AAB6	A	Cytoplasm
+P0AAB8	A, F1	IM_cyto
+P0AAC0	A	Cytoplasm
+P0AAC4	B	IM_integral
+P0AAC6	B	IM_integral
+P0AAC8	A	Cytoplasm
+P0AAD2	B	IM_integral
+P0AAD4	B	IM_integral
+P0AAD6	B	IM_integral
+P0AAD8	B	IM_integral
+P0AAE0	B	IM_integral
+P0AAE2	B	IM_integral
+P52614	A, X	Secreted
+P0AAE8	B	IM_integral
+P0AAF1	B	IM_integral
+P0AAF3	A, F1	IM_cyto
+P0AAF6	A, F1	IM_cyto
+P0AAG0	A, F1	IM_cyto
+P0AAG3	A, F1	IM_cyto
+P0AAG5	B	IM_integral
+P0AAG8	A, F1	IM_cyto
+P0AAH0	A, F1	IM_cyto
+P0AAH4	A, F1	IM_cyto
+P0AAH8	A, F1	IM_cyto
+P0AAI1	A, F1	IM_cyto
+P0AAI5	A, F1	IM_cyto
+P0AAJ1	F2	IM_peri
+P0AAJ3	B	IM_integral
+P0AAJ5	A, F1	IM_cyto
+P0AAJ8	F2	IM_peri
+P0AAK1	A	Cytoplasm
+P0AAK4	A	Cytoplasm
+P0AAK7	G	Periplasm
+P0AAL0	A	Cytoplasm
+P0AAL3	G	Periplasm
+P0AAL6	A, F1	IM_cyto
+P0AAL9	G	Periplasm
+P0AAM1	B	IM_integral
+P0AAM3	A	Cytoplasm
+P0AAM7	A	Cytoplasm
+P0AAN1	A	Cytoplasm
+P0AAN3	A	Cytoplasm
+P0AAN5	A	Cytoplasm
+P0AAN9	A	Cytoplasm
+P0AAP1	B	IM_integral
+P0AAP3	A, N	Cytoplasm
+P0AAP5	A	Cytoplasm
+P0AAP7	B	IM_integral
+P0AAQ0	B	IM_integral
+P0AAQ2	A	Cytoplasm
+P0AAQ6	A	Cytoplasm
+P0AAR0	A	Cytoplasm
+P0AAR3	A	Cytoplasm
+P0AAR5	B	IM_integral
+P0AAR8	G	Periplasm
+P0AAS0	B	IM_integral
+P0AAS3	B	IM_integral
+P0AAS5	A	Cytoplasm
+P0AAS7	A	Cytoplasm
+P0AAS9	A	Cytoplasm
+P0AAT2	A	Cytoplasm
+P0AAT4	B	IM_integral
+P0AAT6	A	Cytoplasm
+P0AAT9	A	Cytoplasm
+P0AAU2	B	IM_integral
+P0AAU5	B	IM_integral
+P0AAU7	A	Cytoplasm
+P0AAV0	B	IM_integral
+P0AAV4	A	Cytoplasm
+P0AAV6	G	Periplasm
+P0AAV8	A	Cytoplasm
+P0AAW1	A	Cytoplasm
+P0AAW5	B	IM_integral
+P0AAW9	B	IM_integral
+P0AAX3	G	Periplasm
+P0AAX6	G	Periplasm
+P0AAX8	F3	Periplasm
+P0AAY1	A	Cytoplasm
+P0AAY4	G	Periplasm
+P0AAY6	A	Cytoplasm
+P0AAZ0	B	IM_integral
+P0AAZ4	A	Cytoplasm
+P0AB01	B	IM_integral
+P0AB03	A	Cytoplasm
+P0AB06	G	Periplasm
+P0AB10	E	IMLP
+P0AB12	B	IM_integral
+P0AB14	A	Cytoplasm
+P0AB20	A	Cytoplasm
+P0AB24	G	Periplasm
+P0AB26	I	OMLP
+P0AB28	A	Cytoplasm
+P0AB31	I	OMLP
+P0AB33	A	Cytoplasm
+P0AB35	B	IM_integral
+P0AB38	I	OMLP
+P0AB40	F3	Periplasm
+P0AB43	A	Cytoplasm
+P0AB46	G	Periplasm
+P0AB49	B	IM_integral
+P0AB52	A	Cytoplasm
+P0AB55	A	Cytoplasm
+P0AB58	B	IM_integral
+P0AB61	A	Cytoplasm
+P0AB65	A	Cytoplasm
+P0AB67	B	IM_integral
+P0AB74	A	Cytoplasm
+P0AB77	A, F1	IM_cyto
+P0AB80	A	Cytoplasm
+P0AB83	A	Cytoplasm
+P0AB85	E	IMLP
+P0AB87	A	Cytoplasm
+P0AB91	A	Cytoplasm
+P0AB93	B	IM_integral
+P0AB96	A	Cytoplasm
+P0AB98	B	IM_integral
+P0ABA0	B	IM_integral
+P0ABA4	A, F1	IM_cyto
+P0ABA6	A, F1	IM_cyto
+P0ABB0	A, F1	IM_cyto
+P0ABB4	A, F1	IM_cyto
+P0ABB8	B	IM_integral
+P0ABC0	B	IM_integral
+P0ABC3	B	IM_integral
+P0ABC7	B	IM_integral
+P0ABC9	B	IM_integral
+P0ABD1	B	IM_integral
+P0ABD3	A	Cytoplasm
+P0ABE2	A, N	Cytoplasm
+P0ABE5	B	IM_integral
+P0ABE9	A	Cytoplasm
+P0ABF1	A, F1	IM_cyto
+P0ABF4	A	Cytoplasm
+P0ABF6	A	Cytoplasm
+P0ABH7	A, F1	IM_cyto
+P0ABH9	A	Cytoplasm
+P0ABI4	B	IM_integral
+P0ABI8	B	IM_integral
+P0ABJ1	B	IM_integral
+P0ABJ3	B	IM_integral
+P0ABJ6	B	IM_integral
+P0ABK5	A, F1	IM_cyto
+P0ABK7	F4	Secreted
+P0ABK9	G	Periplasm
+P0ABL1	G	Periplasm
+P0ABL3	G	Periplasm
+P0ABL5	B	IM_integral
+P0ABL8	B	IM_integral
+P0ABM1	B	IM_integral
+P0ABM5	B	IM_integral
+P0ABM9	B	IM_integral
+P0ABN1	B	IM_integral
+P0ABN5	B	IM_integral
+P0ABN9	B	IM_integral
+P0ABP3	B	IM_integral
+P0ABP6	B	IM_integral
+P0ABP8	A, F1	IM_cyto
+P0ABQ2	A	Cytoplasm
+P0ABR1	A	Cytoplasm
+P0ABR5	A	Cytoplasm
+P0ABR7	A	Cytoplasm
+P0ABR9	A	Cytoplasm
+P0ABS1	A, N	Cytoplasm
+P0ABS8	A, N	Cytoplasm
+P0ABT2	A, N, F1	IM_cyto
+P0ABT5	A	Cytoplasm
+P0ABT8	B	IM_integral
+P0ABU0	A	Cytoplasm
+P0ABU2	A	Cytoplasm
+P0ABU5	A	Cytoplasm
+P0ABU7	B	IM_integral
+P0ABU9	B	IM_integral
+P0ABV2	B	IM_integral
+P0ABV6	B	IM_integral
+P0ABW0	A	Cytoplasm
+P0ABW3	A	Cytoplasm
+P0ABW5	G	Periplasm
+P0ABW9	G	Periplasm
+P0ABX2	G	Periplasm
+P0ABX5	G	Periplasm
+P0ABX8	B	IM_integral
+P0ABY2	A	Cytoplasm
+P0ABY4	A	Cytoplasm
+P0ABY7	A, N	Cytoplasm
+P0ABZ1	A, F1	IM_cyto
+P0ABZ4	A, F1	IM_cyto
+P0ABZ6	G	Periplasm
+P0AC00	A	Cytoplasm
+P0AC05	B	IM_integral
+P0AC07	B	IM_integral
+P0AC19	A	Cytoplasm
+P0AC23	B	IM_integral
+P0AC26	B	IM_integral
+P0AC28	A	Cytoplasm
+P0AC30	B	IM_integral
+P0AC33	A, F1	IM_cyto
+P0AC35	A	Cytoplasm
+P0AC38	A, F1	IM_cyto
+P0AC41	A, F1	IM_cyto
+P0AC44	B	IM_integral
+P0AC47	A, F1	IM_cyto
+P0AC51	A, N	Cytoplasm
+P0AC53	A	Cytoplasm
+P0AC55	A, F1	IM_cyto
+P0AC59	A	Cytoplasm
+P0AC62	A, F1	IM_cyto
+P0AC65	A	Cytoplasm
+P0AC69	A, F1	IM_cyto
+P0AC73	A	Cytoplasm
+P0AC78	B	IM_integral
+P0AC81	A	Cytoplasm
+P0AC84	A	Cytoplasm
+P0AC86	A	Cytoplasm
+P0AC88	A	Cytoplasm
+P0AC92	A, F1	IM_cyto
+P0AC94	B	IM_integral
+P0AC96	B	IM_integral
+P0AC98	B	IM_integral
+P0ACA1	A	Cytoplasm
+P0ACA3	A	Cytoplasm
+P0ACA7	A	Cytoplasm
+P0ACB7	B	IM_integral
+P0ACC9	A	Cytoplasm
+P0ACD2	A	Cytoplasm
+P0ACD8	A, F1	IM_cyto
+P0ACE0	F2	IM_peri
+P0ACE3	A	Cytoplasm
+P0ACE7	A, F1	IM_cyto
+P0ACF0	A, N, F1	IM_cyto
+P0ACF4	A, N, F1	IM_cyto
+P0ACF8	A, N, F1	IM_cyto
+P0ACG1	A, N, F1	IM_cyto
+P0ACG4	G	Periplasm
+P0ACG6	G	Periplasm
+P0ACG8	A	Cytoplasm
+P0ACH1	A, N	Cytoplasm
+P0ACH5	A, N	Cytoplasm
+P0ACH8	A, N	Cytoplasm
+P0ACI0	A, N	Cytoplasm
+P0ACI3	A, N	Cytoplasm
+P0ACI6	A, N	Cytoplasm
+P0ACJ0	A, N, F1	IM_cyto
+P0ACJ5	A, N	Cytoplasm
+P0ACJ8	A, N, F1	IM_cyto
+P0ACK2	A, N	Cytoplasm
+P0ACK5	A, N	Cytoplasm
+P0ACK8	A, N	Cytoplasm
+P0ACL0	A, N	Cytoplasm
+P0ACL2	A, N	Cytoplasm
+P0ACL5	A, N	Cytoplasm
+P0ACL7	A, N	Cytoplasm
+P0ACL9	A, N	Cytoplasm
+P0ACM2	A, N	Cytoplasm
+P0ACM5	A, N	Cytoplasm
+P0ACM9	A, N	Cytoplasm
+P0ACN2	A, N	Cytoplasm
+P0ACN4	A, N	Cytoplasm
+P0ACN7	A, N	Cytoplasm
+P0ACP1	A, N	Cytoplasm
+P0ACP5	A, N	Cytoplasm
+P0ACP7	A, N	Cytoplasm
+P0ACQ0	A, N	Cytoplasm
+P0ACQ4	A, N	Cytoplasm
+P0ACQ7	A, N	Cytoplasm
+P0ACR0	A, N	Cytoplasm
+P0ACR2	A, N	Cytoplasm
+P0ACR4	A, N	Cytoplasm
+P0ACR7	A, N	Cytoplasm
+P0ACR9	A, N	Cytoplasm
+P0ACS2	A, N	Cytoplasm
+P0ACS5	A, N	Cytoplasm
+P0ACS7	A, N	Cytoplasm
+P0ACS9	A, N	Cytoplasm
+P0ACT2	A, N	Cytoplasm
+P0ACT6	A, N	Cytoplasm
+P0ACU0	A, N	Cytoplasm
+P0ACU2	A, N	Cytoplasm
+P0ACU5	A, N	Cytoplasm
+P0ACU7	A, N	Cytoplasm
+P0ACV2	B	IM_integral
+P0ACV6	A	Cytoplasm
+P0ACV8	A	Cytoplasm
+P0ACW0	A	Cytoplasm
+P0ACW2	I	OMLP
+P0ACW4	G	Periplasm
+P0ACW6	A	Cytoplasm
+P0ACW8	A	Cytoplasm
+P0ACX0	B	IM_integral
+P0ACX3	A	Cytoplasm
+P0ACX5	A	Cytoplasm
+P0ACX9	A	Cytoplasm
+P0ACY1	A	Cytoplasm
+P0ACY3	A	Cytoplasm
+P0ACY6	B	IM_integral
+P0ACY9	A	Cytoplasm
+P0ACZ2	A	Cytoplasm
+P0ACZ4	A, N	Cytoplasm
+P0ACZ8	A, N	Cytoplasm
+P0AD01	A, N	Cytoplasm
+P0AD03	B	IM_integral
+P0AD05	A	Cytoplasm
+P0AD07	A	Cytoplasm
+P0AD10	A	Cytoplasm
+P0AD12	A	Cytoplasm
+P0AD14	B	IM_integral
+P0AD17	B	IM_integral
+P0AD19	B	IM_integral
+P0AD21	A	Cytoplasm
+P0AD24	A	Cytoplasm
+P0AD27	B	IM_integral
+P0AD30	B	IM_integral
+P0AD33	A	Cytoplasm
+P0AD35	A	Cytoplasm
+P0AD37	A	Cytoplasm
+P0AD40	A	Cytoplasm
+P0AD42	B	IM_integral
+P0AD44	I	OMLP
+P0AD47	B	IM_integral
+P0AD49	A, F1	IM_cyto
+P0AD53	A	Cytoplasm
+P0AD59	G	Periplasm
+P0AD61	A, F1	IM_cyto
+P0AD70	A, F1	IM_cyto
+P0AD72	A	Cytoplasm
+P0AD79	A	Cytoplasm
+P0AD83	A	Cytoplasm
+P0AD86	A	Cytoplasm
+P0AD89	A	Cytoplasm
+P0AD96	G	Periplasm
+P0AD99	B	IM_integral
+P0ADA1	G	Periplasm
+P0ADA3	I	OMLP
+P0ADA5	I	OMLP
+P0ADA7	I	OMLP
+P0ADB1	I	OMLP
+P0ADB4	I	OMLP
+P0ADB7	I	OMLP
+P0ADC8	A	Cytoplasm
+P0ADD2	B	IM_integral
+P0ADD5	B	IM_integral
+P0ADD7	A, N	Cytoplasm
+P0ADD9	A	Cytoplasm
+P0ADE2	A	Cytoplasm
+P0ADE4	H	OMP
+P0ADE6	A, F1	IM_cyto
+P0ADF0	A	Cytoplasm
+P0ADF3	A	Cytoplasm
+P0ADF6	A	Cytoplasm
+P0ADF8	A	Cytoplasm
+P0ADG1	A	Cytoplasm
+P0ADG7	A, F1	IM_cyto
+P0ADH5	A	Cytoplasm
+P0ADH7	A	Cytoplasm
+P0ADI0	A	Cytoplasm
+P0ADI4	A, F1	IM_cyto
+P0ADI7	A	Cytoplasm
+P0ADI9	B	IM_integral
+P0ADJ3	A	Cytoplasm
+P0ADJ5	B	IM_integral
+P0ADJ8	B	IM_integral
+P0ADK0	E	IMLP
+P0ADK4	B	IM_integral
+P0ADK6	A	Cytoplasm
+P0ADK8	A	Cytoplasm
+P0ADL1	B	IM_integral
+P0ADL3	B	IM_integral
+P0ADL6	B	IM_integral
+P0ADM0	B	IM_integral
+P0ADM4	E	IMLP
+P0ADM6	I	OMLP
+P0ADM8	A, F1	IM_cyto
+P0ADN0	A	Cytoplasm
+P0ADN2	A, F1	IM_cyto
+P0ADN6	I	OMLP
+P0ADP0	A	Cytoplasm
+P0ADP2	A, F1	IM_cyto
+P0ADP5	B	IM_integral
+P0ADP7	A	Cytoplasm
+P0ADP9	A	Cytoplasm
+P0ADQ2	B	IM_integral
+P0ADQ5	A	Cytoplasm
+P0ADQ7	B	IM_integral
+P0ADR0	B	IM_integral
+P0ADR2	B	IM_integral
+P0ADR6	A	Cytoplasm
+P0ADR8	A	Cytoplasm
+P0ADS2	A, F1	IM_cyto
+P0ADS6	G	Periplasm
+P0ADS9	G	Periplasm
+P0ADT2	A, F1	IM_cyto
+P0ADT5	A	Cytoplasm
+P0ADT8	B	IM_integral
+P0ADU2	A	Cytoplasm
+P0ADU5	G	Periplasm
+P0ADU7	A	Cytoplasm
+P0ADV5	A	Cytoplasm
+P0ADV7	G	Periplasm
+P0ADV9	B	IM_integral
+P0ADW3	B	IM_integral
+P0ADW6	A	Cytoplasm
+P0ADW8	A	Cytoplasm
+P0ADX1	A	Cytoplasm
+P0ADX5	A	Cytoplasm
+P0ADX7	G	Periplasm
+P0ADX9	A	Cytoplasm
+P0ADY1	B	IM_integral
+P0ADZ7	B	IM_integral
+P0AE01	A, F1	IM_cyto
+P0AE06	E	IMLP
+P0AE08	A, F1	IM_cyto
+P0AE12	A	Cytoplasm
+P0AE14	B	IM_integral
+P0AE16	B	IM_integral
+P0AE22	G	Periplasm
+P0AE24	B	IM_integral
+P0AE26	B	IM_integral
+P0AE28	A	Cytoplasm
+P0AE30	B	IM_integral
+P0AE34	B	IM_integral
+P0AE37	A	Cytoplasm
+P0AE39	A, N	Cytoplasm
+P0AE42	B	IM_integral
+P0AE45	B	IM_integral
+P0AE48	A	Cytoplasm
+P0AE52	A	Cytoplasm
+P0AE56	A	Cytoplasm
+P0AE58	A, N	Cytoplasm
+P0AE60	A	Cytoplasm
+P0AE63	A	Cytoplasm
+P0AE67	A	Cytoplasm
+P0AE70	A	Cytoplasm
+P0AE72	A, N	Cytoplasm
+P0AE74	B	IM_integral
+P0AE76	A	Cytoplasm
+P0AE78	A	Cytoplasm
+P0AE82	B	IM_integral
+P0AE85	F2	IM_peri
+P0AE88	A, N, F1	IM_cyto
+P0AE91	G	Periplasm
+P0AE95	G	Periplasm
+P0AE98	F4	Secreted
+P0AEA2	I, F4	OMLP
+P0AEA5	B	IM_integral
+P0AEA8	A	Cytoplasm
+P0AEB0	B	IM_integral
+P0AEB2	F2	IM_peri
+P0AEB5	B	IM_integral
+P0AEB7	A	Cytoplasm
+P0AEC0	B	IM_integral
+P0AEC3	B	IM_integral
+P0AEC5	B	IM_integral
+P0AEC8	B	IM_integral
+P0AED0	A, F1	IM_cyto
+P0AED5	A, N	Cytoplasm
+P0AED9	A, N	Cytoplasm
+P0AEE1	E	IMLP
+P0AEE3	G	Periplasm
+P0AEE5	G	Periplasm
+P0AEE8	A, N	Cytoplasm
+P0AEF4	A, N	Cytoplasm
+P0AEF8	B	IM_integral
+P0AEG1	B	IM_integral
+P0AEG4	G	Periplasm
+P0AEG6	G	Periplasm
+P0AEG8	A	Cytoplasm
+P0AEH1	B	IM_integral
+P0AEH3	A	Cytoplasm
+P0AEH5	B	IM_integral
+P0AEH8	B	IM_integral
+P0AEI1	A	Cytoplasm
+P0AEI4	A	Cytoplasm
+P0AEI6	A	Cytoplasm
+P0AEJ0	B	IM_integral
+P0AEJ2	A	Cytoplasm
+P0AEJ4	B	IM_integral
+P0AEJ6	A	Cytoplasm
+P0AEJ8	A	Cytoplasm
+P0AEK0	A, N	Cytoplasm
+P0AEK7	B	IM_integral
+P0AEL0	B	IM_integral
+P0AEL3	A	Cytoplasm
+P0AEL6	G	Periplasm
+P0AEL8	A, N	Cytoplasm
+P0AEM0	A	Cytoplasm
+P06709	B, N	IM_integral
+P0AEM6	A, N	Cytoplasm
+P0AEM9	G	Periplasm
+P0AEN1	A	Cytoplasm
+P0AEN8	A	Cytoplasm
+P0AEP1	B	IM_integral
+P0AEP3	A	Cytoplasm
+P0AEP7	A	Cytoplasm
+P0AEP9	A	Cytoplasm
+P0AEQ1	A	Cytoplasm
+P0AEQ3	G	Periplasm
+P0AEQ6	B	IM_integral
+P0AER0	B	IM_integral
+P0AER3	B	IM_integral
+P0AER5	B	IM_integral
+P0AER8	B	IM_integral
+P0AES0	A	Cytoplasm
+P0AES2	A	Cytoplasm
+P0AES9	G	Periplasm
+P0AET2	G	Periplasm
+P0AET5	B	IM_integral
+P0AET8	A	Cytoplasm
+P0AEU0	G	Periplasm
+P0AEU3	B	IM_integral
+P0AEU7	G	Periplasm
+P0AEV1	A	Cytoplasm
+P0AEV4	A	Cytoplasm
+P0AEV7	A	Cytoplasm
+P0AEV9	A	Cytoplasm
+P0AEW1	B	IM_integral
+P0AEW4	A	Cytoplasm
+P0AEW6	A	Cytoplasm
+P0AEW9	A	Cytoplasm
+P0AEX3	B	IM_integral
+P0AEX5	A	Cytoplasm
+P0AEX7	B	IM_integral
+P0AEX9	F2, G	IM_peri
+P0AEY1	B	IM_integral
+P0AEY3	A	Cytoplasm
+P0AEY5	A	Cytoplasm
+P0AEY8	B	IM_integral
+P0AEZ1	A	Cytoplasm
+P0AEZ3	A, F1	IM_cyto
+P0AEZ7	I	OMLP
+P0AEZ9	A, F1	IM_cyto
+P0AF01	B	IM_integral
+P0AF03	A	Cytoplasm
+P0AF06	B	IM_integral
+P0AF08	A	Cytoplasm
+P0AF10	A, N	Cytoplasm
+P0AF12	A	Cytoplasm
+P0AF18	A	Cytoplasm
+P0AF20	A, N	Cytoplasm
+P0AF24	A	Cytoplasm
+P0AF26	A	Cytoplasm
+P0AF28	A, N	Cytoplasm
+P0AF32	B	IM_integral
+P0AF34	B	IM_integral
+P0AF36	A, F1	IM_cyto
+P0AF40	B	IM_integral
+P0AF43	B	IM_integral
+P0AF45	G	Periplasm
+P0AF48	A	Cytoplasm
+P0AF50	A	Cytoplasm
+P0AF52	B	IM_integral
+P0AF54	B	IM_integral
+P0AF56	G	Periplasm
+P0AF59	A	Cytoplasm
+P0AF61	A	Cytoplasm
+P0AF63	A, N	Cytoplasm
+P0AF70	I	OMLP
+P0AF73	B	IM_integral
+P0AF76	A	Cytoplasm
+P0AF78	A	Cytoplasm
+P0AF80	B	IM_integral
+P0AF82	G	Periplasm
+P0AF86	G	Periplasm
+P0AF90	A, N, F1	IM_cyto
+P0AF93	A, F1	IM_cyto
+P0AF96	A	Cytoplasm
+P0AFA2	B	IM_integral
+P0AFA5	B	IM_integral
+P0AFA7	B	IM_integral
+P0AFA9	B	IM_integral
+P0AFB1	I	OMLP
+P0AFB5	A	Cytoplasm
+P0AFB8	A, N	Cytoplasm
+P0AFC0	A	Cytoplasm
+P0AFC3	B	IM_integral
+P0AFC7	A, F1	IM_cyto
+P0AFD1	A, F1	IM_cyto
+P0AFD4	B	IM_integral
+P0AFD6	A, F1	IM_cyto
+P0AFE0	B	IM_integral
+P0AFE4	B	IM_integral
+P0AFE8	B	IM_integral
+P0AFF0	B	IM_integral
+P0AFF2	B	IM_integral
+P0AFF4	B	IM_integral
+P0AFG8	A, F1	IM_cyto
+P0AFH0	A, N	Cytoplasm
+P0AFH2	B	IM_integral
+P0AFH6	B	IM_integral
+P0AAE5	B, N	IM_integral
+P0AFI0	A	Cytoplasm
+P0AFI5	G	Periplasm
+P0AFI9	B	IM_integral
+P0AFJ1	A	Cytoplasm
+P0AFJ5	A, N, F1	IM_cyto
+P0AFJ7	B	IM_integral
+P0AFK0	A	Cytoplasm
+P0AFK2	B	IM_integral
+P0AFK4	B	IM_integral
+P0AFK6	B	IM_integral
+P0AFK9	G	Periplasm
+P0AFL1	B	IM_integral
+P0AFL3	G	Periplasm
+P0AFL6	A, F1	IM_cyto
+P0AFL9	B	IM_integral
+P0AFM2	G	Periplasm
+P0AFM4	G	Periplasm
+P0AFM6	A, F1	IM_cyto
+P0AFM9	B	IM_integral
+P0AFN2	B	IM_integral
+P0AFN6	B	IM_integral
+P0AFP0	B	IM_integral
+P0AFP2	A	Cytoplasm
+P0AFP4	A, N, F1	IM_cyto
+P0AFP6	A	Cytoplasm
+P0AFP9	B	IM_integral
+P0AFQ2	B	IM_integral
+P0AFQ5	A	Cytoplasm
+P0AFQ7	A	Cytoplasm
+P0AFR0	A	Cytoplasm
+P0AFR2	B	IM_integral
+P0AFR4	A	Cytoplasm
+P0AFR7	B	IM_integral
+P0AFR9	B	IM_integral
+P0AFS1	B	IM_integral
+P0AFS3	A	Cytoplasm
+P0AFS5	B	IM_integral
+P0AFS7	B	IM_integral
+P0AFS9	B	IM_integral
+P0AFT2	B	IM_integral
+P0AFT5	A, N	Cytoplasm
+P0AFT8	A	Cytoplasm
+P0AFU0	B	IM_integral
+P0AFU2	B	IM_integral
+P0AFU4	A, N	Cytoplasm
+P0AFU6	A	Cytoplasm
+P0AFV0	B	IM_integral
+P0AFV2	B	IM_integral
+P0AFV4	I	OMLP
+P0AFV8	A, F1	IM_cyto
+P0AFW0	A, N	Cytoplasm
+P0AFW2	A	Cytoplasm
+P0AFW4	A	Cytoplasm
+P0AFW8	A	Cytoplasm
+P0AFX0	A	Cytoplasm
+P0AFX4	A	Cytoplasm
+P0AFX7	B	IM_integral
+P0AFX9	G	Periplasm
+P0AFY2	B	IM_integral
+P0AFY6	B	IM_integral
+P0AFY8	A, F1	IM_cyto
+P0AFZ1	A	Cytoplasm
+P0AFZ3	A, F1	IM_cyto
+P0AFZ5	A	Cytoplasm
+P0AFZ7	B	IM_integral
+P0AG00	B	IM_integral
+P0AG11	A, N	Cytoplasm
+P0AG14	B	IM_integral
+P0AG16	A, F1	IM_cyto
+P0AG18	A	Cytoplasm
+P0AG20	A, F1	IM_cyto
+P0AG24	A	Cytoplasm
+P0AG27	B	IM_integral
+P0AG34	B	IM_integral
+P0AG38	B	IM_integral
+P0AG71	B	IM_integral
+P0AG74	A	Cytoplasm
+P0AG76	A	Cytoplasm
+P0AG78	G	Periplasm
+P0AG80	G	Periplasm
+P0AG82	G	Periplasm
+P0AG84	A	Cytoplasm
+P0AG86	A, F1	IM_cyto
+P0AG90	B	IM_integral
+P0AG93	B	IM_integral
+P0AG99	B	IM_integral
+P0AGA6	A, N	Cytoplasm
+P0AGB0	A	Cytoplasm
+P0AGC0	B	IM_integral
+P0AGC3	G	Periplasm
+P0AGC5	F3	Periplasm
+P0AGC7	B	IM_integral
+P0AGD1	G	Periplasm
+P0AGD3	G	Periplasm
+P0AGE4	B	IM_integral
+P0AGE6	A	Cytoplasm
+P0AGE9	A, F1	IM_cyto
+P0AGF2	A	Cytoplasm
+P0AGF4	B	IM_integral
+P0AGF6	A, F1	IM_cyto
+P0AGG2	A	Cytoplasm
+P0AGG4	A	Cytoplasm
+P0AGG8	A	Cytoplasm
+P0AGH1	B	IM_integral
+P0AGH3	B	IM_integral
+P0AGH5	B	IM_integral
+P0AGH8	B	IM_integral
+P0AGI1	B	IM_integral
+P0AGI4	B	IM_integral
+P0AGI8	A, F1	IM_cyto
+P0AGJ2	A	Cytoplasm
+P0AGJ5	A, F1	IM_cyto
+P0AGJ7	A	Cytoplasm
+P0AGK4	A	Cytoplasm
+P0AGK8	A, N	Cytoplasm
+P0AGL2	A	Cytoplasm
+P0AGL5	A	Cytoplasm
+P0AGL7	A, F1	IM_cyto
+P0AGM0	B	IM_integral
+P0AGM2	B	IM_integral
+P0AGM5	A	Cytoplasm
+P0AGM7	B	IM_integral
+P0AGM9	B	IM_integral
+P0C037	A	Cytoplasm
+P0C054	A	Cytoplasm
+P0C058	A	Cytoplasm
+P0C066	I	OMLP
+P0C077	A	Cytoplasm
+P0C093	A, N	Cytoplasm
+P0C0K3	A	Cytoplasm
+P0C0L2	A	Cytoplasm
+P0C0L7	B	IM_integral
+P0C0L9	A	Cytoplasm
+P0C0R7	A, F1	IM_cyto
+P0C0S1	B	IM_integral
+P0C0T5	G	Periplasm
+P0C0U4	A	Cytoplasm
+P0C0V0	G	Periplasm
+P0C7L2	A	Cytoplasm
+P0C8J6	A, F1	IM_cyto
+P0C8J8	A, F1	IM_cyto
+P0C8K0	A	Cytoplasm
+P0C960	I	OMLP
+P0CB39	B	IM_integral
+P0CB62	B	IM_integral
+P0CD93	A	Cytoplasm
+P0CE44	B	IM_integral
+P0CE47	A, F1	IM_cyto
+P0CE48	A, F1	IM_cyto
+P0CE49	A	Cytoplasm
+P0CE50	A	Cytoplasm
+P0CE51	A	Cytoplasm
+P0CE52	A	Cytoplasm
+P0CE53	A	Cytoplasm
+P0CE54	A	Cytoplasm
+P0CE55	A	Cytoplasm
+P0CE56	A	Cytoplasm
+P0CE57	A	Cytoplasm
+P0CE58	A	Cytoplasm
+P0CF07	A	Cytoplasm
+P0CF08	A	Cytoplasm
+P0CF09	A	Cytoplasm
+P0CF10	A	Cytoplasm
+P0CF11	A	Cytoplasm
+P0CF12	A	Cytoplasm
+P0CF25	A	Cytoplasm
+P0CF26	A	Cytoplasm
+P0CF27	A	Cytoplasm
+P0CF28	A	Cytoplasm
+P0CF29	A	Cytoplasm
+P0CF40	A	Cytoplasm
+P0CF41	A	Cytoplasm
+P0CF42	A	Cytoplasm
+P0CF43	A	Cytoplasm
+P0CF44	A	Cytoplasm
+P0CF45	A	Cytoplasm
+P0CF53	A	Cytoplasm
+P0CF54	A	Cytoplasm
+P0CF55	A	Cytoplasm
+P0CF56	A	Cytoplasm
+P0CF57	A	Cytoplasm
+P0CF58	A	Cytoplasm
+P0CF60	A	Cytoplasm
+P0CF66	A	Cytoplasm
+P0CF67	A	Cytoplasm
+P0CF68	A	Cytoplasm
+P0CF69	A	Cytoplasm
+P0CF70	A	Cytoplasm
+P0CF79	A	Cytoplasm
+P0CF80	A	Cytoplasm
+P0CF81	A	Cytoplasm
+P0CF82	A	Cytoplasm
+P0CF83	A	Cytoplasm
+P0CF86	A	Cytoplasm
+P0CF88	A	Cytoplasm
+P0CF89	A	Cytoplasm
+P0CF90	A	Cytoplasm
+P0CF91	A	Cytoplasm
+P0CF92	A	Cytoplasm
+P0CF93	A	Cytoplasm
+P0CG19	A	Cytoplasm
+P0CI31	A	Cytoplasm
+P0CK95	E	IMLP
+P0DKB3	A	Cytoplasm
+P0DM85	A	Cytoplasm
+P0DMC5	B	IM_integral
+P0DMC7	A, N, F1	IM_cyto
+P0DMC9	A, N	Cytoplasm
+P0DN74	A	Cytoplasm
+P0DP21	A	Cytoplasm
+P0DP22	A	Cytoplasm
+P0DP63	A	Cytoplasm
+P0DP64	A	Cytoplasm
+P0DP69	B	IM_integral
+P0DP70	B	IM_integral
+P0DP89	A	Cytoplasm
+P0DPC4	A	Cytoplasm
+P0DPC5	A	Cytoplasm
+P0DPC6	A	Cytoplasm
+P0DPC7	A	Cytoplasm
+P0DPC8	A	Cytoplasm
+P0DPC9	A	Cytoplasm
+P0DPD0	B	IM_integral
+P0DPD1	B	IM_integral
+P10100	I	OMLP
+P10151	A, N	Cytoplasm
+P10346	A, F1	IM_cyto
+P10371	A	Cytoplasm
+P10378	A, F1	IM_cyto
+P10384	H	OMP
+P10423	F2	IM_peri
+P10442	A	Cytoplasm
+P10805	A, N	Cytoplasm
+P10902	A	Cytoplasm
+P10903	B	IM_integral
+P10905	B	IM_integral
+P10906	B	IM_integral
+P10907	A, F1	IM_cyto
+P10908	A	Cytoplasm
+P11071	A	Cytoplasm
+P11072	A, F1	IM_cyto
+P11286	B	IM_integral
+P11289	I	OMLP
+P11290	A	Cytoplasm
+P11291	A	Cytoplasm
+P11349	A, F1	IM_cyto
+P11350	B	IM_integral
+P11446	A	Cytoplasm
+P11447	A, F1	IM_cyto
+P11454	A, F1	IM_cyto
+P11458	A	Cytoplasm
+P11551	B	IM_integral
+P11553	A	Cytoplasm
+P11557	B	IM_integral
+P11663	A, N	Cytoplasm
+P11664	A	Cytoplasm
+P11667	B	IM_integral
+P11864	A	Cytoplasm
+P11865	A	Cytoplasm
+P11866	A, N	Cytoplasm
+P11868	A	Cytoplasm
+P11988	A	Cytoplasm
+P11989	A, F1	IM_cyto
+P12008	A	Cytoplasm
+P12281	A	Cytoplasm
+P12282	A	Cytoplasm
+P12295	A	Cytoplasm
+P12758	A	Cytoplasm
+P12994	A	Cytoplasm
+P12995	A	Cytoplasm
+P12996	A	Cytoplasm
+P12998	A	Cytoplasm
+P12999	A	Cytoplasm
+P13000	A	Cytoplasm
+P13001	A	Cytoplasm
+P13009	A, F1	IM_cyto
+P13016	A	Cytoplasm
+P13024	A	Cytoplasm
+P13029	A	Cytoplasm
+P13033	A, F1	IM_cyto
+P13035	A, F1	IM_cyto
+P13036	H	OMP
+P13039	A	Cytoplasm
+P13445	A, N, F1	IM_cyto
+P13458	A, N	Cytoplasm
+P13482	G	Periplasm
+P13518	B	IM_integral
+P23890	B, N	IM_integral
+P13669	A, N	Cytoplasm
+P13738	B	IM_integral
+P13857	A	Cytoplasm
+P14081	A	Cytoplasm
+P14175	A, F1	IM_cyto
+P14176	B	IM_integral
+P14294	A, N	Cytoplasm
+P14375	A, N	Cytoplasm
+P14377	B	IM_integral
+P14407	A	Cytoplasm
+P15005	A, N	Cytoplasm
+P15006	A	Cytoplasm
+P15028	F2, G	IM_peri
+P15029	B	IM_integral
+P15030	B	IM_integral
+P15031	A, F1	IM_cyto
+P15032	A	Cytoplasm
+P15033	A	Cytoplasm
+P15034	A	Cytoplasm
+P15038	A	Cytoplasm
+P15043	A	Cytoplasm
+P15047	A	Cytoplasm
+P15067	A	Cytoplasm
+P15070	A, F1	IM_cyto
+P15078	B	IM_integral
+P15081	A, N	Cytoplasm
+P15082	A, N	Cytoplasm
+P15254	A	Cytoplasm
+P15286	B	IM_integral
+P15288	A	Cytoplasm
+P15373	A, N	Cytoplasm
+P15639	A	Cytoplasm
+P15640	A	Cytoplasm
+P15723	A	Cytoplasm
+P15770	A	Cytoplasm
+P15877	B	IM_integral
+P15977	A, F1	IM_cyto
+P15993	B	IM_integral
+P16095	A, F1	IM_cyto
+P16256	B	IM_integral
+P16384	A	Cytoplasm
+P16429	B	IM_integral
+P16430	B	IM_integral
+P16431	A, F1	IM_cyto
+P16432	A	Cytoplasm
+P16433	A	Cytoplasm
+P16456	A	Cytoplasm
+P16525	A, N	Cytoplasm
+P16528	A, N	Cytoplasm
+P16676	A, F1	IM_cyto
+P16677	A, F1	IM_cyto
+P16678	A, F1	IM_cyto
+P16679	A, F1	IM_cyto
+P16681	A	Cytoplasm
+P16682	G	Periplasm
+P16684	A, N	Cytoplasm
+P16685	A	Cytoplasm
+P16686	A	Cytoplasm
+P16687	A	Cytoplasm
+P16688	A	Cytoplasm
+P16689	A	Cytoplasm
+P16690	A	Cytoplasm
+P16691	A	Cytoplasm
+P16692	A, F1	IM_cyto
+P16700	G	Periplasm
+P16701	B	IM_integral
+P16703	A	Cytoplasm
+P16869	H	OMP
+P16916	A	Cytoplasm
+P16917	A, F1	IM_cyto
+P16918	A	Cytoplasm
+P16919	A	Cytoplasm
+P17109	A	Cytoplasm
+P17115	A	Cytoplasm
+P17117	A	Cytoplasm
+P17315	H	OMP
+P17334	B	IM_integral
+P17410	A, N	Cytoplasm
+P17411	A	Cytoplasm
+P17444	A, F1	IM_cyto
+P17445	A	Cytoplasm
+P17446	A, N	Cytoplasm
+P17583	B	IM_integral
+P17802	A	Cytoplasm
+P17846	A	Cytoplasm
+P17854	A, F1	IM_cyto
+P17888	A, N	Cytoplasm
+P17994	G	Periplasm
+P18133	G	Periplasm
+P18196	A	Cytoplasm
+P18200	B	IM_integral
+P18335	A	Cytoplasm
+P18390	G	Periplasm
+P18392	B	IM_integral
+P18393	A	Cytoplasm
+P18775	F2	IM_peri
+P18776	F2	IM_peri
+P18777	B	IM_integral
+P18811	A, N	Cytoplasm
+P18956	G	Periplasm
+P19317	A	Cytoplasm
+P19318	A, F1	IM_cyto
+P19319	A, F1	IM_cyto
+P19323	A, N	Cytoplasm
+P19624	A	Cytoplasm
+P19636	A	Cytoplasm
+P19642	B	IM_integral
+P19767	A	Cytoplasm
+P19768	A	Cytoplasm
+P19769	A	Cytoplasm
+P19925	A	Cytoplasm
+P19926	G	Periplasm
+P19930	A	Cytoplasm
+P19931	A	Cytoplasm
+P19932	A	Cytoplasm
+P19934	B	IM_integral
+P20099	A	Cytoplasm
+P20605	A	Cytoplasm
+P20966	B	IM_integral
+P21151	A	Cytoplasm
+P21156	A	Cytoplasm
+P21165	A	Cytoplasm
+P21169	A	Cytoplasm
+P21170	G	Periplasm
+P21177	A, F1	IM_cyto
+P21179	A	Cytoplasm
+P21189	A, N	Cytoplasm
+P21338	G	Periplasm
+P21345	B	IM_integral
+P21361	A	Cytoplasm
+P21362	A	Cytoplasm
+P21363	A	Cytoplasm
+P21365	B	IM_integral
+P21367	A	Cytoplasm
+P21369	A	Cytoplasm
+P21418	A	Cytoplasm
+P21420	H	OMP
+P21437	A	Cytoplasm
+P21499	A, F1	IM_cyto
+P21503	B	IM_integral
+P21507	A, F1	IM_cyto
+P21513	A, F1	IM_cyto
+P21514	A, N	Cytoplasm
+P21515	A	Cytoplasm
+P21517	A	Cytoplasm
+P21599	A, F1	IM_cyto
+P21693	A, F1	IM_cyto
+P21829	A	Cytoplasm
+P21865	B	IM_integral
+P21866	A, N	Cytoplasm
+P21893	A, N	Cytoplasm
+P22106	A, F1	IM_cyto
+P22186	A	Cytoplasm
+P22255	A, F1	IM_cyto
+P22256	A, F1	IM_cyto
+P22259	A	Cytoplasm
+P22333	A, F1	IM_cyto
+P22525	F3	Periplasm
+P22564	A	Cytoplasm
+P22586	B	IM_integral
+P22729	B	IM_integral
+P22731	A, F1	IM_cyto
+P22787	A	Cytoplasm
+P23003	A	Cytoplasm
+P23173	B	IM_integral
+P23200	B	IM_integral
+P23256	A	Cytoplasm
+P23305	A	Cytoplasm
+P23325	A	Cytoplasm
+P23331	A	Cytoplasm
+P23367	A, N	Cytoplasm
+P23481	A	Cytoplasm
+P23482	B	IM_integral
+P23484	A, N, F1	IM_cyto
+P23485	B	IM_integral
+P23522	A	Cytoplasm
+P23524	A	Cytoplasm
+P23538	A, F1	IM_cyto
+P23721	A	Cytoplasm
+P23827	G	Periplasm
+P23836	A, N	Cytoplasm
+P23837	B	IM_integral
+P23839	A	Cytoplasm
+P23840	A	Cytoplasm
+P23841	A, N	Cytoplasm
+P23842	B	IM_integral
+P23843	G	Periplasm
+P23845	A	Cytoplasm
+P23847	G	Periplasm
+P23849	B	IM_integral
+P23857	G	Periplasm
+P23862	A, N	Cytoplasm
+P23865	F2	IM_peri
+P23869	A, F1	IM_cyto
+P23872	A	Cytoplasm
+P23874	A	Cytoplasm
+P23876	B	IM_integral
+P23877	B	IM_integral
+P23878	A, F1	IM_cyto
+P23883	A	Cytoplasm
+P27434	B, N	IM_integral
+P23894	B	IM_integral
+P23895	B	IM_integral
+P23898	I	OMLP
+P23908	A, F1	IM_cyto
+P23909	A, N	Cytoplasm
+P23910	B	IM_integral
+P23917	A	Cytoplasm
+P24077	B	IM_integral
+P24169	A	Cytoplasm
+P24171	A	Cytoplasm
+P24173	A, F1	IM_cyto
+P24174	A	Cytoplasm
+P24175	A	Cytoplasm
+P24177	B	IM_integral
+P24178	A	Cytoplasm
+P24180	E	IMLP
+P24181	B	IM_integral
+P24183	F2	IM_peri
+P24188	A	Cytoplasm
+P24192	A	Cytoplasm
+P24193	A	Cytoplasm
+P24197	A	Cytoplasm
+P24200	A	Cytoplasm
+P24202	A	Cytoplasm
+P24203	A	Cytoplasm
+P24205	B	IM_integral
+P24207	B	IM_integral
+P24211	A	Cytoplasm
+P24215	A	Cytoplasm
+P24216	F4	Secreted
+P24218	A	Cytoplasm
+P24228	F2	IM_peri
+P24230	A, N	Cytoplasm
+P24232	A	Cytoplasm
+P24238	A	Cytoplasm
+P24240	A	Cytoplasm
+P24241	B	IM_integral
+P24242	A, N	Cytoplasm
+P24244	B	IM_integral
+P24251	A, N	Cytoplasm
+P24252	A	Cytoplasm
+P24255	A, N	Cytoplasm
+P24554	A, N, F1	IM_cyto
+P24555	A	Cytoplasm
+P25396	B	IM_integral
+P25397	A	Cytoplasm
+P25437	A, F1	IM_cyto
+P25516	A	Cytoplasm
+P25519	A, F1	IM_cyto
+P25522	A, F1	IM_cyto
+P25524	A	Cytoplasm
+P25526	A, F1	IM_cyto
+P25527	B	IM_integral
+P25531	A	Cytoplasm
+P25535	A	Cytoplasm
+P25536	A	Cytoplasm
+P25549	G	Periplasm
+P25550	A	Cytoplasm
+P25552	A	Cytoplasm
+P25553	A	Cytoplasm
+P25665	A	Cytoplasm
+P25666	A, F1	IM_cyto
+P25718	G	Periplasm
+P25728	A	Cytoplasm
+P25736	G	Periplasm
+P25737	B	IM_integral
+P25738	A	Cytoplasm
+P25740	A, F1	IM_cyto
+P25741	A, F1	IM_cyto
+P25742	A, F1	IM_cyto
+P25743	B	IM_integral
+P25744	B	IM_integral
+P25746	A, F1	IM_cyto
+P25747	B	IM_integral
+P25748	A, N	Cytoplasm
+P25772	A, N	Cytoplasm
+P25798	B	IM_integral
+P25888	A, F1	IM_cyto
+P25889	A	Cytoplasm
+P25894	I	OMLP
+P25906	A	Cytoplasm
+P25907	G	Periplasm
+P25960	B	IM_integral
+P26218	H	OMP
+P26266	B	IM_integral
+P26281	A	Cytoplasm
+P26365	G	Periplasm
+P26458	B	IM_integral
+P26459	B	IM_integral
+P26602	A	Cytoplasm
+P26608	A	Cytoplasm
+P26612	A	Cytoplasm
+P26616	A	Cytoplasm
+P26646	A	Cytoplasm
+P26648	G	Periplasm
+P26649	A	Cytoplasm
+P27111	A, N	Cytoplasm
+P27125	B	IM_integral
+P27126	A	Cytoplasm
+P27127	A	Cytoplasm
+P27128	A	Cytoplasm
+P27129	A	Cytoplasm
+P27238	A	Cytoplasm
+P27240	A	Cytoplasm
+P27241	A	Cytoplasm
+P27242	A, F1	IM_cyto
+P27243	B	IM_integral
+P27245	A, N	Cytoplasm
+P27247	A, F1	IM_cyto
+P27248	A, F1	IM_cyto
+P27249	A	Cytoplasm
+P27250	A	Cytoplasm
+P27253	A	Cytoplasm
+P27254	A, F1	IM_cyto
+P27278	A, N, F1	IM_cyto
+P27294	A	Cytoplasm
+P27296	A	Cytoplasm
+P27297	A	Cytoplasm
+P27298	A, F1	IM_cyto
+P27303	B	IM_integral
+P27305	A	Cytoplasm
+P27306	A, F1	IM_cyto
+P27375	A	Cytoplasm
+P27431	A	Cytoplasm
+P42590	B, N	IM_integral
+P27550	A, F1	IM_cyto
+P27828	A	Cytoplasm
+P27829	A	Cytoplasm
+P27830	A	Cytoplasm
+P27832	A	Cytoplasm
+P27833	A	Cytoplasm
+P27836	A, F1	IM_cyto
+P27837	B	IM_integral
+P27838	A	Cytoplasm
+P27840	G	Periplasm
+P27842	B	IM_integral
+P27843	B	IM_integral
+P27844	B	IM_integral
+P27848	A	Cytoplasm
+P27859	A	Cytoplasm
+P27862	A	Cytoplasm
+P27896	B	IM_integral
+P28224	I	OMLP
+P28246	B	IM_integral
+P28249	B	IM_integral
+P28303	B	IM_integral
+P28304	A	Cytoplasm
+P28305	A	Cytoplasm
+P28306	B	IM_integral
+P28307	F4	Secreted
+P28369	A	Cytoplasm
+P28629	A	Cytoplasm
+P28634	A	Cytoplasm
+P28635	E	IMLP
+P28638	A, N	Cytoplasm
+P28696	G	Periplasm
+P28697	A	Cytoplasm
+P28721	G	Periplasm
+P28722	G	Periplasm
+P28861	A	Cytoplasm
+P28903	A	Cytoplasm
+P28904	A, F1	IM_cyto
+P28905	A, N	Cytoplasm
+P28911	B	IM_integral
+P28912	A	Cytoplasm
+P28915	G	Periplasm
+P28916	A	Cytoplasm
+P28917	A	Cytoplasm
+P29009	A	Cytoplasm
+P29010	A	Cytoplasm
+P29012	A, F1	IM_cyto
+P29013	A	Cytoplasm
+P29131	B	IM_integral
+P29208	A	Cytoplasm
+P29217	A	Cytoplasm
+P29744	F4	Secreted
+P29745	A	Cytoplasm
+P30011	A	Cytoplasm
+P30015	A	Cytoplasm
+P30125	A	Cytoplasm
+P30126	A	Cytoplasm
+P30128	A	Cytoplasm
+P30130	H	OMP
+P30131	A	Cytoplasm
+P30136	A	Cytoplasm
+P30137	A	Cytoplasm
+P30138	B	IM_integral
+P30139	A	Cytoplasm
+P30140	A	Cytoplasm
+P30143	B	IM_integral
+P30147	A	Cytoplasm
+P30149	B	IM_integral
+P30176	A	Cytoplasm
+P30177	A	Cytoplasm
+P30178	A	Cytoplasm
+P30192	A	Cytoplasm
+P30235	A	Cytoplasm
+P30744	A	Cytoplasm
+P30745	A	Cytoplasm
+P30748	A	Cytoplasm
+P30749	A	Cytoplasm
+P30750	A, F1	IM_cyto
+P30843	A, N	Cytoplasm
+P30844	B	IM_integral
+P30845	B	IM_integral
+P30847	B	IM_integral
+P30850	A, N, F1	IM_cyto
+P30852	A	Cytoplasm
+P30855	B	IM_integral
+P30859	G	Periplasm
+P30860	G	Periplasm
+P30863	A	Cytoplasm
+P30864	A, N	Cytoplasm
+P30866	A	Cytoplasm
+P30870	A	Cytoplasm
+P30871	A	Cytoplasm
+P30958	A	Cytoplasm
+P30979	A, N	Cytoplasm
+P31057	A	Cytoplasm
+P31058	F4	Secreted
+P31060	A, F1	IM_cyto
+P31061	A	Cytoplasm
+P31062	A	Cytoplasm
+P31063	I	OMLP
+P31064	B	IM_integral
+P31068	A	Cytoplasm
+P31069	B	IM_integral
+P31119	B	IM_integral
+P31121	G	Periplasm
+P31122	B	IM_integral
+P31125	B	IM_integral
+P31126	B	IM_integral
+P31129	A	Cytoplasm
+P31130	G	Periplasm
+P31131	A	Cytoplasm
+P31133	G	Periplasm
+P31134	A, F1	IM_cyto
+P31135	B	IM_integral
+P31142	A	Cytoplasm
+P31224	B	IM_integral
+P31433	B	IM_integral
+P31434	A	Cytoplasm
+P31435	B	IM_integral
+P31436	B	IM_integral
+P31437	B	IM_integral
+P31440	B	IM_integral
+P31441	A	Cytoplasm
+P31442	B	IM_integral
+P31443	A	Cytoplasm
+P31446	B	IM_integral
+P31447	A	Cytoplasm
+P31448	B	IM_integral
+P31449	A, N	Cytoplasm
+P31450	A	Cytoplasm
+P31452	B	IM_integral
+P31453	A, N	Cytoplasm
+P31455	A	Cytoplasm
+P31456	A	Cytoplasm
+P31459	A	Cytoplasm
+P31460	A, N	Cytoplasm
+P31462	B	IM_integral
+P31463	A, N	Cytoplasm
+P31466	B	IM_integral
+P31467	A	Cytoplasm
+P31468	B	IM_integral
+P31469	A	Cytoplasm
+P31470	A	Cytoplasm
+P31471	G	Periplasm
+P31473	A	Cytoplasm
+P31474	B	IM_integral
+P31475	A, N	Cytoplasm
+P31545	G	Periplasm
+P31547	B	IM_integral
+P31548	A, F1	IM_cyto
+P31549	B	IM_integral
+P31550	G	Periplasm
+P31551	A	Cytoplasm
+P31552	A, F1	IM_cyto
+P31553	B	IM_integral
+P31572	A	Cytoplasm
+P31574	A	Cytoplasm
+P31600	H	OMP
+P31658	A	Cytoplasm
+P31660	A	Cytoplasm
+P31663	A	Cytoplasm
+P31665	A	Cytoplasm
+P31666	F2	IM_peri
+P31667	A	Cytoplasm
+P31675	B	IM_integral
+P31677	A, F1	IM_cyto
+P31678	A	Cytoplasm
+P31679	B	IM_integral
+P31680	B	IM_integral
+P31697	G	Periplasm
+P31801	B	IM_integral
+P31802	A, N	Cytoplasm
+P31806	A	Cytoplasm
+P31808	A	Cytoplasm
+P31825	A	Cytoplasm
+P31826	B	IM_integral
+P31827	H	OMP
+P31828	G	Periplasm
+P31979	A, F1	IM_cyto
+P31992	A	Cytoplasm
+P32051	I	OMLP
+P32053	A	Cytoplasm
+P32055	A	Cytoplasm
+P32056	A	Cytoplasm
+P32057	A	Cytoplasm
+P32099	A	Cytoplasm
+P32106	G	Periplasm
+P32108	B	IM_integral
+P32109	A	Cytoplasm
+P32125	A, N	Cytoplasm
+P32128	B	IM_integral
+P32129	B	IM_integral
+P32131	A	Cytoplasm
+P32132	A, F1	IM_cyto
+P32134	A	Cytoplasm
+P32135	B	IM_integral
+P32136	B	IM_integral
+P32137	B	IM_integral
+P32138	A	Cytoplasm
+P32139	A	Cytoplasm
+P32140	A	Cytoplasm
+P32141	A	Cytoplasm
+P32143	A	Cytoplasm
+P32144	A, N	Cytoplasm
+P32151	E	IMLP
+P32152	A, N	Cytoplasm
+P32153	A	Cytoplasm
+P32154	B	IM_integral
+P32155	A, F1	IM_cyto
+P32156	A	Cytoplasm
+P32157	A	Cytoplasm
+P32160	G	Periplasm
+P32162	A	Cytoplasm
+P32166	B	IM_integral
+P32167	G	Periplasm
+P32169	A	Cytoplasm
+P32170	A	Cytoplasm
+P32171	A	Cytoplasm
+P32173	A	Cytoplasm
+P32176	G	Periplasm
+P32177	A	Cytoplasm
+P32662	A	Cytoplasm
+P32664	A	Cytoplasm
+P32668	G	Periplasm
+P32669	A	Cytoplasm
+P32670	A, F1	IM_cyto
+P32672	B	IM_integral
+P32674	A	Cytoplasm
+P32675	A	Cytoplasm
+P32676	A, F1	IM_cyto
+P32677	A, N	Cytoplasm
+P32680	A	Cytoplasm
+P32681	I	OMLP
+P32684	A, F1	IM_cyto
+P32685	A	Cytoplasm
+P32687	I	OMLP
+P32688	G	Periplasm
+P32689	E	IMLP
+P32690	A	Cytoplasm
+P32693	A	Cytoplasm
+P32694	A	Cytoplasm
+P32695	A, F1	IM_cyto
+P32696	B	IM_integral
+P32700	B	IM_integral
+P32701	B	IM_integral
+P32703	B	IM_integral
+P32704	A	Cytoplasm
+P32705	B	IM_integral
+P32709	B	IM_integral
+P32710	B	IM_integral
+P32711	B	IM_integral
+P32712	I	OMLP
+P32714	I	OMLP
+P32715	B	IM_integral
+P32716	B	IM_integral
+P32717	G	Periplasm
+P32718	A	Cytoplasm
+P32719	A	Cytoplasm
+P32720	B	IM_integral
+P32721	A, F1	IM_cyto
+P33011	B	IM_integral
+P33012	A, N	Cytoplasm
+P33013	F2	IM_peri
+P33014	A	Cytoplasm
+P33015	B	IM_integral
+P33018	A	Cytoplasm
+P33020	A	Cytoplasm
+P33021	B	IM_integral
+P33022	A	Cytoplasm
+P33024	B	IM_integral
+P33025	A	Cytoplasm
+P33026	B	IM_integral
+P33029	A	Cytoplasm
+P33030	A	Cytoplasm
+P33128	G	Periplasm
+P33129	H	OMP
+P33135	B	IM_integral
+P33136	G	Periplasm
+P33195	A, F1	IM_cyto
+P33218	B	IM_integral
+P33219	X	Secreted
+P33221	A	Cytoplasm
+P33222	A	Cytoplasm
+P33224	A, N	Cytoplasm
+P33225	G	Periplasm
+P33226	B	IM_integral
+P33227	A	Cytoplasm
+P33228	A	Cytoplasm
+P33229	A	Cytoplasm
+P33230	A	Cytoplasm
+P33231	B	IM_integral
+P33232	A, F1	IM_cyto
+P33234	A, N	Cytoplasm
+P33235	F4	Secreted
+P33236	B	IM_integral
+P33340	G	Periplasm
+P33341	H	OMP
+P33342	G	Periplasm
+P33343	G	Periplasm
+P33344	G	Periplasm
+P33345	A	Cytoplasm
+P33346	A	Cytoplasm
+P33347	A	Cytoplasm
+P33348	A	Cytoplasm
+P33349	A	Cytoplasm
+P33352	A	Cytoplasm
+P33353	A	Cytoplasm
+P33354	I	OMLP
+P33355	A	Cytoplasm
+P33358	A, N, F1	IM_cyto
+P33359	B	IM_integral
+P33360	A, F1	IM_cyto
+P33361	B	IM_integral
+P33362	G	Periplasm
+P33363	G	Periplasm
+P33366	B	IM_integral
+P33368	A	Cytoplasm
+P33369	I	OMLP
+P33371	A	Cytoplasm
+P33554	G	Periplasm
+P33570	A, F1	IM_cyto
+P33590	G	Periplasm
+P33591	B	IM_integral
+P33593	A, F1	IM_cyto
+P33594	A, F1	IM_cyto
+P33595	A, N	Cytoplasm
+P33596	A, N	Cytoplasm
+P33599	A, F1	IM_cyto
+P33602	A, F1	IM_cyto
+P33607	B	IM_integral
+P33634	A, N	Cytoplasm
+P33644	A	Cytoplasm
+P33647	A	Cytoplasm
+P33650	B	IM_integral
+P33666	H	OMP
+P33667	A	Cytoplasm
+P33668	I	OMLP
+P33669	B	IM_integral
+P33913	G	Periplasm
+P33915	B	IM_integral
+P33916	A, F1	IM_cyto
+P33919	A	Cytoplasm
+P33920	A, N	Cytoplasm
+P33924	H	OMP
+P33927	B	IM_integral
+P33931	A, F1	IM_cyto
+P33934	B	IM_integral
+P33937	G	Periplasm
+P33940	A, F1	IM_cyto
+P33941	B	IM_integral
+P33997	A, N	Cytoplasm
+P34209	A	Cytoplasm
+P34749	H	OMP
+P35340	A, F1	IM_cyto
+P36547	A, N	Cytoplasm
+P36548	G	Periplasm
+P36553	A	Cytoplasm
+P36554	B	IM_integral
+P36560	G	Periplasm
+P36561	B	IM_integral
+P36562	A	Cytoplasm
+P36566	A	Cytoplasm
+P36645	A	Cytoplasm
+P36646	B	IM_integral
+P36647	B	IM_integral
+P36649	G	Periplasm
+P36655	B	IM_integral
+P36659	A, N	Cytoplasm
+P36661	A	Cytoplasm
+P36662	A	Cytoplasm
+P36667	A, F1	IM_cyto
+P36672	B	IM_integral
+P36673	A, N	Cytoplasm
+P36675	A	Cytoplasm
+P36677	A	Cytoplasm
+P36678	B	IM_integral
+P36680	A, F1	IM_cyto
+P36682	G	Periplasm
+P36683	A, F1	IM_cyto
+P36767	A, N	Cytoplasm
+P36771	A, N	Cytoplasm
+P36837	B	IM_integral
+P36879	A, F1	IM_cyto
+P36881	A, F1	IM_cyto
+P36928	A	Cytoplasm
+P36929	B	IM_integral
+P36930	A, N	Cytoplasm
+P36937	A, F1	IM_cyto
+P36938	A	Cytoplasm
+P36943	G	Periplasm
+P36979	A	Cytoplasm
+P36995	A	Cytoplasm
+P36999	A	Cytoplasm
+P37001	H	OMP
+P37002	B	IM_integral
+P37003	A	Cytoplasm
+P37005	A	Cytoplasm
+P37007	A, F1	IM_cyto
+P37008	A	Cytoplasm
+P37009	A, F1	IM_cyto
+P37013	A, N	Cytoplasm
+P37014	A	Cytoplasm
+P37016	G	Periplasm
+P37017	G	Periplasm
+P37018	G	Periplasm
+P37019	B	IM_integral
+P37024	A	Cytoplasm
+P37025	A	Cytoplasm
+P37028	G	Periplasm
+P37047	A, N	Cytoplasm
+P37049	G	Periplasm
+P37050	G	Periplasm
+P37051	A	Cytoplasm
+P37052	A	Cytoplasm
+P37056	I	OMLP
+P37057	A, N	Cytoplasm
+P37095	A	Cytoplasm
+P37127	A	Cytoplasm
+P37128	A	Cytoplasm
+P37146	B	IM_integral
+P37147	B	IM_integral
+P37177	A, F1	IM_cyto
+P37180	B	IM_integral
+P37182	A	Cytoplasm
+P37188	A, F1	IM_cyto
+P37194	I	OMLP
+P37195	A, N	Cytoplasm
+P37197	E	IMLP
+P37305	B	IM_integral
+P37306	A	Cytoplasm
+P37309	A, N	Cytoplasm
+P37313	A, F1	IM_cyto
+P37325	G	Periplasm
+P37326	A	Cytoplasm
+P37327	B	IM_integral
+P37329	G	Periplasm
+P37330	A	Cytoplasm
+P37338	A, N	Cytoplasm
+P37339	A, F1	IM_cyto
+P37340	B	IM_integral
+P37342	A	Cytoplasm
+P37344	A, N	Cytoplasm
+P37348	A	Cytoplasm
+P37349	A, F1	IM_cyto
+P37351	A	Cytoplasm
+P37353	A, F1	IM_cyto
+P37355	A	Cytoplasm
+P37387	G	Periplasm
+P37388	A, F1	IM_cyto
+P37440	A	Cytoplasm
+P37443	B	IM_integral
+P37590	A	Cytoplasm
+P37595	A	Cytoplasm
+P37596	A	Cytoplasm
+P37597	B	IM_integral
+P37610	A	Cytoplasm
+P37613	A	Cytoplasm
+P37614	B	IM_integral
+P37615	B	IM_integral
+P37617	B	IM_integral
+P37619	B	IM_integral
+P37621	B	IM_integral
+P37623	A	Cytoplasm
+P37624	B	IM_integral
+P37626	B	IM_integral
+P37627	A	Cytoplasm
+P37629	A	Cytoplasm
+P37630	B	IM_integral
+P37631	B	IM_integral
+P37634	A	Cytoplasm
+P37635	A	Cytoplasm
+P37636	I	OMLP
+P37637	B	IM_integral
+P37639	A, N	Cytoplasm
+P37640	A, N	Cytoplasm
+P37641	A, N	Cytoplasm
+P37642	B	IM_integral
+P37643	B	IM_integral
+P37645	B	IM_integral
+P37646	A	Cytoplasm
+P37647	A	Cytoplasm
+P37648	G	Periplasm
+P37649	B	IM_integral
+P37650	G	Periplasm
+P37651	G	Periplasm
+P37652	B	IM_integral
+P37653	B	IM_integral
+P37655	A	Cytoplasm
+P37657	A	Cytoplasm
+P37659	B	IM_integral
+P37660	B	IM_integral
+P37661	B	IM_integral
+P37662	B	IM_integral
+P37663	H	OMP
+P37664	A	Cytoplasm
+P37665	I	OMLP
+P37666	A	Cytoplasm
+P37669	B	IM_integral
+P37671	A, N	Cytoplasm
+P37672	A	Cytoplasm
+P37673	A	Cytoplasm
+P37674	B	IM_integral
+P37675	B	IM_integral
+P37676	G	Periplasm
+P37677	A	Cytoplasm
+P37678	A	Cytoplasm
+P37679	A	Cytoplasm
+P37680	A	Cytoplasm
+P37681	H	OMP
+P37682	A, N	Cytoplasm
+P37683	B	IM_integral
+P37685	A	Cytoplasm
+P37686	A	Cytoplasm
+P37689	A	Cytoplasm
+P37690	G	Periplasm
+P37691	G	Periplasm
+P37692	A, F1	IM_cyto
+P37744	G	Periplasm
+P37745	A	Cytoplasm
+P37746	B	IM_integral
+P37747	A	Cytoplasm
+P37748	B	IM_integral
+P37749	A, F1	IM_cyto
+P37750	A, F1	IM_cyto
+P37751	A, F1	IM_cyto
+P37757	A	Cytoplasm
+P37758	B	IM_integral
+P37759	A	Cytoplasm
+P37760	A	Cytoplasm
+P37765	A, F1	IM_cyto
+P37766	A	Cytoplasm
+P37767	A, N	Cytoplasm
+P37769	A	Cytoplasm
+P37772	B	IM_integral
+P37773	A	Cytoplasm
+P37774	A, F1	IM_cyto
+P37794	A	Cytoplasm
+P37902	G	Periplasm
+P37903	A	Cytoplasm
+P37906	A	Cytoplasm
+P37908	B	IM_integral
+P37909	G	Periplasm
+P38035	A, N	Cytoplasm
+P38036	A	Cytoplasm
+P38038	A	Cytoplasm
+P38051	A	Cytoplasm
+P38052	G	Periplasm
+P38054	B	IM_integral
+P38055	B	IM_integral
+P38097	B	IM_integral
+P38101	B	IM_integral
+P38104	A	Cytoplasm
+P38105	A	Cytoplasm
+P38134	B	IM_integral
+P38135	A, F1	IM_cyto
+P38392	B	IM_integral
+P38393	A	Cytoplasm
+P38489	A, F1	IM_cyto
+P38506	A	Cytoplasm
+P38521	A, F1	IM_cyto
+P38683	G	Periplasm
+P38684	A, N	Cytoplasm
+P39099	G	Periplasm
+P39160	A	Cytoplasm
+P39161	A, N	Cytoplasm
+P39163	A	Cytoplasm
+P39165	G	Periplasm
+P39172	G	Periplasm
+P39173	A	Cytoplasm
+P39176	F3	Periplasm
+P39177	A, F1	IM_cyto
+P39180	H	OMP
+P39187	G	Periplasm
+P39196	B	IM_integral
+P39199	A	Cytoplasm
+P39206	A	Cytoplasm
+P39208	A	Cytoplasm
+P39212	A	Cytoplasm
+P39220	A	Cytoplasm
+P39221	A	Cytoplasm
+P39263	B	IM_integral
+P39264	G	Periplasm
+P39265	G	Periplasm
+P39267	A	Cytoplasm
+P39270	B	IM_integral
+P39274	A	Cytoplasm
+P39276	B	IM_integral
+P39277	B	IM_integral
+P39279	A	Cytoplasm
+P39280	A	Cytoplasm
+P39282	B	IM_integral
+P39283	A	Cytoplasm
+P39284	B	IM_integral
+P39285	B	IM_integral
+P39288	A	Cytoplasm
+P39293	A	Cytoplasm
+P39295	A, F1	IM_cyto
+P39297	I	OMLP
+P39298	A	Cytoplasm
+P39300	A	Cytoplasm
+P39301	B	IM_integral
+P39304	A	Cytoplasm
+P39305	A	Cytoplasm
+P39306	A	Cytoplasm
+P39308	A	Cytoplasm
+P39309	A	Cytoplasm
+P39310	B	IM_integral
+P39314	B	IM_integral
+P39315	A	Cytoplasm
+P39317	A	Cytoplasm
+P39321	B	IM_integral
+P39325	G	Periplasm
+P39328	B	IM_integral
+P39332	A	Cytoplasm
+P39333	A	Cytoplasm
+P39334	A, N	Cytoplasm
+P39336	A	Cytoplasm
+P39337	A	Cytoplasm
+P39338	B	IM_integral
+P39342	A, F1	IM_cyto
+P39343	A, N	Cytoplasm
+P39344	B	IM_integral
+P39346	A	Cytoplasm
+P39347	A	Cytoplasm
+P39349	B	IM_integral
+P39351	A	Cytoplasm
+P39352	B	IM_integral
+P39353	A	Cytoplasm
+P39354	A	Cytoplasm
+P39355	B	IM_integral
+P39356	A	Cytoplasm
+P39357	B	IM_integral
+P39358	A	Cytoplasm
+P39359	A	Cytoplasm
+P39360	A, N	Cytoplasm
+P39361	A, N	Cytoplasm
+P39362	A	Cytoplasm
+P39363	A	Cytoplasm
+P39364	A	Cytoplasm
+P39365	B	IM_integral
+P39366	A	Cytoplasm
+P39367	A	Cytoplasm
+P39368	A	Cytoplasm
+P39369	A	Cytoplasm
+P39370	A	Cytoplasm
+P39371	G	Periplasm
+P39374	A	Cytoplasm
+P39375	A	Cytoplasm
+P39376	A, N	Cytoplasm
+P39377	A	Cytoplasm
+P39379	B	IM_integral
+P39380	A	Cytoplasm
+P39381	B	IM_integral
+P39382	B	IM_integral
+P39383	A	Cytoplasm
+P39384	A, N	Cytoplasm
+P39385	B	IM_integral
+P39386	B	IM_integral
+P39389	A, N	Cytoplasm
+P39390	A	Cytoplasm
+P39391	A	Cytoplasm
+P39393	A	Cytoplasm
+P39394	A	Cytoplasm
+P39396	B	IM_integral
+P39398	B	IM_integral
+P39399	A	Cytoplasm
+P39400	A	Cytoplasm
+P39401	B	IM_integral
+P39404	A, N	Cytoplasm
+P39405	A, F1	IM_cyto
+P39406	A, F1	IM_cyto
+P39407	A	Cytoplasm
+P39408	A	Cytoplasm
+P39409	A	Cytoplasm
+P39410	A	Cytoplasm
+P39411	A	Cytoplasm
+P39414	B	IM_integral
+P39451	A, F1	IM_cyto
+P39452	A	Cytoplasm
+P39453	B	IM_integral
+P39829	A	Cytoplasm
+P39830	B	IM_integral
+P39831	A	Cytoplasm
+P39832	B	IM_integral
+P39834	G	Periplasm
+P39835	B	IM_integral
+P39836	B	IM_integral
+P39838	B	IM_integral
+P39901	A	Cytoplasm
+P39902	A	Cytoplasm
+P40120	G	Periplasm
+P40191	A	Cytoplasm
+P40710	I	OMLP
+P40711	A, r	Cytoplasm
+P40719	B	IM_integral
+P40874	A, F1	IM_cyto
+P40876	G	Periplasm
+P41036	B	IM_integral
+P41039	A	Cytoplasm
+P41052	I	OMLP
+P41407	A, F1	IM_cyto
+P41409	A	Cytoplasm
+P41441	B	IM_integral
+P41442	B	IM_integral
+P41443	B	IM_integral
+P42588	A	Cytoplasm
+P42589	A	Cytoplasm
+P45562	B, N	IM_integral
+P42591	G	Periplasm
+P42592	G	Periplasm
+P42593	A	Cytoplasm
+P42596	A	Cytoplasm
+P42597	A	Cytoplasm
+P42598	B	IM_integral
+P42599	A	Cytoplasm
+P42601	B	IM_integral
+P42603	B	IM_integral
+P42604	A, F1	IM_cyto
+P42615	B	IM_integral
+P42616	G	Periplasm
+P42619	B	IM_integral
+P42620	A	Cytoplasm
+P42624	A	Cytoplasm
+P42625	A	Cytoplasm
+P42626	B	IM_integral
+P42628	B	IM_integral
+P42630	A	Cytoplasm
+P42632	A	Cytoplasm
+P42640	B	IM_integral
+P42904	A	Cytoplasm
+P42905	B	IM_integral
+P42906	A	Cytoplasm
+P42907	A	Cytoplasm
+P42909	A	Cytoplasm
+P42910	B	IM_integral
+P42911	B	IM_integral
+P42912	A	Cytoplasm
+P42913	G	Periplasm
+P42914	G	Periplasm
+P42915	H	OMP
+P43319	G	Periplasm
+P43329	A, F1	IM_cyto
+P43337	A	Cytoplasm
+P43340	A, F1	IM_cyto
+P43531	B	IM_integral
+P43533	A	Cytoplasm
+P43667	B	IM_integral
+P43671	B	IM_integral
+P43672	A, F1	IM_cyto
+P43674	I	OMLP
+P43676	B	IM_integral
+P45394	B	IM_integral
+P45395	A	Cytoplasm
+P45420	H	OMP
+P45421	G	Periplasm
+P45422	G	Periplasm
+P45423	A	Cytoplasm
+P45424	A	Cytoplasm
+P45425	A	Cytoplasm
+P45428	B	IM_integral
+P45463	A, N	Cytoplasm
+P45464	I	OMLP
+P45465	A	Cytoplasm
+P45468	B	IM_integral
+P45469	A, F1	IM_cyto
+P45470	A	Cytoplasm
+P45472	A	Cytoplasm
+P45475	A	Cytoplasm
+P45505	A	Cytoplasm
+P45508	H	OMP
+P45522	B	IM_integral
+P45523	G	Periplasm
+P45524	A	Cytoplasm
+P45527	A	Cytoplasm
+P45530	A	Cytoplasm
+P45531	A	Cytoplasm
+P45532	A	Cytoplasm
+P45537	B	IM_integral
+P45539	B	IM_integral
+P45541	A	Cytoplasm
+P45543	A	Cytoplasm
+P45544	A, N	Cytoplasm
+P45545	A	Cytoplasm
+P45546	B	IM_integral
+P45548	A	Cytoplasm
+P45549	A	Cytoplasm
+P45550	A	Cytoplasm
+P45551	A	Cytoplasm
+P45552	A	Cytoplasm
+P46889	B, N	IM_integral
+P45563	A	Cytoplasm
+P45564	H	OMP
+P45565	G	Periplasm
+P45566	B	IM_integral
+P45570	B	IM_integral
+P45577	A, F1	IM_cyto
+P45578	A, F1	IM_cyto
+P45579	A	Cytoplasm
+P45581	A	Cytoplasm
+P45736	A	Cytoplasm
+P45750	G	Periplasm
+P45751	B	IM_integral
+P45753	A	Cytoplasm
+P45756	B	IM_integral
+P45757	B	IM_integral
+P45758	H	OMP
+P45759	A, F1	IM_cyto
+P45760	B	IM_integral
+P45761	G	Periplasm
+P45762	G	Periplasm
+P45763	B	IM_integral
+P45766	G	Periplasm
+P45767	B	IM_integral
+P45768	B	IM_integral
+P45769	A, F1	IM_cyto
+P45771	A	Cytoplasm
+P45795	A	Cytoplasm
+P45799	A	Cytoplasm
+P45804	B	IM_integral
+P45807	A	Cytoplasm
+P45848	B	IM_integral
+P45955	G	Periplasm
+P45956	A	Cytoplasm
+P46022	B	IM_integral
+P46068	A, N	Cytoplasm
+P46118	A, N	Cytoplasm
+P46119	B	IM_integral
+P46121	A	Cytoplasm
+P46122	I	OMLP
+P46125	B	IM_integral
+P46126	E	IMLP
+P46130	I	OMLP
+P46133	B	IM_integral
+P46136	B	IM_integral
+P46139	B	IM_integral
+P46141	B	IM_integral
+P46142	G	Periplasm
+P46144	A, F1	IM_cyto
+P46187	B	IM_integral
+P46474	H	OMP
+P46478	B	IM_integral
+P46481	B	IM_integral
+P46482	B	IM_integral
+P46837	A, F1	IM_cyto
+P46846	A	Cytoplasm
+P46849	A	Cytoplasm
+P46850	A	Cytoplasm
+P46852	A	Cytoplasm
+P46853	A	Cytoplasm
+P46854	A	Cytoplasm
+P46855	A	Cytoplasm
+P46856	A	Cytoplasm
+P46857	A	Cytoplasm
+P46859	A	Cytoplasm
+P46879	B	IM_integral
+P46883	G	Periplasm
+P46887	A	Cytoplasm
+P46888	A	Cytoplasm
+P52696	B, N	IM_integral
+P46890	A	Cytoplasm
+P46891	A	Cytoplasm
+P46923	G	Periplasm
+P50456	A, N, F1	IM_cyto
+P50457	A	Cytoplasm
+P50465	A, N	Cytoplasm
+P50466	B	IM_integral
+P51020	A	Cytoplasm
+P51024	A	Cytoplasm
+P51025	A	Cytoplasm
+P51981	A, F1	IM_cyto
+P52005	B	IM_integral
+P52006	A	Cytoplasm
+P52007	A	Cytoplasm
+P52037	A	Cytoplasm
+P52043	A	Cytoplasm
+P52044	A, N	Cytoplasm
+P52045	A	Cytoplasm
+P52048	A	Cytoplasm
+P52052	A	Cytoplasm
+P52060	A	Cytoplasm
+P52061	A, N	Cytoplasm
+P52062	A	Cytoplasm
+P52067	B	IM_integral
+P52073	A	Cytoplasm
+P52074	A	Cytoplasm
+P52076	A, N	Cytoplasm
+P52086	A	Cytoplasm
+P52094	B	IM_integral
+P52095	A	Cytoplasm
+P52096	A	Cytoplasm
+P52101	B	IM_integral
+P52102	A	Cytoplasm
+P52106	A, N, F1	IM_cyto
+P52107	G	Periplasm
+P52108	A, N	Cytoplasm
+P52119	A	Cytoplasm
+P52123	A	Cytoplasm
+P52124	A	Cytoplasm
+P52125	A	Cytoplasm
+P52126	A	Cytoplasm
+P52127	A	Cytoplasm
+P52128	A	Cytoplasm
+P52129	A	Cytoplasm
+P52130	A, N	Cytoplasm
+P52131	A, F1	IM_cyto
+P52132	A	Cytoplasm
+P52133	A, N	Cytoplasm
+P52134	B	IM_integral
+P52135	G	Periplasm
+P52138	B	IM_integral
+P52139	A	Cytoplasm
+P52140	A	Cytoplasm
+P52141	A	Cytoplasm
+P52143	H	OMP
+P52598	A, N	Cytoplasm
+P52599	G	Periplasm
+P52600	B	IM_integral
+P52612	A	Cytoplasm
+P52613	A, F1	IM_cyto
+P67662	B, N	IM_integral
+P52627	A	Cytoplasm
+P52636	B	IM_integral
+P52643	A	Cytoplasm
+P52644	I	OMLP
+P52645	B	IM_integral
+P52647	A	Cytoplasm
+P76175	B, N	IM_integral
+P52697	A	Cytoplasm
+P54745	B	IM_integral
+P54746	A	Cytoplasm
+P54901	A	Cytoplasm
+P55135	A	Cytoplasm
+P55138	A	Cytoplasm
+P55140	B	IM_integral
+P55734	B	IM_integral
+P55798	A	Cytoplasm
+P55799	A	Cytoplasm
+P55914	B	IM_integral
+P56256	A	Cytoplasm
+P56257	A	Cytoplasm
+P56258	A, F1	IM_cyto
+P56259	A	Cytoplasm
+P56262	A	Cytoplasm
+P56579	B	IM_integral
+P56580	B	IM_integral
+P56614	A	Cytoplasm
+P56976	B	IM_integral
+P57998	A	Cytoplasm
+P58033	A	Cytoplasm
+P58034	B	IM_integral
+P58035	A, F1	IM_cyto
+P58037	A	Cytoplasm
+P58041	I	OMLP
+P58042	I	OMLP
+P58094	A	Cytoplasm
+P58095	A	Cytoplasm
+P60061	B	IM_integral
+P60240	A	Cytoplasm
+P60340	A	Cytoplasm
+P60390	A, F1	IM_cyto
+P60560	A	Cytoplasm
+P60566	A	Cytoplasm
+P60584	A	Cytoplasm
+P60595	A	Cytoplasm
+P60632	B	IM_integral
+P60651	A	Cytoplasm
+P60664	A	Cytoplasm
+P60720	A	Cytoplasm
+P60757	A, F1	IM_cyto
+P60778	B	IM_integral
+P60782	B	IM_integral
+P60785	A, F1	IM_cyto
+P60844	B	IM_integral
+P60869	B	IM_integral
+P60872	B	IM_integral
+P60932	B	IM_integral
+P60995	A	Cytoplasm
+P61887	A	Cytoplasm
+P61889	A, F1	IM_cyto
+P62066	A	Cytoplasm
+P76425	B, N	IM_integral
+P62517	B	IM_integral
+P62522	A	Cytoplasm
+P62601	A	Cytoplasm
+P62672	A	Cytoplasm
+P62707	A, F1	IM_cyto
+P62723	B	IM_integral
+P62768	A, F1	IM_cyto
+P63020	A	Cytoplasm
+P63177	A	Cytoplasm
+P63183	B	IM_integral
+P63201	A, N	Cytoplasm
+P63204	A, N	Cytoplasm
+P63224	A	Cytoplasm
+P63228	A	Cytoplasm
+P63235	B	IM_integral
+P63264	A	Cytoplasm
+P63284	A, F1	IM_cyto
+P63340	B	IM_integral
+P63386	A, F1	IM_cyto
+P63389	A, F1	IM_cyto
+P63417	A	Cytoplasm
+P63746	A	Cytoplasm
+P63883	G	Periplasm
+P64423	B	IM_integral
+P64426	I	OMLP
+P64429	B	IM_integral
+P64432	B	IM_integral
+P64435	A	Cytoplasm
+P64439	B	IM_integral
+P64442	B	IM_integral
+P64445	B	IM_integral
+P64448	I	OMLP
+P64451	I	OMLP
+P64453	B	IM_integral
+P64455	A	Cytoplasm
+P64459	G	Periplasm
+P64461	A	Cytoplasm
+P64463	A	Cytoplasm
+P64467	A	Cytoplasm
+P64471	B	IM_integral
+P64476	A	Cytoplasm
+P64479	A	Cytoplasm
+P64481	B	IM_integral
+P64483	A	Cytoplasm
+P64485	B	IM_integral
+P64488	A	Cytoplasm
+P64490	A	Cytoplasm
+P64493	I	OMLP
+P64496	A	Cytoplasm
+P64499	B	IM_integral
+P64503	A	Cytoplasm
+P64506	G	Periplasm
+P64508	A	Cytoplasm
+P64512	B	IM_integral
+P64515	B	IM_integral
+P64517	A	Cytoplasm
+P64519	A	Cytoplasm
+P64521	A	Cytoplasm
+P64524	A	Cytoplasm
+P64526	A	Cytoplasm
+P64530	A	Cytoplasm
+P64534	G	Periplasm
+P64536	B	IM_integral
+P64540	A	Cytoplasm
+P64542	G	Periplasm
+P64545	B	IM_integral
+P64548	G	Periplasm
+P64550	B	IM_integral
+P64554	A	Cytoplasm
+P64557	A	Cytoplasm
+P64559	A	Cytoplasm
+P64562	A	Cytoplasm
+P64564	B	IM_integral
+P64567	A	Cytoplasm
+P64570	A	Cytoplasm
+P64572	A	Cytoplasm
+P64574	A	Cytoplasm
+P64578	A	Cytoplasm
+P64581	B	IM_integral
+P64585	B	IM_integral
+P64588	A	Cytoplasm
+P64590	B	IM_integral
+P64592	B	IM_integral
+P64594	A	Cytoplasm
+P64596	I	OMLP
+P64599	A	Cytoplasm
+P64602	A, F1	IM_cyto
+P64604	G	Periplasm
+P64606	B	IM_integral
+P64610	A	Cytoplasm
+P64612	A	Cytoplasm
+P64614	G	Periplasm
+P64616	A	Cytoplasm
+P64619	B	IM_integral
+P64622	I	OMLP
+P64624	A	Cytoplasm
+P64627	I	OMLP
+P64631	B	IM_integral
+P64634	B	IM_integral
+P64636	A	Cytoplasm
+P64638	A	Cytoplasm
+P64646	B	IM_integral
+P65290	I	OMLP
+P65292	I	OMLP
+P65294	I	OMLP
+P65298	I	OMLP
+P65367	A	Cytoplasm
+P65556	A	Cytoplasm
+P65643	A	Cytoplasm
+P65807	A	Cytoplasm
+P65870	A	Cytoplasm
+P66817	A, N	Cytoplasm
+P66899	A	Cytoplasm
+P66948	G	Periplasm
+P67080	A	Cytoplasm
+P67087	A	Cytoplasm
+P67095	A	Cytoplasm
+P67127	B	IM_integral
+P67143	B	IM_integral
+P67153	B	IM_integral
+P67244	B	IM_integral
+P67338	A	Cytoplasm
+P67430	A, N	Cytoplasm
+P67444	B	IM_integral
+P67553	E	IMLP
+P67601	B	IM_integral
+P67603	A	Cytoplasm
+P67624	A	Cytoplasm
+P67660	A, N	Cytoplasm
+Q46942	B, N	IM_integral
+P67697	A, N	Cytoplasm
+P67699	A, N	Cytoplasm
+P67729	B	IM_integral
+P67762	A	Cytoplasm
+P67826	A	Cytoplasm
+P67910	A, F1	IM_cyto
+P68066	A, F1	IM_cyto
+P68183	B	IM_integral
+P68187	A, F1	IM_cyto
+P68191	A, F1	IM_cyto
+P68206	A	Cytoplasm
+P68567	A	Cytoplasm
+P68644	A, F1	IM_cyto
+P68646	A	Cytoplasm
+P68661	A	Cytoplasm
+P68688	A	Cytoplasm
+P68699	B	IM_integral
+P68739	A, N	Cytoplasm
+P68767	A, F1	IM_cyto
+P69054	B	IM_integral
+P69210	B	IM_integral
+P69212	B	IM_integral
+P69228	A, N	Cytoplasm
+P69330	A	Cytoplasm
+P69346	A, N	Cytoplasm
+P69348	A	Cytoplasm
+P69367	B	IM_integral
+P69380	B	IM_integral
+P69411	I	OMLP
+P69423	B	IM_integral
+P69425	B	IM_integral
+P69428	B	IM_integral
+P69432	B	IM_integral
+P69434	H	OMP
+P69451	A, F1	IM_cyto
+P69488	A	Cytoplasm
+P69490	B	IM_integral
+P69503	A	Cytoplasm
+P69506	A, F1	IM_cyto
+P69681	B	IM_integral
+P69739	B	IM_integral
+P69741	F2	IM_peri
+P69776	I, F4	OMLP
+P69783	A, F1	IM_cyto
+P69786	B	IM_integral
+P69789	B	IM_integral
+P69791	A, F1	IM_cyto
+P69795	A, F1	IM_cyto
+P69797	A, F1	IM_cyto
+P69801	B	IM_integral
+P69805	B	IM_integral
+P69808	A	Cytoplasm
+P69811	A, F1	IM_cyto
+P69816	A, F1	IM_cyto
+P69820	A, F1	IM_cyto
+P69822	A, F1	IM_cyto
+P69824	A, F1	IM_cyto
+P69826	B	IM_integral
+P69828	A, F1	IM_cyto
+P69829	A, F1	IM_cyto
+P69831	B	IM_integral
+P69853	A, F1	IM_cyto
+P69856	G	Periplasm
+P69874	A, F1	IM_cyto
+P69902	A, F1	IM_cyto
+P69908	A	Cytoplasm
+P69910	A, F1	IM_cyto
+P69922	A	Cytoplasm
+P69937	B	IM_integral
+P71229	A, N	Cytoplasm
+P71237	A	Cytoplasm
+P71238	B	IM_integral
+P71239	A	Cytoplasm
+P71241	B	IM_integral
+P71242	A	Cytoplasm
+P71243	A	Cytoplasm
+P71244	G	Periplasm
+P71296	A	Cytoplasm
+P71297	A	Cytoplasm
+P71298	A	Cytoplasm
+P71301	A, N	Cytoplasm
+P71311	A	Cytoplasm
+P75616	G	Periplasm
+P75617	A	Cytoplasm
+P75620	A, F1	IM_cyto
+P75672	A, F1	IM_cyto
+P75675	A	Cytoplasm
+P75676	A	Cytoplasm
+P75677	A	Cytoplasm
+P75678	A	Cytoplasm
+P75679	A	Cytoplasm
+P75680	A	Cytoplasm
+P75681	B	IM_integral
+P75682	A	Cytoplasm
+P75683	B	IM_integral
+P75684	A	Cytoplasm
+P75685	B	IM_integral
+P75687	G	Periplasm
+P75688	A	Cytoplasm
+P75691	A, F1	IM_cyto
+P75692	A	Cytoplasm
+P75693	B	IM_integral
+P75694	G	Periplasm
+P75697	A	Cytoplasm
+P75704	A	Cytoplasm
+P75711	B	IM_integral
+P75712	B	IM_integral
+P75713	A	Cytoplasm
+P75715	G	Periplasm
+P75717	A	Cytoplasm
+P75718	A	Cytoplasm
+P75719	B	IM_integral
+P75726	A	Cytoplasm
+P75728	A	Cytoplasm
+P75733	H	OMP
+P75734	I	OMLP
+P75736	A	Cytoplasm
+P75737	I	OMLP
+P75741	A	Cytoplasm
+P75742	B	IM_integral
+P75745	A	Cytoplasm
+P75746	A	Cytoplasm
+P75747	B	IM_integral
+P75748	G	Periplasm
+P75749	G	Periplasm
+P75750	H	OMP
+P75757	B	IM_integral
+P75763	B	IM_integral
+P75764	A	Cytoplasm
+P75767	A	Cytoplasm
+P75769	B	IM_integral
+P75770	B	IM_integral
+P75777	B	IM_integral
+P75779	A	Cytoplasm
+P75780	H	OMP
+P75782	A	Cytoplasm
+P75783	B	IM_integral
+P75785	B	IM_integral
+P75788	B	IM_integral
+P75791	A	Cytoplasm
+P75792	A	Cytoplasm
+P75793	A	Cytoplasm
+P75794	A	Cytoplasm
+P75796	A, F1	IM_cyto
+P75797	G	Periplasm
+P75798	B	IM_integral
+P75799	B	IM_integral
+P75800	B	IM_integral
+P75801	B	IM_integral
+P75804	G	Periplasm
+P75806	B	IM_integral
+P75809	A	Cytoplasm
+P75810	B	IM_integral
+P75811	A, N	Cytoplasm
+P75817	A	Cytoplasm
+P75818	I	OMLP
+P75820	I	OMLP
+P75821	A, F1	IM_cyto
+P75822	B	IM_integral
+P75823	A	Cytoplasm
+P75824	A	Cytoplasm
+P75825	A	Cytoplasm
+P75826	B	IM_integral
+P75828	A	Cytoplasm
+P75829	A, F1	IM_cyto
+P75830	B	IM_integral
+P75831	B	IM_integral
+P75835	B	IM_integral
+P75836	A, N	Cytoplasm
+P75838	A	Cytoplasm
+P75839	B	IM_integral
+P75843	A	Cytoplasm
+P75849	A	Cytoplasm
+P75851	B	IM_integral
+P75853	G	Periplasm
+P75855	G	Periplasm
+P75856	G	Periplasm
+P75857	H	OMP
+P75858	G	Periplasm
+P75859	G	Periplasm
+P75860	G	Periplasm
+P75862	A	Cytoplasm
+P75863	A	Cytoplasm
+P75864	A	Cytoplasm
+P75867	A, F1	IM_cyto
+P75869	A	Cytoplasm
+P75870	B	IM_integral
+P75874	A	Cytoplasm
+P75876	A, F1	IM_cyto
+P75882	G	Periplasm
+P75883	G	Periplasm
+P75884	I	OMLP
+P75885	B	IM_integral
+P75892	B	IM_integral
+P75893	A	Cytoplasm
+P75894	A, N	Cytoplasm
+P75895	A	Cytoplasm
+P75897	A	Cytoplasm
+P75898	A	Cytoplasm
+P75901	B	IM_integral
+P75905	B	IM_integral
+P75906	I	OMLP
+P75908	B	IM_integral
+P75910	B	IM_integral
+P75913	A	Cytoplasm
+P75914	A	Cytoplasm
+P75915	A, F1	IM_cyto
+P75916	B	IM_integral
+P75917	G	Periplasm
+P75919	A	Cytoplasm
+P75920	B	IM_integral
+P75925	B	IM_integral
+P75931	A	Cytoplasm
+P75933	G	Periplasm
+P75936	F4	Secreted
+P75937	F4	Secreted
+P75938	G	Periplasm
+P75942	A	Cytoplasm
+P75946	I	OMLP
+P75948	A, F1	IM_cyto
+P75949	A	Cytoplasm
+P75952	A, N	Cytoplasm
+P75954	F3	Periplasm
+P75955	B	IM_integral
+P75959	A	Cytoplasm
+P75960	A	Cytoplasm
+P75961	B	IM_integral
+P75962	B	IM_integral
+P75966	A	Cytoplasm
+P75967	A	Cytoplasm
+P75969	A	Cytoplasm
+P75970	A	Cytoplasm
+P75971	B	IM_integral
+P75972	A	Cytoplasm
+P75973	A, F1	IM_cyto
+P75975	A	Cytoplasm
+P75976	A	Cytoplasm
+P75977	A	Cytoplasm
+P75978	A	Cytoplasm
+P75979	B	IM_integral
+P75980	A	Cytoplasm
+P75981	A	Cytoplasm
+P75982	A	Cytoplasm
+P75988	A	Cytoplasm
+P75989	A, N	Cytoplasm
+P75990	A	Cytoplasm
+P75991	A	Cytoplasm
+P75992	A	Cytoplasm
+P75993	A	Cytoplasm
+P75994	A	Cytoplasm
+P75995	B	IM_integral
+P76000	H	OMP
+P76001	G	Periplasm
+P76002	G	Periplasm
+P76004	A	Cytoplasm
+P76007	B	IM_integral
+P76008	A	Cytoplasm
+P76010	A, F1	IM_cyto
+P76011	B	IM_integral
+P76012	A	Cytoplasm
+P76014	A	Cytoplasm
+P76015	A	Cytoplasm
+P76016	A, N	Cytoplasm
+P76017	H	OMP
+P76023	A	Cytoplasm
+P76027	A, F1	IM_cyto
+P76034	A, N	Cytoplasm
+P76035	A	Cytoplasm
+P76037	B	IM_integral
+P76038	A	Cytoplasm
+P76041	A	Cytoplasm
+P76042	I	OMLP
+P76043	A	Cytoplasm
+P76044	A, F1	IM_cyto
+P76045	H	OMP
+P76046	A	Cytoplasm
+P76049	A	Cytoplasm
+P76052	A	Cytoplasm
+P76053	A	Cytoplasm
+P76055	A	Cytoplasm
+P76056	A	Cytoplasm
+P76057	A	Cytoplasm
+P76061	A	Cytoplasm
+P76064	A	Cytoplasm
+P76065	A	Cytoplasm
+P76066	A	Cytoplasm
+P76068	A	Cytoplasm
+P76069	A	Cytoplasm
+P76071	A, F1	IM_cyto
+P76072	A	Cytoplasm
+P76073	A	Cytoplasm
+P76076	G	Periplasm
+P76077	A	Cytoplasm
+P76078	A	Cytoplasm
+P76079	A, F1	IM_cyto
+P76080	A	Cytoplasm
+P76081	A	Cytoplasm
+P76082	A	Cytoplasm
+P76083	A	Cytoplasm
+P76084	A	Cytoplasm
+P76085	A	Cytoplasm
+P76086	A, N	Cytoplasm
+P76090	B	IM_integral
+P76091	B	IM_integral
+P76092	A	Cytoplasm
+P76093	B	IM_integral
+P76096	A	Cytoplasm
+P76097	A	Cytoplasm
+P76100	A	Cytoplasm
+P76102	A	Cytoplasm
+P76103	B	IM_integral
+P76104	A	Cytoplasm
+P76106	A	Cytoplasm
+P76108	G	Periplasm
+P76111	B	IM_integral
+P76112	A	Cytoplasm
+P76113	A	Cytoplasm
+P76114	A, N	Cytoplasm
+P76115	H	OMP
+P76116	G	Periplasm
+P76117	A	Cytoplasm
+P76119	A	Cytoplasm
+P76121	A	Cytoplasm
+P76122	A	Cytoplasm
+P76123	A	Cytoplasm
+P76127	A	Cytoplasm
+P76128	G	Periplasm
+P76129	A	Cytoplasm
+P76134	A	Cytoplasm
+P76135	A, N	Cytoplasm
+P76137	A	Cytoplasm
+P76138	A, N	Cytoplasm
+P76141	A, N	Cytoplasm
+P76142	G	Periplasm
+P76143	A	Cytoplasm
+P76145	A	Cytoplasm
+P76146	B	IM_integral
+P76147	B	IM_integral
+P76148	A	Cytoplasm
+P76149	A	Cytoplasm
+P76150	A	Cytoplasm
+P76154	A	Cytoplasm
+P76155	A	Cytoplasm
+P76157	A	Cytoplasm
+P76158	G	Periplasm
+P76159	A	Cytoplasm
+P76160	A	Cytoplasm
+P76161	A	Cytoplasm
+P76162	A	Cytoplasm
+P76163	A	Cytoplasm
+P76164	A	Cytoplasm
+P76165	A	Cytoplasm
+P76168	A	Cytoplasm
+P76169	B	IM_integral
+P76170	F3	Periplasm
+P76172	G	Periplasm
+P76173	B	IM_integral
+P0A855	G, F3	Periplasm
+P76176	G	Periplasm
+P76177	G	Periplasm
+P76180	B	IM_integral
+P76182	B	IM_integral
+P76185	B	IM_integral
+P76186	B	IM_integral
+P76187	A	Cytoplasm
+P76190	G	Periplasm
+P76192	A	Cytoplasm
+P76193	F3	Periplasm
+P76194	A, F1	IM_cyto
+P76196	A	Cytoplasm
+P76197	B	IM_integral
+P76198	B	IM_integral
+P76201	A	Cytoplasm
+P76204	A	Cytoplasm
+P76205	A	Cytoplasm
+P76206	G	Periplasm
+P76208	B	IM_integral
+P76210	A	Cytoplasm
+P76213	A, N	Cytoplasm
+P76214	A	Cytoplasm
+P76215	A	Cytoplasm
+P76216	A	Cytoplasm
+P76217	A	Cytoplasm
+P76219	B	IM_integral
+P76220	E	IMLP
+P76221	B	IM_integral
+P76222	B	IM_integral
+P76223	G	Periplasm
+P76224	B	IM_integral
+P76226	B	IM_integral
+P76227	G	Periplasm
+P76228	B	IM_integral
+P76230	B	IM_integral
+P76231	A	Cytoplasm
+P76234	A	Cytoplasm
+P76235	A	Cytoplasm
+P76236	B	IM_integral
+P76237	B	IM_integral
+P76239	B	IM_integral
+P76241	A, N	Cytoplasm
+P76242	B	IM_integral
+P76243	A	Cytoplasm
+P76245	A	Cytoplasm
+P76249	B	IM_integral
+P76250	A, N	Cytoplasm
+P76251	A	Cytoplasm
+P76254	A	Cytoplasm
+P76257	A	Cytoplasm
+P76261	B	IM_integral
+P76264	B	IM_integral
+P76268	A, N	Cytoplasm
+P76269	B	IM_integral
+P76270	A	Cytoplasm
+P76272	B	IM_integral
+P76273	A	Cytoplasm
+P76275	A	Cytoplasm
+P76278	B	IM_integral
+P76280	A	Cytoplasm
+P76290	A	Cytoplasm
+P76291	A	Cytoplasm
+P76296	G	Periplasm
+P76297	G	Periplasm
+P76298	B	IM_integral
+P76299	B	IM_integral
+P76308	I	OMLP
+P76316	A	Cytoplasm
+P76318	A	Cytoplasm
+P76319	A	Cytoplasm
+P76322	A	Cytoplasm
+P76323	A	Cytoplasm
+P76329	A	Cytoplasm
+P76330	B	IM_integral
+P76334	B	IM_integral
+P76335	H	OMP
+P76339	B	IM_integral
+P76340	A	Cytoplasm
+P76341	G	Periplasm
+P76342	F2	IM_peri
+P76343	B	IM_integral
+P76344	G	Periplasm
+P76345	B	IM_integral
+P76346	A, F1	IM_cyto
+P76347	H	OMP
+P76349	A, F1	IM_cyto
+P76350	B	IM_integral
+P76352	B	IM_integral
+P76356	H	OMP
+P76359	A	Cytoplasm
+P76361	B	IM_integral
+P76362	A	Cytoplasm
+P76364	A	Cytoplasm
+P76369	A, N	Cytoplasm
+P76372	B	IM_integral
+P76373	A	Cytoplasm
+P76387	B	IM_integral
+P76389	B	IM_integral
+P76393	B	IM_integral
+P76394	G	Periplasm
+P76395	A	Cytoplasm
+P76396	A	Cytoplasm
+P76397	F2	IM_peri
+P76398	B	IM_integral
+P76399	B	IM_integral
+P76402	A	Cytoplasm
+P76403	A	Cytoplasm
+P76406	I	OMLP
+P76407	A	Cytoplasm
+P76417	B	IM_integral
+P76418	A	Cytoplasm
+P76419	A	Cytoplasm
+P76421	B	IM_integral
+P76422	A	Cytoplasm
+P76423	A	Cytoplasm
+P0AFH8	G, X	Secreted
+P76440	A	Cytoplasm
+P76445	B	IM_integral
+P76446	B	IM_integral
+P76458	A	Cytoplasm
+P76459	A	Cytoplasm
+P76460	B	IM_integral
+P76461	A	Cytoplasm
+P76462	G	Periplasm
+P76463	G	Periplasm
+P76464	G	Periplasm
+P76466	G	Periplasm
+P76469	A	Cytoplasm
+P76470	B	IM_integral
+P76471	H	OMP
+P76472	A, F1	IM_cyto
+P76473	B	IM_integral
+P76474	B	IM_integral
+P76481	E	IMLP
+P76482	B	IM_integral
+P76483	A	Cytoplasm
+P76484	A	Cytoplasm
+P76485	A	Cytoplasm
+P76486	A	Cytoplasm
+P76491	A	Cytoplasm
+P76498	G	Periplasm
+P76499	G	Periplasm
+P76500	G	Periplasm
+P76501	G	Periplasm
+P76502	A, F1	IM_cyto
+P76503	A, F1	IM_cyto
+P76505	A, N	Cytoplasm
+P76506	I	OMLP
+P76507	B	IM_integral
+P76508	A	Cytoplasm
+P76509	A	Cytoplasm
+P76510	A	Cytoplasm
+P76512	A	Cytoplasm
+P76513	A	Cytoplasm
+P76514	A	Cytoplasm
+P76515	A	Cytoplasm
+P76516	A	Cytoplasm
+P76518	A	Cytoplasm
+P76520	G	Periplasm
+P76521	B	IM_integral
+P76524	A	Cytoplasm
+P76535	A	Cytoplasm
+P76536	A	Cytoplasm
+P76537	I	OMLP
+P76538	B	IM_integral
+P76539	A	Cytoplasm
+P76540	A	Cytoplasm
+P76541	A	Cytoplasm
+P76542	A	Cytoplasm
+P76543	A	Cytoplasm
+P76544	A	Cytoplasm
+P76545	A	Cytoplasm
+P76546	A, F1	IM_cyto
+P76547	A	Cytoplasm
+P76548	G	Periplasm
+P76549	A, F1	IM_cyto
+P76551	A	Cytoplasm
+P76552	B	IM_integral
+P76553	A	Cytoplasm
+P76555	A	Cytoplasm
+P76556	A	Cytoplasm
+P76558	A, F1	IM_cyto
+P76559	G	Periplasm
+P76561	A	Cytoplasm
+P76562	A	Cytoplasm
+P76569	A	Cytoplasm
+P76573	G	Periplasm
+P76575	A	Cytoplasm
+P76576	B	IM_integral
+P76577	B	IM_integral
+P76578	E	IMLP
+P76584	A	Cytoplasm
+P76585	A	Cytoplasm
+P76586	A, N	Cytoplasm
+P76594	A	Cytoplasm
+P76611	A	Cytoplasm
+P76612	A	Cytoplasm
+P76613	A	Cytoplasm
+P76616	A	Cytoplasm
+P76621	A	Cytoplasm
+P76628	B	IM_integral
+P76630	B	IM_integral
+P76632	A	Cytoplasm
+P76633	A	Cytoplasm
+P76639	A, F1	IM_cyto
+P76641	A	Cytoplasm
+P76655	H	OMP
+P76656	G	Periplasm
+P76657	B	IM_integral
+P76658	A	Cytoplasm
+P76692	B	IM_integral
+P76773	H	OMP
+P76909	A, F1	IM_cyto
+P76938	A	Cytoplasm
+P77031	B	IM_integral
+P77044	A	Cytoplasm
+P77087	A	Cytoplasm
+P77091	B	IM_integral
+P77129	A, F1	IM_cyto
+P77136	A	Cytoplasm
+P77147	A	Cytoplasm
+P77148	A	Cytoplasm
+P77150	A	Cytoplasm
+P77154	A	Cytoplasm
+P77156	B	IM_integral
+P77161	A	Cytoplasm
+P77162	G	Periplasm
+P77163	A	Cytoplasm
+P77165	G	Periplasm
+P77169	A	Cytoplasm
+P77170	A	Cytoplasm
+P77171	A, N	Cytoplasm
+P77172	B	IM_integral
+P77174	A	Cytoplasm
+P77179	B	IM_integral
+P77180	B	IM_integral
+P77181	A	Cytoplasm
+P77182	A	Cytoplasm
+P77183	A	Cytoplasm
+P77184	H	OMP
+P77187	A, F1	IM_cyto
+P77188	G	Periplasm
+P77196	H	OMP
+P77199	H	OMP
+P77202	G	Periplasm
+P77206	A	Cytoplasm
+P77211	I	OMLP
+P77212	A	Cytoplasm
+P77213	A	Cytoplasm
+P77214	G	Periplasm
+P77215	A	Cytoplasm
+P77216	A	Cytoplasm
+P77218	A	Cytoplasm
+P77219	B	IM_integral
+P77221	A	Cytoplasm
+P77223	A, F1	IM_cyto
+P77228	B	IM_integral
+P77231	A	Cytoplasm
+P77234	A	Cytoplasm
+P77237	B	IM_integral
+P77239	F2	IM_peri
+P77243	A	Cytoplasm
+P77245	A, N	Cytoplasm
+P77247	A	Cytoplasm
+P77249	G	Periplasm
+P77252	A	Cytoplasm
+P77256	A	Cytoplasm
+P77257	A, F1	IM_cyto
+P77258	A	Cytoplasm
+P77260	A	Cytoplasm
+P77263	G	Periplasm
+P77265	B	IM_integral
+P77268	A, F1	IM_cyto
+P77269	G	Periplasm
+P77272	B	IM_integral
+P77277	A	Cytoplasm
+P77279	A, F1	IM_cyto
+P77280	A, F1	IM_cyto
+P77285	G	Periplasm
+P77286	H	OMP
+P77288	G	Periplasm
+P77293	B	IM_integral
+P77294	G	Periplasm
+P77295	A, N	Cytoplasm
+P77296	I	OMLP
+P77297	A	Cytoplasm
+P77300	A, N	Cytoplasm
+P77301	A	Cytoplasm
+P77302	A	Cytoplasm
+P77304	B	IM_integral
+P77306	B	IM_integral
+P77307	B	IM_integral
+P77308	B	IM_integral
+P77309	A, N	Cytoplasm
+P77315	B	IM_integral
+P77316	A	Cytoplasm
+P77318	G	Periplasm
+P77319	A	Cytoplasm
+P77324	G	Periplasm
+P77326	A	Cytoplasm
+P77328	B	IM_integral
+P77329	A, F1	IM_cyto
+P77330	I	OMLP
+P77333	A, N	Cytoplasm
+P77334	A	Cytoplasm
+P13656	G, X	Secreted
+P77337	A	Cytoplasm
+P77338	B	IM_integral
+P77339	I	OMLP
+P77348	G	Periplasm
+P77354	B	IM_integral
+P77357	A	Cytoplasm
+P77359	B	IM_integral
+P77360	A	Cytoplasm
+P77364	A	Cytoplasm
+P77365	E	IMLP
+P77366	A	Cytoplasm
+P77368	G	Periplasm
+P77374	F2	IM_peri
+P77375	G	Periplasm
+P77376	A	Cytoplasm
+P77377	B	IM_integral
+P77378	A	Cytoplasm
+P77379	A, N	Cytoplasm
+P77381	B	IM_integral
+P77389	B	IM_integral
+P77390	A	Cytoplasm
+P77393	A	Cytoplasm
+P77395	A	Cytoplasm
+P77396	A, N	Cytoplasm
+P77397	A	Cytoplasm
+P77398	A, F1	IM_cyto
+P77399	A, F1	IM_cyto
+P77400	B	IM_integral
+P77402	A, N	Cytoplasm
+P77409	B	IM_integral
+P77414	A	Cytoplasm
+P77416	B	IM_integral
+P77423	A	Cytoplasm
+P77425	A	Cytoplasm
+P77427	A	Cytoplasm
+P77432	A	Cytoplasm
+P77433	A	Cytoplasm
+P77434	A	Cytoplasm
+P77437	B	IM_integral
+P77439	A, F1	IM_cyto
+P77444	A, F1	IM_cyto
+P77445	A	Cytoplasm
+P77453	A	Cytoplasm
+P77454	A	Cytoplasm
+P77455	A	Cytoplasm
+P77460	A	Cytoplasm
+P77463	B	IM_integral
+P77467	A	Cytoplasm
+P77468	H	OMP
+P77473	B	IM_integral
+P77475	A	Cytoplasm
+P77481	A, F1	IM_cyto
+P77485	B	IM_integral
+P77489	G	Periplasm
+P77493	A	Cytoplasm
+P77494	B	IM_integral
+P77495	A, F1	IM_cyto
+P77499	A, F1	IM_cyto
+P77503	A	Cytoplasm
+P77504	B	IM_integral
+P77506	B	IM_integral
+P77509	A, F1	IM_cyto
+P77510	B	IM_integral
+P77515	A	Cytoplasm
+P77522	A, F1	IM_cyto
+P77526	A	Cytoplasm
+P77528	A	Cytoplasm
+P77529	B	IM_integral
+P77536	A	Cytoplasm
+P77538	B	IM_integral
+P77539	A	Cytoplasm
+P77541	B	IM_integral
+P77544	A	Cytoplasm
+P77546	A	Cytoplasm
+P77549	B	IM_integral
+P77551	A	Cytoplasm
+P77552	A	Cytoplasm
+P77554	G	Periplasm
+P77555	A	Cytoplasm
+P77559	A, N	Cytoplasm
+P77561	A	Cytoplasm
+P77562	I	OMLP
+P77564	A	Cytoplasm
+P77567	A	Cytoplasm
+P77569	A, N	Cytoplasm
+P77570	A	Cytoplasm
+P77579	B	IM_integral
+P77580	A	Cytoplasm
+P77581	A	Cytoplasm
+P77585	A	Cytoplasm
+P77588	G	Periplasm
+P77589	B	IM_integral
+P77596	A	Cytoplasm
+P77598	A	Cytoplasm
+P77599	G	Periplasm
+P77601	A, N	Cytoplasm
+P77607	B	IM_integral
+P77608	A	Cytoplasm
+P77609	A	Cytoplasm
+P77610	B	IM_integral
+P77611	A, F1	IM_cyto
+P77615	A, N	Cytoplasm
+P77616	H	OMP
+P77619	G	Periplasm
+P77622	A, F1	IM_cyto
+P77624	A, F1	IM_cyto
+P77625	A	Cytoplasm
+P77626	A, N	Cytoplasm
+P77627	A	Cytoplasm
+P77634	A, N	Cytoplasm
+P77649	A	Cytoplasm
+P77650	A	Cytoplasm
+P77656	A	Cytoplasm
+P77657	A	Cytoplasm
+P77658	A	Cytoplasm
+P77667	A, F1	IM_cyto
+P77668	A	Cytoplasm
+P77671	A	Cytoplasm
+P77672	B	IM_integral
+P77674	A	Cytoplasm
+P77682	B	IM_integral
+P77688	A	Cytoplasm
+P77689	A, F1	IM_cyto
+P77690	A	Cytoplasm
+P77692	A	Cytoplasm
+P77694	H	OMP
+P77695	A	Cytoplasm
+P77698	A	Cytoplasm
+P77699	A	Cytoplasm
+P77700	A, N	Cytoplasm
+P77704	A	Cytoplasm
+P77712	A	Cytoplasm
+P77713	A	Cytoplasm
+P77714	A	Cytoplasm
+P77716	B	IM_integral
+P77717	I	OMLP
+P77718	A	Cytoplasm
+P77721	A, N	Cytoplasm
+P77726	B	IM_integral
+P77730	A, N	Cytoplasm
+P77731	A	Cytoplasm
+P77732	A, N	Cytoplasm
+P77733	B	IM_integral
+P77735	A	Cytoplasm
+P77736	A	Cytoplasm
+P77737	A, F1	IM_cyto
+P77739	A	Cytoplasm
+P77743	A, N	Cytoplasm
+P77744	A, N	Cytoplasm
+P77746	A, N	Cytoplasm
+P77747	H	OMP
+P77748	A, F1	IM_cyto
+P77754	G	Periplasm
+P77756	A	Cytoplasm
+P77757	B	IM_integral
+P77759	A	Cytoplasm
+P77766	A	Cytoplasm
+P77768	A	Cytoplasm
+P77774	I	OMLP
+P77775	A	Cytoplasm
+P77779	A	Cytoplasm
+P77781	A	Cytoplasm
+P77783	F2	IM_peri
+P77788	A	Cytoplasm
+P77789	F4	Secreted
+P77790	A	Cytoplasm
+P77791	A	Cytoplasm
+P77795	A, F1	IM_cyto
+P77802	G	Periplasm
+P77804	F2	IM_peri
+P77806	A	Cytoplasm
+P77808	A	Cytoplasm
+P77858	B	IM_integral
+P78055	A	Cytoplasm
+P78061	A	Cytoplasm
+P78067	G	Periplasm
+P78271	A	Cytoplasm
+P78285	A	Cytoplasm
+P80644	A	Cytoplasm
+P80645	A	Cytoplasm
+P80668	A	Cytoplasm
+Q06065	A, N	Cytoplasm
+Q06067	B	IM_integral
+Q2EEP9	A	Cytoplasm
+Q2EEQ2	A, r	Cytoplasm
+Q2EEQ3	B	IM_integral
+Q2EEQ8	A	Cytoplasm
+Q2EER5	A	Cytoplasm
+Q2EES0	A	Cytoplasm
+Q2EES1	B	IM_integral
+Q2EES3	A	Cytoplasm
+Q2EES6	B	IM_integral
+Q2EES9	A	Cytoplasm
+Q2EET0	A	Cytoplasm
+Q2EET2	B	IM_integral
+Q2EEU2	A	Cytoplasm
+Q2M5U1	B	IM_integral
+Q2M7M3	I	OMLP
+Q2M7R5	A	Cytoplasm
+Q2M7X4	G	Periplasm
+Q2MB16	B	IM_integral
+Q46755	B	IM_integral
+Q46789	A, N	Cytoplasm
+Q46790	G	Periplasm
+Q46791	A, N	Cytoplasm
+Q46795	A	Cytoplasm
+Q46796	A	Cytoplasm
+Q46797	G	Periplasm
+Q46798	I	OMLP
+Q46799	A	Cytoplasm
+Q46800	A	Cytoplasm
+Q46801	A	Cytoplasm
+Q46802	A, N	Cytoplasm
+Q46803	A	Cytoplasm
+Q46806	A	Cytoplasm
+Q46807	A	Cytoplasm
+Q46808	A	Cytoplasm
+Q46809	A	Cytoplasm
+Q46810	A	Cytoplasm
+Q46811	A	Cytoplasm
+Q46812	A	Cytoplasm
+Q46814	A	Cytoplasm
+Q46817	B	IM_integral
+Q46819	A	Cytoplasm
+Q46820	A	Cytoplasm
+Q46821	B	IM_integral
+Q46822	A	Cytoplasm
+Q46824	B	IM_integral
+Q46829	A	Cytoplasm
+Q46831	B	IM_integral
+Q46832	B	IM_integral
+Q46833	B	IM_integral
+Q46834	G	Periplasm
+Q46835	I	OMLP
+Q46836	B	IM_integral
+Q46839	B	IM_integral
+Q46840	A	Cytoplasm
+Q46841	B	IM_integral
+Q46843	B	IM_integral
+Q46844	B	IM_integral
+Q46845	A, F1	IM_cyto
+Q46851	A	Cytoplasm
+Q46855	A, N	Cytoplasm
+Q46856	A, F1	IM_cyto
+Q46857	A	Cytoplasm
+Q46858	G	Periplasm
+Q46861	A	Cytoplasm
+Q46863	G	Periplasm
+Q46864	A, N	Cytoplasm
+Q46865	A, N	Cytoplasm
+Q46866	A, N	Cytoplasm
+Q46867	B	IM_integral
+Q46868	A	Cytoplasm
+Q46871	A	Cytoplasm
+Q46877	A	Cytoplasm
+Q46888	B	IM_integral
+Q46889	A	Cytoplasm
+Q46890	A	Cytoplasm
+Q46891	A	Cytoplasm
+Q46892	B	IM_integral
+Q46896	A	Cytoplasm
+Q46897	A	Cytoplasm
+Q46898	A	Cytoplasm
+Q46899	A, N	Cytoplasm
+Q46901	A	Cytoplasm
+Q46904	A	Cytoplasm
+Q46905	A	Cytoplasm
+Q46906	A	Cytoplasm
+Q46907	A	Cytoplasm
+Q46908	A	Cytoplasm
+Q46909	B	IM_integral
+Q46911	A	Cytoplasm
+Q46915	A	Cytoplasm
+Q46916	B	IM_integral
+Q46919	A	Cytoplasm
+Q46920	A	Cytoplasm
+Q46925	A, F1	IM_cyto
+Q46927	B	IM_integral
+Q46938	A	Cytoplasm
+Q46939	A	Cytoplasm
+Q46941	A, N	Cytoplasm
+P77335	G, X	Secreted
+Q46943	B	IM_integral
+Q46948	A	Cytoplasm
+Q46953	A	Cytoplasm
+Q47005	A, N	Cytoplasm
+Q47013	A	Cytoplasm
+Q47083	A, N	Cytoplasm
+Q47129	A, N	Cytoplasm
+Q47138	A	Cytoplasm
+Q47140	A	Cytoplasm
+Q47141	A, N	Cytoplasm
+Q47142	B	IM_integral
+Q47146	B	IM_integral
+Q47147	A	Cytoplasm
+Q47149	A	Cytoplasm
+Q47150	A, N	Cytoplasm
+Q47151	G	Periplasm
+Q47152	A	Cytoplasm
+Q47153	B	IM_integral
+Q47154	A	Cytoplasm
+Q47155	A, N	Cytoplasm
+Q47156	A, N	Cytoplasm
+Q47157	A	Cytoplasm
+Q47158	A	Cytoplasm
+Q47208	A, F1	IM_cyto
+Q47268	A	Cytoplasm
+Q47269	A	Cytoplasm
+Q47270	A	Cytoplasm
+Q47272	A	Cytoplasm
+Q47274	A	Cytoplasm
+Q47319	A	Cytoplasm
+Q47377	B	IM_integral
+Q47534	G	Periplasm
+Q47536	B	IM_integral
+Q47537	G	Periplasm
+Q47538	A, F1	IM_cyto
+Q47539	B	IM_integral
+Q47622	G	Periplasm
+Q47679	A	Cytoplasm
+Q47684	A	Cytoplasm
+Q47685	A	Cytoplasm
+Q47688	A	Cytoplasm
+Q47689	B	IM_integral
+Q47690	A	Cytoplasm
+Q47702	G	Periplasm
+Q47706	H	OMP
+Q47710	B	IM_integral
+Q47718	A	Cytoplasm
+Q47719	A	Cytoplasm
+Q57083	A, N	Cytoplasm
+Q57261	A	Cytoplasm
+Q59385	B	IM_integral
+Q6BEX0	A, F1	IM_cyto
+Q6BEX5	G	Periplasm
+Q6BF16	A	Cytoplasm
+Q6BF17	A	Cytoplasm
+Q6BF25	B	IM_integral
+Q6BF87	B	IM_integral
+Q79CP2	A	Cytoplasm
+Q79E92	A	Cytoplasm
+Q7DFU6	A	Cytoplasm
+Q7DFV3	B	IM_integral
+Q7DFV4	A	Cytoplasm
+Q93K97	A, F1	IM_cyto
+Q9XB42	A	Cytoplasm
+Q9Z3A0	A	Cytoplasm
+U3PVA8	A	Cytoplasm
+V9HVX0	A	Cytoplasm

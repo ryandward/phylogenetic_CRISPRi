@@ -3,11 +3,11 @@ p_load(data.table, pheatmap)
 
 ################################################################################
 # how many groups for k-means? 
-target_k = 20
+target_k = 7
 ################################################################################
 
 #https://www.cell.com/fulltext/S0092-8674(10)01374-7
-typas_data <- fread("mmc2.tsv")
+typas_data <- fread("mmc2.tsv.gz")
 
 typas_data <- melt(typas_data, 
                    variable.name = "condition", 
