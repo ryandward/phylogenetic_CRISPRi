@@ -11,3 +11,5 @@ significant_conditions_loc <-
 
 most_phenotypes_by_group_loc <- 
   significant_conditions_loc[significant_conditions_loc[, .(N = max(N, na.rm = TRUE)), by = .(Group, STEPdb_loc_code)], on = .(N, STEPdb_loc_code, Group)]
+
+#https://docs.google.com/document/d/1hvRGJ7ZJy1We3j9Vh1qcUzapQK17SXealcnLI-lOzBw/edit#
