@@ -9,6 +9,15 @@ target_k = 7
 #https://www.cell.com/fulltext/S0092-8674(10)01374-7
 typas_data <- fread("mmc2.tsv.gz")
 
+
+
+#https://journals.asm.org/doi/10.1128/mSystems.00808-19
+protein_loc <- fread("protein_localization.tsv")
+protein_dict <- fread("protein_dict.tsv")
+
+protein_loc <- protein_loc[protein_dict, on = .(protein)]
+
+
 typas_data <- melt(typas_data, 
                    variable.name = "condition", 
                    value = "score", 
@@ -17,15 +26,6 @@ typas_data <- melt(typas_data,
 # get rid of multiple drug treatment conditions
 typas_data <- typas_data[!condition %like% ","]
 typas_data <- typas_data[!condition %like% "/"]
-typas_data <- typas_data[!condition %like% "^PH"]
-typas_data <- typas_data[!condition %like% "^ETHIDIUM"]
-
-
-typas_data[, condition := gsub('UNSPECIFIED', "", condition)]
-
-typas_data[, condition := gsub(' - $', "", condition)]
-typas_data[, condition := gsub(' -$', "", condition)]
-
 
 
 typas_data[, c("ECK_name", paste0(rep("extra",5), c(1:5))) := tstrsplit(Gene, "-", type.convert = TRUE, fixed = TRUE)]
@@ -78,6 +78,9 @@ conversion <- rbind(conversion, conversions_found)
 
 typas_data <- conversion[typas_data, on = .(ECK_name)][!is.na(b_name)]
 
+
+
+
 # get rid of non-unique b names
 typas_data <- 
   typas_data[
@@ -88,15 +91,29 @@ typas_data <-
   typas_data[
     !b_name %in% typas_data[, .N, by = .(ECK_name)][N != nrow(typas_data[, .(unique(condition))])]$b_name]
 
-typas_data <- dcast(typas_data, b_name ~ condition, value.var = "score")
 
-typas_data_matrix <- data.matrix(typas_data[, -1])
+# specification is always "UNSPECIFIED", throw it away
+typas_data[, c("condition", "specification") := tstrsplit(condition, " - ")]
 
-rownames(typas_data_matrix) <- typas_data$b_name
 
-typas_data_matrix <- typas_data_matrix[complete.cases(typas_data_matrix),]
+typas_data[, condition := gsub(' -$', "", condition)]
+typas_data[, condition := gsub('-$', "", condition)]
 
-typas_cor <- cor(typas_data_matrix, use = "complete.obs")
+typas_data[, specification := NULL]
+
+
+typas_df <- dcast(
+  typas_data, 
+  b_name ~ condition, 
+  value.var = "score")
+
+typas_df_matrix <- data.matrix(typas_df[, -1])
+
+rownames(typas_df_matrix) <- typas_df$b_name
+
+typas_df_matrix <- typas_df_matrix[complete.cases(typas_df_matrix),]
+
+typas_cor <- cor(typas_df_matrix, use = "complete.obs")
 
 plot_matrix <- typas_cor
 
@@ -140,42 +157,31 @@ setnames(
   "V1", 
   "group")
 
-condition_groups[, c("condition", "dose") := tstrsplit(condition, "-")]
-
 fwrite(
   condition_groups, 
   "condition_groups.tsv", 
   sep = "\t")
 
 
-melted_typas <- 
-  melt(
-    # typas_data[complete.cases(typas_data)],
-    typas_data,
-    id.vars = 'b_name', 
-    variable.name = 'condition', 
-    value.name = 'score')
-
-melted_typas <- 
-  melted_typas[, c("condition", "dose") := tstrsplit(condition, "-")]
-
-
 significant_conditions <- 
-  melted_typas[
-    abs(score) > (1 * sd(melted_typas$score, na.rm = T)), 
+  typas_data[
+    score < -(1 * sd(typas_data$score, na.rm = T))
+    & score > -(3 * sd(typas_data$score, na.rm = T)), 
     .N, 
-    by = .(condition, dose)]
+    by = .(condition)]
 
 
 setorder(significant_conditions, N)
 
 
 significant_conditions <- 
-  significant_conditions[condition_groups, on = .(condition, dose)]
+  significant_conditions[condition_groups, on = .(condition)]
 
 significant_conditions <- 
-  significant_conditions[, .(condition, dose, N, group)]
+  significant_conditions[, .(condition, N, group)]
 
 most_phenotypes_by_group <-
-  significant_conditions[significant_conditions[, .(N = max(N)), by = .(group)], on = .(group, N)]
+  significant_conditions[significant_conditions[, .(N = max(N, na.rm = TRUE)), by = .(group)], on = .(group, N)]
+
+
 
