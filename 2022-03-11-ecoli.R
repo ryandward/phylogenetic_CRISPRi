@@ -1,4 +1,4 @@
-today = "2022-03-09"
+today = "2022-03-11"
 organism = "ecoli"
 
 drug_exp <- fread(
