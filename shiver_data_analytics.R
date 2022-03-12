@@ -1,3 +1,12 @@
+library('pacman')
+
+p_load(
+  data.table
+  , pheatmap
+  , factoextra
+  )
+
+
 #https://pubmed.ncbi.nlm.nih.gov/27355376/
 shiver <- fread ("shiver.tsv.gz")
 

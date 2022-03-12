@@ -1,0 +1,124 @@
+UID	Antibiotic/Condition	Screen Concentration	Stock Concentration	Solvent	Notes
+ASCC002	A22	5 µg/ml	10 mg/mL	DMSO
+ASBC016	Acetate (M9)	0.60%	200 mg/mL	Water
+ASBC017	acidic pH 4 (HOMOPIPES)	pH 4, 100mM	1M	Water
+ASBC003	Acriflavine	10 µg/ml	20 mg/mL	water
+BSUFC	Actinomycin D 	5 µg/ml	1 mg/mL	DMSO
+ASCC003	Amoxicillin 	1.5 µg/ml	1mg/ml	Water
+ASCC052	Ampicillin	4 µg/ml	100mg/ml	Water
+ASCC004	Azidothymidine	2.5 ng/ml	1mg/ml	Water
+BSUCC	Azithromycin	1 µg/ml	1mg/ml	EtOH
+ASCC005	Bacitracin	200 µg/ml	10mg/ml	Water
+ASBC018	basic pH 9 (TAPS)	pH 10, 100mM	1M (265.3mg/mL)	Water
+ASBC010	Benzalkonium	25 µg/ml	10 mg/mL	water
+ASFC015	Bicyclomycin	10 µg/ml	50 mg/mL	water
+ASBC011	Bile salts	2% w/v	200 mg/mL	water
+ASCC007	Bleomycin	0.5 µg/ml	1mg/ml	Water
+ASCC008	Carbenicillin	1.5 µg/ml	4mg/ml	.2N NaOH	THIS ONE IS WRONG
+ASFC002	CCCP (Carbonyl cyanide 3-chlorophenylhydrazone)	2 µg/ml	5mg/ml	DMSO
+ASCC053	Cefaclor	2 µg/ml	4mg/ml	Water
+ASCC009	Cefoxitin	0.5 µg/ml	4mg/ml	Water
+ASCC010	Cefsulodin	24 µg/ml	60mg/ml	Water
+ASCC011	Ceftazidime	50 ng/mL	4mg/ml	Water
+ASCC054	Chloramphenicol	2 µg/ml	20mg/ml	EtOH
+ASCC013	Chlorpromazine	24 uM	30mM (10.7 mg/mL)	Water
+ASBC012	Cholate	0.5% w/v	200 mg/mL	water
+ASCC015	Ciprofloxacin	6 ng/ml	0.1 mg/ml	Water
+ASCC016	Cisplatin	20 µg/ml	50 mg/mL	Water
+ASCC017	Clarythromycin	5 µg/ml	10 mg/mL	MetOH
+ASBC019	Copper stress-CuCl2	4 mM	1M (170.48 mg/mL)	Water
+ASFC003	Cycloserine D	16 µg/ml	16mg/ml	Water
+BSUCC	Deoxycholate	2% w/v	200 mg/mL	Water
+ASCC020	Dibucaine	1.2 mM	0.2M (68.7 mg/mL)	DMSO
+ASCC021	Doxycycline 	0.75 µg/ml	1mg/ml 	70% EtOH
+ASBC020	EDTA	1 mM	1M (292.24 mg/mL)	Water
+ASBC021	EGTA	1 mM	100 mg/mL	1N NaOH
+ASCC023	Epigallocatechin gallate (EGCG)	20 µM	10mM (4.6 mg/mL)	DMSO
+ASCC024	Epinephrine	250 µM	50mM (9.16 mg/mL) 	5% HCl
+ASCC025	Erythromycin	5 µg/ml	10mg/ml 	EtOH
+ASBC022	Ethidium Bromide	50 µg/ml	10mg/ml 	Water
+ASBC023	EtOH	4% w/v	-	-
+ASCC026	Fosfomycin	1 µg/ml	10mg/ml 	Water
+ASCC027	Fusidic acid	50 µg/ml	100mg/ml	Water
+ASCC055	Gentamicin	0.1 µg/ml	15mg/ml	Water
+ASBC004	Glucosamine (M9)	0.2% w/v	200 mg/mL	water
+ASBC024	Glucose (M9)	0.2% w/v	200 mg/mL	Water
+ASBC025	Glycerol (M9)	0.4% w/v	500 mg/mL	Water
+ASCC029	Hydroxyurea	5 mM	1M (76.06 mg/mL)	Water
+ASFC005	Indolicidin	0.1 µg/ml	1mg/ml	50% glycerol
+ASBC027	Iron excess-FeSO4*7H2O	1mM	0.5M (139.01 mg/mL)	Water
+ASBC028	Iron starvation-FeSO4	2 µM	-	-
+ASCC057	Isoniazid	1.5 mM	0.5M (68.6 mg/mL)	Water
+ASBC029	Maltose  (M9)	0.10%	200 mg/mL	water
+ASCC031	Mecillinam	120 ng/mL	0.3mg/ml	Water
+BSUXX	Minocycline	1 µg/ml	2mg/ml	0.1N HCl
+ASCC033	Mitomycin C	100 ng/mL	2mg/ml	0.1N HCl
+ASCC034	MMS	0.05% w/v	5%	DMSO
+ASBC005	N-acetyl Glucosamine	0.15% w/v	-	-
+ASBC030	NaCl	450 mM	5M (292.2 mg/mL)	Water
+ASCC056	Nalidixic acid	1.5 µg/ml	4mg/ml	0.1N NaOH
+ASBC031	NH4Cl (MOPS)	9.5 mM	-	-
+ASBC032	Nickel stress-NiCl2	1 mM	0.1M (23.8 mg/mL)	Water
+ASBC013	Nitrofurantoin	1.5 µg/ml	2 mg/ml	acetone
+ASFC008	Norepinephrine	1 mM	50mM (8.45 mg/mL) 	5% HCl
+ASCC036	Norfloxacin	20 ng/mL	10mg/ml 	0.5N HCl
+ASCC037	Novobiocin	12 µg/ml	10mg/ml	Water
+ASCC038	Oxacillin	5 µg/ml	10mg/ml	Water
+ASCC039	Paraquat dichloride	18 µM	10mM (2.57mg/ml)	Water
+ASFC009	Phenazine methosulfate (PMS)	100 µM	0.5M (153.2 mg/mL)	Water
+ASCC041	Phleomycin	1 ug/mL	5 mg/ml	Water
+ASBC006	Polymyxin B	4 µg/ml	2 mg/ml	water
+ASCC042	Procaine	30 mM	2M (545.5 mg/mL)	Water
+ASCC043	Propidium iodide	50 µg/ml	1mg/ml	Water
+ASFC012	Puromycin	25 µg/ml	10 mg/mL	Water
+ASFC013	Pyocyanin	10 µg/ml	5 mg/ml	DMSO
+ASBC033	Rifampicin	2 µg/ml	4 mg/ml	MetOH
+ASBC034	SDS	1% w/v	200 mg/mL	Water
+ASBC035	SDS+EDTA	0.5%w/v; 0.5mM	-	-
+ASBC036	Spectinomycin	4 µg/ml	50 mg/ml 	Water
+ASCC044	Spiramycin	20 µg/ml	10mg/ml	MetOH
+ASCC045	Streptomycin	50 ng/mL	20mg/ml	Water
+ASCC046	Streptonigrin	500 ng/mL	1mg/ml	DMSO
+ASBC037	Succinate (M9)	0.3% w/v	200 mg/mL
+ASCC047	Sulfamonomethoxine	100 µg/ml	20mg/ml	Acetone
+ASBC038	Tetracycline	1 µg/ml	10 mg/ml	70% EtOH
+ASBC014	Theophylline	100 µg/ml	8 mg/ml	0.2N NaOH
+ASBC014	Theophylline	100 µg/ml	8 mg/ml	0.2N NaOH
+ASCC048	Tobramycin	0.05 µg/ml	1mg/ml	Water
+ASBC015	Triclosan/Irgasan	50 ng/mL	10 mg/ml	DMSO
+ASBC007	Trimethoprim	0.1 µg/ml	2mg/ml	DMSO
+ASBC039	Triton X-100	0.03% v/v	-	-
+ASCC049	Tunicamycin	7.5 µg/ml	10mg/ml	DMSO
+ASCC050	Vancomycin	50 µg/ml	10mg/ml	Water
+ASCC051	Verapamil	0.5 mM	20mM  (9.8 mg/ml)	Water
+ASCC001	5-bromodeoxyuridine	NOT SCREENED	-	-
+ASBC001	5-fluorouridine	250 ng/mL	10 mg/mL	DMSO
+ASBC002	5-methyl anthranilic acid	20 ug/mL	20 mg/mL	ethanol
+ASFC001	7-azatryptophan	14 ug/mL	50 mg/mL	0.5N HCl
+ASBC009	azelaic acid	1 mg/mL	50 mg/mL	\
+ASCC006	Blasticidin S	33 ug/mL	10 mg/mL	water
+ASCC012	Chlorhexidine	NOT SCREENED	6 mg/mL	DMSO
+ASCC014	Cinoxacin	6 ug/mL	10 mg/mL	DMSO
+ASCC018	Clindamycin	64 ug/mL	10 mg/mL	water
+ASCC019	Clofazimine	NOT SCREENED	4 mg/ml	-
+ASFC004	DL-serine hydroxamate	600 ug/mL	50 mg/mL	Water
+ASCC022	EMS	0.2%(v/v)	use directly	-
+ASCC028	Gramicidin	NOT SCREENED	-	-
+ASBC026	guanidine hydrochloride	150 mM	5M (477.65 mg/mL)	Water
+ASFC006	Kasugamycin	-	20 mg/mL	Water
+ASFC007	Kendomycin	NOT SCREENED	-	-
+ASCC030	Linezolid	NOT SCREENED	-	-
+ASCC032	metronidazole + anaerobic 	NOT SCREENED	20 mg/mL	0.5N HCl
+ASCC035	Nisin	NOT SCREENED	8 mg/ml	Water
+ASCC040	Paromomycin	8.5 ug/mL	10 mg/mL	Water
+ASFC010	Piericidin	NOT SCREENED	-	-
+ASFC011	Pseudomonic acid	36 ug/mL	25 mg/mL	DMSO
+ASFC014	Thiolutin (LB)	-	-	-
+ASBC040	urea	750mM	5M (300.3 mg/mL)	water
+ASBC008	2-Amino Purine	NOT SCREENED	-	-
+ASBC041	5-methyl-DL-tryptophan	2.5 ug/mL	20 mg/mL	0.5N HCl
+ASHC002	bleach	1%(v/v)	-	-
+ASHC001	DMSO	9.5%(v/v)	-	-
+ASHC003	isopropanol	5%(v/v)	-	-
+ASHC004	n-butanol	1%(v/v)	-	-
+ASHC005	t-butanol	5%(v/v)	-	-
