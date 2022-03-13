@@ -1,0 +1,228 @@
+cJMP###	Name	alternative name	Type	Formula	CAS	FW	MW (g/mol)	form	solubility	storage	safety category	quantity	location (container)	brand	supplier	item #	used up?	notes
+1	A22		antibiotic	C8H8Cl2N2S	22816-60-0		253.13	powder	DMSO (20 mg/ml); H2O (2 mg/ml)	2-8°C, dark, dessicate, OK to freeze		25 mg	4°C (D1)		Sigma / Calbiochem	475951-25MG		
+2	acriflavine		antibiotic	C14H14ClN3	8048-52-0		259.73	powder	H2O (Sigma - 50 mg/ml, lit - 330 mg/mL)	RT		25 g			Sigma	A8126-25G		
+3	actinomycin D		antibiotic	C62H86N12O16	50-76-0		1255.42	powder	DMSO (1 mg/mL)	2-8°C, dark, dessicate		10 mg	4°C (D1)		Sigma	A1410-10MG		
+4	amikacin sulfate salt		antibiotic	C22H45N5O17S	149022-22-0		683.68	powder	H2O (50 mg/mL)	2-8°C, dry, well-ventilated		5 g	4°C (D1)		Sigma	A2324-5G		insoluble (<1 mg/mL) in DMSO
+5	amoxicillin		antibiotic	C16H19N3O5S	26787-78-0		365.4	powder	1 M NH4OH (50 mg/mL); DMSO (lit. - 73 mg/mL)	2-8°C, dry, well-ventilated		5 g	4°C (D1)		Fisher	AC455140050		can crystallize/harden if not immediately vortexed during resuspension; additionally, crashes out when thawed from -80 degrees (10 mg/mL stock)
+6	ampicillin	amp	antibiotic	C16H19N3O4S	69-53-4	371.39	349.4	powder	1 M NH4OH (50 mg/mL); H2O (lab stock - 100 mg/mL)	2-8°C	irritant	5 g	4°C (1)	Fisher	Fisher	BP17605		
+7	Apramycin sulfate	apr	antibiotic	C21H43N5O15S	65710-07-8		637.7	liquid		2-8°C	NA	1 g	4°C (D3)	Sigma	Sigma	A2024-5G		
+8	azithromycin		antibiotic	C38H72N2O12	83905-01-5		748.98	powder	DMSO (5 mg/mL); EtOH/DMF (16 mg/mL)	-20°C		50 mg	-30 freezer (1)		Fisher	377150	yes	
+9	aztreonam		antibiotic	C13H17N5O8S2	78110-38-0		435.43	powder	DMF/water (50 mg/mL)	-20°C	NA	1 g	-30 freezer (2)		Fisher	AAJ628870.		
+10	bicyclomycin		antibiotic	C12H18N2O7	38129-37-2		302.28		DMSO; DMF; H2O						M. Gottesman	gift		
+11	carbenicillin disodium salt	carb	antibiotic	C17H16N2Na2O6S	4800-94-6		422.36	powder	H2O (>50 mg/mL, lab stock - 100-200 mg/mL)	2-8°C	allergen	5g	4°C (1)	Sigma	Sigma	C1389-250MG		
+12	carvacrol	5-isopropyl-2-methylphenol; liquid	antibiotic	C10H14O	499-75-2		150.22	liquid		RT		10 g			Sigma	282197-10G		
+13	cefaclor		antibiotic	C15H14ClN3O4S	53994-73-3		367.81	powder or crystals	slightly soluble in H2O	RT		1 g			Sigma	C6895-100MG		insoluble in DMSO
+14	ceftazidime hydrate		antibiotic	C22H32N6O12S2	120618-65-7		546.58	powder	0.1 M NaOH (50 mg/mL)	2-8°C, dry, well-ventilated		1 g	4°C (D1)		Sigma	C3809-1G		contains 10% sodium carbonate as stabilizer; cayman chem recommends not storing aqueous solution for more than a day
+15	cerulenin		antibiotic	C12H17NO3	17397-89-6		223.27	powder	acetone (19.6-20.4 mg/mL)	-20°C		5 mg	-30 freezer (1)		Sigma	C2389-10MG		
+16	Chloramphenicol	cam	antibiotic	C11H12Cl2N2O5	56-75-7		323.13	powder	2.5 g/l (25°C)	cool, well-ventilated	potential carcinogen	5 g		Sigma	Sigma	C1919-5G		
+17	chlorhexidine		antibiotic	C22H30Cl2N10	55-56-1		505.45	powder	H2O (0.08%)	RT		1 g			Sigma	282227-1G		
+18	chlorpromazine hydrochloride		antibiotic	C17H19CIN2S	69-09-0		355.33	powder	H2O (>50 mg/mL)	RT		5 g			Sigma	C8138-5G		
+19	ciprofloxacin		antibiotic	C17H18FN3O3	85721-33-1		331.34	powder or crystals	slightly soluble in H2O	RT		5 g			Sigma	17850-5G-F		NOT SOLUBLE at 2 mg/mL in H2O
+20	colistin sulfate salt	Polymyxin E	antibiotic	C52H98N16O13	1264-72-8		1155.4	powder	H2O	2-8°C, dry, well-ventilated		1 g	4°C (D1)		Sigma	C4461-1G		insoluble in DMSO!
+21	daptomycin		antibiotic	C72H101N17O26	103060-53-3		1619.71	powder	H2O (100 mg/mL); DMSO (100mM)	4°C		500 mg	4°C (2)		UW Hosp Pharmacy			
+22	D-cycloserine		antibiotic	C3H6N2O2	68-41-7		102.09	powder	H2O (>50 mg/mL)	-20°C		1 g	-30 freezer (1)		Sigma	C6880-1G		
+23	doripenem hydrate		antibiotic	C15H26N4O7S2	364622-82-2		438.52	powder	H2O (5 mg/mL)	2-8°C		10 mg	4°C		Sigma	SML1220-10MG		
+24	Erythromycin	erm	antibiotic	C37H67NO13	114-07-8		733.93	solid		2-8°C, well-ventilated 	NA	1 g	4°C (2)	Sigma	Sigma	E5389-1G		
+25	Phosphomycin disodium salt	phosphomycin	antibiotic	C3H5Na2O4P	26016-99-9		182.02	powder	H2O (>50 mg/mL)	2-8°C		5 g	4°C (2)		Sigma	P5396-1G		insoluble in anhydrous acetone
+26	Gentamicin	gent	antibiotic	C21H43N5O7	1403-66-3		477.596	solid	H2O	Cool location	flammable	1 g	4°C (2)	Sigma	Sigma	G1264-1G		
+27	imipenem monohydrate		antibiotic	C12H17N3O4SH2O	74431-23-5		317.36	powder	H2O (>5 mg/mL)	-20°C		100 mg	-30 freezer (1)		Sigma	I0160-25MG		
+28	indole - A. baumannii		antibiotic	C8H7N	120-72-9		117.15	powder or crystals	H2O (190 mg/mL); DMSO	RT		25 g	RT		Sigma	I3408-25G		
+29	isoniazid		antibiotic	C6H7N3O	54-85-3		137.14	powder	H2O (>50 mg/mL)	RT		50 g			Sigma	I3377-5G		
+30	Kanamycin	kan	antibiotic	C18H36N4O11	8063-07-8		582.58	solid	H2O	locked up	flammable		RT, chem cabinet, plate additives	Fisher	Fisher	BP906-5		
+31	levofloxacin		antibiotic	C18H20FN3O4	100986-85-4		361.37	powder or crystals	Glacial acetic acid, chloroform		flammable	10 g			Sigma	28266-1G-F		
+32	mecillinam	amdinocillin	antibiotic	C15H23N3O3S	32887-01-7		325.43	powder	chloroform (30 mg/mL); H2O (1 mg/mL)	2-8°C		1 g	4°C (3)		RPI	A91690-1.0		
+33	meropenem		antibiotic	C17H25N3O5S	119478-56-7		437.51	powder	H2O; DMSO	RT		300 mg	4°C (3)		Sigma	1392454-300MG		
+34	mupirocin calcium salt		antibiotic	C52H90CaO20	115074-43-6		538.68	solid	DMSO (100 mg/mL); ethanol (100 mg/mL)	4°C		100 mg	4°C		Santa Cruz	sc-477645	yes	
+35	myricetin - A. baumannii		antibiotic	C15H10O8	529-44-2		318.24	crystalline	ethanol (1 mg/mL); DMSO (10 mg/mL)			25 mg			Sigma	M6760-25MG		
+36	nalidixic acid sodium salt		antibiotic	C12H11N2NaO3	3374-05-8		254.22	powder	H2O (100 mg/mL)	4°C		5 g	4°C (3)		Sigma	N4382-5G		
+37	novobiocin sodium salt		antibiotic	 C31H35N2NaO11	1476-53-5		634.61	powder	H2O (50 mg/mL)	2-8°C		1 g	4°C		Sigma	N1628-1G		
+38	PC190723	FtsZ Polymer Stabilizer	antibiotic	C₁₄H₈ClF₂N₃O₂S	NA		355.75	powder	DMSO (10 mg/mL)	-20°C		5 mg			Sigma	344580-5MG	yes	
+39	phenazine methosulfate		antibiotic	C14H14N2O4S	299-11-6		306.34	powder	H2O (200 mg/mL)	-20°C		1g	-30 freezer (1)		Sigma	P9625-1G		
+40	piperacillin sodium salt		antibiotic	C23H26N5NaO7S	59703-84-3		539.54	powder	H2O (50 mg/mL)	2-8°C		5g	4°C (3)		Sigma	P8396-5G		
+41	polymixin B		antibiotic	C56H100N16O17S	1405-20-5		1385.61	powder	H2O (25 mg/mL)	15-30°C		5 g			Sigma	5291-5MG		
+42	pyocyanin		antibiotic	C13H10N2O	85-66-5		210.23	powder	DMSO; acetone; chloroform	-20°C		25 mg	-30 freezer (1)		Sigma	P0046-25MG	yes	
+43	rifampicin		antibiotic	C43H58N4O12	13292-46-1		822.94	powder	H2O (1.3 mg/mL); DMSO (100 mg/mL)	-20°C		5 g	-30 freezer (1)		Sigma	R3501-5G		
+44	Spectinomycin dihydrochloride pentahydrate	spec	antibiotic	C14H36Cl2N2O12	22189-32-8		495.3	powder	soluble	refrigerated	NA	5 g	4°C (3)	Sigma	Sigma	S4014-5G		
+45	Streptomycin sulfate	strep	antibiotic	C42H84N14O36S3	3810-74-0		1457.59	powder	H2O	2-8C	toxic	5 g	4°C (3)	Sigma	Sigma	S1277-5G		
+46	streptonigrin		antibiotic	C25H22N4O8	3930-19-6		506.46	powder	CHCl3/MeOH (1.9-2.1 mg/mL)	2-8°C		5 mg			Sigma	S1014-5MG		
+47	sulbactam		antibiotic	C8H11NO5S	68373-14-8		233.24	powder	H2O (>18 mg/mL)	2-8°C		10 mg	4°C		Sigma	S9701-10MG		
+48	sulfamethoxazole		antibiotic	C10H11N3O3S	723-46-6		253.28	powder	alcohol (1:50); acetone (1:3); DMSO (50 mg/mL)	RT, protect from light		10 g	-30 freezer (1)		Sigma	S7507-10G		
+49	tannic acid - A. baumannii		antibiotic	C76H52O46	1401-55-4		1701.2	powder or solid				50 g			Sigma	403040-50G		
+50	tazobactam sodium salt		antibiotic	C10H11N4NaO5S	89785-84-2		322.27	powder or crystals	EtOH (5 mg/mL); DMSO (20 mg/mL); DMF (25 mg/mL)	cil		10 mg			Sigma	T2820-10MG		
+51	Tetracycline hydrochloride	tet	antibiotic	C22H25CIN2O8	64-75-5		480.9	powder	H2O; EtOH; MeOH	-20°C	toxic	100 g	-30 freezer (2)	Sigma	Sigma	T7660-5G		
+52	tigecycline		antibiotic	C29H39N5O8	220620-09-7		585.65	powder	EtOH (1 mg/mL); DMSO (30 mg/mL)			100mg	-30 freezer (2)		Fisher	507513756		
+53	tobramycin		antibiotic	C18H37N5O9	32986-56-4		467.51	powder	H2O (94 mg/mL); DMSO (<1 mg/mL); PBS (10 mg/mL)	2-8°C		100mg	4°C (4)		Sigma	T4014-100MG		
+54	triclosan	Irgasan	antibiotic	C12H17Cl3O2	3380-34-5		289.54	powder or crystals	1M NaOH (5%)	dry, well-ventilated		5g	RT		Sigma	72779-5G-F		
+55	trimethoprim		antibiotic	C14H18N4O3	738-70-5		290.3	powder	DMSO	2-8°C		5g	4°C (4)		Dot Scientific	DST59000-5		
+56	vancomycin hydrochloride		antibiotic	C66H76Cl3N9O24	1404-93-9		1485.71	powder	H2O (50 mg/mL)	2-8°C		1g	4°C (4)		Sigma	V1130-1G		
+57	lactoferrin		enzyme	C141H226N46O29S3	NA		3125.8	powder	H2O (10 mg/mL)	2-8°C		50 mg	4°C (4)		Sigma	L9507-50MG		
+58	Antarctic phosphatase		enzymes		NA								-30 freezer	NEB	NEB, Fisher, VWR	M0289S		
+59	lysozyme	muramidase	enzymes	C11H20NO6	12650-88-3		14300	lyophilized powder	NA	-20°C	NA	5 g	-30 freezer (2)	Sigma	Sigma	L6876-5G		
+60	OneTaq DNA polymerase		enzymes								NA		-30 freezer	NEB	NEB, Fisher, VWR	M0480S		
+61	proteinase K		enzymes		39450-01-6								-30 freezer					
+62	Q5 DNA polymerase		enzymes		NA						NA		-30 freezer	NEB	NEB, Fisher, VWR	M0491S		
+63	T4 DNA ligase		enzymes		NA								-30 freezer	NEB	NEB, Fisher, VWR	M0202S		
+64	T4 DNA polymerase		enzymes		NA								-30 freezer	Novagen	Sigma-Millipore	70099-3		
+65	T4 Polynucleotide kinase	PNK	enzymes		NA								-30 freezer	NEB				
+66	cobalt (II) chloride		inorganic compound	Cl2Co · 6H2O	7791-13-1	 237.93						25g	RT	Sigma	Sigma	C8661-25G		
+67	cobalt nitrate		inorganic compound	Co(NO3)2 · 6H2O	10026-22-9	291.03						5g	RT	Sigma	Sigma	239267-5G		
+68	copper(II) chloride	cupric chloride	inorganic compound	CuCl2	7447-39-4		134.45	powder		RT		5 g			Sigma	451665-5G		
+69	copper(II) sulfate		inorganic compound	CuSO4 · 5H2O	7758-99-8	249.69						5g	RT	Sigma	Sigma	209198-5G		
+70	nickel(II) chloride hexahydrate		inorganic compound	NiCl2*6H2O	7791-20-0		237.69	powder	H2O (>100 mg/mL)			100g	RT	Sigma	Sigma	N6136-100G		
+71	sodium tungstate dihydrate		inorganic compound		10213-10-2		329.85	crystalline				5g			Sigma	223336-5G		
+72	Agar, granulated		media		9002-18-0					RT		500 g	RT, media bench	BD	VWR or Fisher			
+73	Brain-heart infusion		media		NA					RT		500 g	RT, media bench	BD	VWR or Fisher			
+74	Casamino acids		media		NA			powder		RT	NA	500 g	RT, media bench	BD	VWR or Fisher			
+75	LB, lennox		media		NA					RT		500 g	RT, media bench	BD	VWR or Fisher			
+76	M17 broth		media		NA					RT		500 g	RT, media bench	BD	VWR or Fisher			
+77	MES buffer		media		1266615-59-1		195.24	powder	H2O (>250 mg/mL)	RT	NA	100 g	RT, chem cabinet, BUFFERS (top right shelf)	Sigma	Sigma	M2933-100G		low pH
+78	MOPS buffer		media	C7H15NO4S	1132-61-2		209.26	powder	H2O, 209g/L	RT	NA	500 g	RT, chem cabinet, BUFFERS (top right shelf)	Sigma	Sigma	M3183-500g		
+79	Peptone		media		NA			solid	H2O	RT		500 g	RT, media bench	BD	VWR or Fisher			
+80	R2A		media					powder	H2O	RT	Combustable		RT, media bench	Teknova				
+81	Tryptic Soy Broth (TSB)		media					powder	H2O	RT	NA	500 g	RT, media bench	BD	VWR or Fisher			
+82	Tryptone		media		NA					RT		500 g	RT, media bench	BD	VWR or Fisher			
+83	Yeast extract		media							RT		500 g	RT, media bench	BD	VWR or Fisher			
+84	DNA purficationDNA Clean and Concentrator-25		molecular biology kits							RT			RT	Zymo Research		D4005		
+85	DNA purficationDNA Clean and Concentrator-5		molecular biology kits					liquid	H2O	RT	NA		RT	Zymo Research		D4004		
+86	gDNA Blood and Tissue kit		molecular biology kits							RT			RT	Qiagen	Qiagen	69504		
+87	Gel dissolving buffer	ADB Buffer	molecular biology kits					liquid		RT	NA		RT	Zymo Research		D4001-1-100		
+88	GeneJet genomic DNA Purification Kit		molecular biology kits							RT			RT	Thermo Fisher	Fisher	FERK0721		
+89	GeneJet plasmid miniprep kit		molecular biology kits							RT			RT	Thermo Fisher	Fisher	FERK0503		
+90	Hifi DNA assembly		molecular biology kits										-30 freezer	NEB	NEB, Fisher, VWR	E2621S		
+91	HiPure plasmid midi		molecular biology kits							RT			RT	Invitrogen	Fisher	K210004		
+92	Monarch PCR and DNA purification		molecular biology kits							RT			RT	NEB	NEB	T1030S		
+93	1 KB plus DNA ladder		molecular biology reagent		NA	NA	NA	liquid		NA			RT, gel bench and -20 Rosie	NEB	NEB	N3200		
+94	Agarose (Seakem GTG)		molecular biology reagent		9012-36-6			powder	H2O	RT 	NA		RT, chem cabinet	Lonza	VWR	12001-896		
+95	Agarose (SeaKem LE)		molecular biology reagent		9012-36-7			powder	H2O	RT 	NA		RT, chem cabinet	Lonza	VWR	12001-870		
+96	DNA electrophoresis sample buffer		molecular biology reagent				394.29	liquid		RT?	NA		RT, gel bench	Biorad	Biorad			
+97	Ethidium bromide	EtBr	molecular biology reagent		1239-45-8		394.3076	liquid	Miscible in H2O	RT 	carcinogen		RT, gel bench	Biorad	Biorad			
+98	Gene Ruler		molecular biology reagent										RT, gel bench and -20 Rosie	Thermo	Thermo			
+99	purple loading dye		molecular biology reagent										RT, gel bench	NEB	NEB	B7024		
+100	SybrSafe dye		molecular biology reagent		1030826-36-8			liquid	NA	RT	NA		RT, gel bench	invitrogen	Fisher			
+101	AscI		restriction enzyme										-30 freezer					
+102	BamHI		restriction enzyme										-30 freezer					
+103	BbsI		restriction enzyme										-30 freezer					
+104	BsaI		restriction enzyme										-30 freezer					
+105	DpnI		restriction enzyme										-30 freezer					
+106	EcoRI		restriction enzyme										-30 freezer					
+107	HindIII		restriction enzyme										-30 freezer					
+108	KpnI		restriction enzyme										-30 freezer					
+109	NotI		restriction enzyme										-30 freezer					
+110	PmeI		restriction enzyme										-30 freezer					
+111	PstI		restriction enzyme										-30 freezer					
+112	SmaI		restriction enzyme										-30 freezer					
+113	SpeI		restriction enzyme										-30 freezer					
+114	XhoI		restriction enzyme										-30 freezer					
+115	Chloroform		solvent	CHCl3	67-66-3		119.37	Clear liquid	Slightly soluble	Cool location	corrosive	500 ml	corrosives cabinet-left	Sigma	Sigma	C2432-500ML		
+116	Dimethyl formamide	DMF, N,N-dimethylformamide	solvent	C3H7NO	68-12-2		73.095	Liquid	In H2O, diethyl ether, acetone	Well-ventilated	flammable-class II	100 ml	flammable cabinet	Sigma	Sigma	227056-100ML		
+117	Dimethyl sulfoxide	DMSO	solvent	C2H6OS	67-68-5		78.13	Liquid	Miscible in H2O	Well-ventilated	flammable	100 ml	corrosives cabinet-left	Sigma	Sigma	D4540-100ML		
+118	Ethyl alcohol, 200 proof	ethanol, EtOH	solvent	C2H6O	64-17-5		46.07	liquid	H2O, completely soluble	flammable	flammable-1B	4 l	flammable cabinet	pharmco	stockroom	111000200		
+119	Formaldehyde solution		solvent	CH2O	50-00-0		30.026	Liquid	Miscible	Flammable	corrosive, flammable-class II	250 ml	corrosives cabinet-left 	Sigma	Sigma	47608-250ML-F		(30-50% formaldehyde, 10-20% methanol)
+120	Glycerol	glycerin	solvent	C14H14ClN3	56-81-5	92.09	92.09	liquid	H2O	Flammable	flammable (low risk)	500 ml	flammable cabinet	Sigma	Sigma	G6279-500ML		
+121	Glycerol	glycerin	solvent	 HOCH2CH(OH)CH2OH	56-81-5	92.09	92.09	liquid	H2O	Flammable	flammable (low risk)	1 l	flammable cabinet	Fisher	Fisher	BP2291		
+122	isobutanol - Z. mobilis		solvent	C4H10O	78-83-1		74.12	liquid		Flammable	flammable		flammable cabinet		Sigma	1009841000		
+123	isopropanol	2-propanol	solvent	C3H8O	67-63-0		60.09502	liquid	H2O, completely soluble	Flammable	flammable-1B	500 ml	flammable cabinet	Sigma	Sigma	I9516-500ML		
+124	Methanol	methyl alcohol, MeOH	solvent	CH4O	67-56-1		32.05	liquid	20°C	Cool location	flammable-1B	1 l	flammable cabinet	Sigma	stockroom	179337-1L		
+125	Acetic acid		solvent	C2H4O2	64-19-7		60.05	liquid	H2O	Cool location	corrosive-class II	500 ml	corrosives cabinet-left	Sigma	Sigma	695092-500ML-GL		
+126	Hydrochloric acid, 37%,		solvent	HCl	7647-01-0		36.46	liquid	H2O	2-25°C	corrosive	500 ml	corrosives cabinet-left	Sigma	Sigma	320331-500ML		
+127	4-aminobenzoic acid (PABA)	PABA vitamin H1		H2NC6H4CO2H	150-13-0	137.14						5g	4°C (5)	Sigma	Sigma	A9878-5G		
+128	Ammonium chloride      		reagent	NH4Cl	12125-02-9	53.49	53.49	powder	39.6% at 176°F	Cool location	toxic/irritant	500 g	RT	Sigma	Sigma	A9434-500G		
+129	ammonium molybdate			(NH4)6Mo7O24*4H20	12054-85-2	1235.86						5g	RT	Acros	Fisher	AC423310050		
+130	Ammonium sulfate		reagent	(NH4)2SO4	7783-20-2	132.14	132.14	solid	H2O	Cool location	NA	500 g	RT	Sigma	Sigma	A4418-500g		
+131	anhydrotetracycline				13803-65-1	462.88						100 mg		Sigma	Sigma	37919		
+132	Arabinose (l(+))	ara	Sugar	C5H10O5	5328-37-0	150.13	150.13	powder	NA		NA	25 g	RT	Sigma	Sigma	A3256-25G		
+133	Aspartic acid			HO2CCH2CH(NH2)CO2H	56-84-8	 133.10						100g	RT	Acros	Fisher	AC105041000		
+134	Biotin       	Vitamin H, D-Biotin, Bios II, Vitamin B7, Coenzyme R	vitamin	C10H16N2O3S	58085-5	244.31	244.31	powder	NA	2-8C	NA	500 mg	4°C (5)	Sigma	Sigma	B4639-500MG		
+135	boric acid			 H3BO3	10043-35-3	61.83						500g	RT	Sigma	Sigma	B6768-500G		
+136	Calcium chloride dihydrate		reagent	CaCl2	10035-04-8	147.01	147.0146	crystalline	H2O	Well-ventilated	irritant	250 g	RT	Sigma	Sigma	C3306-250G		
+137	Calcium pantothenate	"vitamin B5, D-pantothenic acid
+hemicalcium salt"	vitamin	HOCH2C(CH3)2CH(OH)CONHCH2CH2CO2 ·1/2Ca	137-08-6	238.27	476.5	crystalline	NA	Well-ventilated, 2-8C	NA	5 g	4°C (D2)	Sigma	Sigma	21210-5G-F		
+138	Cellobiose			C12H22O11 	528-50-7		342.3			RT		25 g			Sigma	C7252-25G		
+139	Citric acid		acid	HOC(COOH)(CH2COOH)2	77-92-9	192.12	192.12	solid	H2O (1330g/L)	30-5C	irritant	500 g	RT	Sigma	Sigma	791725-500G		
+140	Cyanocobalamin (Vitamin B12)	vitamin B12		C63H88CoN14O14P	68-19-9	1355.37						100mg	4°C (D2)	Sigma	Sigma	V6629-100MG		
+141	Diaminopimelic acid	DAP	acid	HOOCCH(NH2)+B140+E142+B140+E142+B+E142	583-93-7	190.2	372.23	solid	H2O: 11g/100mL	well-ventilated	irritant	5 g	RT, chem cabinet, plate additives	Sigma	Sigma	33240-5G		
+142	DL-dithiothreitol (DTT)	DTT		HSCH2CH(OH)CH(OH)CH2SH 	3483-12-3	154.25	154.3							Sigma	Sigma	D9779		
+143	EDTA (disodium)	EDTA	chelating agent	C10H14N2Na2O8 · 2H2O	6381-92-6	372.24	373.24	powder	H2O	RT	NA	250 g	RT	Sigma	Sigma	E5134-250G		
+144	Folic acid	vitamin M		C19H19N7O6	59-30-3	441.4						5g	RT	Sigma	Sigma	F8758-5G		
+145	Fructose 		sugar	C6H12O6	57-48-7		180.16	solid		RT		500 g			Sigma	F0127-500G		
+146	Glucose (d(+))	dextrose, glucose	sugar	C6H12O6	50-99-7	180.16	180.15588	powder	H20 completely	well-ventilated	NA	250 g	RT	Sigma	Sigma	G7528-250G		
+147	Glutamic acid			C5H9NO4	56-86-0	203.23						100g	RT	Acros	Fisher	AC156211000		
+148	Glycine	gly	amino acid	NH2CH2COOH	56-40-6	75.07	75.05	white solid	H2O	Cool location	NA	500 g	RT	Sigma	Sigma	G7126-500G		
+149	Hydrogen peroxide			H2O2	7722-84-1		34.014	liquid	H2O	4°C		100 ml			Sigma	H1009-100ML		
+150	Iron sulfate        	Ferrous sulfate heptahydrate 	reagent	FeSO4.7H20 	7782-63-0	278.01	399.8778	solid	H2O (400g/L)	Dry, 15-25C, no light	toxic, irritant	250 g	RT	Sigma	Sigma	F7002-250G		
+151	iron(III) (ferric) citrate	ferric citrate monohydrate		Fe(C6H5O7)	334024-15-6	262.959						50g	RT	Alpha aesar	Fisher	AAA1027618		
+152	Isopropyl β- d-1-thiogalactopyranoside (IPTG) 			C9H18O5S	367-93-1	238.3						10g	4°C (6)	Sigma	Sigma	I6758		
+153	Lipoic acid (Thioctic acid)			C8H14O2S2 	1077-28-7							1g	RT	Sigma		T1395-1G		
+154	Magnesium chloride hexahydrate			MgCl2 · 6H2O	7791-18-6	 203.30	203.3	solid	H2O, 545.7g/L	Dry, 2-25C	NA	500 g	RT	Sigma	Sigma	M2670-500G		
+155	Magnesium sulfate heptahydrate		reagent	MgSO4 · 7H2O	10034-99-8	246.47	246.48	solid	H2O, 710g/L	Cool location	NA	250 g	RT	Sigma	Sigma	63138-250G		
+156	Manganese chloride tetrahydrate		reagent	MnCl2	13446-34-9	197.9	197.91	pink crystals	H20 completely	Cool location	toxic	100 g	RT	Sigma	Sigma	M3634-100G		
+157	manganese(II) sulfate			MnSO4 · H2O	10034-96-5	169.02						100g	RT	Sigma		M7634-100G		
+158	Nicotinic acid (vit B3)	vitamin B3		C6H5NO2	59-67-6							5g	RT	Sigma		N4126-5G		
+159	Nitrilotriacetic acid			 N(CH2COOH)3	139-13-9	191.14						100g	RT	Fisher/Alpha Aesar		AAA1193622		
+160	paraquat dichloride hydrate			C12H14Cl2N2 · xH2O	75365-73-0		257.16	powder	H2O (62 g/mL)	2-8°C		5 mg	4°C (6)		Sigma	36541-100MG		
+161	Phosphate buffered saline, 10X			Cl2H2K2Na3O9P2	7647-14-5		411.04	liquid	miscible	RT	NA	500 ml	RT, chem cabinet, BUFFERS (top right shelf)	Fisher	Fisher	BP399-500		
+162	Polyethylene glycol 8000 (PEG8000)	PEG 8000		H(OCH2CH2)nOH	25322-68-3	7000-9000	18.02	viscous	NA	"Dry, well-ventilated, ""store under nitrogen"""	NA	250 g	RT, chem cabinet	Sigma	Sigma	89510		
+163	Potassium chloride		reagent	KCl	7447-40-7	74.55	74.5513	solid	partially	Cool location	NA	500 g	RT	Sigma	Sigma	P9333-500G		
+164	Potassium hydroxide			KOH	1310-58-3							500g	corrosives-right	Sigma		221473-500G		
+165	Potassium nitrate			KNO3	7757-79-1	101.1	101.1	solid	32g/100ml H2O	Cool location	oxidizing solid, toxic	500 g	RT, chem cabinet	Sigma	Sigma	P8291-500G		
+166	Potassium phosphate (dibasic)			K2HPO4	7758-11-4	174.2	174.2	granules	H2O	Dry, well-ventilated	NA	500 g	RT	Sigma	Sigma	795496-500G		
+167	Potassium phosphate (monobasic)			KH2PO4	7778-77-0	136.1	136.09	crystalline	H2O, 208g/L	Dry, well-ventilated; TRGS 510 (non-combustible solids)	NA	500 g	RT	Sigma	Sigma	P9791-50G		
+168	Pyridoxine hydrochloride (vit B6)	vitamin B6		C8H11NO3 · HCl	58-56-0							10g	RT	Sigma		P6280-10G		
+169	Riboflavin (vit B2)	vitamin B2		C17H20N4O6	83-88-5							25g	RT	Sigma		R9504-25G		
+170	Sea salts				NA							500g	RT	Millipore	Sigma	S9883		
+171	soda lime (with indicator)				8006-28-8			pellets	insoluble in H2O	Dry, well-ventilated	Severe irritant and toxic	1KG	corrosives-right	Sigma	Sigma	72073-1KG		
+172	Sodium acetate		reagent	CH3COONa 	127-09-3	82.03	82.03	solid	1190 at 20°C	Cool location	NA	250 g	RT	Sigma	Sigma	S2889-250G		
+173	sodium bicarbonate	baking soda		NaHCO3	144-55-8	84.006						500g	RT	Fisher	Fisher	BP328-500		
+174	sodium carbonate	soda ash, washing soda		Na2CO3	497-19-8	105.988						250g	RT	Acros	Fisher	AC424285000		
+175	Sodium chloride	table salt		NaCl	7647-14-5	58.44	58.44	powder	H2O	Cool location	NA	500 g	RT	Fisher	stockroom	S271-500		
+176	Sodium citrate tribasic dihydrate	Citric acid trisodium salt dihydrate,  Trisodium citrate dihydrate		HOC(COONa)(CH2COONa)2 · 2H2O 	6132-04-3	294.1	294.1	powder	72g/100ml	Protect from moisture	NA	500 g	RT	Sigma	Sigma	C8532-500G		
+177	Sodium deoxycholate (bile salts)	bile salts		C24H39NaO4 	302-95-4	414.55	415.55	powder	H2O (>50 mg/mL)	RT		25g	RT	Sigma	Sigma	D6750-25G		
+178	Sodium dodecyl sulfate	SDS		CH3(CH2)11OSO3Na 	151-21-3	288.38	288.38	powder	H2O (>130g/L)	Dry, 15-25C	Severe irritant and toxic	250 g	flammable cabinet	Sigma	Sigma	L6026-250G		
+179	Sodium hydroxide	soda lye		NaOH	1310-73-2	39.997	40	solid	soluble	Cool location	base	500g	corrosives-right	Fisher	stockroom	S318-500		
+180	sodium molybdate			Na2MoO4-2H2O	10102-40-6	241.95						5g	RT	Acros	Fisher	AC206370050		
+181	sodium phosphate dibasic	Disodium phosphate		Na2HP04*12H2O	7558-79-4	141.96						500g	RT	Sigma	Sigma	S5136-500G		
+182	sodium succinate			C4H4Na2O4	6106-21-4								RT					
+183	Succinic acid	succinate		HOOCCH2CH2COOH	110-15-6	118.09						500g	RT	Fisher	Fisher	BP336-500		
+184	Sucrose		sugar	C12H22O11 	57-50-1	342.3	342.1474	solid	H2O	Cool location	NA	1 KG	RT	Sigma	Sigma	S7903-1KG		
+185	Thiamine HCl  (vit B1)	vitamin B1		C12H17ClN4OS · HCl	67-03-8	337.27						5g	RT	Sigma	Sigma	T4625-5G		
+186	thymol			C10H14O	89-83-8		150.22	powder	EtOH (50 mg/mL)	RT		100g			Sigma	T0501-100G		
+187	TPEN			C26H28N6	16858-02-9		424.54	powder	EtOH (>5 mg/mL)			50mg			Sigma	P4413-50MG	yes	
+188	Trimethyloctadecylammonium bromide	C18TAB		CH3(CH2)17N(Br)(CH3)3 	1120-02-1	392.5	391.5	powder	H2O (0.095 mg/mL)	dessicated		10g	RT	Sigma	Sigma	359246-10G		
+189	Tris buffer	Trizma base		NH2C(CH2OH)3	77-86-1	121.14	121.14	liquid	H2O	Cool location	NA	1000 g	RT, chem cabinet, BUFFERS (top right shelf)	Sigma	Sigma	93362-1KG		don't order this product # again, came in giant glass bottle
+190	Triton X-100			t-Oct-C6H4-(OCH2CH2)xOH, x= 9-10	9002-93-1			liquid	H2O	RT	toxic/irritant, combustible	100 ml	corrosives cabinet-left 	Sigma	Sigma	T8787-100ML		
+191	X-gal (5-Bromo-4-chloro-3-indolyl B-D Galactopyranoside)	X-gal		C14H15BrClNO6	7240-90-6	408.63	408.63	powder	H2O	-20°C	NA	1 g	4°C (D2)	Sigma	Sigma	B4252		
+192	Xylose (d(+))	xyl		C5H10O5	58-86-6	150.13	150.13	crystalline	H2O (150.13g/L)	RT	NA	500 g	RT	Sigma	Sigma	X1500-500G		
+193	zinc sulfate			ZnSO4 · 7H2O	7446-20-0	287.56	161.4					100g	RT	Sigma	Sigma	Z0251-100G		
+194	N-Acetyl-D-glucosamine	NAG, D-GlcNAc		C8H15NO6	7512-17-6			powder		-20°C		25g	-30 freezer (3)	Sigma	Sigma	A3286-25G		
+195	1000X Trace Metals Mixture	Trace elements			NA			liquid		RT		1 L	RT	Teknova	Teknova	T1001		
+196	2-aminopurine	2-AP		C5H5N5 	452-06-2		135.13	powder				250 mg	4°C (D2)	Sigma	Sigma	A3509-250MG		
+197	DiOC2(3)	3,3'-Diethyloxacarbocyanine Iodide		C21H21IN2O2	905-96-4		460.13					100 mg	4°C (D2)	Thermo-Fisher	Invitrogen	D14730		
+198	hydroxyurea	HU, Hydroxycarbamide		NH2CONHOH	127-07-1		76.05	liquid (stock)		-20°C			-30 freezer (1)	unknown	other lab			stock is 80 mg/mL; 11 mg/mL
+199	Carbonyl cyanide 3-chlorophenylhydrazone	CCCP	chemical	C9H5ClN4	555-60-2		204.62	powder	DMSO (100 mM)	-20°C	toxic/irritant	200 mg	-30 freezer (3)	Sigma	Sigma	C2759-100MG		
+200	X-gal (5-Bromo-4-chloro-3-indolyl B-D Galactopyranoside)	X-gal		C14H15BrClNO6	7240-90-6	408.63	408.63	powder	H2O	-20°C	NA	1 g	-30 freezer (2)	Sigma	Sigma	B4252-1G		
+201	Amoxicillin Trihydrate		antibiotic	C16H25N3O8S	61336-70-7			powder	25 mg/mL (DMSO)	2-8°C, dessicated		25 g	4°C (D3)	TCI	Fisher	A2099-25G		hygroscopic
+202	Azithromycin Dihydrate		antibiotic		117772-70-0			powder		2-8°C		5 g	4°C (7)	TCI	Fisher	A2076-5G		
+203	Ciprofloxacin Hydrochloride Monohydrate		antibiotic		86393-32-0			powder	35 mg/mL (water)	2-8°C		25 g	4°C (7)	TCI	Fisher	C2227-25G		
+204	Minocycline		antibiotic	C23H27N3O7 · HCl	13614-98-7		493.94	powder		2-8°C, dessicated		100 mg	4°C (D3)	Sigma	Sigma	M9511-100MG	yes	
+205	Sodium phosphate monobasic dihydrate			NaH2PO4*2H2O	13472-35-1		156.01			RT, dry	NA							
+206	L-tryptophan			C11H12N2O2	73-22-3		204.23			dry, well ventilated 	NA							
+207	Drierite				NA					dry, well ventilated 	carcinogen, irritant							
+208	Potassium sulfate				7778-80-5					dry, well ventilated 	NA							
+209	L-glutamic acid and potassium salt monohydrate			C5H8KNO4 · H2O	6382-01-0		203.23			dry, well ventilated 	NA							
+210	L-glutamine			C5H10N2O3	56-85-9		146.14			dry, well ventilated 	NA							
+211	Hexadecyltrimethylammonium bromide			C19H42N.Br	57-09-0		364.45			combustible 	toxic, hazardous							
+212	L-aspartic acid and potassium salt			C4H6KNO4	1115-63-5		171.19			dry, well ventilated 	NA							
+213	D-alanine			C3H7NO2	338-69-2		89.09			dry, well ventilated 	NA							
+214	Phosphoric acid			H3PO4	7664-38-2		98			RT	corrosive							
+215	Mitomycin C			C15H18N4O5	50-07-7		334.33	powder	40 mg/mL in H2O	2-8°C		5 g	4°C (7)	Sigma	Sigma	M0440-5G	yes	
+216	4',6-Diamidino-2-Phenylindole, Dihydrochloride (DAPI)	DAPI	dye	C16H17Cl2N5	28718-90-3		320.35			-25 to 30°C, protect from light 	NA		4°C (#D4)	ThermoFisher	ThermoFisher	D1306		nuclear and chromosome stain
+217	FM™ 4-64FX		dye	C35H45N4O6F9			788.75			-25 to 30°C, protect from light 	NA	10x100 ug	4°C (#D4)	ThermoFisher	ThermoFisher	F34653		membrane dye, fixable analog of FM 4-64
+218	Protodioscin		Saponin	C51H84O22	55056-80-9		1049.2	powder		2-8°C, dessicated		10 mg	4°C (D3)	Sigma	Sigma	G0299-10MG		
+219	Cholesterol			C27H46O	57-88-5		386.65	powder	water: soluble 0.00003 g/L at 20 °C	-20C		5 g	-30 freezer (3)	Sigma	Sigma	C8667-5G		
+220	Non-idet P-40	Igepal CA-630, Non-idet P-40 substitute			9036-19-5					RT		2 mL	RT, chem cabinet, upper left rack	US biological	US biological	N3500		Gift from Landick lab. May develop turbidity or sediment during storage. A clear liquid can be obtained on heating to 40°C.
+221	Triton X-100		detergent		"9002-93-1"					RT		2 mL	RT, chem cabinet, upper left rack	Sigma	Sigma	X100		Gift from Landick lab
+222	Tween 20	Polysorbate 20	detergent		9005-64-5					RT		2 mL	RT, chem cabinet, upper left rack	Sigma	Sigma	W291501		Gift from Landick lab
+223	Surfactin			C53H93N7O13	24730-31-2		1036.34	powder	ethanol: soluble 10 mg/mL	2-8°C, dry		10 mg	4°C (D3)	Sigma	Sigma	S3523-10MG		
+224	Coomassie Blue G250		dye		573-58-0		696.66	powder		RT		5g	RT, chem cabinet, upper left rack	TCI	Fisher	y		
+225	Congo Red		dye		6104-58-1			powder		RT		25g	RT, chem cabinet, upper left rack	Sigma	Sigma	C6767		
+226	LL-37		peptide	LLG DFF RKS KEK IGK EFK RIV QRI KDF LRN LVP RTES -OH				lyophilised powder		-20		1 mg	-30, box #3	Anaspec	Anaspec	AS-61302		
