@@ -3,7 +3,7 @@ library('pacman')
 p_load(
   data.table, 
   pheatmap,
-  factoextra  )
+  factoextra)
 
 
 #https://pubmed.ncbi.nlm.nih.gov/27355376/

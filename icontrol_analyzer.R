@@ -108,3 +108,4 @@ Experiments <- Experiments[, .SD, .SDcols = !patterns("^i.")]
 
 dbWriteTable(chem_gen_db, "Experiments", Chemical_Data, append = TRUE)
 
+dbDisconnect(chem_gen_db)
