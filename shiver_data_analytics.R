@@ -1,14 +1,13 @@
 library('pacman')
 
 p_load(
-  data.table
-  , pheatmap
-  , factoextra
-  )
+  data.table, 
+  pheatmap,
+  factoextra  )
 
 
 #https://pubmed.ncbi.nlm.nih.gov/27355376/
-shiver <- fread ("shiver.tsv.gz")
+shiver <- fread("shiver.tsv.gz")
 
 ################################################################################
 # how many groups for k-means? 

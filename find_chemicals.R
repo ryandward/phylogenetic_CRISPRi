@@ -19,8 +19,25 @@ OMP_OMLP[, Condition := tolower(Condition)]
 
 OMP_OMLP <- chem_gen[OMP_OMLP, on = .(`Antibiotic/Condition` == Condition)]
 
-current_chemicals <- fread('current_chemicals.tsv')
-current_chemicals[, Name := tolower(Name)]
-current_chemicals[, `alternative name` := tolower(Name)]
+setnames(
+  OMP_OMLP,
+  c("Dose", "Antibiotic/Condition"),
+  c("Shriver_Dose", "Common_Name"))
 
-OMP_OMLP <- current_chemicals[, .(`cJMP###`, Name, `location (container)`, form)][OMP_OMLP[!is.na(UID)], on = .( Name == `Antibiotic/Condition`)]
+OMP_OMLP[, Batch := NULL]
+
+fwrite(
+  OMP_OMLP, 
+  'shriver_omp_omlp.tsv',
+  sep = "\t")
+
+# current_chemicals <- fread('current_chemicals.tsv')
+# current_chemicals[, Name := tolower(Name)]
+# current_chemicals[, `alternative name` := tolower(Name)]
+# 
+# OMP_OMLP <- current_chemicals[, .(`cJMP###`, Name, `location (container)`, form)][OMP_OMLP[!is.na(UID)], on = .( Name == `Antibiotic/Condition`)]
+# 
+# setnames(
+#   OMP_OMLP,
+#   c("Dose", "location (container)", "Name"),
+#   c("Shiver_Dose", "Location", "Common_Name"))
