@@ -18,20 +18,12 @@ Chemicals <- c(
   "urea")
 
 Doses <- c(
-  NA,
+  0,
   1, 
   30, 
   1, 
   30, 
   750)
-
-Units <- c(
-  NA,
-  "%w/v",
-  "ng/mL",
-  "mM",
-  "ug/mL",
-  "mM")
 
 source("icontrol_analyzer.R")
 

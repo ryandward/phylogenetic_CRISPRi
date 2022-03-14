@@ -20,10 +20,7 @@ Chemical_key <- data.table(
 Dose_key <- data.table(
   Dose = factor(Doses, levels = unique(Doses)))
 
-Unit_key <- data.table(
-  Unit = factor(Units, levels = unique(Units)))
-
-Chemical_key <- cbind(Chemical_key, Dose_key, Unit_key)
+Chemical_key <- cbind(Chemical_key, Dose_key)
 
 Well_locations <- 
   CJ(
@@ -34,8 +31,8 @@ Well_locations <-
 layout <- CJ(
   Organism = Organism_key$Organism, 
   Chemical = factor(
-    Chemical_key[, paste(Chemical, Dose, Unit, sep = "_")],
-    levels = Chemical_key[, paste(Chemical, Dose, Unit, sep = "_")])
+    Chemical_key[, paste(Chemical, Dose, sep = ":")],
+    levels = Chemical_key[, paste(Chemical, Dose, sep = ":")])
   , 
   Induced = c(TRUE, FALSE), 
   Rep = c(1:4))
@@ -64,17 +61,17 @@ Chemical_Data <-
 
 Chemical_Data <- layout[Chemical_Data, on = .(Well)]
 
-Chemical_Data[, c("Chemical", "Dose", "Unit") := tstrsplit(Chemical, "_")]
+Chemical_Data[, c("Chemical", "Dose") := tstrsplit(Chemical, ":")]
 
 Chemical_Data[, Date := today]
 
-Chemical_Data <- Chemical_Data[, .(Date, Well, Organism, Chemical, Dose, Unit, Induced, Rep, Time, OD600)]
+Chemical_Data <- Chemical_Data[, .(Date, Well, Organism, Chemical, Dose, Induced, Rep, Time, OD600)]
 
 Chemical_Data[, Time := as.numeric(as.character(Time))]
 
 Chemical_Data[, Instrument := "icontrol"]
 
-Chemical_Data <- Ryans_Chemicals[, .(Chemical, cJMP)][Chemical_Data, on = .(Chemical == Chemical)]
+Chemical_Data <- Ryans_Chemicals[, .(Chemical, cJMP, Unit)][Chemical_Data, on = .(Chemical == Chemical)]
 
 Chemical_Data[, OD600 := as.numeric(OD600)]
 

@@ -18,19 +18,11 @@ Chemicals <- c(
   "vancomycin")
 
 Doses <- c(
-  NA,
+  0,
   4, 
   120, 
   120, 
   100, 
   50)
-
-Units <- c(
-  NA,
-  "ug/mL",
-  "ng/mL",
-  "ug/mL",
-  "mM",
-  "ug/mL")
 
 source("icontrol_analyzer.R")
