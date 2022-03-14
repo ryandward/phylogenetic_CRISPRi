@@ -1,0 +1,22 @@
+UID	Common_Name	Screen Concentration	Stock Concentration	Solvent	Notes	Shriver_Dose
+	10c					-
+ASCC002	a22	5 µg/ml	10 mg/mL	DMSO	""	5 ug/mL
+	d,l-serine hydroxamate					600 ug/mL
+ASBC020	edta	1 mM	1M (292.24 mg/mL)	Water	""	1 mM
+ASBC021	egta	1 mM	100 mg/mL	1N NaOH	""	1 mM
+	m9min 7-azatryptophan					5 ug/mL
+ASCC052	ampicillin	4 µg/ml	100mg/ml	Water	""	4 ug/mL
+BSUCC	deoxycholate	2% w/v	200 mg/mL	Water	""	1% (w/v)
+	gliotoxin-a					10 ug/mL
+	gliotoxin-b					10 ug/mL
+ASCC031	mecillinam	120 ng/mL	0.3mg/ml	Water	""	30 ng/mL
+ASBC032	nickel(ii)	1 mM	0.1M (23.8 mg/mL)	Water	""	1 mM
+ASCC037	novobiocin	12 µg/ml	10mg/ml	Water	""	30 ug/mL
+	ph6					-
+ASFC013	pyocyanin	10 µg/ml	5 mg/ml	DMSO	""	10 ug/mL
+ASBC033	rifampicin	2 µg/ml	4 mg/ml	MetOH	""	2 ug/mL
+ASBC033	rifampicin	2 µg/ml	4 mg/ml	MetOH	""	4 ug/mL
+ASCC044	spiramycin	20 µg/ml	10mg/ml	MetOH	""	20 ug/mL
+ASBC038	tetracycline	1 µg/ml	10 mg/ml	70% EtOH	""	500 ng/mL
+ASBC040	urea	750mM	5M (300.3 mg/mL)	water	""	750 mM
+ASCC050	vancomycin	50 µg/ml	10mg/ml	Water	""	50 ug/mL
