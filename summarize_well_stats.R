@@ -58,15 +58,21 @@ dbDisconnect(chem_gen_db)
 
 this.Chemical = "mecillinam"
 
-zz <- ggplot(
-  Fitted_Experiments[
-    Date == '2022-03-15', .(OD600_fit),
-    by = .(Hour, Dose, Organism, Chemical, Induced)],
-  aes(x = Hour, y = OD600_fit, color = Chemical, fill = Chemical)) +
-  geom_smooth(
-    method = "gam") +
-  scale_colour_brewer(palette = "Set1") +
-  scale_fill_brewer(palette = "Set1") +
-  ggtitle('2022-03-15')
 
-plot(zz)
+for (i in Fitted_Experiments[, unique(Date)]) {
+  
+  this.Fitted_Plot <- 
+    ggplot(
+      Fitted_Experiments[
+        Date == i, 
+        .(OD600_fit, Chemical = paste(Chemical, Dose)),
+        by = .(Hour, Organism, Induced)],
+      aes(x = Hour, y = OD600_fit, color = Chemical, fill = Chemical)) +
+    geom_smooth(
+      method = "gam") +
+    scale_colour_brewer(palette = "Set1") +
+    scale_fill_brewer(palette = "Set1") +
+    ggtitle(paste("Growth Curves on", i))
+  
+  plot(this.Fitted_Plot)
+}
