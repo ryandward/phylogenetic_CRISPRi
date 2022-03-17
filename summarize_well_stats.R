@@ -4,7 +4,8 @@ p_load(
   data.table, 
   RSQLite, 
   RColorBrewer,
-  growthcurver)
+  growthcurver,
+  ggplot2)
 
 chem_gen_db <- dbConnect(RSQLite::SQLite(), "chem_gen.db")
 
@@ -13,7 +14,7 @@ Experiments.pk <- c("Date", "Well", "Time")
 
 Experiments[, Organism := factor(Organism)]
 
-Well_Stats <- unique(Experiments[, .(Date, Well, cJMP, Chemical, Dose)])
+Well_Stats <- unique(Experiments[, .(Date, Well, cJMP, Chemical, Dose, Instrument, Rep)])
 Well_Stats.pk <- c("Date", "Well")
 
 Well_Stats <- Well_Stats[
@@ -42,21 +43,32 @@ Fitted_Experiments <-
   Well_Stats[
     , .(
       Hour = c(1:15), 
-      OD600_fit = k  /  (  1 + ( (k - n0) / n0 ) * exp(-r * c(1:15))  ) ), 
+      OD600_fit = k  / ( 1 + ( ( k - n0 ) / n0 ) * exp( -r * c(1:15) ) ) ), 
     by = Well_Stats.pk]
 
+
 Fitted_Experiments <- 
-  unique(Experiments[, .(Chemical, Dose, cJMP, Organism, Induced), by = Well_Stats.pk])[Fitted_Experiments, on = Well_Stats.pk]
+  unique(Experiments[, .(Chemical, Dose, cJMP, Organism, Induced, Instrument, Rep),
+                     by = Well_Stats.pk])[Fitted_Experiments, on = Well_Stats.pk]
+
+Fitted_Experiments[
+  is.na(OD600_fit), 
+  OD600_fit := 0]
 
 Fitted_Experiments[, Dose := factor(Dose)]
 Fitted_Experiments[, Induced := factor(Induced)]
 
-dbWriteTable(chem_gen_db, "Well_Stats", Well_Stats, append = TRUE)
-dbWriteTable(chem_gen_db, "Fitted_Experiments", Fitted_Experiments, append = TRUE)
+dbWriteTable(chem_gen_db, 
+             "Well_Stats", 
+             Well_Stats, 
+             overwrite = TRUE)
+
+dbWriteTable(chem_gen_db, 
+             "Fitted_Experiments", 
+             Fitted_Experiments, 
+             overwrite = TRUE)
+
 dbDisconnect(chem_gen_db)
-
-
-this.Chemical = "mecillinam"
 
 
 for (i in Fitted_Experiments[, unique(Date)]) {
@@ -65,9 +77,12 @@ for (i in Fitted_Experiments[, unique(Date)]) {
     ggplot(
       Fitted_Experiments[
         Date == i, 
-        .(OD600_fit, Chemical = paste(Chemical, Dose)),
-        by = .(Hour, Organism, Induced)],
-      aes(x = Hour, y = OD600_fit, color = Chemical, fill = Chemical)) +
+        .(OD600_fit, Chemical = paste(Chemical, Dose)), by = .(Hour, Organism, Induced)],
+      aes(
+        x = Hour, 
+        y = OD600_fit, 
+        color = Chemical, 
+        fill = Chemical)) +
     geom_smooth(
       method = "gam") +
     scale_colour_brewer(palette = "Set1") +
@@ -75,4 +90,5 @@ for (i in Fitted_Experiments[, unique(Date)]) {
     ggtitle(paste("Growth Curves on", i))
   
   plot(this.Fitted_Plot)
+  
 }
