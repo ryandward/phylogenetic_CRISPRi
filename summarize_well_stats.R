@@ -3,7 +3,8 @@ library(pacman)
 p_load(
   data.table, 
   RSQLite, 
-  RColorBrewer)
+  RColorBrewer,
+  growthcurver)
 
 chem_gen_db <- dbConnect(RSQLite::SQLite(), "chem_gen.db")
 
@@ -35,6 +36,8 @@ Well_Stats <- Well_Stats[
   Experiments[, .(r = SummarizeGrowth(Time/60/60, OD600)$vals$r), 
               by = Well_Stats.pk], on = Well_Stats.pk]
 
+
+
 Fitted_Experiments <- 
   Well_Stats[
     , .(
@@ -47,6 +50,11 @@ Fitted_Experiments <-
 
 Fitted_Experiments[, Dose := factor(Dose)]
 Fitted_Experiments[, Induced := factor(Induced)]
+
+dbWriteTable(chem_gen_db, "Well_Stats", Well_Stats, append = TRUE)
+dbWriteTable(chem_gen_db, "Fitted_Experiments", Fitted_Experiments, append = TRUE)
+dbDisconnect(chem_gen_db)
+
 
 this.Chemical = "mecillinam"
 
