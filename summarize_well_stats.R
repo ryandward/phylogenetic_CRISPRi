@@ -10,11 +10,15 @@ p_load(
 chem_gen_db <- dbConnect(RSQLite::SQLite(), "chem_gen.db")
 
 Experiments <- data.table(dbReadTable(chem_gen_db, "Experiments"))
+
+Ryan_Strains <- data.table(dbReadTable(chem_gen_db, "Ryan_Strains"))
+
 Experiments.pk <- c("Date", "Well", "Time")
 
 Experiments[, Organism := factor(Organism)]
 
-Well_Stats <- unique(Experiments[, .(Date, Well, cJMP, Chemical, Dose, Instrument, Rep)])
+Well_Stats <- unique(Experiments[, .(Date, Well, cJMP, Chemical, Dose, Instrument, Rep, Media, Induced, Organism)])
+
 Well_Stats.pk <- c("Date", "Well")
 
 Well_Stats <- Well_Stats[
@@ -48,15 +52,13 @@ Fitted_Experiments <-
 
 
 Fitted_Experiments <- 
-  unique(Experiments[, .(Chemical, Dose, cJMP, Organism, Induced, Instrument, Rep),
+  unique(Experiments[, .(Chemical, Dose, cJMP, Organism, Induced, Instrument, Rep, Media),
                      by = Well_Stats.pk])[Fitted_Experiments, on = Well_Stats.pk]
 
 Fitted_Experiments[
   is.na(OD600_fit), 
   OD600_fit := 0]
 
-Fitted_Experiments[, Dose := factor(Dose)]
-Fitted_Experiments[, Induced := factor(Induced)]
 
 dbWriteTable(chem_gen_db, 
              "Well_Stats", 

@@ -21,12 +21,12 @@ Organisms <- c(
 
 
 
-Chemicals <- c(
+Medias <- c(
   "LB",
   "EZ")
 
-Chemicals <-
-  rep(Chemicals, each = 6)
+Medias <-
+  rep(Medias, each = 6)
 
 
 
@@ -60,8 +60,8 @@ Reps <-
 Organism_key <- data.table(
   Organism = factor(Organisms, levels = unique(Organisms)))
 
-Chemical_key <- data.table(
-  Chemical = factor(Chemicals, levels = unique(Chemicals)))
+Media_key <- data.table(
+  Media = factor(Medias, levels = unique(Medias)))
 
 Dose_key <- data.table(
   Dose = factor(Doses, levels = unique(Doses)))
@@ -71,7 +71,7 @@ Induced_key <- data.table(
 
 Rep_key <- Reps
 
-Chemical_key <- cbind(Chemical_key, Dose_key)
+Media_key <- cbind(Media_key, Dose_key)
 
 ################################################################################
 
@@ -82,7 +82,7 @@ Well_locations <-
 
 Organism_key[, Well_row := c(1:12)]
 
-Chemical_key[, Well_row := c(1:12)]
+Media_key[, Well_row := c(1:12)]
 
 Induced_key[, Well_col := toupper(letters[1:8])]
 
@@ -90,7 +90,7 @@ Rep_key[, Well_col := rep(toupper(letters[1:8]), 12)]
 
 layout <-
   Induced_key[
-    Chemical_key[
+    Media_key[
       Organism_key[
         Rep_key[
           Well_locations, on = .(Well_row, Well_col)], 
@@ -141,12 +141,13 @@ Chemical_Data <- layout[Chemical_Data, on = .(Well)]
 
 Chemical_Data[, Date := today]
 
-Chemical_Data <- Chemical_Data[, .(Date, Well, Organism, Chemical, Dose, Induced, Rep, Time, OD600)]
+Chemical_Data <- Chemical_Data[, .(Date, Well, Organism, Media, Dose, Induced, Rep, Time, OD600)]
 
 Chemical_Data[, Time := as.numeric(as.character(Time))]
 
 Chemical_Data[, Instrument := "sunrise"]
 
+Chemical_Data[, Chemical := "none"]
 
 ################################################################################
 
