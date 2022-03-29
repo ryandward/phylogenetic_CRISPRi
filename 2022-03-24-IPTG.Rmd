@@ -1,0 +1,32 @@
+---
+title: "Effect of IPTG Induction in 3 organism libraries"
+output: html_notebook
+---
+```{r}
+chem_gen_db <- dbConnect(RSQLite::SQLite(), "chem_gen.db")
+Experiments <- data.table(dbReadTable(chem_gen_db, "Experiments"))
+Ryan_Strains <- data.table(dbReadTable(chem_gen_db, "Ryan_Strains"))
+dbDisconnect(chem_gen_db)
+
+today <- "2022-03-24"
+
+Experiments <- Ryan_Strains[Experiments[Date == today], on = .(Organism)]
+
+for (i in unique(Experiments[!is.na(Species), Species])) {
+  this.plot <- 
+    ggplot(
+      Experiments[
+        Species == i, 
+        .(OD600,
+          IPTG_mM = paste(Induced)), 
+        by = .(Time)],
+      aes(x = Time, y = OD600, color = IPTG_mM, fill = IPTG_mM)) +
+    ylim(0, max(Experiments$OD600)) +
+    geom_smooth(formula = y ~ s(x, bs = "cs"), method = "gam") +
+    scale_colour_brewer(palette = "Set1") +
+    scale_fill_brewer(palette = "Set1") +
+    ggtitle(paste(i, "growth curves on", today))
+  
+  plot(this.plot)
+}
+```
