@@ -30,3 +30,31 @@ for (i in unique(Experiments[!is.na(Species), Species])) {
   plot(this.plot)
 }
 ```
+```{r}
+chem_gen_db <- dbConnect(RSQLite::SQLite(), "../chem_gen.db")
+Fitted_Experiments <- data.table(dbReadTable(chem_gen_db, "Fitted_Experiments"))
+Ryan_Strains <- data.table(dbReadTable(chem_gen_db, "Ryan_Strains"))
+dbDisconnect(chem_gen_db)
+
+today <- "2022-03-24"
+
+Fitted_Experiments <- Ryan_Strains[Fitted_Experiments[Date == today], on = .(Organism)]
+
+for (i in unique(Experiments[!is.na(Species), Species])) {
+  this.plot <- 
+    ggplot(
+      Fitted_Experiments[
+        Species == i, 
+        .(OD600_fit,
+          IPTG_mM = paste(Induced)), 
+        by = .(Hour)],
+      aes(x = Hour, y = OD600_fit, color = IPTG_mM, fill = IPTG_mM)) +
+    ylim(0, max(Fitted_Experiments$OD600)) +
+    geom_smooth(formula = y ~ s(x, bs = "cs"), method = "gam") +
+    scale_colour_brewer(palette = "Set1") +
+    scale_fill_brewer(palette = "Set1") +
+    ggtitle(paste(i, "FITTED growth curves on", today))
+  
+  plot(this.plot)
+}
+```
