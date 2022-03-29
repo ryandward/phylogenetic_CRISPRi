@@ -3,7 +3,7 @@ title: "Effect of IPTG Induction in 3 organism libraries"
 output: html_notebook
 ---
 ```{r}
-chem_gen_db <- dbConnect(RSQLite::SQLite(), "chem_gen.db")
+chem_gen_db <- dbConnect(RSQLite::SQLite(), "../chem_gen.db")
 Experiments <- data.table(dbReadTable(chem_gen_db, "Experiments"))
 Ryan_Strains <- data.table(dbReadTable(chem_gen_db, "Ryan_Strains"))
 dbDisconnect(chem_gen_db)
