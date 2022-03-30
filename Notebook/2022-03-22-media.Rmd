@@ -1,5 +1,5 @@
 ---
-title: "Effect of IPTG Induction in 3 organism libraries"
+title: "Effect of Media in E. cloacae"
 output: html_notebook
 ---
 ```{r}
@@ -8,7 +8,7 @@ Experiments <- data.table(dbReadTable(chem_gen_db, "Experiments"))
 Ryan_Strains <- data.table(dbReadTable(chem_gen_db, "Ryan_Strains"))
 dbDisconnect(chem_gen_db)
 
-today <- "2022-03-24"
+today <- "2022-03-22"
 
 Experiments <- Ryan_Strains[Experiments[Date == today], on = .(Organism)]
 
@@ -18,9 +18,9 @@ for (i in unique(Experiments[!is.na(Species), Species])) {
       Experiments[
         Species == i, 
         .(OD600,
-          IPTG_mM = paste(Induced, Media)), 
+          Media = paste(Media, Remark)), 
         by = .(Time)],
-      aes(x = Time, y = OD600, color = IPTG_mM, fill = IPTG_mM)) +
+      aes(x = Time, y = OD600, color = Media, fill = Media)) +
     ylim(0, max(Experiments$OD600)) +
     geom_smooth(formula = y ~ s(x, bs = "cs"), method = "gam") +
     scale_colour_brewer(palette = "Set1") +
@@ -36,7 +36,7 @@ Fitted_Experiments <- data.table(dbReadTable(chem_gen_db, "Fitted_Experiments"))
 Ryan_Strains <- data.table(dbReadTable(chem_gen_db, "Ryan_Strains"))
 dbDisconnect(chem_gen_db)
 
-today <- "2022-03-24"
+today <- "2022-03-22"
 
 Fitted_Experiments <- Ryan_Strains[Fitted_Experiments[Date == today], on = .(Organism)]
 
@@ -46,9 +46,9 @@ for (i in unique(Fitted_Experiments[!is.na(Species), Species])) {
       Fitted_Experiments[
         Species == i, 
         .(OD600_fit,
-          IPTG_mM = paste(Induced, Media)), 
+          Media = paste(Media, Remark)), 
         by = .(Hour)],
-      aes(x = Hour, y = OD600_fit, color = IPTG_mM, fill = IPTG_mM)) +
+      aes(x = Hour, y = OD600_fit, color = Media, fill = Media)) +
     ylim(0, max(Fitted_Experiments$OD600)) +
     geom_smooth(formula = y ~ s(x, bs = "cs"), method = "gam") +
     scale_colour_brewer(palette = "Set1") +
