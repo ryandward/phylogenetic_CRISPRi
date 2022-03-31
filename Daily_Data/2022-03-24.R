@@ -1,7 +1,7 @@
 today = "2022-03-24"
 
 Chemical_Data <- fread(
-  paste0(today, ".tsv"), 
+  paste0("Daily_Data/", today, ".tsv"), 
   header = TRUE,
   na.strings = "NA")
 

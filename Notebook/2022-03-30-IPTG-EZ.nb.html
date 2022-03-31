@@ -221,7 +221,7 @@ pre code {
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2hlbV9nZW5fZGIgPC0gZGJDb25uZWN0KFJTUUxpdGU6OlNRTGl0ZSgpLCBcIi4uL2NoZW1fZ2VuLmRiXCIpXG5FeHBlcmltZW50cyA8LSBkYXRhLnRhYmxlKGRiUmVhZFRhYmxlKGNoZW1fZ2VuX2RiLCBcIkV4cGVyaW1lbnRzXCIpKVxuUnlhbl9TdHJhaW5zIDwtIGRhdGEudGFibGUoZGJSZWFkVGFibGUoY2hlbV9nZW5fZGIsIFwiUnlhbl9TdHJhaW5zXCIpKVxuZGJEaXNjb25uZWN0KGNoZW1fZ2VuX2RiKVxuXG50b2RheSA8LSBcIjIwMjItMDMtMzBcIlxuXG5FeHBlcmltZW50cyA8LSBSeWFuX1N0cmFpbnNbRXhwZXJpbWVudHNbRGF0ZSA9PSB0b2RheV0sIG9uID0gLihPcmdhbmlzbSldXG5cbmZvciAoaSBpbiB1bmlxdWUoRXhwZXJpbWVudHNbIWlzLm5hKFNwZWNpZXMpLCBTcGVjaWVzXSkpIHtcbiAgXG4gIGZvciAoIGogaW4gdW5pcXVlKEV4cGVyaW1lbnRzJFJlbWFyaykpe1xuICB0aGlzLnBsb3QgPC0gXG4gICAgZ2dwbG90KFxuICAgICAgRXhwZXJpbWVudHNbXG4gICAgICAgIFNwZWNpZXMgPT0gaSAmIFJlbWFyayA9PSBqLCBcbiAgICAgICAgLihPRDYwMCxcbiAgICAgICAgICBJUFRHX21NID0gcGFzdGUoTWVkaWEsIEluZHVjZWQsIFJlbWFyaykpLCBcbiAgICAgICAgYnkgPSAuKFRpbWUpXSxcbiAgICAgIGFlcyh4ID0gVGltZSwgeSA9IE9ENjAwLCBjb2xvciA9IElQVEdfbU0sIGZpbGwgPSBJUFRHX21NKSkgK1xuICAgIHlsaW0oMCwgbWF4KEV4cGVyaW1lbnRzJE9ENjAwKSkgK1xuICAgIGdlb21fc21vb3RoKGZvcm11bGEgPSB5IH4gcyh4LCBicyA9IFwiY3NcIiksIG1ldGhvZCA9IFwiZ2FtXCIpICtcbiAgICBzY2FsZV9jb2xvdXJfYnJld2VyKHBhbGV0dGUgPSBcIlNldDFcIikgK1xuICAgIHNjYWxlX2ZpbGxfYnJld2VyKHBhbGV0dGUgPSBcIlNldDFcIikgK1xuICAgIGdndGl0bGUocGFzdGUoaSwgaiwgXCJncm93dGggY3VydmVzIG9uXCIsIHRvZGF5KSlcbiAgXG4gIHBsb3QodGhpcy5wbG90KVxuICB9XG59XG5gYGAifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2hlbV9nZW5fZGIgPC0gZGJDb25uZWN0KFJTUUxpdGU6OlNRTGl0ZSgpLCBcIi4uL2NoZW1fZ2VuLmRiXCIpXG5FeHBlcmltZW50cyA8LSBkYXRhLnRhYmxlKGRiUmVhZFRhYmxlKGNoZW1fZ2VuX2RiLCBcIkV4cGVyaW1lbnRzXCIpKVxuUnlhbl9TdHJhaW5zIDwtIGRhdGEudGFibGUoZGJSZWFkVGFibGUoY2hlbV9nZW5fZGIsIFwiUnlhbl9TdHJhaW5zXCIpKVxuZGJEaXNjb25uZWN0KGNoZW1fZ2VuX2RiKVxuXG50b2RheSA8LSBcIjIwMjItMDMtMzBcIlxuXG5FeHBlcmltZW50cyA8LSBSeWFuX1N0cmFpbnNbRXhwZXJpbWVudHNbRGF0ZSA9PSB0b2RheV0sIG9uID0gLihPcmdhbmlzbSldXG5gYGAifQ== -->
 <pre class="r"><code>chem_gen_db &lt;- dbConnect(RSQLite::SQLite(), &quot;../chem_gen.db&quot;)
 Experiments &lt;- data.table(dbReadTable(chem_gen_db, &quot;Experiments&quot;))
 Ryan_Strains &lt;- data.table(dbReadTable(chem_gen_db, &quot;Ryan_Strains&quot;))
@@ -229,9 +229,13 @@ dbDisconnect(chem_gen_db)
 
 today &lt;- &quot;2022-03-30&quot;
 
-Experiments &lt;- Ryan_Strains[Experiments[Date == today], on = .(Organism)]
-
-for (i in unique(Experiments[!is.na(Species), Species])) {
+Experiments &lt;- Ryan_Strains[Experiments[Date == today], on = .(Organism)]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZzogY2FsbCBkYkRpc2Nvbm5lY3QoKSB3aGVuIGZpbmlzaGVkIHdvcmtpbmcgd2l0aCBhIGNvbm5lY3Rpb25cbiJ9 -->
+<pre><code>Warning: call dbDisconnect() when finished working with a connection</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZm9yIChpIGluIHVuaXF1ZShFeHBlcmltZW50c1shaXMubmEoU3BlY2llcyksIFNwZWNpZXNdKSkge1xuICBcbiAgZm9yICggaiBpbiB1bmlxdWUoRXhwZXJpbWVudHMkUmVtYXJrKSl7XG4gIHRoaXMucGxvdCA8LSBcbiAgICBnZ3Bsb3QoXG4gICAgICBFeHBlcmltZW50c1tcbiAgICAgICAgU3BlY2llcyA9PSBpICYgUmVtYXJrID09IGosIFxuICAgICAgICAuKE9ENjAwLFxuICAgICAgICAgIElQVEdfbU0gPSBwYXN0ZShNZWRpYSwgSW5kdWNlZCwgUmVtYXJrKSksIFxuICAgICAgICBieSA9IC4oVGltZSldLFxuICAgICAgYWVzKHggPSBUaW1lLCB5ID0gT0Q2MDAsIGNvbG9yID0gSVBUR19tTSwgZmlsbCA9IElQVEdfbU0pKSArXG4gICAgeWxpbSgwLCBtYXgoRXhwZXJpbWVudHMkT0Q2MDApKSArXG4gICAgZ2VvbV9zbW9vdGgoZm9ybXVsYSA9IHkgfiBzKHgsIGJzID0gXCJjc1wiKSwgbWV0aG9kID0gXCJnYW1cIikgK1xuICAgIHNjYWxlX2NvbG91cl9icmV3ZXIocGFsZXR0ZSA9IFwiU2V0MVwiKSArXG4gICAgc2NhbGVfZmlsbF9icmV3ZXIocGFsZXR0ZSA9IFwiU2V0MVwiKSArXG4gICAgZ2d0aXRsZShwYXN0ZShpLCBqLCBcImdyb3d0aCBjdXJ2ZXMgb25cIiwgdG9kYXkpKVxuICBcbiAgcGxvdCh0aGlzLnBsb3QpXG4gIH1cbn1cbmBgYCJ9 -->
+<pre class="r"><code>for (i in unique(Experiments[!is.na(Species), Species])) {
   
   for ( j in unique(Experiments$Remark)){
   this.plot &lt;- 

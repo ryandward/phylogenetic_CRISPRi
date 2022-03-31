@@ -1,57 +1,61 @@
-today = "2022-03-30"
+today = "2022-03-22"
 
 Chemical_Data <- fread(
-  paste0(today, ".tsv"), 
+  paste0("Daily_Data/", today, ".tsv"), 
   header = TRUE,
   na.strings = "NA")
 
 Organisms <- c(
-  "163",
-  "5142",
-  "269",
+  "0",
+  "0",
+  "5123",
+  "5123",
   "5144",
-  "241",
-  "5146")
+  "5144",
+  "0",
+  "0",
+  "5123",
+  "5123",
+  "5144",
+  "5144")
 
-Organisms <-
-  rep(Organisms, each = 2)
+
 
 Medias <- c(
+  "LB",
   "EZ")
 
 Medias <-
-  rep(Medias, each = 12)
+  rep(Medias, each = 6)
 
 
 
 Doses <- c(
+  0,
   0)
 
 Doses <-
-  rep(Doses, each = 12)
+  rep(Doses, each = 6)
 
 
 
 Induced <-
   c(
-    0,
-    0.01,
-    0.1,
-    1)
+    FALSE,
+    FALSE)
 
 Induced <-
-  rep(Induced, each = 2)
+  rep(Induced, each = 4)
 
 
-Reps <- rbind(
-  CJ(Well_col = rep(c("A","C","E","G"),6), Rep = rep(1:2)), 
-  CJ(Well_col = rep(c("B","D","F","H"),6), Rep = rep(3:4)))
-
-Well_row <- rep(c(c(1,3,5,7,9,11),c(2,4,6,8,10,12)), 8)
-
-Reps <- cbind(Reps, Well_row)
-
-setorder(Reps, Well_col, Well_row)
+Reps <- 
+  rbind(
+    CJ(
+      Well_row = c(1,3,5,7,9,11), 
+      Rep = rep(1:8)),
+    CJ(
+      Well_row = c(2,4,6,8,10,12),
+      Rep = rep(9:16)))
 
 Organism_key <- data.table(
   Organism = factor(Organisms, levels = unique(Organisms)))
@@ -82,16 +86,17 @@ Media_key[, Well_row := c(1:12)]
 
 Induced_key[, Well_col := toupper(letters[1:8])]
 
+Rep_key[, Well_col := rep(toupper(letters[1:8]), 12)]
+
 layout <-
   Induced_key[
     Media_key[
       Organism_key[
-        Rep_key, 
+        Rep_key[
+          Well_locations, on = .(Well_row, Well_col)], 
         on = .(Well_row)], 
       on = .(Well_row)], 
     on = .(Well_col)]
-
-layout[, Chemical := "none"]
 
 layout[, Well := paste0(Well_col, Well_row)]
 

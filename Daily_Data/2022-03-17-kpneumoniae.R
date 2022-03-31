@@ -1,13 +1,13 @@
-today = "2022-03-16"
+today = "2022-03-17"
 
 Chemical_Data <- fread(
-  paste0(today, ".tsv"), 
+  paste0("Daily_Data/", today, ".tsv"), 
   header = TRUE,
   na.strings = "NA")
 
 Organisms <- c(
-  "5123",
-  "5144")
+  "5133",
+  "5146")
 
 Chemicals <- c(
   "none",

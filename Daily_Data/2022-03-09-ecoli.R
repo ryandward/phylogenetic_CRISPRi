@@ -1,29 +1,29 @@
-today = "2022-03-17"
+today = "2022-03-09"
 
 Chemical_Data <- fread(
-  paste0(today, ".tsv"), 
+  paste0("Daily_Data/", today, ".tsv"), 
   header = TRUE,
   na.strings = "NA")
 
 Organisms <- c(
-  "5133",
-  "5146")
+  "5111",
+  "5142")
 
 Chemicals <- c(
   "none",
+  "deoxycholate",
   "mecillinam",
   "nickel(ii)",
   "novobiocin",
-  "urea",
-  "vancomycin")
+  "urea")
 
 Doses <- c(
   0,
-  60, 
-  5, 
-  60, 
-  500, 
-  100)
+  1, 
+  30, 
+  1, 
+  30, 
+  750)
 
-source("sunrise_analyzer.R")
+source("icontrol_analyzer.R")
 
