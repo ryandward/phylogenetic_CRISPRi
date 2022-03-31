@@ -15,7 +15,7 @@ Ryan_Strains <- data.table(dbReadTable(chem_gen_db, "Ryan_Strains"))
 
 Experiments.pk <- c("Date", "Well", "Time")
 
-Experiments[, Organism := factor(Organism)]
+Experiments[, Organism := as.numeric(Organism)]
 
 Well_Stats <- unique(Experiments[, .(Date, Well, cJMP, Chemical, Dose, Instrument, Rep, Media, Induced, Organism)])
 
