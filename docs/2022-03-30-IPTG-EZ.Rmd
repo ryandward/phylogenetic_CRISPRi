@@ -1,12 +1,15 @@
 ---
 title: "Effect of IPTG Induction in 3 CRISPRi Libraries in EZ media"
 output:
-  html_document:
-    df_print: paged
+  html_document: 
+    toc: yes
+    keep_md: yes
   html_notebook: default
   pdf_document:
     fig_height: 4
   word_document: default
+editor_options: 
+  chunk_output_type: console
 ---
 
 # Raw Values
