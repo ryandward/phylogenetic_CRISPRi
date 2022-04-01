@@ -8,10 +8,11 @@
         for (let file of data) {
 
 						let extension = file.path.split('.').pop();
-						if (extension == 'html') {
-
             file.path = file.path.replace(/docs\//g, '');
-						htmlString += `<li><a href="${file.path}">${file.name}</a></li>`;
+
+						if (extension == 'html' && file.path != 'index.html') {
+
+							htmlString += `<li><a href="${file.path}">${file.name}</a></li>`;
 
 					}
         }
