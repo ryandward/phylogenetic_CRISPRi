@@ -1,8 +1,13 @@
 ---
 title: "Effect of Media in E. cloacae"
-output: html_notebook
+output:
+  pdf_document: default
+  html_notebook: default
 ---
 ```{r}
+library(pacman)
+p_load(data.table, ggplot2, RSQLite)
+
 chem_gen_db <- dbConnect(RSQLite::SQLite(), "../chem_gen.db")
 Experiments <- data.table(dbReadTable(chem_gen_db, "Experiments"))
 Ryan_Strains <- data.table(dbReadTable(chem_gen_db, "Ryan_Strains"))
@@ -31,6 +36,9 @@ for (i in unique(Experiments[!is.na(Species), Species])) {
 }
 ```
 ```{r}
+library(pacman)
+p_load(data.table, ggplot2, RSQLite)
+
 chem_gen_db <- dbConnect(RSQLite::SQLite(), "../chem_gen.db")
 Fitted_Experiments <- data.table(dbReadTable(chem_gen_db, "Fitted_Experiments"))
 Ryan_Strains <- data.table(dbReadTable(chem_gen_db, "Ryan_Strains"))
