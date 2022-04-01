@@ -1,8 +1,16 @@
 ---
 title: "Effect of Drugs in E. coli"
-output: html_notebook
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+  html_notebook: default
+  word_document: default
 ---
 ```{r}
+library(pacman)
+p_load(data.table, ggplot2, RSQLite)
+
 chem_gen_db <- dbConnect(RSQLite::SQLite(), "../chem_gen.db")
 Experiments <- data.table(dbReadTable(chem_gen_db, "Experiments"))
 Ryan_Strains <- data.table(dbReadTable(chem_gen_db, "Ryan_Strains"))
@@ -31,6 +39,9 @@ for (i in unique(Experiments[!is.na(Species), Induced])) {
 }
 ```
 ```{r}
+library(pacman)
+p_load(data.table, ggplot2, RSQLite)
+
 chem_gen_db <- dbConnect(RSQLite::SQLite(), "../chem_gen.db")
 Fitted_Experiments <- data.table(dbReadTable(chem_gen_db, "Fitted_Experiments"))
 Ryan_Strains <- data.table(dbReadTable(chem_gen_db, "Ryan_Strains"))
