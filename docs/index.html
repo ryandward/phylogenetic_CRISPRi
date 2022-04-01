@@ -1,4 +1,5 @@
 <html>
+
   <body>
     <script>
       (async () => {
@@ -7,19 +8,21 @@
         let htmlString = '<ul>';
         for (let file of data) {
 
-					let extension = file.path.split('.').pop();
+          let html = file.path.includes(".html");
 
-					if(extension == "html") {
+          if (html == true) {
 
-						file.path = file.path.replace( /docs\//g, '' );
-						htmlString += `<li><a href="${file.path}">${file.name}</a></li>`;
-
-					}
+            file.path = file.path.replace(/docs\//g, '');
+            htmlString += `<li><a href="${file.path}">${file.name}</a></li>`;
+          }
 
         }
         htmlString += '</ul>';
         document.getElementsByTagName('body')[0].innerHTML = htmlString;
       })()
+
     </script>
-  <body>
+
+    <body>
+
 </html>
