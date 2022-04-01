@@ -1,9 +1,16 @@
 ---
-title: "Effect of IPTG Induction in 3 organism libraries in EZ media"
+title: "Effect of IPTG Induction in 3 CRISPRi Libraries in EZ media"
 output:
-  pdf_document: default
+  html_document:
+    df_print: paged
   html_notebook: default
+  pdf_document:
+    fig_height: 4
+  word_document: default
 ---
+
+# Raw Values
+
 ```{r}
 library(pacman)
 p_load(data.table, ggplot2, RSQLite)
@@ -20,24 +27,24 @@ Experiments <- Ryan_Strains[Experiments[Date == today], on = .(Organism)]
 for (i in unique(Experiments[!is.na(Species), Species])) {
   
   for ( j in unique(Experiments$Remark)){
-  this.plot <- 
-    ggplot(
-      Experiments[
-        Species == i & Remark == j, 
-        .(OD600,
-          IPTG_mM = paste(Media, Induced, Remark)), 
-        by = .(Time)],
-      aes(x = Time, y = OD600, color = IPTG_mM, fill = IPTG_mM)) +
-    ylim(0, max(Experiments$OD600)) +
+  this.plot <- ggplot(
+    Experiments[Species == i & Remark == j, 
+                .(OD600, IPTG_mM = paste(Media, Induced, Remark)), 
+                by = .(Time)],
+    aes(x = Time, y = OD600, color = IPTG_mM, fill = IPTG_mM)) +
+    ylim(0 - 0.15, max(Experiments$OD600) + 0.15) +
     geom_smooth(formula = y ~ s(x, bs = "cs"), method = "gam") +
     scale_colour_brewer(palette = "Set1") +
     scale_fill_brewer(palette = "Set1") +
     ggtitle(paste(i, j, "growth curves on", today))
   
-  plot(this.plot)
-  }
-}
+  plot(this.plot)}}
 ```
+
+\pagebreak
+
+# Fitted Values using GrowthcurveR
+
 ```{r}
 library(pacman)
 p_load(data.table, ggplot2, RSQLite)
@@ -52,23 +59,20 @@ today <- "2022-03-30"
 Fitted_Experiments <- Ryan_Strains[Fitted_Experiments[Date == today], on = .(Organism)]
 
 for (i in unique(Fitted_Experiments[!is.na(Species), Species])) {
-    for ( j in unique(Fitted_Experiments$Remark)){
-
-  this.plot <- 
-    ggplot(
-      Fitted_Experiments[
-        Species == i & j == Remark, 
-        .(OD600_fit,
-          IPTG_mM = paste(Induced, Media)), 
-        by = .(Hour)],
-      aes(x = Hour, y = OD600_fit, color = IPTG_mM, fill = IPTG_mM)) +
-    ylim(0, max(Fitted_Experiments$OD600)) +
+  
+  for (j in unique(Fitted_Experiments$Remark)){
+  this.plot <- ggplot(
+    Fitted_Experiments[Species == i & Remark == j, 
+                .(OD600_fit, IPTG_mM = paste(Media, Induced, Remark)), 
+                by = .(Hour)],
+    aes(x = Hour, y = OD600_fit, color = IPTG_mM, fill = IPTG_mM)) +
+    ylim(0 - 0.15, max(Fitted_Experiments$OD600_fit) + 0.15) +
     geom_smooth(formula = y ~ s(x, bs = "cs"), method = "gam") +
     scale_colour_brewer(palette = "Set1") +
     scale_fill_brewer(palette = "Set1") +
-    ggtitle(paste(i, j, "FITTED growth curves on", today))
+    ggtitle(paste(i, j, "growth curves on", today))
   
-  plot(this.plot)
-    }
-}
+  plot(this.plot)}}
 ```
+
+\pagebreak
