@@ -1,8 +1,15 @@
 ---
 title: "Effect of Media in E. cloacae"
 output:
-  pdf_document: default
+  html_document: 
+    toc: yes
+    keep_md: yes
   html_notebook: default
+  pdf_document:
+    fig_height: 4
+  word_document: default
+editor_options: 
+  chunk_output_type: console
 ---
 ```{r}
 library(pacman)
