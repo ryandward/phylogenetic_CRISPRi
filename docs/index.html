@@ -7,9 +7,9 @@
         let htmlString = '<ul>';
         for (let file of data) {
 
-					let file.extension = file.path.split('.').pop();
+					let extension = file.path.split('.').pop();
 
-					if(file.extension == "html") {
+					if(extension == "html") {
 
 						file.path = file.path.replace( /docs\//g, '' );
 						htmlString += `<li><a href="${file.path}">${file.name}</a></li>`;
