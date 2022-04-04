@@ -63,7 +63,8 @@ target_h <-
 
 plot(
   to_plot$tree_row, 
-  cex = 0.35)
+  cex = 0.35,
+  main = "Condition Similarity from Shiver Dataset")
 
 abline(
   h = target_h, 
