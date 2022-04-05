@@ -71,24 +71,24 @@ dbWriteTable(chem_gen_db,
 dbDisconnect(chem_gen_db)
 
 
-for (i in Fitted_Experiments[, unique(Date)]) {
-
-  this.Fitted_Plot <-
-    ggplot(
-      Fitted_Experiments[
-        Date == i,
-        .(OD600_fit, Chemical = paste(Chemical, Dose)), by = .(Hour, Organism, Induced)],
-      aes(
-        x = Hour,
-        y = OD600_fit,
-        color = Chemical,
-        fill = Chemical)) +
-    geom_smooth(
-      method = "gam") +
-    scale_colour_brewer(palette = "Set1") +
-    scale_fill_brewer(palette = "Set1") +
-    ggtitle(paste("Growth Curves on", i))
-
-  plot(this.Fitted_Plot)
-
-}
+# for (i in Fitted_Experiments[, unique(Date)]) {
+# 
+#   this.Fitted_Plot <-
+#     ggplot(
+#       Fitted_Experiments[
+#         Date == i,
+#         .(OD600_fit, Chemical = paste(Chemical, Dose)), by = .(Hour, Organism, Induced)],
+#       aes(
+#         x = Hour,
+#         y = OD600_fit,
+#         color = Chemical,
+#         fill = Chemical)) +
+#     geom_smooth(
+#       method = "gam") +
+#     scale_colour_brewer(palette = "Set1") +
+#     scale_fill_brewer(palette = "Set1") +
+#     ggtitle(paste("Growth Curves on", i))
+# 
+#   plot(this.Fitted_Plot)
+# 
+# }
