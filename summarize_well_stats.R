@@ -21,25 +21,15 @@ Well_Stats <- unique(Experiments[, .(Date, Well, cJMP, Chemical, Dose, Unit, Ins
 
 Well_Stats.pk <- c("Date", "Well")
 
-Well_Stats <- Well_Stats[
-  Experiments[, .(auc_l = SummarizeGrowth(Time/60/60, OD600)$vals$auc_l), 
-              by = Well_Stats.pk], on = Well_Stats.pk]
-  
-Well_Stats <- Well_Stats[
-  Experiments[, .(auc_e = SummarizeGrowth(Time/60/60, OD600)$vals$auc_e), 
-              by = Well_Stats.pk], on = Well_Stats.pk]
+Well_Stats <- 
+  Well_Stats[
+    Experiments[
+      , SummarizeGrowth(
+        Time/60/60, 
+        OD600)$vals, 
+      by = Well_Stats.pk], 
+    on = Well_Stats.pk]
 
-Well_Stats <- Well_Stats[
-  Experiments[, .(k = SummarizeGrowth(Time/60/60, OD600)$vals$k), 
-              by = Well_Stats.pk], on = Well_Stats.pk]
-
-Well_Stats <- Well_Stats[
-  Experiments[, .(n0 = SummarizeGrowth(Time/60/60, OD600)$vals$n0), 
-              by = Well_Stats.pk], on = Well_Stats.pk]
-
-Well_Stats <- Well_Stats[
-  Experiments[, .(r = SummarizeGrowth(Time/60/60, OD600)$vals$r), 
-              by = Well_Stats.pk], on = Well_Stats.pk]
 
 Fitted_Experiments <- 
   Well_Stats[
