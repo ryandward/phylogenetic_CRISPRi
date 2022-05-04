@@ -68,7 +68,7 @@ plot(
 
 abline(
   h = target_h, 
-  col="red", 
+  col = "red", 
   lty = 2, 
   lwd = 2)
 
