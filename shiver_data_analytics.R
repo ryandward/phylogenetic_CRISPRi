@@ -51,8 +51,8 @@ plot_matrix <- shiver_cor
 to_plot <- pheatmap(
   plot_matrix,
   clustering_method = "ward.D2",
-  clustering_distance_rows = "maximum",
-  clustering_distance_cols = "maximum"
+  clustering_distance_rows = "canberra",
+  clustering_distance_cols = "canberra"
 )
 
 
