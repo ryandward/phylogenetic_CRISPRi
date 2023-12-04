@@ -35,10 +35,12 @@ targets <- fread(
   mutate(
     type = case_when(
       mismatches == 0 ~ "perfect",
-      mismatches == 1 ~ "mismatch", 
+      mismatches == 1 ~ "mismatch",
       mismatches == "None" ~ "control"
     )
   )
+
+targets[type != "control", target := toupper(target)]
 
 # create a data.table with the types for each spacer, i.e., perfect, mismatch, control
 types <- targets %>%
@@ -184,6 +186,28 @@ volcano_plots <- results %>%
   scale_color_manual(values = c("control" = "#bbbbbb", "mismatch" = "#1f77b4", "perfect" = "#ff7f0e")) +
   theme_bw() +
   labs(color = "Type") +
+  facet_grid(contrast ~ ., scales = "free") +
+  theme(strip.text.y = element_text(angle = 0))
+
+print(volcano_plots)
+
+# create gene-level summary for perfect spacers for each contrast
+
+perfect_median_results <- results %>%
+  filter(type == "perfect" & locus_tag != "None") %>%
+  group_by(contrast, locus_tag) %>%
+  summarize(
+    logFC = median(logFC),
+    FDR = poolr::stouffer(FDR)$p,
+    .groups = "drop"
+  )
+
+# create faceted volcano plots for perfect median results
+volcano_plots <- perfect_median_results %>%
+  ggplot(aes(x = logFC, y = FDR)) +
+  scale_y_continuous(trans = scales::reverse_trans() %of% scales::log10_trans()) +
+  geom_point(size = 2, alpha = 0.5) +
+  theme_bw() +
   facet_grid(contrast ~ ., scales = "free") +
   theme(strip.text.y = element_text(angle = 0))
 
