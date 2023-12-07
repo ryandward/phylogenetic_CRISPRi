@@ -1,4 +1,4 @@
-``` log
+``` logtalk
 [14:30:30] Initializing heuristic barcode counting...                                                                                                                                                                      heuristicount.py:329
            Reading barcodes...                                                                                                                                                                                             heuristicount.py:337
            Sampling initial reads for orientation...                                                                                                                                                                       heuristicount.py:346
@@ -11,7 +11,7 @@
 [14:31:31] Collating results...                                                                                                                                                                                            heuristicount.py:413
 ```
 
-``` log
+``` logtalk
                                                                                                                                                                                                                            heuristicount.py:502
                            heuristicount.py                               Summary                                                                                                                                                              
             ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                                                                                                                                                             
