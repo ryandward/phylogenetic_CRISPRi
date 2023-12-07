@@ -1,18 +1,12 @@
-``` logtalk
-[14:30:30] Initializing heuristic barcode counting...                                                                                                                                                                      heuristicount.py:329
-           Reading barcodes...                                                                                                                                                                                             heuristicount.py:337
-           Sampling initial reads for orientation...                                                                                                                                                                       heuristicount.py:346
-           Determining orientation of reads...                                                                                                                                                                             heuristicount.py:349
-[14:30:32] Sampled 60,210 unique reads and found 27,476 forward and 32,528 reverse valid matches...                                                                                                                        heuristicount.py:353
-           Swapping orientation...                                                                                                                                                                                         heuristicount.py:354
-           Identifying forward flanking sequences...                                                                                                                                                                       heuristicount.py:359
-           Identifying reverse flanking sequences...                                                                                                                                                                       heuristicount.py:367
-[14:30:33] Executing high-throughput read analysis...                                                                                                                                                                      heuristicount.py:403
-[14:31:31] Collating results...                                                                                                                                                                                            heuristicount.py:413
-```
-
-``` logtalk
-                                                                                                                                                                                                                           heuristicount.py:502
+[16:18:35] Initializing heuristic barcode counting...                                                                                                                                                                      heuristicount.py:371
+           Reading barcodes...                                                                                                                                                                                             heuristicount.py:379
+           Sampling initial reads for orientation...                                                                                                                                                                       heuristicount.py:388
+[16:18:45] Sampled 441,719 reads and found 26,304 barcodes in 56,010 forward and 57,825 reverse matches...                                                                                                                 heuristicount.py:392
+           Swapping orientation...                                                                                                                                                                                         heuristicount.py:394
+           Identifying flanking sequences...                                                                                                                                                                               heuristicount.py:396
+           Executing high-throughput read analysis...                                                                                                                                                                      heuristicount.py:442
+[16:19:49] Collating results...                                                                                                                                                                                            heuristicount.py:452
+                                                                                                                                                                                                                           heuristicount.py:541
                            heuristicount.py                               Summary                                                                                                                                                              
             ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                                                                                                                                                             
                              Input & Config                                                                                                                                                                                                    
@@ -54,5 +48,4 @@
                       TACGGGCCGGGAAATTGACA*                                   201                                                                                                                                                              
                       AATAGCTTAGTGCCCCATCT*                                   196                                                                                                                                                              
                                                                                                                                                                                                                                                
-                            Finished at 2023-12-01 14:31:31.421461                                                                                                                                                                             
-```
+                            Finished at 2023-12-07 16:19:49.252318                                                                                                                                                                             
