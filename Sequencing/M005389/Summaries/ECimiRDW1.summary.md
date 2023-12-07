@@ -1,3 +1,4 @@
+``` log
 [14:30:30] Initializing heuristic barcode counting...                                                                                                                                                                      heuristicount.py:329
            Reading barcodes...                                                                                                                                                                                             heuristicount.py:337
            Sampling initial reads for orientation...                                                                                                                                                                       heuristicount.py:346
@@ -8,6 +9,9 @@
            Identifying reverse flanking sequences...                                                                                                                                                                       heuristicount.py:367
 [14:30:33] Executing high-throughput read analysis...                                                                                                                                                                      heuristicount.py:403
 [14:31:31] Collating results...                                                                                                                                                                                            heuristicount.py:413
+```
+
+``` log
                                                                                                                                                                                                                            heuristicount.py:502
                            heuristicount.py                               Summary                                                                                                                                                              
             ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                                                                                                                                                             
@@ -51,3 +55,4 @@
                       AATAGCTTAGTGCCCCATCT*                                   196                                                                                                                                                              
                                                                                                                                                                                                                                                
                             Finished at 2023-12-01 14:31:31.421461                                                                                                                                                                             
+```
