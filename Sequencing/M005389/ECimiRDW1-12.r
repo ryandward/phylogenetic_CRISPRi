@@ -216,9 +216,10 @@ print(volcano_plots)
 definitions <- fread("Organisms/E_coli_genes_from_string.tsv",
   header = TRUE,
   sep = "\t",
-  col.names = c("string_id", "gene_name", "size", "annotation")) %>%
+  col.names = c("string_id", "gene_name", "size", "annotation")
+) %>%
   mutate(locus_tag = gsub(".*\\.", "", string_id))
 
-results_summary <- results %>% 
-  dcast(locus_tag ~ contrast, value.var = "logFC", fun.aggregate = median) %>% 
+results_summary <- results %>%
+  dcast(locus_tag ~ contrast, value.var = "logFC", fun.aggregate = median) %>%
   left_join(definitions)
