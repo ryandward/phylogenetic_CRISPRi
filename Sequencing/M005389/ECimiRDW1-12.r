@@ -74,7 +74,7 @@ replicate_plot <- data %>%
 print(replicate_plot)
 
 # 0.25 looks bad, so we'll remove it
-data <- data %>% filter(imipenem != 0.25)
+data <- data %>% filter(!(imipenem == 0.25))
 
 # fill in missing values with 0
 full_data <- data %>%
