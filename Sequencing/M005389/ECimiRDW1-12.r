@@ -247,7 +247,7 @@ definitions <- fread("Organisms/E_coli_genes_from_string.tsv",
   mutate(locus_tag = gsub(".*\\.", "", string_id))
 
 results_summary <- results %>%
-  filter(type == "perfect") %>%
+  filter(type %in% c("perfect", "perfect essential")) %>%
   dcast(locus_tag ~ contrast, value.var = "logFC", fun.aggregate = median) %>%
   left_join(definitions)
 
