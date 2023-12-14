@@ -6,6 +6,8 @@ p_load(
   pheatmap, svglite, ggplot2, ggrepel, RColorBrewer, tidyverse, magrittr, ggpubr, ggallin
 )
 
+show_col(brewer.pal(12, "Paired"))
+
 # Load the data, first column is sample, second column is spacer, third column is count
 data <- fread(
   "Sequencing/M005389/ECimiRDW1-12.tsv.gz",
@@ -42,12 +44,20 @@ targets <- fread(
 
 targets[type != "control", target := toupper(target)]
 
+# targets[sp_dir == tar_dir, type := "control"]
+# targets[overlap < 20, type := "control"]
+
+essentials <- targets %>% filter(type == "mismatch") %>% pull(locus_tag) %>% unique()
+
+targets[locus_tag %in% essentials & type == "perfect", type := "perfect essential"]
+targets[spacer %in% targets[type == "perfect essential"]$spacer & type == "perfect", type := "perfect essential"]
+
 # create a data.table with the types for each spacer, i.e., perfect, mismatch, control
 types <- targets %>%
   select(spacer, chr, target, mismatches, type) %>%
   unique()
 
-data <- data %>% inner_join(types, by = "spacer")
+data <- data %>% inner_join(types, by = c("spacer"))
 
 # draw a log CPM replicate correlation plot
 replicate_plot <- data %>%
@@ -58,7 +68,12 @@ replicate_plot <- data %>%
   arrange(desc(type)) %>%
   ggplot(aes(x = A, y = B)) +
   geom_point(aes(color = type), size = 1, alpha = 0.5) +
-  scale_color_manual(values = c("control" = "#bbbbbb", "mismatch" = "#1f77b4", "perfect" = "#ff7f0e")) +
+  scale_color_manual(
+    values = c(
+      "control" = "#bbbbbb",
+      "perfect" = "#1F78B4",
+      "mismatch" = "#FF7F00",
+      "perfect essential" = "#E31A1C")) +
   geom_abline(intercept = 0, slope = 1, linetype = "dashed", color = "red") +
   stat_cor(method = "pearson", aes(label = after_stat(label)), label.x = 0, label.y = 5, na.rm = TRUE) +
   scale_x_log10() +
@@ -183,7 +198,12 @@ volcano_plots <- results %>%
   ggplot(aes(x = logFC, y = FDR)) +
   scale_y_continuous(trans = scales::reverse_trans() %of% scales::log10_trans()) +
   geom_point(aes(color = type), size = 2, alpha = 0.5) +
-  scale_color_manual(values = c("control" = "#bbbbbb", "mismatch" = "#1f77b4", "perfect" = "#ff7f0e")) +
+  scale_color_manual(
+    values = c(
+      "control" = "#bbbbbb",
+      "perfect" = "#1F78B4",
+      "mismatch" = "#FF7F00",
+      "perfect essential" = "#E31A1C")) +
   theme_bw() +
   labs(color = "Type") +
   facet_grid(contrast ~ ., scales = "free") +
@@ -194,8 +214,8 @@ print(volcano_plots)
 # create gene-level summary for perfect spacers for each contrast
 
 perfect_median_results <- results %>%
-  filter(type == "perfect" & locus_tag != "None") %>%
-  group_by(contrast, locus_tag) %>%
+  filter(type %in% c("perfect", "perfect essential") & locus_tag != "None") %>%
+  group_by(contrast, locus_tag, type) %>%
   summarize(
     logFC = median(logFC),
     FDR = poolr::stouffer(FDR)$p,
@@ -206,7 +226,13 @@ perfect_median_results <- results %>%
 volcano_plots <- perfect_median_results %>%
   ggplot(aes(x = logFC, y = FDR)) +
   scale_y_continuous(trans = scales::reverse_trans() %of% scales::log10_trans()) +
-  geom_point(size = 2, alpha = 0.5) +
+  geom_point(size = 2, alpha = 0.5, aes(color = type)) +
+    scale_color_manual(
+    values = c(
+      "control" = "#bbbbbb",
+      "perfect" = "#1F78B4",
+      "mismatch" = "#FF7F00",
+      "perfect essential" = "#E31A1C")) +
   theme_bw() +
   facet_grid(contrast ~ ., scales = "free") +
   theme(strip.text.y = element_text(angle = 0))
@@ -224,3 +250,14 @@ results_summary <- results %>%
   filter(type == "perfect") %>%
   dcast(locus_tag ~ contrast, value.var = "logFC", fun.aggregate = median) %>%
   left_join(definitions)
+
+
+# results %>%
+#       filter(type == "perfect essential") %>%
+#       select(target, logFC) %>%
+#       rename(perfect_LFC = logFC) %>%
+#       inner_join(results %>% filter(type == "mismatch")) %>% rename(mismatch_LFC = logFC) %>%
+#       ggplot(aes(x = perfect_LFC, y = mismatch_LFC)) +
+#       geom_point(aes(colour = as.numeric(pmin(y_pred, 1))), alpha = 0.1) +
+#       scale_color_gradientn(colors = viridis::magma(100)) +
+#       facet_wrap(~contrast)

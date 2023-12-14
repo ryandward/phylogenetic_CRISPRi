@@ -137,9 +137,9 @@ botneck.stats.plot <- botneck %>%
   scale_fill_manual(
     values = c(
       "control" = "#bbbbbb",
-      "mismatch" = "#1F78B4",
-      "perfect" = "#FDBF6F",
-      "perfect essential" = "#FF7F00")) +
-  guides(fill = FALSE)
+      "perfect" = "#1F78B4",
+      "mismatch" = "#FF7F00",
+      "perfect essential" = "#E31A1C")) +
+  guides(fill = "none")
 
 print(botneck.stats.plot)
