@@ -214,33 +214,6 @@ volcano_plots <- results %>%
 
 print(volcano_plots)
 
-# create gene-level summary for perfect spacers for each contrast
-
-perfect_median_results <- results %>%
-  filter(type %in% c("perfect", "perfect essential") & locus_tag != "None") %>%
-  group_by(contrast, locus_tag, type) %>%
-  summarize(
-    logFC = median(logFC),
-    FDR = poolr::stouffer(FDR)$p,
-    .groups = "drop"
-  )
-
-# create faceted volcano plots for perfect median results
-volcano_plots <- perfect_median_results %>%
-  ggplot(aes(x = logFC, y = FDR)) +
-  scale_y_continuous(trans = scales::reverse_trans() %of% scales::log10_trans()) +
-  geom_point(size = 2, alpha = 0.5, aes(color = type)) +
-    scale_color_manual(
-    values = c(
-      "control" = "#bbbbbb",
-      "perfect" = "#1F78B4",
-      "mismatch" = "#FF7F00",
-      "perfect essential" = "#E31A1C")) +
-  theme_bw() +
-  facet_grid(contrast ~ ., scales = "free") +
-  theme(strip.text.y = element_text(angle = 0))
-
-print(volcano_plots)
 
 definitions <- fread("Organisms/E_coli_genes_from_string.tsv",
   header = TRUE,
