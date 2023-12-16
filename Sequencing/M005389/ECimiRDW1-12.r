@@ -2,7 +2,7 @@ require("pacman")
 
 # Load the packages
 p_load(
-  data.table, scales, edgeR, statmod, poolr,
+  data.table, scales, edgeR, statmod, poolr, ggtext,
   pheatmap, svglite, ggplot2, ggrepel, RColorBrewer, tidyverse, magrittr, ggpubr, ggallin
 )
 
@@ -67,14 +67,14 @@ replicate_plot <- data %>%
   dcast(type + spacer + imipenem + induced ~ replicate, value.var = "cpm", fill = 0) %>%
   arrange(desc(type)) %>%
   ggplot(aes(x = A, y = B)) +
-  geom_point(aes(color = type), size = 1, alpha = 0.5) +
+  geom_abline(intercept = 0, slope = 1, linetype = "dashed", color = "black") +
+  geom_point(aes(color = type), size = 1, alpha = 0.5, shape = 16) +
   scale_color_manual(
     values = c(
       "control" = "#bbbbbb",
       "perfect" = "#1F78B4",
       "mismatch" = "#FF7F00",
       "perfect essential" = "#E31A1C")) +
-  geom_abline(intercept = 0, slope = 1, linetype = "dashed", color = "red") +
   stat_cor(method = "pearson", aes(label = after_stat(label)), label.x = 0, label.y = 5, na.rm = TRUE) +
   scale_x_log10() +
   scale_y_log10() +
@@ -134,6 +134,9 @@ full_data <- design_names %>%
   inner_join(full_data) %>%
   arrange(group)
 
+
+# full_data <- full_data %>% inner_join(median_spacers)
+
 # list of spacer names
 spacers <- full_data %>%
   select(spacer) %>%
@@ -165,7 +168,7 @@ dge <- calcNormFactors(dge)
 
 
 # estimate dispersion
-dge <- estimateDisp(dge, design_matrix)
+dge <- estimateGLMRobustDisp(dge, design_matrix)
 
 # create a contrast matrix
 contrasts <- makeContrasts(
@@ -248,17 +251,96 @@ definitions <- fread("Organisms/E_coli_genes_from_string.tsv",
 
 results_summary <- results %>%
   filter(target != "None") %>%
-  filter(type %in% c("perfect", "perfect essential")) %>%
+  # filter(type %in% c("perfect", "perfect essential")) %>%
   dcast(locus_tag + type ~ contrast, value.var = "logFC", fun.aggregate = median) %>%
-  left_join(definitions)
+  left_join(definitions %>% select(-annotation))
+
+median_spacers <- data %>% select(sample, spacer, count) %>%
+  # rbind(freezer_stock) %>% inner_join(targets %>% select(spacer, target) %>% unique()) %>% 
+  inner_join(types) %>% 
+  # filter(type %in% c("mismatch", "perfect")) %>%
+  group_by(sample) %>%
+  mutate(cpm = cpm(count), lcpm = log(cpm)) %>% 
+  group_by(target) %>%
+  mutate(LMT_count = log(mean(cpm)), t_deviance = lcpm - LMT_count, t_sd = sd(cpm)) %>% 
+  filter(abs(t_deviance) == min(abs(t_deviance)) & t_sd == min(t_sd)) %>%
+  inner_join(targets %>% filter(sp_dir != tar_dir & overlap == 20 & offset >= 0)) %>%
+  group_by(locus_tag) %>%
+  mutate(LMG_count = log(mean(cpm)), g_deviance = t_deviance - LMG_count, g_sd = sd(cpm)) %>%
+  filter(abs(g_deviance) == min(abs(g_deviance)) & g_sd == min(g_sd)) %>%
+  ungroup %>%
+  select(locus_tag, spacer) %>% unique()
 
 
-# results %>%
-#       filter(type == "perfect essential") %>%
-#       select(target, logFC) %>%
-#       rename(perfect_LFC = logFC) %>%
-#       inner_join(results %>% filter(type == "mismatch")) %>% rename(mismatch_LFC = logFC) %>%
-#       ggplot(aes(x = perfect_LFC, y = mismatch_LFC)) +
-#       geom_point(aes(colour = as.numeric(pmin(y_pred, 1))), alpha = 0.1) +
-#       scale_color_gradientn(colors = viridis::magma(100)) +
-#       facet_wrap(~contrast)
+
+overall_median_results <- results %>% 
+      inner_join(median_spacers) %>%
+      filter(target != "None") %>% data.table() %>%
+      dcast(locus_tag + type ~ contrast, value.var = "logFC", fun.aggregate = median) %>%
+      left_join(definitions %>% select(-annotation)) %>% 
+      arrange(imipenem_partial)
+
+# create faceted volcano plots for perfect median results
+volcano_plots <- median_spacers %>%
+  inner_join(results) %>%
+  mutate(FDR = ifelse(FDR == 1, 0.99999, FDR)) %>%
+  inner_join(definitions) %>%
+  filter(contrast %in% c("induction_only", "imipenem_partial")) %>%
+  arrange(contrast, logFC) %>%
+  group_by(contrast) %>%
+  mutate(index_asc = row_number()) %>%
+  arrange(contrast, desc(logFC)) %>%
+  mutate(index_desc = row_number()) %>%
+  ungroup() %>%
+  mutate(gene_name = ifelse(is.na(gene_name), sprintf("bold('%s')", locus_tag), sprintf("italic('%s')", gene_name))) %>%
+  mutate(type = ifelse(type %in% c("mismatch", "perfect essential"), "essential", "nonessential")) %>%
+  ggplot(aes(y = logFC, x = FDR)) +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "black") +
+  geom_vline(xintercept = 0.05, linetype = "dashed", color = "black") +
+  scale_x_continuous(trans = scales::reverse_trans() %of% scales::log10_trans()) +
+  geom_point(aes(fill = type, color = type), size = 2, alpha = 0.35, shape = 16) +
+  scale_color_manual(
+    values = c(
+      # "control" = "#bbbbbb",
+      "nonessential" = "#1F78B4",
+      # "mismatch" = "#FF7F00",
+      "essential" = "#E31A1C")) +
+        scale_fill_manual(
+    values = c(
+      # "control" = "#bbbbbb",
+      "nonessential" = "#1F78B4",
+      # "mismatch" = "#FF7F00",
+      "essential" = "#E31A1C")) +
+  theme_bw() +
+  # keep the y-axis the same for all plots
+  facet_wrap(~contrast) +
+  theme(strip.text.y = element_text(angle = 0)) +
+  geom_text_repel(
+    data = . %>%
+      group_by(contrast) %>% 
+      filter(FDR < 0.01 & (index_asc <= 10 | index_desc <= 10)),
+      aes(label = gene_name),
+    # size = 3,
+    # segment.size = 0.2,
+    segment.color = "black",
+    segment.alpha = 0.5,
+    box.padding = 0.5,
+    point.padding = 0.5,
+    force = 10,
+    nudge_x = 0,
+    nudge_y = 0,
+    parse = TRUE,
+  ) +
+  geom_point(
+    data = . %>%
+      group_by(contrast) %>% 
+      filter(FDR < 0.01 & (index_asc <= 10 | index_desc <= 10)),
+    aes(color = type), 
+    size = 4,
+    shape = 21,
+    alpha = 0.5,
+    stroke = 1) +
+    # x axis should say Confidence (FDR) and y axis should say Relatie Fitness Score (log2FC)
+  labs(x = "Confidence (FDR)", y = "Relative Fitness Score (log2FC)", color = "Type", fill = "Type") 
+
+print(volcano_plots)
