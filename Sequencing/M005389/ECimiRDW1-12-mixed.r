@@ -128,11 +128,14 @@ design_names <- design_names %>% arrange(group)
 
 # then factor the design_names$sample by existing order, i.e., the order of the design_names$group
 design_names$sample <- factor(design_names$sample, levels = design_names$sample)
+# design_names$induced <- factor(design_names$induced, levels = design_names$induced %>% unique())
+# design_names$imipenem <- factor(design_names$imipenem, levels = design_names$imipenem %>% unique())
 
 # create design matrix for edgeR with the groups
-design_matrix <- model.matrix(~ 0 + design_names$group) %>%
-  set_colnames(levels(design_names$group)) %>%
-  set_rownames(design_names$sample)
+design_matrix <- model.matrix(~ factor(induced) * factor(imipenem), data = design_names) %>%
+  set_rownames(design_names$verbose)
+
+colnames(design_matrix) <- c("intercept", "induced", "imipenem", "induced_imipenem")
 
 # explicitly reorder the full_data by the design_groups
 full_data <- design_names %>%
@@ -150,42 +153,30 @@ spacers <- full_data %>%
 
 # create a matrix of counts for edgeR
 full_data_matrix <- full_data %>%
-  dcast(spacer ~ factor(sample, levels = unique(sample)), value.var = "count") %>%
+  dcast(spacer ~ factor(verbose, levels = unique(verbose)), value.var = "count") %>%
   select(-spacer) %>%
   data.matrix() %>%
   set_rownames(spacers)
 
 # create a DGEList object
-dge <- DGEList(counts = full_data_matrix, group = design_names$group)
-
-# # filterByExpr
-# keep <- dge %>%
-#   filterByExpr(design = design_matrix, group = design_names$group)
-
-# # keep only the spacers that pass the filterByExpr
-# dge <- dge[keep, , keep.lib.sizes = TRUE]
+dge <- DGEList(counts = full_data_matrix, group = design_names$group, samples = design_names$verbose)
 
 # # normalize
 dge <- calcNormFactors(dge)
 
-# scaleOffset using the doublings
-# dge <- scaleOffset(dge, design_names$doublings)
-
-
 # estimate dispersion
 dge <- estimateGLMRobustDisp(dge, design_matrix)
 
-# create a contrast matrix
-contrasts <- makeContrasts(
-  induction_only = induced_0 - uninduced_0,
-  uninduced_drift = uninduced_0_125 - uninduced_0,
-  imipenem_full = induced_0_125 - uninduced_0_125,
-  imipenem_partial = induced_0_125 - induced_0,
-  levels = design_matrix
-)
-
 # fit the glmQLFTest
 fit <- glmQLFit(dge, design = design_matrix, robust = TRUE)
+
+contrasts <- makeContrasts(
+  induced = induced,
+  induced_imipenem = induced_imipenem,
+  imipenem = imipenem,
+  # imipenem_extra = induced_imipenem - induced,
+  levels = design_matrix
+)
 
 # create a single data.table with all the results, going through each contrast, one at a time
 results <- lapply(colnames(contrasts), function(contrast) {
@@ -270,6 +261,7 @@ volcano_plots <- results %>%
   filter(F == max(F)) %>%
   mutate(FDR = ifelse(FDR == 1, 0.99999, FDR)) %>%
   inner_join(definitions) %>%
+  # filter(contrast %in% c("induction_only", "imipenem_partial")) %>%
   arrange(contrast, logFC) %>%
   group_by(contrast) %>%
   mutate(index_asc = row_number()) %>%
@@ -315,3 +307,118 @@ volcano_plots <- results %>%
   labs(x = "Confidence (FDR)", y = "Relative Fitness Score (log2FC)", color = "Type", fill = "Type")
 
 print(volcano_plots)
+
+################
+
+
+all_string <- fread("Organisms/511145.protein.enrichment.terms.v12.0.txt.gz") %>%
+  mutate(locus_tag = str_replace(`#string_protein_id`, ".*\\.", "")) %>%
+  unique()
+
+
+enrichments <- all_string %>%
+  filter(term %in% (all_string %>% group_by(term) %>% tally() %>% filter(n <= 100) %>% pull(unique(term)))) %>%
+  group_by(category, term, description) %>%
+  summarise(locus_tag = list(sort(unique(locus_tag)))) %>%
+  mutate(locus_tag_group = vapply(locus_tag, paste, collapse = ",", FUN.VALUE = character(1))) %>%
+  ungroup() %>%
+  distinct(locus_tag_group, .keep_all = TRUE) %>%
+  select(-locus_tag_group) %>%
+  unnest(locus_tag)
+
+enrichments_with_enough_spacers <- enrichments %>%
+  inner_join(targets, relationship = "many-to-many") %>%
+  unique() %>%
+  group_by(term) %>%
+  tally() %>%
+  filter(n >= 4) %>%
+  filter(!term %in% (enrichments %>% full_join(targets, relationship = "many-to-many") %>% filter(is.na(spacer)) %>% pull(term) %>% unique())) %>%
+  unique() %>%
+  arrange(n) %>%
+  inner_join(enrichments %>% select(term, description) %>% unique())
+
+
+# Get the unique terms
+unique_terms <- unique(enrichments_with_enough_spacers$term)
+
+target_spacers_for_terms <- enrichments_with_enough_spacers %>%
+  inner_join(enrichments) %>%
+  inner_join(targets)
+
+# Initialize a list to store the gene indices
+gene_indices <- list()
+
+# Loop over the unique terms
+for (current_term in unique_terms) {
+  # Get the locus tags of the genes in the set to be tested
+  locus_tags <- target_spacers_for_terms %>%
+    filter(term == current_term) %>%
+    pull(spacer)
+
+  # Create a vector of indices for the genes in the set
+  gene_indices[[current_term]] <- which(rownames(dge) %in% locus_tags)
+}
+
+# Perform the competitive gene set test for all gene sets
+induced_sets <- camera(dge, index = gene_indices, design = design_matrix, contrast = contrasts[, "induced"]) %>%
+  data.table(keep.rownames = "term") %>%
+  mutate(term = factor(term, levels = unique_terms))
+
+induced_imipenem_sets <- camera(dge, index = gene_indices, design = design_matrix, contrast = contrasts[, "induced_imipenem"]) %>%
+  data.table(keep.rownames = "term") %>%
+  mutate(term = factor(term, levels = unique_terms))
+
+# imipenem_extra_sets <- camera(dge, index = gene_indices, design = design_matrix, contrast = contrasts[, "imipenem_extra"]) %>%
+# data.table(keep.rownames = "term") %>%
+#   mutate(term = factor(term, levels = unique_terms))
+
+full_data %>%
+      group_by(sample) %>%
+      mutate(cpm = cpm(count + 1)) %>%
+      ungroup() %>%
+      inner_join(targets) %>%
+      inner_join(enrichments) %>%
+      inner_join(
+        rbind(
+          induced_sets %>% filter(Direction == "Up") %>% arrange(FDR) %>% head(12),
+          induced_sets %>% filter(Direction == "Down") %>% arrange(FDR) %>% head(12)
+        )
+      ) %>%
+      arrange(FDR) %>%
+      mutate(facet_title = paste(term, paste0("(", toupper(Direction), ":", "1e-", round(-log10(FDR),0), ")"))) %>%
+      mutate(facet_title = factor(facet_title, levels = facet_title %>% unique())) %>%
+      ggplot(aes(y = log(cpm), x = factor(induced))) +
+      geom_violin(aes(fill = factor(imipenem)), alpha = 0.25, scale = "area", draw_quantiles = c(0.25, 0.5, 0.75)) +
+      facet_wrap(~ facet_title + stringr::str_sub(description, start = 1, end = 30), ncol = 6, scales = "free_y") +
+      theme_minimal() +
+      scale_fill_viridis(direction = -1, discrete = TRUE)
+
+full_data %>%
+      group_by(sample) %>%
+      mutate(cpm = cpm(count + 1)) %>%
+      ungroup() %>%
+      inner_join(targets) %>%
+      inner_join(enrichments) %>%
+      inner_join(
+        rbind(
+          induced_imipenem_sets %>% filter(Direction == "Up") %>% arrange(FDR) %>% head(12),
+          induced_imipenem_sets %>% filter(Direction == "Down") %>% arrange(FDR) %>% head(12)
+        )
+      ) %>%
+      arrange(FDR) %>%
+      mutate(facet_title = paste(term, paste0("(", toupper(Direction), ":", "1e-", round(-log10(FDR),0), ")"))) %>%
+      mutate(facet_title = factor(facet_title, levels = facet_title %>% unique())) %>%
+      ggplot(aes(y = log(cpm), x = factor(induced))) +
+      geom_violin(aes(fill = factor(imipenem)), alpha = 0.25, scale = "area", draw_quantiles = c(0.25, 0.5, 0.75)) +
+      facet_wrap(~ facet_title + stringr::str_sub(description, start = 1, end = 30), ncol = 6, scales = "free_y") +
+      theme_minimal() +
+      scale_fill_viridis(direction = -1, discrete = TRUE)
+
+# results %>%  select(-PValue, -FDR) %>%
+# # filter(contrast %in% c("induction_only", "imipenem_partial")) %>%
+# inner_join(targets) %>%
+# inner_join(enrichments) %>%
+# inner_join(induced_imipenem_sets %>% head(30) %>% select(term, FDR)) %>%
+#   ggplot(aes(y = logFC)) +
+#   geom_boxplot(aes(fill = contrast), alpha = 0.5) +
+#   facet_wrap(~term+description+paste("FDR =", FDR), scale = "free_y", ncol = 6)
