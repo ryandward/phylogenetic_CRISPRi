@@ -2,7 +2,7 @@ require("pacman")
 
 # Load the packages
 p_load(
-  data.table, scales, edgeR, statmod, poolr, ggtext,
+  data.table, scales, edgeR, statmod, poolr, ggtext, viridis,
   pheatmap, svglite, ggplot2, ggrepel, RColorBrewer, tidyverse, magrittr, ggpubr, ggallin
 )
 
@@ -128,8 +128,6 @@ design_names <- design_names %>% arrange(group)
 
 # then factor the design_names$sample by existing order, i.e., the order of the design_names$group
 design_names$sample <- factor(design_names$sample, levels = design_names$sample)
-# design_names$induced <- factor(design_names$induced, levels = design_names$induced %>% unique())
-# design_names$imipenem <- factor(design_names$imipenem, levels = design_names$imipenem %>% unique())
 
 # create design matrix for edgeR with the groups
 design_matrix <- model.matrix(~ factor(induced) * factor(imipenem), data = design_names) %>%
@@ -250,7 +248,7 @@ overall_median_results <- results %>%
   data.table() %>%
   dcast(locus_tag + type ~ contrast, value.var = "logFC", fun.aggregate = median) %>%
   left_join(definitions %>% select(-annotation)) %>%
-  arrange(imipenem_partial)
+  arrange(induced_imipenem)
 
 volcano_plots <- results %>%
   filter(FDR <= 0.05) %>%
@@ -261,7 +259,7 @@ volcano_plots <- results %>%
   filter(F == max(F)) %>%
   mutate(FDR = ifelse(FDR == 1, 0.99999, FDR)) %>%
   inner_join(definitions) %>%
-  # filter(contrast %in% c("induction_only", "imipenem_partial")) %>%
+  # filter(contrast %in% c("induction_only", "induced_imipenem")) %>%
   arrange(contrast, logFC) %>%
   group_by(contrast) %>%
   mutate(index_asc = row_number()) %>%
@@ -415,7 +413,7 @@ full_data %>%
       scale_fill_viridis(direction = -1, discrete = TRUE)
 
 # results %>%  select(-PValue, -FDR) %>%
-# # filter(contrast %in% c("induction_only", "imipenem_partial")) %>%
+# # filter(contrast %in% c("induction_only", "induced_imipenem")) %>%
 # inner_join(targets) %>%
 # inner_join(enrichments) %>%
 # inner_join(induced_imipenem_sets %>% head(30) %>% select(term, FDR)) %>%
