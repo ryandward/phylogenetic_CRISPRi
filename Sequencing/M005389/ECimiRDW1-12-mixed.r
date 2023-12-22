@@ -2,7 +2,7 @@ require("pacman")
 
 # Load the packages
 p_load(
-  data.table, scales, edgeR, statmod, poolr, ggtext, viridis,
+  data.table, scales, edgeR, statmod, poolr, ggtext, viridis, ggforce,
   pheatmap, svglite, ggplot2, ggrepel, RColorBrewer, tidyverse, magrittr, ggpubr, ggallin
 )
 
@@ -172,6 +172,7 @@ contrasts <- makeContrasts(
   induced = induced,
   induced_imipenem = induced_imipenem,
   imipenem = imipenem,
+  imipenem_difference = induced_imipenem - induced,
   # imipenem_extra = induced_imipenem - induced,
   levels = design_matrix
 )
@@ -366,57 +367,110 @@ induced_imipenem_sets <- camera(dge, index = gene_indices, design = design_matri
   data.table(keep.rownames = "term") %>%
   mutate(term = factor(term, levels = unique_terms))
 
+imipenem_difference_sets <- camera(dge, index = gene_indices, design = design_matrix, contrast = contrasts[, "imipenem_difference"]) %>%
+  data.table(keep.rownames = "term") %>%
+  mutate(term = factor(term, levels = unique_terms))
+
 # imipenem_extra_sets <- camera(dge, index = gene_indices, design = design_matrix, contrast = contrasts[, "imipenem_extra"]) %>%
 # data.table(keep.rownames = "term") %>%
 #   mutate(term = factor(term, levels = unique_terms))
 
 full_data %>%
-      group_by(sample) %>%
-      mutate(cpm = cpm(count + 1)) %>%
-      ungroup() %>%
-      inner_join(targets) %>%
-      inner_join(enrichments) %>%
-      inner_join(
-        rbind(
-          induced_sets %>% filter(Direction == "Up") %>% arrange(FDR) %>% head(12),
-          induced_sets %>% filter(Direction == "Down") %>% arrange(FDR) %>% head(12)
-        )
-      ) %>%
-      arrange(FDR) %>%
-      mutate(facet_title = paste(term, paste0("(", toupper(Direction), ":", "1e-", round(-log10(FDR),0), ")"))) %>%
-      mutate(facet_title = factor(facet_title, levels = facet_title %>% unique())) %>%
-      ggplot(aes(y = log(cpm), x = factor(induced))) +
-      geom_violin(aes(fill = factor(imipenem)), alpha = 0.25, scale = "area", draw_quantiles = c(0.25, 0.5, 0.75)) +
-      facet_wrap(~ facet_title + stringr::str_sub(description, start = 1, end = 30), ncol = 6, scales = "free_y") +
-      theme_minimal() +
-      scale_fill_viridis(direction = -1, discrete = TRUE)
+  rbind(freezer_stock, fill = TRUE) %>%
+  mutate(imipenem = ifelse(is.na(imipenem), "Stock", imipenem), induced = ifelse(is.na(induced), "Stock", induced)) %>%
+  group_by(sample) %>%
+  mutate(imipenem = factor(imipenem, levels = c("Stock", "0", "0.125", "0.25"))) %>%
+  mutate(induced = factor(induced, levels = c("Stock", "FALSE", "TRUE"))) %>%
+  mutate(cpm = cpm(count + 1)) %>%
+  ungroup() %>%
+  inner_join(targets, by = "spacer") %>%
+  inner_join(enrichments) %>%
+  inner_join(
+    rbind(
+      induced_sets %>% filter(Direction == "Up" & NGenes <= 50) %>% arrange(FDR) %>% head(12),
+      induced_sets %>% filter(Direction == "Down" & NGenes <= 50) %>% arrange(FDR) %>% head(12)
+    )
+  ) %>%
+  arrange(FDR) %>%
+  mutate(facet_title = paste(term, paste0("(", NGenes, " guides ", toupper(Direction), ": ", "1e-", round(-log10(FDR),0), ")"))) %>%
+  mutate(facet_title = factor(facet_title, levels = facet_title %>% unique())) %>%
+  ggplot(aes(y = log2(cpm), x = factor(induced))) +
+  geom_sina(aes(color = factor(imipenem)), scale = "width") +
+  geom_violin(aes(fill = factor(imipenem), color = factor(imipenem), linewidth = induced), alpha = 0.25, scale = "width", draw_quantiles = c(0.25, 0.5, 0.75)) +
+  facet_wrap(~ facet_title + stringr::str_sub(description, start = 1, end = 30), ncol = 6, scales = "free_y") +
+  theme_minimal() +
+  scale_linewidth_manual(values = c("Stock" = 0.5, "FALSE" = 0.5, "TRUE" = 1.5)) +
+  ggtitle("Differences in induced samples")
+
 
 full_data %>%
-      group_by(sample) %>%
-      mutate(cpm = cpm(count + 1)) %>%
-      ungroup() %>%
-      inner_join(targets) %>%
-      inner_join(enrichments) %>%
-      inner_join(
-        rbind(
-          induced_imipenem_sets %>% filter(Direction == "Up") %>% arrange(FDR) %>% head(12),
-          induced_imipenem_sets %>% filter(Direction == "Down") %>% arrange(FDR) %>% head(12)
-        )
-      ) %>%
-      arrange(FDR) %>%
-      mutate(facet_title = paste(term, paste0("(", toupper(Direction), ":", "1e-", round(-log10(FDR),0), ")"))) %>%
-      mutate(facet_title = factor(facet_title, levels = facet_title %>% unique())) %>%
-      ggplot(aes(y = log(cpm), x = factor(induced))) +
-      geom_violin(aes(fill = factor(imipenem)), alpha = 0.25, scale = "area", draw_quantiles = c(0.25, 0.5, 0.75)) +
-      facet_wrap(~ facet_title + stringr::str_sub(description, start = 1, end = 30), ncol = 6, scales = "free_y") +
-      theme_minimal() +
-      scale_fill_viridis(direction = -1, discrete = TRUE)
+  rbind(freezer_stock, fill = TRUE) %>%
+  mutate(imipenem = ifelse(is.na(imipenem), "Stock", imipenem), induced = ifelse(is.na(induced), "Stock", induced)) %>%
+  group_by(sample) %>%
+  mutate(imipenem = factor(imipenem, levels = c("Stock", "0", "0.125", "0.25"))) %>%
+  mutate(induced = factor(induced, levels = c("Stock", "FALSE", "TRUE"))) %>%
+  mutate(cpm = cpm(count + 1)) %>%
+  ungroup() %>%
+  inner_join(targets, by = "spacer") %>%
+  inner_join(enrichments) %>%
+  inner_join(
+    rbind(
+      induced_imipenem_sets %>% filter(Direction == "Up" & NGenes <= 50) %>% arrange(FDR) %>% head(12),
+      induced_imipenem_sets %>% filter(Direction == "Down" & NGenes <= 50) %>% arrange(FDR) %>% head(12)
+    )
+  ) %>%
+  arrange(FDR) %>%
+  mutate(facet_title = paste(term, paste0("(", NGenes, " guides ", toupper(Direction), ": ", "1e-", round(-log10(FDR),0), ")"))) %>%
+  mutate(facet_title = factor(facet_title, levels = facet_title %>% unique())) %>%
+  ggplot(aes(y = log2(cpm), x = factor(induced))) +
+  geom_sina(aes(color = factor(imipenem)), scale = "width") +
+  geom_violin(aes(fill = factor(imipenem), color = factor(imipenem), linewidth = induced), alpha = 0.25, scale = "width", draw_quantiles = c(0.25, 0.5, 0.75)) +
+  facet_wrap(~ facet_title + stringr::str_sub(description, start = 1, end = 30), ncol = 6, scales = "free_y") +
+  theme_minimal() +
+  scale_linewidth_manual(values = c("Stock" = 0.5, "FALSE" = 0.5, "TRUE" = 1.5)) +
+  ggtitle("Differences in guide composition in induced imipenem samples")
 
-# results %>%  select(-PValue, -FDR) %>%
-# # filter(contrast %in% c("induction_only", "induced_imipenem")) %>%
-# inner_join(targets) %>%
-# inner_join(enrichments) %>%
-# inner_join(induced_imipenem_sets %>% head(30) %>% select(term, FDR)) %>%
-#   ggplot(aes(y = logFC)) +
-#   geom_boxplot(aes(fill = contrast), alpha = 0.5) +
-#   facet_wrap(~term+description+paste("FDR =", FDR), scale = "free_y", ncol = 6)
+
+full_data %>%
+  rbind(freezer_stock, fill = TRUE) %>%
+  mutate(imipenem = ifelse(is.na(imipenem), "Stock", imipenem), induced = ifelse(is.na(induced), "Stock", induced)) %>%
+  group_by(sample) %>%
+  mutate(imipenem = factor(imipenem, levels = c("Stock", "0", "0.125", "0.25"))) %>%
+  mutate(induced = factor(induced, levels = c("Stock", "FALSE", "TRUE"))) %>%
+  mutate(cpm = cpm(count + 1)) %>%
+  ungroup() %>%
+  inner_join(targets, by = "spacer") %>%
+  inner_join(enrichments) %>%
+  inner_join(
+    rbind(
+      imipenem_difference_sets %>% filter(Direction == "Up" & NGenes <= 50) %>% arrange(FDR) %>% head(12),
+      imipenem_difference_sets %>% filter(Direction == "Down" & NGenes <= 50) %>% arrange(FDR) %>% head(12)
+    )
+  ) %>%
+  arrange(FDR) %>%
+  mutate(facet_title = paste(term, paste0("(", NGenes, " guides ", toupper(Direction), ": ", "1e-", round(-log10(FDR),0), ")"))) %>%
+  mutate(facet_title = factor(facet_title, levels = facet_title %>% unique())) %>%
+  ggplot(aes(y = log2(cpm), x = factor(induced))) +
+  geom_sina(aes(color = factor(imipenem)), scale = "width") +
+  geom_violin(aes(fill = factor(imipenem), color = factor(imipenem), linewidth = induced), alpha = 0.25, scale = "width", draw_quantiles = c(0.25, 0.5, 0.75)) +
+  facet_wrap(~ facet_title + stringr::str_sub(description, start = 1, end = 30), ncol = 6, scales = "free_y") +
+  theme_minimal() +
+  scale_linewidth_manual(values = c("Stock" = 0.5, "FALSE" = 0.5, "TRUE" = 1.5)) +
+  ggtitle("Differences in guide composition between induced and induced imipenem samples")
+
+
+
+# # Select random 10 locus_tags
+# random_locus_tags <- sample(essentials, 2)
+
+# # Filter results to include only the selected locus_tags
+# filtered_results <- results %>% 
+# filter(locus_tag %in% random_locus_tags) %>%
+# inner_join(definitions)
+
+# # Plot
+# filtered_results %>%
+# # filter(PValue <= 0.05) %>%
+#   ggplot(aes(x = as.numeric(y_pred), y = logFC)) +
+#   geom_point(aes(colour = factor(offset))) + geom_line(aes(colour = factor(offset))) +
+#   facet_grid(contrast ~ gene_name)
