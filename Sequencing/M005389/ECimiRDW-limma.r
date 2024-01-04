@@ -178,11 +178,17 @@ dge <- calcNormFactors(dge)
 # estimate dispersion
 dge <- estimateGLMRobustDisp(dge, design_matrix)
 
-# fit the glmQLFTest
-voom_fit <- voomLmFit(dge, design_matrix)
+# voom
+v <- voomWithQualityWeights(dge, design_matrix)
+
+# fit the model
+voom_fit <- lmFit(v, design_matrix, method = "robust")
+
+# voom_fit <- voomLmFit(dge, design_matrix, sample.weights = TRUE, plot = TRUE)
 
 # create a list of contrasts
 contrasts <- makeContrasts(
+  intercept = intercept,
   induced = induced,
   imipenem = imipenem,
   induced_imipenem = induced_imipenem - imipenem,
@@ -519,7 +525,6 @@ create_plot <- function(full_data, freezer_stock, targets, enrichments, sets) {
 }
 
 create_plot(full_data, freezer_stock, v_targets, enrichments, all_sets[contrast == "induced", ])
-#create_plot(full_data, freezer_stock, v_targets, enrichments, all_sets[contrast == "imipenem", ])
+create_plot(full_data, freezer_stock, v_targets, enrichments, all_sets[contrast == "intercept", ])
 create_plot(full_data, freezer_stock, v_targets, enrichments, all_sets[contrast == "induced_imipenem", ])
 create_plot(full_data, freezer_stock, v_targets, enrichments, all_sets[contrast == "imipenem_isolated", ])
-
