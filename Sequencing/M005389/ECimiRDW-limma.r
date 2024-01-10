@@ -2,7 +2,7 @@ require("pacman")
 
 # Load the packages
 p_load(
-  data.table, scales, edgeR, statmod, poolr, ggtext, viridis, ggforce,
+  data.table, scales, edgeR, statmod, poolr, ggtext, viridis, ggforce, igraph,
   pheatmap, svglite, ggplot2, ggrepel, RColorBrewer, tidyverse, magrittr, ggpubr, ggallin
 )
 
@@ -188,7 +188,7 @@ voom_fit <- lmFit(v, design_matrix, method = "robust")
 
 # create a list of contrasts
 contrasts <- makeContrasts(
-  intercept = intercept,
+  # intercept = intercept,
   induced = induced,
   imipenem = imipenem,
   induced_imipenem = induced_imipenem - imipenem,
@@ -336,49 +336,49 @@ all_string <- fread("Organisms/511145.protein.enrichment.terms.v12.0.txt.gz") %>
 
 
 gene_groups <- all_string %>%
-      # filter(term %in% (all_string %>% group_by(term) %>% tally() %>% pull(unique(term)))) %>%
-      group_by(category, term, description) %>%
-      summarise(gene_count = n(), locus_tag = list(sort(unique(locus_tag)))) %>%
-      mutate(locus_tag_group = vapply(locus_tag, paste, collapse = ",", FUN.VALUE = character(1)))
+  # filter(term %in% (all_string %>% group_by(term) %>% tally() %>% pull(unique(term)))) %>%
+  group_by(category, term, description) %>%
+  summarise(gene_count = n(), locus_tag = list(sort(unique(locus_tag)))) %>%
+  mutate(locus_tag_group = vapply(locus_tag, paste, collapse = ",", FUN.VALUE = character(1)))
 
-complete_terms <- gene_groups %>% 
-  unnest(locus_tag) %>% 
-  inner_join(targets %>% 
-  select(locus_tag) %>% unique()) %>% 
-  group_by(term, gene_count) %>% 
-  summarize(genes_targeted = n()) %>% 
+complete_terms <- gene_groups %>%
+  unnest(locus_tag) %>%
+  inner_join(targets %>%
+    select(locus_tag) %>% unique()) %>%
+  group_by(term, gene_count) %>%
+  summarize(genes_targeted = n()) %>%
   filter(gene_count == genes_targeted)
 
 # only perform enrichments where all genes are available
 gene_groups <- complete_terms %>% inner_join(gene_groups)
 
-repeated_gene_groups <- gene_groups %>% 
-  group_by(locus_tag) %>% 
-  mutate(times_listed = n()) %>% 
-  arrange(locus_tag) %>% 
-  ungroup ()
+repeated_gene_groups <- gene_groups %>%
+  group_by(locus_tag) %>%
+  mutate(times_listed = n()) %>%
+  arrange(locus_tag) %>%
+  ungroup()
 
 # pick the best annotation for each locus_tag_group, i.e., highest in term, and the lowest in the category_rank
 ranked_annotations <- repeated_gene_groups %>%
-      group_by(locus_tag_group, category) %>%
-      arrange(versionsort::ver_sort(term)) %>%
-      slice(n()) %>%
-      ungroup() %>%
-      mutate(category_rank = case_when(
-        category == "Biological Process (Gene Ontology)" ~ 1,
-        category == "Molecular Function (Gene Ontology)" ~ 2,
-        category == "Cellular Component (Gene Ontology)" ~ 3,
-        category == "Protein Domains and Features (InterPro)" ~ 4,
-        category == "Protein Domains (SMART)" ~ 5,
-        category == "Protein Domains (Pfam)" ~ 6,
-        category == "Annotated Keywords (UniProt)" ~ 7,
-        category == "Reactome Pathways" ~ 8,
-        category == "Subcellular localization (COMPARTMENTS)" ~ 9,
-        category == "Local Network Cluster (STRING)" ~ 10,
-        TRUE ~ NA_integer_
-      )) %>%
-      group_by(locus_tag_group) %>%
-      filter(category_rank == min(category_rank))
+  group_by(locus_tag_group, category) %>%
+  arrange(versionsort::ver_sort(term)) %>%
+  slice(n()) %>%
+  ungroup() %>%
+  mutate(category_rank = case_when(
+    category == "Biological Process (Gene Ontology)" ~ 1,
+    category == "Molecular Function (Gene Ontology)" ~ 2,
+    category == "Cellular Component (Gene Ontology)" ~ 3,
+    category == "Protein Domains and Features (InterPro)" ~ 4,
+    category == "Protein Domains (SMART)" ~ 5,
+    category == "Protein Domains (Pfam)" ~ 6,
+    category == "Annotated Keywords (UniProt)" ~ 7,
+    category == "Reactome Pathways" ~ 8,
+    category == "Subcellular localization (COMPARTMENTS)" ~ 9,
+    category == "Local Network Cluster (STRING)" ~ 10,
+    TRUE ~ NA_integer_
+  )) %>%
+  group_by(locus_tag_group) %>%
+  filter(category_rank == min(category_rank))
 
 enrichments <- ranked_annotations %>%
   ungroup() %>%
@@ -485,7 +485,7 @@ create_plot <- function(full_data, freezer_stock, targets, enrichments, sets) {
           head(18)
       )
     ) %>%
-    filter(FDR <= 0.05) %>%
+    # filter(FDR <= 0.05) %>%
     group_by(factor(imipenem), factor(induced), term) %>%
     ungroup() %>%
     arrange(FDR) %>%
@@ -494,19 +494,18 @@ create_plot <- function(full_data, freezer_stock, targets, enrichments, sets) {
     mutate(facet_title = paste0("**", term, "**", " — ", Direction, "<br>", description)) %>%
     # mutate(facet_title = sub("([^ \n]+)", "**\\1**", facet_title)) %>%
     mutate(facet_title = gsub("\n", "<br>", facet_title)) %>%
-    mutate(facet_title = paste(facet_title, paste0("**FDR** = ", signif(FDR, 2), ", *n* = ", NGenes), sep = "<br>")) %>%
+    mutate(facet_title = paste(facet_title, paste0("**FDR** = ", signif(FDR, 2), ", *n* = ", NGenes), paste0("**[", contrast, "]**"), sep = "<br>")) %>%
     mutate(facet_title = factor(facet_title, levels = facet_title %>% unique()))
 
   ggplot(plot_data, aes(y = cpm, x = factor(induced), group = interaction(factor(imipenem), factor(induced)))) +
     geom_tile(data = data.frame(induced = "TRUE"), aes(x = induced, y = 0), width = 1, height = Inf, fill = "grey50", alpha = 0.2, inherit.aes = FALSE) +
-    geom_sina(aes(color = factor(imipenem), size = weight), alpha = 0.5, shape = 16) +
+    geom_sina(aes(color = factor(imipenem), size = weight, weight = weight), alpha = 0.5, shape = 16) +
     geom_violin(aes(weight = as.numeric(weight)), alpha = 0.25, draw_quantiles = c(0.25, 0.5, 0.75), position = "dodge") +
     facet_wrap(~facet_title, nrow = 3, scales = "free_y") +
     scale_size(range = c(0.25, 2.5)) +
     # use some nice colors for fill and color
     scale_fill_manual(values = c("0" = "#1F78B4", "0.125" = "#FF7F00", "0.25" = "#E31A1C")) +
     scale_color_manual(values = c("0" = "#1F78B4", "0.125" = "#FF7F00", "0.25" = "#E31A1C")) +
-    ggtitle(set_name) +
     # bottom label should say induced and uninduced instead of true/false
     labs(x = NULL, y = "Counts per Million", color = "Imipenem (µg/mL)", fill = "Imipenem (µg/mL)", size = "Predicted Weight") +
     guides(color = guide_legend(override.aes = list(size = 4))) +
@@ -528,3 +527,7 @@ create_plot(full_data, freezer_stock, v_targets, enrichments, all_sets[contrast 
 create_plot(full_data, freezer_stock, v_targets, enrichments, all_sets[contrast == "intercept", ])
 create_plot(full_data, freezer_stock, v_targets, enrichments, all_sets[contrast == "induced_imipenem", ])
 create_plot(full_data, freezer_stock, v_targets, enrichments, all_sets[contrast == "imipenem_isolated", ])
+
+create_plot(full_data, freezer_stock, v_targets, enrichments, all_sets[term == "CL:35"])
+create_plot(full_data, freezer_stock, v_targets, enrichments, all_sets[term == "GO:0004605"])
+create_plot(full_data, freezer_stock, v_targets, enrichments, all_sets[term == "CL:110"])
