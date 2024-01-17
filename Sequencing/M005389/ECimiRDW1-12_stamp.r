@@ -13,6 +13,8 @@ bottleneck_data <- bottleneck_data %>% rbind(fread(
   header = TRUE, sep = "\t", col.names = c("sample", "spacer", "count")
 ) %>% filter(!(spacer %like% "\\*")))
 
+############
+
 bottleneck_design <- fread("Sequencing/M005389/design.tsv", header = TRUE, sep = "\t") %>%
   rbind(data.table(sample = "ECO_freezer", doublings = 0), fill = TRUE) %>%
   mutate(induction = ifelse(induced == TRUE, "induced", "uninduced")) %>%
@@ -143,3 +145,30 @@ botneck.stats.plot <- botneck %>%
   guides(fill = "none")
 
 print(botneck.stats.plot)
+
+#####################################
+
+# create an MDS plot
+bottleneck_data <- bottleneck_data %>%
+  group_by(condition, replicate) %>%
+  mutate(cpm = count / sum(count) * 1e6) %>%
+  filter(!condition %like% "0.25")
+
+rectangle_data <- bottleneck_data %>% data.table() %>% dcast(spacer ~ condition + replicate, fill = 0)
+
+dist_matrix <- dist(t(rectangle_data[, -1]))
+
+mds <- cmdscale(dist_matrix)
+
+
+mds_df <- data.table(mds, keep.rownames = "sample")
+
+
+names(mds_df) <- c("Sample", "Dim1", "Dim2")
+
+
+ggplot(mds_df, aes(x = Dim1, y = Dim2)) +
+  geom_point() +
+  theme_minimal() +
+  labs(x = "Dimension 1", y = "Dimension 2", color = "Condition_Replicate") +
+  ggrepel::geom_text_repel(aes(label = Sample), size = 3, max.overlaps = Inf)
