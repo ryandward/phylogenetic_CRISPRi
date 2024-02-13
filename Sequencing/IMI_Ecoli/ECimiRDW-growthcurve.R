@@ -121,7 +121,7 @@ growth_curve_plot <- ggplot(
     linetype = "Induced", fill = "Imipenem"
   ) +
   scale_linetype_manual(values = c("FALSE" = "dashed", "TRUE" = "solid")) +
-  scale_color_discrete(guide = guide_legend(ncol = ncol)) +
+  # scale_color_discrete(guide = guide_legend(ncol = ncol)) +
   facet_wrap(followup ~ .) +
   theme_minimal()
 

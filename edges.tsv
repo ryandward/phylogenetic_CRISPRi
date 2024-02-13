@@ -1,0 +1,1458 @@
+description	gene
+Plasma membrane respiratory chain complex I GO:0045272	nuoN
+Plasma membrane respiratory chain complex I GO:0045272	nuoM
+Plasma membrane respiratory chain complex I GO:0045272	nuoL
+Plasma membrane respiratory chain complex I GO:0045272	nuoK
+Plasma membrane respiratory chain complex I GO:0045272	nuoJ
+Plasma membrane respiratory chain complex I GO:0045272	nuoI
+Plasma membrane respiratory chain complex I GO:0045272	nuoH
+Plasma membrane respiratory chain complex I GO:0045272	nuoG
+Plasma membrane respiratory chain complex I GO:0045272	nuoF
+Plasma membrane respiratory chain complex I GO:0045272	nuoE
+Plasma membrane respiratory chain complex I GO:0045272	nuoB
+Plasma membrane respiratory chain complex I GO:0045272	nuoA
+NADH dehydrogenase complex GO:0030964	nuoN
+NADH dehydrogenase complex GO:0030964	nuoM
+NADH dehydrogenase complex GO:0030964	nuoL
+NADH dehydrogenase complex GO:0030964	nuoK
+NADH dehydrogenase complex GO:0030964	nuoJ
+NADH dehydrogenase complex GO:0030964	nuoI
+NADH dehydrogenase complex GO:0030964	nuoH
+NADH dehydrogenase complex GO:0030964	nuoG
+NADH dehydrogenase complex GO:0030964	nuoF
+NADH dehydrogenase complex GO:0030964	nuoE
+NADH dehydrogenase complex GO:0030964	nuoB
+NADH dehydrogenase complex GO:0030964	nuoA
+Cell division site GO:0032153	ftsW
+Cell division site GO:0032153	mrdB
+Cell division site GO:0032153	tolQ
+Cell division site GO:0032153	tolR
+Cell division site GO:0032153	tolB
+Cell division site GO:0032153	pal
+Cell division site GO:0032153	ftsK
+Cell division site GO:0032153	dedD
+Cell division site GO:0032153	nlpD
+Cell division site GO:0032153	damX
+Cell division site GO:0032153	ftsX
+Cell division site GO:0032153	ftsE
+Cell division site GO:0032153	envC
+Cell division site GO:0032153	ftsN
+Plasma membrane respirasome GO:0070470	nuoN
+Plasma membrane respirasome GO:0070470	nuoM
+Plasma membrane respirasome GO:0070470	nuoL
+Plasma membrane respirasome GO:0070470	nuoK
+Plasma membrane respirasome GO:0070470	nuoJ
+Plasma membrane respirasome GO:0070470	nuoI
+Plasma membrane respirasome GO:0070470	nuoH
+Plasma membrane respirasome GO:0070470	nuoG
+Plasma membrane respirasome GO:0070470	nuoF
+Plasma membrane respirasome GO:0070470	nuoE
+Plasma membrane respirasome GO:0070470	nuoB
+Plasma membrane respirasome GO:0070470	nuoA
+Respiratory chain complex GO:0098803	nuoN
+Respiratory chain complex GO:0098803	nuoM
+Respiratory chain complex GO:0098803	nuoL
+Respiratory chain complex GO:0098803	nuoK
+Respiratory chain complex GO:0098803	nuoJ
+Respiratory chain complex GO:0098803	nuoI
+Respiratory chain complex GO:0098803	nuoH
+Respiratory chain complex GO:0098803	nuoG
+Respiratory chain complex GO:0098803	nuoF
+Respiratory chain complex GO:0098803	nuoE
+Respiratory chain complex GO:0098803	nuoB
+Respiratory chain complex GO:0098803	nuoA
+Pyrimidine nucleoside triphosphate biosynthetic process GO:0009148	tmk
+Pyrimidine nucleoside triphosphate biosynthetic process GO:0009148	dcd
+Pyrimidine nucleoside triphosphate biosynthetic process GO:0009148	pyrG
+Pyrimidine nucleoside triphosphate biosynthetic process GO:0009148	thyA
+Translation initiation factor activity GO:0003743	infA
+Translation initiation factor activity GO:0003743	infC
+Translation initiation factor activity GO:0003743	infB
+Pyrimidine deoxyribonucleoside triphosphate biosynthetic process GO:0009212	tmk
+Pyrimidine deoxyribonucleoside triphosphate biosynthetic process GO:0009212	dcd
+Pyrimidine deoxyribonucleoside triphosphate biosynthetic process GO:0009212	thyA
+Respirasome GO:0070469	nuoN
+Respirasome GO:0070469	nuoM
+Respirasome GO:0070469	nuoL
+Respirasome GO:0070469	nuoK
+Respirasome GO:0070469	nuoJ
+Respirasome GO:0070469	nuoI
+Respirasome GO:0070469	nuoH
+Respirasome GO:0070469	nuoG
+Respirasome GO:0070469	nuoF
+Respirasome GO:0070469	nuoE
+Respirasome GO:0070469	nuoB
+Respirasome GO:0070469	nuoA
+Regulation of membrane invagination GO:1905153	tolQ
+Regulation of membrane invagination GO:1905153	tolR
+Regulation of membrane invagination GO:1905153	tolB
+Regulation of membrane invagination GO:1905153	pal
+Cell septum GO:0030428	ftsW
+Cell septum GO:0030428	ftsK
+Cell septum GO:0030428	dedD
+Cell septum GO:0030428	damX
+Cell septum GO:0030428	ftsX
+Cell septum GO:0030428	ftsE
+Cell septum GO:0030428	ftsN
+NADH dehydrogenase (ubiquinone) activity GO:0008137	nuoN
+NADH dehydrogenase (ubiquinone) activity GO:0008137	nuoM
+NADH dehydrogenase (ubiquinone) activity GO:0008137	nuoL
+NADH dehydrogenase (ubiquinone) activity GO:0008137	nuoK
+NADH dehydrogenase (ubiquinone) activity GO:0008137	nuoJ
+NADH dehydrogenase (ubiquinone) activity GO:0008137	nuoG
+NADH dehydrogenase (ubiquinone) activity GO:0008137	nuoF
+NADH dehydrogenase (ubiquinone) activity GO:0008137	nuoB
+NADH dehydrogenase (ubiquinone) activity GO:0008137	nuoA
+dTTP metabolic process GO:0046075	tmk
+dTTP metabolic process GO:0046075	dcd
+dTTP metabolic process GO:0046075	thyA
+Deoxyribose phosphate biosynthetic process GO:0046385	tmk
+Deoxyribose phosphate biosynthetic process GO:0046385	dcd
+Deoxyribose phosphate biosynthetic process GO:0046385	nrdA
+Deoxyribose phosphate biosynthetic process GO:0046385	thyA
+Peptidoglycan transport GO:0015835	ftsW
+Peptidoglycan transport GO:0015835	mrdB
+Division septum GO:0000935	ftsX
+Division septum GO:0000935	ftsE
+Division septum GO:0000935	ftsN
+NADH dehydrogenase (quinone) activity GO:0050136	nuoN
+NADH dehydrogenase (quinone) activity GO:0050136	nuoM
+NADH dehydrogenase (quinone) activity GO:0050136	nuoL
+NADH dehydrogenase (quinone) activity GO:0050136	nuoK
+NADH dehydrogenase (quinone) activity GO:0050136	nuoJ
+NADH dehydrogenase (quinone) activity GO:0050136	nuoI
+NADH dehydrogenase (quinone) activity GO:0050136	nuoG
+NADH dehydrogenase (quinone) activity GO:0050136	nuoF
+NADH dehydrogenase (quinone) activity GO:0050136	nuoB
+NADH dehydrogenase (quinone) activity GO:0050136	nuoA
+Cytokinetic process GO:0032506	ftsW
+Cytokinetic process GO:0032506	ftsK
+Cytokinetic process GO:0032506	minE
+Cytokinetic process GO:0032506	minD
+Cytokinetic process GO:0032506	minC
+Cytokinetic process GO:0032506	dedD
+Cytokinetic process GO:0032506	damX
+Cytokinetic process GO:0032506	ftsX
+Cytokinetic process GO:0032506	ftsE
+Cytokinetic process GO:0032506	ftsN
+Divisome complex GO:1990586	ftsW
+Divisome complex GO:1990586	ftsK
+Divisome complex GO:1990586	ftsX
+Divisome complex GO:1990586	ftsE
+Divisome complex GO:1990586	ftsN
+DNA negative supercoiling activity GO:0034335	gyrA
+DNA negative supercoiling activity GO:0034335	gyrB
+Pyrimidine nucleoside triphosphate metabolic process GO:0009147	tmk
+Pyrimidine nucleoside triphosphate metabolic process GO:0009147	dcd
+Pyrimidine nucleoside triphosphate metabolic process GO:0009147	pyrG
+Pyrimidine nucleoside triphosphate metabolic process GO:0009147	thyA
+Lipid-linked peptidoglycan transport GO:0015836	ftsW
+Lipid-linked peptidoglycan transport GO:0015836	mrdB
+Glycogen biosynthetic process GO:0005978	glgA
+Glycogen biosynthetic process GO:0005978	glgC
+Glycogen biosynthetic process GO:0005978	glgB
+2-deoxyribonucleotide metabolic process GO:0009394	tmk
+2-deoxyribonucleotide metabolic process GO:0009394	dcd
+2-deoxyribonucleotide metabolic process GO:0009394	nrdA
+2-deoxyribonucleotide metabolic process GO:0009394	thyA
+Cell division GO:0051301	murE
+Cell division GO:0051301	murD
+Cell division GO:0051301	ftsW
+Cell division GO:0051301	murG
+Cell division GO:0051301	clpX
+Cell division GO:0051301	mrdB
+Cell division GO:0051301	tolQ
+Cell division GO:0051301	tolR
+Cell division GO:0051301	tolB
+Cell division GO:0051301	pal
+Cell division GO:0051301	ftsK
+Cell division GO:0051301	minE
+Cell division GO:0051301	minD
+Cell division GO:0051301	minC
+Cell division GO:0051301	dicA
+Cell division GO:0051301	dedD
+Cell division GO:0051301	nlpD
+Cell division GO:0051301	damX
+Cell division GO:0051301	ftsX
+Cell division GO:0051301	ftsE
+Cell division GO:0051301	envC
+Cell division GO:0051301	ftsN
+Cell cycle process GO:0022402	ftsW
+Cell cycle process GO:0022402	ftsK
+Cell cycle process GO:0022402	minE
+Cell cycle process GO:0022402	minD
+Cell cycle process GO:0022402	minC
+Cell cycle process GO:0022402	dedD
+Cell cycle process GO:0022402	parE
+Cell cycle process GO:0022402	damX
+Cell cycle process GO:0022402	ftsX
+Cell cycle process GO:0022402	ftsE
+Cell cycle process GO:0022402	dnaN
+Cell cycle process GO:0022402	ftsN
+Cell septum assembly GO:0090529	ftsW
+Cell septum assembly GO:0090529	ftsK
+Cell septum assembly GO:0090529	minE
+Cell septum assembly GO:0090529	minD
+Cell septum assembly GO:0090529	minC
+Cell septum assembly GO:0090529	ftsX
+Cell septum assembly GO:0090529	ftsE
+Cell septum assembly GO:0090529	ftsN
+Quinone binding GO:0048038	nuoN
+Quinone binding GO:0048038	nuoM
+Quinone binding GO:0048038	nuoL
+Quinone binding GO:0048038	nuoK
+Quinone binding GO:0048038	nuoJ
+Quinone binding GO:0048038	nuoI
+Quinone binding GO:0048038	nuoH
+Quinone binding GO:0048038	nuoG
+Quinone binding GO:0048038	nuoF
+Quinone binding GO:0048038	nuoE
+Quinone binding GO:0048038	nuoB
+Quinone binding GO:0048038	nuoA
+NADH dehydrogenase activity GO:0003954	nuoN
+NADH dehydrogenase activity GO:0003954	nuoM
+NADH dehydrogenase activity GO:0003954	nuoL
+NADH dehydrogenase activity GO:0003954	nuoK
+NADH dehydrogenase activity GO:0003954	nuoJ
+NADH dehydrogenase activity GO:0003954	nuoI
+NADH dehydrogenase activity GO:0003954	nuoG
+NADH dehydrogenase activity GO:0003954	nuoF
+NADH dehydrogenase activity GO:0003954	nuoB
+NADH dehydrogenase activity GO:0003954	nuoA
+Cytokinesis GO:0000910	ftsW
+Cytokinesis GO:0000910	ftsK
+Cytokinesis GO:0000910	minE
+Cytokinesis GO:0000910	minD
+Cytokinesis GO:0000910	minC
+Cytokinesis GO:0000910	dedD
+Cytokinesis GO:0000910	damX
+Cytokinesis GO:0000910	ftsX
+Cytokinesis GO:0000910	ftsE
+Cytokinesis GO:0000910	ftsN
+Hda-beta clamp complex GO:1990085	hda
+Hda-beta clamp complex GO:1990085	dnaN
+Positive regulation of cell division GO:0051781	ftsX
+Positive regulation of cell division GO:0051781	ftsE
+Oxidoreductase activity, acting on NAD(P)H, quinone or similar compound as acceptor GO:0016655	nuoN
+Oxidoreductase activity, acting on NAD(P)H, quinone or similar compound as acceptor GO:0016655	nuoM
+Oxidoreductase activity, acting on NAD(P)H, quinone or similar compound as acceptor GO:0016655	nuoL
+Oxidoreductase activity, acting on NAD(P)H, quinone or similar compound as acceptor GO:0016655	nuoK
+Oxidoreductase activity, acting on NAD(P)H, quinone or similar compound as acceptor GO:0016655	nuoJ
+Oxidoreductase activity, acting on NAD(P)H, quinone or similar compound as acceptor GO:0016655	nuoI
+Oxidoreductase activity, acting on NAD(P)H, quinone or similar compound as acceptor GO:0016655	nuoH
+Oxidoreductase activity, acting on NAD(P)H, quinone or similar compound as acceptor GO:0016655	nuoG
+Oxidoreductase activity, acting on NAD(P)H, quinone or similar compound as acceptor GO:0016655	nuoF
+Oxidoreductase activity, acting on NAD(P)H, quinone or similar compound as acceptor GO:0016655	nuoB
+Oxidoreductase activity, acting on NAD(P)H, quinone or similar compound as acceptor GO:0016655	nuoA
+Pyrimidine deoxyribonucleoside triphosphate metabolic process GO:0009211	tmk
+Pyrimidine deoxyribonucleoside triphosphate metabolic process GO:0009211	dcd
+Pyrimidine deoxyribonucleoside triphosphate metabolic process GO:0009211	thyA
+Cell cycle GO:0007049	murE
+Cell cycle GO:0007049	murD
+Cell cycle GO:0007049	ftsW
+Cell cycle GO:0007049	murG
+Cell cycle GO:0007049	tolQ
+Cell cycle GO:0007049	tolR
+Cell cycle GO:0007049	tolB
+Cell cycle GO:0007049	pal
+Cell cycle GO:0007049	ftsK
+Cell cycle GO:0007049	minE
+Cell cycle GO:0007049	minD
+Cell cycle GO:0007049	minC
+Cell cycle GO:0007049	dicA
+Cell cycle GO:0007049	dedD
+Cell cycle GO:0007049	nlpD
+Cell cycle GO:0007049	parE
+Cell cycle GO:0007049	damX
+Cell cycle GO:0007049	ftsX
+Cell cycle GO:0007049	ftsE
+Cell cycle GO:0007049	envC
+Cell cycle GO:0007049	dnaN
+Cell cycle GO:0007049	ftsN
+Glycosaminoglycan metabolic process GO:0030203	murE
+Glycosaminoglycan metabolic process GO:0030203	murD
+Glycosaminoglycan metabolic process GO:0030203	ftsW
+Glycosaminoglycan metabolic process GO:0030203	murG
+Glycosaminoglycan metabolic process GO:0030203	mrcB
+Glycosaminoglycan metabolic process GO:0030203	mrdB
+Glycosaminoglycan metabolic process GO:0030203	mrdA
+Glycosaminoglycan metabolic process GO:0030203	mepS
+Glycosaminoglycan metabolic process GO:0030203	mreD
+Glycosaminoglycan metabolic process GO:0030203	mreC
+Glycosaminoglycan metabolic process GO:0030203	ftsX
+Glycosaminoglycan metabolic process GO:0030203	ftsE
+Glycosaminoglycan metabolic process GO:0030203	slt
+Energy reserve metabolic process GO:0006112	glgP
+Energy reserve metabolic process GO:0006112	glgA
+Energy reserve metabolic process GO:0006112	glgC
+Energy reserve metabolic process GO:0006112	glgB
+Deoxyribose phosphate metabolic process GO:0019692	tmk
+Deoxyribose phosphate metabolic process GO:0019692	dcd
+Deoxyribose phosphate metabolic process GO:0019692	nrdA
+Deoxyribose phosphate metabolic process GO:0019692	thyA
+Regulation of developmental process GO:0050793	murE
+Regulation of developmental process GO:0050793	murD
+Regulation of developmental process GO:0050793	ftsW
+Regulation of developmental process GO:0050793	murG
+Regulation of developmental process GO:0050793	mrcB
+Regulation of developmental process GO:0050793	mrdB
+Regulation of developmental process GO:0050793	mrdA
+Regulation of developmental process GO:0050793	mreD
+Regulation of developmental process GO:0050793	mreC
+Peptidoglycan-based cell wall biogenesis GO:0009273	murE
+Peptidoglycan-based cell wall biogenesis GO:0009273	murD
+Peptidoglycan-based cell wall biogenesis GO:0009273	ftsW
+Peptidoglycan-based cell wall biogenesis GO:0009273	murG
+Peptidoglycan-based cell wall biogenesis GO:0009273	mrcB
+Peptidoglycan-based cell wall biogenesis GO:0009273	mrdB
+Peptidoglycan-based cell wall biogenesis GO:0009273	mrdA
+Peptidoglycan-based cell wall biogenesis GO:0009273	mreD
+Peptidoglycan-based cell wall biogenesis GO:0009273	mreC
+Peptidoglycan-based cell wall biogenesis GO:0009273	envC
+Aminoglycan metabolic process GO:0006022	murE
+Aminoglycan metabolic process GO:0006022	murD
+Aminoglycan metabolic process GO:0006022	ftsW
+Aminoglycan metabolic process GO:0006022	murG
+Aminoglycan metabolic process GO:0006022	mrcB
+Aminoglycan metabolic process GO:0006022	mrdB
+Aminoglycan metabolic process GO:0006022	mrdA
+Aminoglycan metabolic process GO:0006022	mepS
+Aminoglycan metabolic process GO:0006022	mreD
+Aminoglycan metabolic process GO:0006022	mreC
+Aminoglycan metabolic process GO:0006022	ftsX
+Aminoglycan metabolic process GO:0006022	ftsE
+Aminoglycan metabolic process GO:0006022	slt
+Cell wall biogenesis GO:0042546	murE
+Cell wall biogenesis GO:0042546	murD
+Cell wall biogenesis GO:0042546	ftsW
+Cell wall biogenesis GO:0042546	murG
+Cell wall biogenesis GO:0042546	mrcB
+Cell wall biogenesis GO:0042546	mrdB
+Cell wall biogenesis GO:0042546	mrdA
+Cell wall biogenesis GO:0042546	mreD
+Cell wall biogenesis GO:0042546	mreC
+Cell wall biogenesis GO:0042546	envC
+5,10-methylenetetrahydrofolate-dependent methyltransferase activity GO:0042083	thyA
+ATPase complex GO:1904949	ftsX
+ATPase complex GO:1904949	ftsE
+Deoxyribonucleotide biosynthetic process GO:0009263	tmk
+Deoxyribonucleotide biosynthetic process GO:0009263	dcd
+Deoxyribonucleotide biosynthetic process GO:0009263	nrdA
+Deoxyribonucleotide biosynthetic process GO:0009263	thyA
+NAD(P)H dehydrogenase (quinone) activity GO:0003955	nuoN
+NAD(P)H dehydrogenase (quinone) activity GO:0003955	nuoM
+NAD(P)H dehydrogenase (quinone) activity GO:0003955	nuoL
+NAD(P)H dehydrogenase (quinone) activity GO:0003955	nuoK
+NAD(P)H dehydrogenase (quinone) activity GO:0003955	nuoJ
+NAD(P)H dehydrogenase (quinone) activity GO:0003955	nuoI
+NAD(P)H dehydrogenase (quinone) activity GO:0003955	nuoG
+NAD(P)H dehydrogenase (quinone) activity GO:0003955	nuoF
+NAD(P)H dehydrogenase (quinone) activity GO:0003955	nuoB
+NAD(P)H dehydrogenase (quinone) activity GO:0003955	nuoA
+Peptidoglycan biosynthetic process GO:0009252	murE
+Peptidoglycan biosynthetic process GO:0009252	murD
+Peptidoglycan biosynthetic process GO:0009252	ftsW
+Peptidoglycan biosynthetic process GO:0009252	murG
+Peptidoglycan biosynthetic process GO:0009252	mrcB
+Peptidoglycan biosynthetic process GO:0009252	mrdB
+Peptidoglycan biosynthetic process GO:0009252	mrdA
+Peptidoglycan biosynthetic process GO:0009252	mreD
+Peptidoglycan biosynthetic process GO:0009252	mreC
+FtsZ-dependent cytokinesis GO:0043093	ftsW
+FtsZ-dependent cytokinesis GO:0043093	ftsK
+FtsZ-dependent cytokinesis GO:0043093	ftsX
+FtsZ-dependent cytokinesis GO:0043093	ftsE
+FtsZ-dependent cytokinesis GO:0043093	ftsN
+Pyrimidine deoxyribonucleotide biosynthetic process GO:0009221	tmk
+Pyrimidine deoxyribonucleotide biosynthetic process GO:0009221	dcd
+Pyrimidine deoxyribonucleotide biosynthetic process GO:0009221	thyA
+DNA polymerase III complex GO:0009360	dnaE
+DNA polymerase III complex GO:0009360	dnaN
+DNA polymerase III complex GO:0009360	holD
+Deoxyribonucleoside triphosphate metabolic process GO:0009200	tmk
+Deoxyribonucleoside triphosphate metabolic process GO:0009200	dcd
+Deoxyribonucleoside triphosphate metabolic process GO:0009200	thyA
+Translation factor activity, RNA binding GO:0008135	tsf
+Translation factor activity, RNA binding GO:0008135	infA
+Translation factor activity, RNA binding GO:0008135	infC
+Translation factor activity, RNA binding GO:0008135	prfB
+Translation factor activity, RNA binding GO:0008135	infB
+Translation factor activity, RNA binding GO:0008135	fusA
+Translation factor activity, RNA binding GO:0008135	prfC
+Cellular component macromolecule biosynthetic process GO:0070589	murE
+Cellular component macromolecule biosynthetic process GO:0070589	murD
+Cellular component macromolecule biosynthetic process GO:0070589	ftsW
+Cellular component macromolecule biosynthetic process GO:0070589	murG
+Cellular component macromolecule biosynthetic process GO:0070589	mrcB
+Cellular component macromolecule biosynthetic process GO:0070589	mrdB
+Cellular component macromolecule biosynthetic process GO:0070589	mrdA
+Cellular component macromolecule biosynthetic process GO:0070589	mreD
+Cellular component macromolecule biosynthetic process GO:0070589	mreC
+Ribosome GO:0005840	rpsT
+Ribosome GO:0005840	rpsA
+Ribosome GO:0005840	rimM
+Ribosome GO:0005840	rpsP
+Ribosome GO:0005840	rpsI
+Ribosome GO:0005840	rplM
+Ribosome GO:0005840	rpmD
+Ribosome GO:0005840	rpsE
+Ribosome GO:0005840	rplR
+Ribosome GO:0005840	rplF
+Ribosome GO:0005840	rpsN
+Ribosome GO:0005840	rplX
+Ribosome GO:0005840	rplN
+Ribosome GO:0005840	rpmC
+Ribosome GO:0005840	rplB
+Ribosome GO:0005840	rplW
+Ribosome GO:0005840	rpsG
+ATP synthesis coupled electron transport GO:0042773	nuoN
+ATP synthesis coupled electron transport GO:0042773	nuoM
+ATP synthesis coupled electron transport GO:0042773	nuoL
+ATP synthesis coupled electron transport GO:0042773	nuoK
+ATP synthesis coupled electron transport GO:0042773	nuoG
+Pyrimidine deoxyribonucleotide metabolic process GO:0009219	tmk
+Pyrimidine deoxyribonucleotide metabolic process GO:0009219	dcd
+Pyrimidine deoxyribonucleotide metabolic process GO:0009219	thyA
+Cytoplasmic translation GO:0002181	rpsT
+Cytoplasmic translation GO:0002181	rpsA
+Cytoplasmic translation GO:0002181	rpsP
+Cytoplasmic translation GO:0002181	rpsI
+Cytoplasmic translation GO:0002181	rplM
+Cytoplasmic translation GO:0002181	rpmD
+Cytoplasmic translation GO:0002181	rpsE
+Cytoplasmic translation GO:0002181	rplR
+Cytoplasmic translation GO:0002181	rplF
+Cytoplasmic translation GO:0002181	rpsN
+Cytoplasmic translation GO:0002181	rplX
+Cytoplasmic translation GO:0002181	rplN
+Cytoplasmic translation GO:0002181	rpmC
+Cytoplasmic translation GO:0002181	rplB
+Cytoplasmic translation GO:0002181	rplW
+Cytoplasmic translation GO:0002181	rpsG
+Oxidoreduction-driven active transmembrane transporter activity GO:0015453	nuoN
+Oxidoreduction-driven active transmembrane transporter activity GO:0015453	nuoM
+Oxidoreduction-driven active transmembrane transporter activity GO:0015453	nuoL
+Oxidoreduction-driven active transmembrane transporter activity GO:0015453	nuoK
+Oxidoreduction-driven active transmembrane transporter activity GO:0015453	nuoJ
+Oxidoreduction-driven active transmembrane transporter activity GO:0015453	nuoG
+Oxidoreduction-driven active transmembrane transporter activity GO:0015453	nuoF
+Oxidoreduction-driven active transmembrane transporter activity GO:0015453	nuoB
+Oxidoreduction-driven active transmembrane transporter activity GO:0015453	nuoA
+Translation GO:0006412	rpsT
+Translation GO:0006412	tsf
+Translation GO:0006412	glnS
+Translation GO:0006412	infA
+Translation GO:0006412	serS
+Translation GO:0006412	rpsA
+Translation GO:0006412	asnS
+Translation GO:0006412	tyrS
+Translation GO:0006412	infC
+Translation GO:0006412	tsaB
+Translation GO:0006412	rpsP
+Translation GO:0006412	lysS
+Translation GO:0006412	prfB
+Translation GO:0006412	infB
+Translation GO:0006412	rpsI
+Translation GO:0006412	rplM
+Translation GO:0006412	rpmD
+Translation GO:0006412	rpsE
+Translation GO:0006412	rplR
+Translation GO:0006412	rplF
+Translation GO:0006412	rpsN
+Translation GO:0006412	rplX
+Translation GO:0006412	rplN
+Translation GO:0006412	rpmC
+Translation GO:0006412	rplB
+Translation GO:0006412	rplW
+Translation GO:0006412	fusA
+Translation GO:0006412	rpsG
+Translation GO:0006412	prfC
+Structural constituent of ribosome GO:0003735	rpsT
+Structural constituent of ribosome GO:0003735	rpsA
+Structural constituent of ribosome GO:0003735	rpsP
+Structural constituent of ribosome GO:0003735	rpsI
+Structural constituent of ribosome GO:0003735	rplM
+Structural constituent of ribosome GO:0003735	rpmD
+Structural constituent of ribosome GO:0003735	rpsE
+Structural constituent of ribosome GO:0003735	rplR
+Structural constituent of ribosome GO:0003735	rplF
+Structural constituent of ribosome GO:0003735	rpsN
+Structural constituent of ribosome GO:0003735	rplX
+Structural constituent of ribosome GO:0003735	rplN
+Structural constituent of ribosome GO:0003735	rpmC
+Structural constituent of ribosome GO:0003735	rplB
+Structural constituent of ribosome GO:0003735	rplW
+Structural constituent of ribosome GO:0003735	rpsG
+Ribosomal subunit GO:0044391	rpsT
+Ribosomal subunit GO:0044391	rpsA
+Ribosomal subunit GO:0044391	rpsP
+Ribosomal subunit GO:0044391	rpsI
+Ribosomal subunit GO:0044391	rplM
+Ribosomal subunit GO:0044391	rpmD
+Ribosomal subunit GO:0044391	rpsE
+Ribosomal subunit GO:0044391	rplR
+Ribosomal subunit GO:0044391	rplF
+Ribosomal subunit GO:0044391	rpsN
+Ribosomal subunit GO:0044391	rplX
+Ribosomal subunit GO:0044391	rplN
+Ribosomal subunit GO:0044391	rpmC
+Ribosomal subunit GO:0044391	rplB
+Ribosomal subunit GO:0044391	rplW
+Ribosomal subunit GO:0044391	rpsG
+Cytosolic ribosome GO:0022626	rpsT
+Cytosolic ribosome GO:0022626	rpsA
+Cytosolic ribosome GO:0022626	rpsP
+Cytosolic ribosome GO:0022626	rpsI
+Cytosolic ribosome GO:0022626	rplM
+Cytosolic ribosome GO:0022626	rpmD
+Cytosolic ribosome GO:0022626	rpsE
+Cytosolic ribosome GO:0022626	rplR
+Cytosolic ribosome GO:0022626	rplF
+Cytosolic ribosome GO:0022626	rpsN
+Cytosolic ribosome GO:0022626	rplX
+Cytosolic ribosome GO:0022626	rplN
+Cytosolic ribosome GO:0022626	rpmC
+Cytosolic ribosome GO:0022626	rplB
+Cytosolic ribosome GO:0022626	rplW
+Cytosolic ribosome GO:0022626	rpsG
+Translation regulator activity, nucleic acid binding GO:0090079	tsf
+Translation regulator activity, nucleic acid binding GO:0090079	infA
+Translation regulator activity, nucleic acid binding GO:0090079	infC
+Translation regulator activity, nucleic acid binding GO:0090079	prfB
+Translation regulator activity, nucleic acid binding GO:0090079	infB
+Translation regulator activity, nucleic acid binding GO:0090079	fusA
+Translation regulator activity, nucleic acid binding GO:0090079	prfC
+dTMP metabolic process GO:0046073	thyA
+Cell wall macromolecule metabolic process GO:0044036	murE
+Cell wall macromolecule metabolic process GO:0044036	murD
+Cell wall macromolecule metabolic process GO:0044036	ftsW
+Cell wall macromolecule metabolic process GO:0044036	murG
+Cell wall macromolecule metabolic process GO:0044036	mrcB
+Cell wall macromolecule metabolic process GO:0044036	mrdB
+Cell wall macromolecule metabolic process GO:0044036	mrdA
+Cell wall macromolecule metabolic process GO:0044036	mreD
+Cell wall macromolecule metabolic process GO:0044036	mreC
+Translation regulator activity GO:0045182	tsf
+Translation regulator activity GO:0045182	infA
+Translation regulator activity GO:0045182	infC
+Translation regulator activity GO:0045182	prfB
+Translation regulator activity GO:0045182	infB
+Translation regulator activity GO:0045182	fusA
+Translation regulator activity GO:0045182	prfC
+Cytosolic small ribosomal subunit GO:0022627	rpsT
+Cytosolic small ribosomal subunit GO:0022627	rpsA
+Cytosolic small ribosomal subunit GO:0022627	rpsP
+Cytosolic small ribosomal subunit GO:0022627	rpsI
+Cytosolic small ribosomal subunit GO:0022627	rpsE
+Cytosolic small ribosomal subunit GO:0022627	rpsN
+Cytosolic small ribosomal subunit GO:0022627	rpsG
+Acid-amino acid ligase activity GO:0016881	murE
+Acid-amino acid ligase activity GO:0016881	murD
+Acid-amino acid ligase activity GO:0016881	folC
+Acid-amino acid ligase activity GO:0016881	dfp
+CTP synthase activity GO:0003883	pyrG
+Ribonucleoprotein complex GO:1990904	rpsT
+Ribonucleoprotein complex GO:1990904	rpsA
+Ribonucleoprotein complex GO:1990904	rpsP
+Ribonucleoprotein complex GO:1990904	rpsI
+Ribonucleoprotein complex GO:1990904	rplM
+Ribonucleoprotein complex GO:1990904	rpmD
+Ribonucleoprotein complex GO:1990904	rpsE
+Ribonucleoprotein complex GO:1990904	rplR
+Ribonucleoprotein complex GO:1990904	rplF
+Ribonucleoprotein complex GO:1990904	rpsN
+Ribonucleoprotein complex GO:1990904	rplX
+Ribonucleoprotein complex GO:1990904	rplN
+Ribonucleoprotein complex GO:1990904	rpmC
+Ribonucleoprotein complex GO:1990904	rplB
+Ribonucleoprotein complex GO:1990904	rplW
+Ribonucleoprotein complex GO:1990904	rpsG
+Peptide biosynthetic process GO:0043043	rpsT
+Peptide biosynthetic process GO:0043043	tsf
+Peptide biosynthetic process GO:0043043	glnS
+Peptide biosynthetic process GO:0043043	infA
+Peptide biosynthetic process GO:0043043	serS
+Peptide biosynthetic process GO:0043043	rpsA
+Peptide biosynthetic process GO:0043043	asnS
+Peptide biosynthetic process GO:0043043	tyrS
+Peptide biosynthetic process GO:0043043	infC
+Peptide biosynthetic process GO:0043043	tsaB
+Peptide biosynthetic process GO:0043043	rpsP
+Peptide biosynthetic process GO:0043043	lysS
+Peptide biosynthetic process GO:0043043	prfB
+Peptide biosynthetic process GO:0043043	infB
+Peptide biosynthetic process GO:0043043	rpsI
+Peptide biosynthetic process GO:0043043	rplM
+Peptide biosynthetic process GO:0043043	rpmD
+Peptide biosynthetic process GO:0043043	rpsE
+Peptide biosynthetic process GO:0043043	rplR
+Peptide biosynthetic process GO:0043043	rplF
+Peptide biosynthetic process GO:0043043	rpsN
+Peptide biosynthetic process GO:0043043	rplX
+Peptide biosynthetic process GO:0043043	rplN
+Peptide biosynthetic process GO:0043043	rpmC
+Peptide biosynthetic process GO:0043043	rplB
+Peptide biosynthetic process GO:0043043	rplW
+Peptide biosynthetic process GO:0043043	fusA
+Peptide biosynthetic process GO:0043043	rpsG
+Peptide biosynthetic process GO:0043043	prfC
+tRNA aminoacylation GO:0043039	glnS
+tRNA aminoacylation GO:0043039	serS
+tRNA aminoacylation GO:0043039	asnS
+tRNA aminoacylation GO:0043039	tyrS
+tRNA aminoacylation GO:0043039	lysS
+Pyrimidine deoxyribonucleoside monophosphate biosynthetic process GO:0009177	dcd
+Pyrimidine deoxyribonucleoside monophosphate biosynthetic process GO:0009177	thyA
+Septum digestion after cytokinesis GO:0000920	ftsK
+Septum digestion after cytokinesis GO:0000920	nlpD
+Septum digestion after cytokinesis GO:0000920	envC
+Translational initiation GO:0006413	infA
+Translational initiation GO:0006413	infC
+Translational initiation GO:0006413	infB
+DNA polymerase complex GO:0042575	dnaE
+DNA polymerase complex GO:0042575	dnaN
+DNA polymerase complex GO:0042575	holD
+Cell wall organization or biogenesis GO:0071554	murE
+Cell wall organization or biogenesis GO:0071554	murD
+Cell wall organization or biogenesis GO:0071554	ftsW
+Cell wall organization or biogenesis GO:0071554	murG
+Cell wall organization or biogenesis GO:0071554	mrcB
+Cell wall organization or biogenesis GO:0071554	mrdB
+Cell wall organization or biogenesis GO:0071554	mrdA
+Cell wall organization or biogenesis GO:0071554	mepS
+Cell wall organization or biogenesis GO:0071554	mreD
+Cell wall organization or biogenesis GO:0071554	mreC
+Cell wall organization or biogenesis GO:0071554	envC
+Cell wall organization or biogenesis GO:0071554	slt
+Amino acid activation GO:0043038	glnS
+Amino acid activation GO:0043038	serS
+Amino acid activation GO:0043038	asnS
+Amino acid activation GO:0043038	tyrS
+Amino acid activation GO:0043038	lysS
+rRNA binding GO:0019843	rpsT
+rRNA binding GO:0019843	infA
+rRNA binding GO:0019843	rimM
+rRNA binding GO:0019843	rplM
+rRNA binding GO:0019843	rpsE
+rRNA binding GO:0019843	rplR
+rRNA binding GO:0019843	rplF
+rRNA binding GO:0019843	rpsN
+rRNA binding GO:0019843	rplX
+rRNA binding GO:0019843	rplN
+rRNA binding GO:0019843	rpmC
+rRNA binding GO:0019843	rplB
+rRNA binding GO:0019843	rplW
+rRNA binding GO:0019843	rpsG
+Ribonucleoprotein complex subunit organization GO:0071826	rpsT
+Ribonucleoprotein complex subunit organization GO:0071826	rpsA
+Ribonucleoprotein complex subunit organization GO:0071826	rimM
+Ribonucleoprotein complex subunit organization GO:0071826	rpsP
+Ribonucleoprotein complex subunit organization GO:0071826	rpmD
+Ribonucleoprotein complex subunit organization GO:0071826	rpsE
+Ribonucleoprotein complex subunit organization GO:0071826	rplF
+Ribonucleoprotein complex subunit organization GO:0071826	rpsN
+Ribonucleoprotein complex subunit organization GO:0071826	rplX
+Ribonucleoprotein complex subunit organization GO:0071826	rpmC
+Ribonucleoprotein complex subunit organization GO:0071826	rplB
+Ribonucleoprotein complex subunit organization GO:0071826	rplW
+Ribonucleoprotein complex subunit organization GO:0071826	rpsG
+asparaginyl-tRNA aminoacylation GO:0006421	asnS
+Ribosomal small subunit assembly GO:0000028	rpsT
+Ribosomal small subunit assembly GO:0000028	rpsA
+Ribosomal small subunit assembly GO:0000028	rimM
+Ribosomal small subunit assembly GO:0000028	rpsP
+Ribosomal small subunit assembly GO:0000028	rpsE
+Ribosomal small subunit assembly GO:0000028	rpsN
+Ribosomal small subunit assembly GO:0000028	rpsG
+De novo CTP biosynthetic process GO:0044210	pyrG
+Deoxyribonucleotide metabolic process GO:0009262	tmk
+Deoxyribonucleotide metabolic process GO:0009262	dcd
+Deoxyribonucleotide metabolic process GO:0009262	nrdA
+Deoxyribonucleotide metabolic process GO:0009262	thyA
+Peptidoglycan turnover GO:0009254	mepS
+Peptidoglycan turnover GO:0009254	ftsX
+Peptidoglycan turnover GO:0009254	ftsE
+Ribosome assembly GO:0042255	rpsT
+Ribosome assembly GO:0042255	rpsA
+Ribosome assembly GO:0042255	rimM
+Ribosome assembly GO:0042255	rpsP
+Ribosome assembly GO:0042255	rpmD
+Ribosome assembly GO:0042255	rpsE
+Ribosome assembly GO:0042255	rplF
+Ribosome assembly GO:0042255	rpsN
+Ribosome assembly GO:0042255	rplX
+Ribosome assembly GO:0042255	rpmC
+Ribosome assembly GO:0042255	rplB
+Ribosome assembly GO:0042255	rplW
+Ribosome assembly GO:0042255	rpsG
+Peptide metabolic process GO:0006518	rpsT
+Peptide metabolic process GO:0006518	tsf
+Peptide metabolic process GO:0006518	glnS
+Peptide metabolic process GO:0006518	infA
+Peptide metabolic process GO:0006518	serS
+Peptide metabolic process GO:0006518	rpsA
+Peptide metabolic process GO:0006518	asnS
+Peptide metabolic process GO:0006518	tyrS
+Peptide metabolic process GO:0006518	infC
+Peptide metabolic process GO:0006518	tsaB
+Peptide metabolic process GO:0006518	rpsP
+Peptide metabolic process GO:0006518	lysS
+Peptide metabolic process GO:0006518	prfB
+Peptide metabolic process GO:0006518	infB
+Peptide metabolic process GO:0006518	rpsI
+Peptide metabolic process GO:0006518	rplM
+Peptide metabolic process GO:0006518	rpmD
+Peptide metabolic process GO:0006518	rpsE
+Peptide metabolic process GO:0006518	rplR
+Peptide metabolic process GO:0006518	rplF
+Peptide metabolic process GO:0006518	rpsN
+Peptide metabolic process GO:0006518	rplX
+Peptide metabolic process GO:0006518	rplN
+Peptide metabolic process GO:0006518	rpmC
+Peptide metabolic process GO:0006518	rplB
+Peptide metabolic process GO:0006518	rplW
+Peptide metabolic process GO:0006518	fusA
+Peptide metabolic process GO:0006518	rpsG
+Peptide metabolic process GO:0006518	prfC
+Regulation of amino acid transmembrane transport GO:1903789	proQ
+Structural molecule activity GO:0005198	rpsT
+Structural molecule activity GO:0005198	rpsA
+Structural molecule activity GO:0005198	rpsP
+Structural molecule activity GO:0005198	rpsI
+Structural molecule activity GO:0005198	rplM
+Structural molecule activity GO:0005198	rpmD
+Structural molecule activity GO:0005198	rpsE
+Structural molecule activity GO:0005198	rplR
+Structural molecule activity GO:0005198	rplF
+Structural molecule activity GO:0005198	rpsN
+Structural molecule activity GO:0005198	rplX
+Structural molecule activity GO:0005198	rplN
+Structural molecule activity GO:0005198	rpmC
+Structural molecule activity GO:0005198	rplB
+Structural molecule activity GO:0005198	rplW
+Structural molecule activity GO:0005198	rpsG
+Structural molecule activity GO:0005198	hupA
+Dihydrofolate metabolic process GO:0046452	folC
+Adenyl-nucleotide exchange factor activity GO:0000774	grpE
+Peptidoglycan glycosyltransferase activity GO:0008955	ftsW
+Peptidoglycan glycosyltransferase activity GO:0008955	mrcB
+Peptidoglycan glycosyltransferase activity GO:0008955	mrdB
+UDP-N-acetylmuramoylalanyl-D-glutamate-2,6-diaminopimelate ligase activity GO:0008765	murE
+Cytosolic large ribosomal subunit GO:0022625	rplM
+Cytosolic large ribosomal subunit GO:0022625	rpmD
+Cytosolic large ribosomal subunit GO:0022625	rplR
+Cytosolic large ribosomal subunit GO:0022625	rplF
+Cytosolic large ribosomal subunit GO:0022625	rplX
+Cytosolic large ribosomal subunit GO:0022625	rplN
+Cytosolic large ribosomal subunit GO:0022625	rpmC
+Cytosolic large ribosomal subunit GO:0022625	rplB
+Cytosolic large ribosomal subunit GO:0022625	rplW
+DNA topoisomerase type II (double strand cut, ATP-hydrolyzing) activity GO:0003918	gyrA
+DNA topoisomerase type II (double strand cut, ATP-hydrolyzing) activity GO:0003918	parE
+DNA topoisomerase type II (double strand cut, ATP-hydrolyzing) activity GO:0003918	gyrB
+Pyrimidine nucleotide biosynthetic process GO:0006221	tmk
+Pyrimidine nucleotide biosynthetic process GO:0006221	dcd
+Pyrimidine nucleotide biosynthetic process GO:0006221	pyrG
+Pyrimidine nucleotide biosynthetic process GO:0006221	thyA
+IHF-DNA complex GO:1990177	ihfA
+Tetrahydrofolylpolyglutamate biosynthetic process GO:0046901	folC
+Large ribosomal subunit rRNA binding GO:0070180	rplM
+Large ribosomal subunit rRNA binding GO:0070180	rplF
+Large ribosomal subunit rRNA binding GO:0070180	rplX
+Large ribosomal subunit rRNA binding GO:0070180	rplN
+Enzyme activator complex GO:0150005	dnaN
+DNA strand elongation GO:0022616	dnaE
+DNA strand elongation GO:0022616	dnaN
+Cell wall organization GO:0071555	murE
+Cell wall organization GO:0071555	murD
+Cell wall organization GO:0071555	ftsW
+Cell wall organization GO:0071555	murG
+Cell wall organization GO:0071555	mrcB
+Cell wall organization GO:0071555	mrdB
+Cell wall organization GO:0071555	mrdA
+Cell wall organization GO:0071555	mepS
+Cell wall organization GO:0071555	slt
+Regulation of cell division GO:0051302	minD
+Regulation of cell division GO:0051302	minC
+Regulation of cell division GO:0051302	ftsX
+Regulation of cell division GO:0051302	ftsE
+DnaB-DnaG complex GO:1990156	dnaG
+DnaB-DnaG complex GO:1990156	dnaB
+Nucleoside monophosphate phosphorylation GO:0046940	tmk
+Nucleoside monophosphate phosphorylation GO:0046940	gmk
+HU-DNA complex GO:1990178	hupA
+UDP-N-acetylmuramoylalanine-D-glutamate ligase activity GO:0008764	murD
+Pyrimidine nucleotide metabolic process GO:0006220	tmk
+Pyrimidine nucleotide metabolic process GO:0006220	dcd
+Pyrimidine nucleotide metabolic process GO:0006220	pyrG
+Pyrimidine nucleotide metabolic process GO:0006220	thyA
+Ribokinase activity GO:0004747	rbsK
+Ribosomal large subunit assembly GO:0000027	rpmD
+Ribosomal large subunit assembly GO:0000027	rplF
+Ribosomal large subunit assembly GO:0000027	rplX
+Ribosomal large subunit assembly GO:0000027	rpmC
+Ribosomal large subunit assembly GO:0000027	rplB
+Ribosomal large subunit assembly GO:0000027	rplW
+DNA polymerase activity GO:0034061	dnaE
+DNA polymerase activity GO:0034061	dnaN
+DNA polymerase activity GO:0034061	holD
+Oxidoreductase activity, acting on NAD(P)H GO:0016651	nuoN
+Oxidoreductase activity, acting on NAD(P)H GO:0016651	nuoM
+Oxidoreductase activity, acting on NAD(P)H GO:0016651	nuoL
+Oxidoreductase activity, acting on NAD(P)H GO:0016651	nuoK
+Oxidoreductase activity, acting on NAD(P)H GO:0016651	nuoJ
+Oxidoreductase activity, acting on NAD(P)H GO:0016651	nuoI
+Oxidoreductase activity, acting on NAD(P)H GO:0016651	nuoH
+Oxidoreductase activity, acting on NAD(P)H GO:0016651	nuoG
+Oxidoreductase activity, acting on NAD(P)H GO:0016651	nuoF
+Oxidoreductase activity, acting on NAD(P)H GO:0016651	nuoB
+Oxidoreductase activity, acting on NAD(P)H GO:0016651	nuoA
+Regulation of cell septum assembly GO:1901891	minE
+Regulation of cell septum assembly GO:1901891	minC
+Ribosomal large subunit biogenesis GO:0042273	rpmD
+Ribosomal large subunit biogenesis GO:0042273	rplF
+Ribosomal large subunit biogenesis GO:0042273	rplX
+Ribosomal large subunit biogenesis GO:0042273	rpmC
+Ribosomal large subunit biogenesis GO:0042273	rplB
+Ribosomal large subunit biogenesis GO:0042273	rplW
+Cellular response to antibiotic GO:0071236	tolB
+Cellular response to antibiotic GO:0071236	ftsK
+RNA polymerase complex GO:0030880	rpoE
+RNA polymerase complex GO:0030880	dnaG
+RNA polymerase complex GO:0030880	rpoD
+Chaperone binding GO:0051087	cspC
+Chaperone binding GO:0051087	grpE
+Regulation of cell cycle GO:0051726	minE
+Regulation of cell cycle GO:0051726	minC
+UDP-N-acetylglucosamine biosynthetic process GO:0006048	glmS
+alpha-1,4-glucan synthase activity GO:0033201	glgA
+Intracellular transport GO:0046907	secF
+Intracellular transport GO:0046907	ffh
+Intracellular transport GO:0046907	ftsY
+Intracellular transport GO:0046907	tatA
+Intracellular transport GO:0046907	secE
+ATPase regulator activity GO:0060590	grpE
+UDP-N-acetylglucosamine metabolic process GO:0006047	glmS
+tyrosyl-tRNA aminoacylation GO:0006437	tyrS
+5S rRNA binding GO:0008097	rplR
+Electron transport coupled proton transport GO:0015990	nuoN
+Electron transport coupled proton transport GO:0015990	nuoM
+Electron transport coupled proton transport GO:0015990	nuoL
+Electron transport coupled proton transport GO:0015990	nuoB
+Organelle disassembly GO:1903008	infC
+Organelle disassembly GO:1903008	fusA
+Ribosomal small subunit biogenesis GO:0042274	rpsT
+Ribosomal small subunit biogenesis GO:0042274	rpsA
+Ribosomal small subunit biogenesis GO:0042274	rimM
+Ribosomal small subunit biogenesis GO:0042274	rpsP
+Ribosomal small subunit biogenesis GO:0042274	rpsE
+Ribosomal small subunit biogenesis GO:0042274	rpsN
+Ribosomal small subunit biogenesis GO:0042274	rpsG
+Bacterial-type DNA replication GO:0044787	dnaN
+Ligase activity, forming carbon-nitrogen bonds GO:0016879	murE
+Ligase activity, forming carbon-nitrogen bonds GO:0016879	murD
+Ligase activity, forming carbon-nitrogen bonds GO:0016879	folC
+Ligase activity, forming carbon-nitrogen bonds GO:0016879	pyrG
+Ligase activity, forming carbon-nitrogen bonds GO:0016879	accC
+Ligase activity, forming carbon-nitrogen bonds GO:0016879	dfp
+dUTP biosynthetic process GO:0006229	dcd
+Cellular response to peptide GO:1901653	tolB
+Cellular component disassembly GO:0022411	infC
+Cellular component disassembly GO:0022411	prfB
+Cellular component disassembly GO:0022411	fusA
+Cellular component disassembly GO:0022411	prfC
+Amino sugar biosynthetic process GO:0046349	glmS
+Chromosome GO:0005694	dnaE
+Chromosome GO:0005694	gyrA
+Chromosome GO:0005694	hda
+Chromosome GO:0005694	parE
+Chromosome GO:0005694	dnaG
+Chromosome GO:0005694	gyrB
+Chromosome GO:0005694	dnaN
+Chromosome GO:0005694	dnaB
+Chromosome GO:0005694	holD
+Transferase complex, transferring phosphorus-containing groups GO:0061695	dnaE
+Transferase complex, transferring phosphorus-containing groups GO:0061695	rpoE
+Transferase complex, transferring phosphorus-containing groups GO:0061695	dnaG
+Transferase complex, transferring phosphorus-containing groups GO:0061695	rpoD
+Transferase complex, transferring phosphorus-containing groups GO:0061695	dnaN
+Transferase complex, transferring phosphorus-containing groups GO:0061695	holD
+Regulation of DNA-templated DNA replication GO:0090329	gyrA
+Regulation of DNA-templated DNA replication GO:0090329	hda
+Regulation of DNA-templated DNA replication GO:0090329	dnaN
+Nucleobase-containing compound kinase activity GO:0019205	tmk
+Nucleobase-containing compound kinase activity GO:0019205	gmk
+Signal recognition particle binding GO:0005047	ftsY
+DNA polymerase III, clamp loader complex GO:0043846	holD
+Glycosylation GO:0070085	murG
+Glycosylation GO:0070085	glmS
+DNA biosynthetic process GO:0071897	dnaE
+DNA biosynthetic process GO:0071897	dnaN
+DNA biosynthetic process GO:0071897	holD
+Macromolecule transmembrane transporter activity GO:0022884	ftsW
+Macromolecule transmembrane transporter activity GO:0022884	secF
+Macromolecule transmembrane transporter activity GO:0022884	mrdB
+Macromolecule transmembrane transporter activity GO:0022884	tatA
+Macromolecule transmembrane transporter activity GO:0022884	secE
+3-oxoacyl-[acyl-carrier-protein] synthase activity GO:0004315	fabH
+3-oxoacyl-[acyl-carrier-protein] synthase activity GO:0004315	fabF
+6,7-dimethyl-8-ribityllumazine synthase activity GO:0000906	ribE
+7S RNA binding GO:0008312	rne
+7S RNA binding GO:0008312	ffh
+CTP metabolic process GO:0046036	pyrG
+Four-way junction DNA binding GO:0000400	rpsP
+Fatty acid elongation GO:0030497	fabG
+Fatty acid elongation GO:0030497	fabF
+Non-membrane-bounded organelle assembly GO:0140694	rpsT
+Non-membrane-bounded organelle assembly GO:0140694	rpsA
+Non-membrane-bounded organelle assembly GO:0140694	rimM
+Non-membrane-bounded organelle assembly GO:0140694	rpsP
+Non-membrane-bounded organelle assembly GO:0140694	rpmD
+Non-membrane-bounded organelle assembly GO:0140694	rpsE
+Non-membrane-bounded organelle assembly GO:0140694	rplF
+Non-membrane-bounded organelle assembly GO:0140694	rpsN
+Non-membrane-bounded organelle assembly GO:0140694	rplX
+Non-membrane-bounded organelle assembly GO:0140694	rpmC
+Non-membrane-bounded organelle assembly GO:0140694	rplB
+Non-membrane-bounded organelle assembly GO:0140694	rplW
+Non-membrane-bounded organelle assembly GO:0140694	rpsG
+Regulation of transmembrane transport GO:0034762	proQ
+Regulation of transmembrane transport GO:0034762	crr
+Pyrimidine-containing compound biosynthetic process GO:0072528	tmk
+Pyrimidine-containing compound biosynthetic process GO:0072528	dcd
+Pyrimidine-containing compound biosynthetic process GO:0072528	pyrG
+Pyrimidine-containing compound biosynthetic process GO:0072528	thyA
+Amide biosynthetic process GO:0043604	rpsT
+Amide biosynthetic process GO:0043604	tsf
+Amide biosynthetic process GO:0043604	glnS
+Amide biosynthetic process GO:0043604	infA
+Amide biosynthetic process GO:0043604	serS
+Amide biosynthetic process GO:0043604	rpsA
+Amide biosynthetic process GO:0043604	asnS
+Amide biosynthetic process GO:0043604	tyrS
+Amide biosynthetic process GO:0043604	infC
+Amide biosynthetic process GO:0043604	tsaB
+Amide biosynthetic process GO:0043604	rpsP
+Amide biosynthetic process GO:0043604	lysS
+Amide biosynthetic process GO:0043604	prfB
+Amide biosynthetic process GO:0043604	infB
+Amide biosynthetic process GO:0043604	rpsI
+Amide biosynthetic process GO:0043604	rplM
+Amide biosynthetic process GO:0043604	rpmD
+Amide biosynthetic process GO:0043604	rpsE
+Amide biosynthetic process GO:0043604	rplR
+Amide biosynthetic process GO:0043604	rplF
+Amide biosynthetic process GO:0043604	rpsN
+Amide biosynthetic process GO:0043604	rplX
+Amide biosynthetic process GO:0043604	rplN
+Amide biosynthetic process GO:0043604	rpmC
+Amide biosynthetic process GO:0043604	rplB
+Amide biosynthetic process GO:0043604	rplW
+Amide biosynthetic process GO:0043604	fusA
+Amide biosynthetic process GO:0043604	rpsG
+Amide biosynthetic process GO:0043604	prfC
+Ribonucleoside-diphosphate reductase activity GO:0061731	nrdA
+External encapsulating structure organization GO:0045229	murE
+External encapsulating structure organization GO:0045229	murD
+External encapsulating structure organization GO:0045229	ftsW
+External encapsulating structure organization GO:0045229	murG
+External encapsulating structure organization GO:0045229	mrcB
+External encapsulating structure organization GO:0045229	mrdB
+External encapsulating structure organization GO:0045229	mrdA
+External encapsulating structure organization GO:0045229	mepS
+External encapsulating structure organization GO:0045229	slt
+Replisome GO:0030894	dnaE
+Replisome GO:0030894	hda
+Replisome GO:0030894	dnaG
+Replisome GO:0030894	dnaN
+Replisome GO:0030894	dnaB
+Replisome GO:0030894	holD
+Translation release factor activity, codon specific GO:0016149	prfB
+Translation release factor activity, codon specific GO:0016149	prfC
+Fatty acid biosynthetic process GO:0006633	fabH
+Fatty acid biosynthetic process GO:0006633	fabG
+Fatty acid biosynthetic process GO:0006633	fabF
+Fatty acid biosynthetic process GO:0006633	accC
+Pyrimidine ribonucleoside triphosphate metabolic process GO:0009208	pyrG
+Replication fork GO:0005657	dnaE
+Replication fork GO:0005657	hda
+Replication fork GO:0005657	dnaG
+Replication fork GO:0005657	dnaN
+Replication fork GO:0005657	dnaB
+Replication fork GO:0005657	holD
+DnaB-DnaC-Rep-PriC complex GO:1990160	dnaB
+Establishment or maintenance of cell polarity regulating cell shape GO:0071963	mreC
+Disordered domain specific binding GO:0097718	clpX
+Regulation of DNA replication GO:0006275	gyrA
+Regulation of DNA replication GO:0006275	hda
+Regulation of DNA replication GO:0006275	dnaN
+Beta-ketoacyl-acyl-carrier-protein synthase III activity GO:0033818	fabH
+Double-stranded DNA helicase activity GO:0036121	ftsK
+Oxidoreductase activity, acting on CH or CH2 groups, disulfide as acceptor GO:0016728	nrdA
+Negative regulation of DNA-templated DNA replication GO:2000104	gyrA
+Negative regulation of DNA-templated DNA replication GO:2000104	hda
+Negative regulation of DNA-templated DNA replication GO:2000104	dnaN
+Pyrimidine nucleoside monophosphate biosynthetic process GO:0009130	dcd
+Pyrimidine nucleoside monophosphate biosynthetic process GO:0009130	thyA
+Periplasmic space organization GO:0043580	lpp
+Protein targeting GO:0006605	secF
+Protein targeting GO:0006605	ffh
+Protein targeting GO:0006605	ftsY
+Protein targeting GO:0006605	secE
+glutamyl-tRNA aminoacylation GO:0006424	glnS
+rRNA (pseudouridine-N3-)-methyltransferase activity GO:0070038	rlmH
+Positive regulation of transport GO:0051050	proQ
+Negative regulation of cytoplasmic translation GO:2000766	rpsA
+Peptidoglycan binding GO:0042834	dedD
+Peptidoglycan binding GO:0042834	damX
+Peptidoglycan binding GO:0042834	ftsN
+Regulation of DNA-templated DNA replication initiation GO:0030174	hda
+Regulation of DNA-templated DNA replication initiation GO:0030174	dnaN
+Regulation of lipid metabolic process GO:0019216	accC
+Glutaminase activity GO:0004359	pyrG
+Anatomical structure development GO:0048856	minC
+Polyribonucleotide nucleotidyltransferase activity GO:0004654	pnp
+Regulation of lipid biosynthetic process GO:0046890	accC
+Enterobacterial common antigen metabolic process GO:0046378	wzyE
+Glutamine metabolic process GO:0006541	pyrG
+Glutamine metabolic process GO:0006541	glmS
+Division septum site selection GO:0000918	minE
+Fatty acid synthase activity GO:0004312	fabH
+Fatty acid synthase activity GO:0004312	fabG
+Fatty acid synthase activity GO:0004312	fabF
+Serine-type D-Ala-D-Ala carboxypeptidase activity GO:0009002	mrcB
+Serine-type D-Ala-D-Ala carboxypeptidase activity GO:0009002	mrdA
+4-hydroxy-3-methylbut-2-en-1-yl diphosphate reductase activity GO:0051745	ispH
+Glycosaminoglycan binding GO:0005539	dedD
+Glycosaminoglycan binding GO:0005539	damX
+Glycosaminoglycan binding GO:0005539	ftsN
+Protein transport by the Tat complex GO:0043953	tatA
+Dihydrobiopterin metabolic process GO:0051066	folE
+RNA binding GO:0003723	rpsT
+RNA binding GO:0003723	nusB
+RNA binding GO:0003723	cspE
+RNA binding GO:0003723	infA
+RNA binding GO:0003723	rpsA
+RNA binding GO:0003723	tyrS
+RNA binding GO:0003723	infC
+RNA binding GO:0003723	cspC
+RNA binding GO:0003723	proQ
+RNA binding GO:0003723	rimM
+RNA binding GO:0003723	lysS
+RNA binding GO:0003723	pnp
+RNA binding GO:0003723	rpsI
+RNA binding GO:0003723	rplM
+RNA binding GO:0003723	rpsE
+RNA binding GO:0003723	rplR
+RNA binding GO:0003723	rplF
+RNA binding GO:0003723	rpsN
+RNA binding GO:0003723	rplX
+RNA binding GO:0003723	rplN
+RNA binding GO:0003723	rpmC
+RNA binding GO:0003723	rplB
+RNA binding GO:0003723	rplW
+RNA binding GO:0003723	rpsG
+DNA secondary structure binding GO:0000217	rpsP
+DNA secondary structure binding GO:0000217	crp
+Proton motive force dependent protein transmembrane transporter activity GO:0009977	tatA
+DNA primase activity GO:0003896	dnaG
+Capsule organization GO:0045230	mepS
+Peptidoglycan-based cell wall GO:0009274	mrcB
+Peptidoglycan-based cell wall GO:0009274	ftsX
+Peptidoglycan-based cell wall GO:0009274	slt
+Pantothenate catabolic process GO:0015941	dfp
+Proteasomal protein catabolic process GO:0010498	clpP
+Negative regulation of DNA metabolic process GO:0051053	gyrA
+Negative regulation of DNA metabolic process GO:0051053	hda
+Negative regulation of DNA metabolic process GO:0051053	dnaN
+malonyl-CoA biosynthetic process GO:2001295	accC
+P-type magnesium transporter activity GO:0015444	mgtA
+Ribosome biogenesis GO:0042254	rpsT
+Ribosome biogenesis GO:0042254	nusB
+Ribosome biogenesis GO:0042254	rpsA
+Ribosome biogenesis GO:0042254	rimM
+Ribosome biogenesis GO:0042254	rpsP
+Ribosome biogenesis GO:0042254	rpmD
+Ribosome biogenesis GO:0042254	rpsE
+Ribosome biogenesis GO:0042254	rplF
+Ribosome biogenesis GO:0042254	rpsN
+Ribosome biogenesis GO:0042254	rplX
+Ribosome biogenesis GO:0042254	rpmC
+Ribosome biogenesis GO:0042254	rplB
+Ribosome biogenesis GO:0042254	rplW
+Ribosome biogenesis GO:0042254	rpsG
+Pyrimidine nucleoside diphosphate biosynthetic process GO:0009139	tmk
+selenocysteinyl-tRNA(Sec) biosynthetic process GO:0097056	serS
+Negative regulation of lipid biosynthetic process GO:0051055	accC
+Pentose-phosphate shunt, oxidative branch GO:0009051	zwf
+Ribonucleoprotein complex biogenesis GO:0022613	rpsT
+Ribonucleoprotein complex biogenesis GO:0022613	nusB
+Ribonucleoprotein complex biogenesis GO:0022613	rpsA
+Ribonucleoprotein complex biogenesis GO:0022613	rimM
+Ribonucleoprotein complex biogenesis GO:0022613	rpsP
+Ribonucleoprotein complex biogenesis GO:0022613	rpmD
+Ribonucleoprotein complex biogenesis GO:0022613	rpsE
+Ribonucleoprotein complex biogenesis GO:0022613	rplF
+Ribonucleoprotein complex biogenesis GO:0022613	rpsN
+Ribonucleoprotein complex biogenesis GO:0022613	rplX
+Ribonucleoprotein complex biogenesis GO:0022613	rpmC
+Ribonucleoprotein complex biogenesis GO:0022613	rplB
+Ribonucleoprotein complex biogenesis GO:0022613	rplW
+Ribonucleoprotein complex biogenesis GO:0022613	rpsG
+Cytosolic DNA-directed RNA polymerase complex GO:0000345	rpoE
+Cytosolic DNA-directed RNA polymerase complex GO:0000345	rpoD
+Intracellular protein-containing complex GO:0140535	dnaE
+Intracellular protein-containing complex GO:0140535	clpP
+Intracellular protein-containing complex GO:0140535	clpX
+Intracellular protein-containing complex GO:0140535	rpoE
+Intracellular protein-containing complex GO:0140535	dnaG
+Intracellular protein-containing complex GO:0140535	rpoD
+Intracellular protein-containing complex GO:0140535	dnaN
+Intracellular protein-containing complex GO:0140535	holD
+DnaB-DnaC-DnaT-PriA-PriC complex GO:1990159	dnaB
+Diol metabolic process GO:0034311	folE
+Negative regulation of DNA-templated DNA replication initiation GO:0032297	hda
+Negative regulation of DNA-templated DNA replication initiation GO:0032297	dnaN
+Protein N-linked glycosylation GO:0006487	glmS
+Leading strand elongation GO:0006272	dnaE
+Nucleoside diphosphate biosynthetic process GO:0009133	tmk
+Nucleoside diphosphate metabolic process GO:0009132	tmk
+Nucleoside diphosphate metabolic process GO:0009132	nrdA
+Nucleoside diphosphate metabolic process GO:0009132	gmk
+dUTP metabolic process GO:0046080	dcd
+Phosphatidylethanolamine metabolic process GO:0046337	psd
+Translation termination factor activity GO:0008079	prfB
+Translation termination factor activity GO:0008079	prfC
+Regulation of cell adhesion GO:0030155	cpxR
+SHG alpha-glucan phosphorylase activity GO:0102499	glgP
+Fatty acid elongation, saturated fatty acid GO:0019367	fabF
+Cellular amide metabolic process GO:0043603	rpsT
+Cellular amide metabolic process GO:0043603	tsf
+Cellular amide metabolic process GO:0043603	glnS
+Cellular amide metabolic process GO:0043603	infA
+Cellular amide metabolic process GO:0043603	serS
+Cellular amide metabolic process GO:0043603	rpsA
+Cellular amide metabolic process GO:0043603	asnS
+Cellular amide metabolic process GO:0043603	tyrS
+Cellular amide metabolic process GO:0043603	infC
+Cellular amide metabolic process GO:0043603	tsaB
+Cellular amide metabolic process GO:0043603	rpsP
+Cellular amide metabolic process GO:0043603	lysS
+Cellular amide metabolic process GO:0043603	prfB
+Cellular amide metabolic process GO:0043603	infB
+Cellular amide metabolic process GO:0043603	rpsI
+Cellular amide metabolic process GO:0043603	rplM
+Cellular amide metabolic process GO:0043603	rpmD
+Cellular amide metabolic process GO:0043603	rpsE
+Cellular amide metabolic process GO:0043603	rplR
+Cellular amide metabolic process GO:0043603	rplF
+Cellular amide metabolic process GO:0043603	rpsN
+Cellular amide metabolic process GO:0043603	rplX
+Cellular amide metabolic process GO:0043603	rplN
+Cellular amide metabolic process GO:0043603	rpmC
+Cellular amide metabolic process GO:0043603	rplB
+Cellular amide metabolic process GO:0043603	rplW
+Cellular amide metabolic process GO:0043603	fusA
+Cellular amide metabolic process GO:0043603	rpsG
+Cellular amide metabolic process GO:0043603	prfC
+DnaB-DnaC complex GO:1990100	dnaB
+Positive regulation of cytoplasmic translation GO:2000767	rpsA
+Ornithine decarboxylase regulator activity GO:0042979	rpsT
+1,4-alpha-glucan branching enzyme activity (using a glucosylated glycogenin as primer for glycogen synthesis) GO:0102752	glgB
+Phospholipid binding GO:0005543	pssA
+2-C-methyl-D-erythritol 4-phosphate cytidylyltransferase activity GO:0050518	ispD
+DNA helicase complex GO:0033202	dnaG
+DNA helicase complex GO:0033202	dnaB
+Catalytic activity, acting on a tRNA GO:0140101	glnS
+Catalytic activity, acting on a tRNA GO:0140101	serS
+Catalytic activity, acting on a tRNA GO:0140101	asnS
+Catalytic activity, acting on a tRNA GO:0140101	tyrS
+Catalytic activity, acting on a tRNA GO:0140101	lysS
+Lytic endotransglycosylase activity GO:0008932	slt
+DNA unwinding involved in DNA replication GO:0006268	dnaG
+DNA unwinding involved in DNA replication GO:0006268	dnaB
+DNA packaging complex GO:0044815	dnaG
+DNA packaging complex GO:0044815	dnaB
+acyl-CoA biosynthetic process GO:0071616	accC
+Ribonucleoside diphosphate metabolic process GO:0009185	nrdA
+Ribonucleoside diphosphate metabolic process GO:0009185	gmk
+Error-prone translesion synthesis GO:0042276	dnaN
+glucose-6-phosphate dehydrogenase activity GO:0004345	zwf
+Protease binding GO:0002020	clpX
+Isoprenoid biosynthetic process GO:0008299	ispH
+Isoprenoid biosynthetic process GO:0008299	ispD
+Terpenoid biosynthetic process GO:0016114	ispH
+Terpenoid biosynthetic process GO:0016114	ispD
+Lytic transglycosylase activity GO:0008933	slt
+seryl-tRNA aminoacylation GO:0006434	serS
+Isopentenyl diphosphate metabolic process GO:0046490	ispH
+Isopentenyl diphosphate metabolic process GO:0046490	ispD
+Penicillin binding GO:0008658	mrcB
+Penicillin binding GO:0008658	mrdA
+Cellular response to misfolded protein GO:0071218	degS
+Nuclear protein-containing complex GO:0140513	dnaE
+Nuclear protein-containing complex GO:0140513	nusG
+Nuclear protein-containing complex GO:0140513	holD
+acyl-[acyl-carrier-protein]-UDP-N-acetylglucosamine O-acyltransferase activity GO:0008780	lpxA
+Regulation of fatty acid biosynthetic process GO:0042304	accC
+Bacterial nucleoid packaging GO:0036386	hupA
+Endopeptidase Clp complex GO:0009368	clpP
+Endopeptidase Clp complex GO:0009368	clpX
+Response to alkaline pH GO:0010446	nhaA
+Nucleobase-containing small molecule interconversion GO:0015949	tmk
+Nucleobase-containing small molecule interconversion GO:0015949	dcd
+Nucleobase-containing small molecule interconversion GO:0015949	nrdA
+Regulation of translational termination GO:0006449	prfC
+Nucleoside-triphosphatase regulator activity GO:0060589	tsf
+DNA replication, synthesis of RNA primer GO:0006269	dnaG
+DNA replication, synthesis of RNA primer GO:0006269	dnaB
+DNA conformation change GO:0071103	ftsK
+DNA conformation change GO:0071103	gyrA
+DNA conformation change GO:0071103	parE
+DNA conformation change GO:0071103	dnaG
+DNA conformation change GO:0071103	gyrB
+DNA conformation change GO:0071103	dnaB
+UDP-3-O-acyl-N-acetylglucosamine deacetylase activity GO:0103117	lpxC
+Pyruvate family amino acid catabolic process GO:0009080	hinT
+Regulation of cytoplasmic translation GO:2000765	rpsA
+glutaminyl-tRNA aminoacylation GO:0006425	glnS
+Peptidoglycan muralytic activity GO:0061783	slt
+Transcription antitermination factor activity, RNA binding GO:0001072	cspE
+Transcription antitermination factor activity, RNA binding GO:0001072	cspC
+Carbon catabolite repression GO:0061985	crp
+Oxidoreductase activity, acting on CH or CH2 groups GO:0016725	ispH
+Oxidoreductase activity, acting on CH or CH2 groups GO:0016725	nrdA
+Regulation of DNA metabolic process GO:0051052	gyrA
+Regulation of DNA metabolic process GO:0051052	hda
+Regulation of DNA metabolic process GO:0051052	dnaN
+Small ribosomal subunit rRNA binding GO:0070181	rpsT
+glyceraldehyde-3-phosphate metabolic process GO:0019682	ispH
+glyceraldehyde-3-phosphate metabolic process GO:0019682	ispD
+Pyrimidine nucleoside monophosphate metabolic process GO:0009129	dcd
+Pyrimidine nucleoside monophosphate metabolic process GO:0009129	thyA
+3-dehydroquinate synthase activity GO:0003856	aroB
+Regulation of intracellular pH GO:0051453	nhaA
+Tetrahydrofolate biosynthetic process GO:0046654	folE
+Tetrahydrofolate biosynthetic process GO:0046654	folC
+Regulation of transport GO:0051049	proQ
+Regulation of transport GO:0051049	crr
+Osmosensory signaling pathway GO:0007231	proQ
+dUMP metabolic process GO:0046078	dcd
+D-alanine catabolic process GO:0055130	hinT
+Replication fork processing GO:0031297	dnaG
+Replication fork processing GO:0031297	dnaB
+lysyl-tRNA aminoacylation GO:0006430	lysS
+Dimethylallyl diphosphate metabolic process GO:0050993	ispH
+glucose-1-phosphate adenylyltransferase activity GO:0008878	glgC
+Replication inhibiting complex GO:1990078	hda
+Replication inhibiting complex GO:1990078	dnaN
+Cyclic nucleotide binding GO:0030551	pnp
+Cyclic nucleotide binding GO:0030551	crp
+CDP-diacylglycerol-serine O-phosphatidyltransferase activity GO:0003882	pssA
+Single-stranded RNA binding GO:0003727	cspE
+Single-stranded RNA binding GO:0003727	rpsA
+Single-stranded RNA binding GO:0003727	proQ
+Riboflavin reductase (NADH) activity GO:0052875	fre
+Monocarboxylic acid biosynthetic process GO:0072330	fabH
+Monocarboxylic acid biosynthetic process GO:0072330	fabG
+Monocarboxylic acid biosynthetic process GO:0072330	fabF
+Monocarboxylic acid biosynthetic process GO:0072330	accC
+Adenosine 5-monophosphoramidase activity GO:0043530	hinT
+Nucleoside triphosphate biosynthetic process GO:0009142	tmk
+Nucleoside triphosphate biosynthetic process GO:0009142	dcd
+Nucleoside triphosphate biosynthetic process GO:0009142	pyrG
+Nucleoside triphosphate biosynthetic process GO:0009142	thyA
+Regulation of RNA helicase activity GO:1902280	rne
+Guanyl-nucleotide exchange factor activity GO:0005085	tsf
+Cellular hyperosmotic salinity response GO:0071475	proQ
+Protein-containing complex organization GO:0043933	rpsT
+Protein-containing complex organization GO:0043933	rpsA
+Protein-containing complex organization GO:0043933	rimM
+Protein-containing complex organization GO:0043933	rpsP
+Protein-containing complex organization GO:0043933	grpE
+Protein-containing complex organization GO:0043933	prfB
+Protein-containing complex organization GO:0043933	rpmD
+Protein-containing complex organization GO:0043933	rpsE
+Protein-containing complex organization GO:0043933	rplF
+Protein-containing complex organization GO:0043933	rpsN
+Protein-containing complex organization GO:0043933	rplX
+Protein-containing complex organization GO:0043933	rpmC
+Protein-containing complex organization GO:0043933	rplB
+Protein-containing complex organization GO:0043933	rplW
+Protein-containing complex organization GO:0043933	rpsG
+Protein-containing complex organization GO:0043933	prfC
+tRNA binding GO:0000049	lysS
+tRNA binding GO:0000049	rpsI
+tRNA binding GO:0000049	rpsG
+Translational termination GO:0006415	prfB
+Translational termination GO:0006415	prfC
+Establishment of protein localization to endoplasmic reticulum GO:0072599	ffh
+Establishment of protein localization to endoplasmic reticulum GO:0072599	ftsY
+Establishment of protein localization to endoplasmic reticulum GO:0072599	secE
+Exopolyphosphatase activity GO:0004309	umpG
+dephospho-CoA kinase activity GO:0004140	coaE
+Protein-containing complex disassembly GO:0032984	prfB
+Protein-containing complex disassembly GO:0032984	prfC
+dUDP metabolic process GO:0046077	tmk
+Cytoplasmic side of membrane GO:0098562	rne
+Cytoplasmic side of membrane GO:0098562	minD
+Cytoplasmic side of membrane GO:0098562	ftsE
+Folic acid-containing compound biosynthetic process GO:0009396	folE
+Folic acid-containing compound biosynthetic process GO:0009396	folC
+GDP metabolic process GO:0046710	gmk
+Selenocysteine biosynthetic process GO:0016260	serS
+Regulation of cellular pH GO:0030641	nhaA
+D-ribose catabolic process GO:0019303	rbsK
+Macromolecule glycosylation GO:0043413	glmS
+ADP binding GO:0043531	hda
+Protein-containing complex assembly GO:0065003	rpsT
+Protein-containing complex assembly GO:0065003	rpsA
+Protein-containing complex assembly GO:0065003	rimM
+Protein-containing complex assembly GO:0065003	rpsP
+Protein-containing complex assembly GO:0065003	grpE
+Protein-containing complex assembly GO:0065003	rpmD
+Protein-containing complex assembly GO:0065003	rpsE
+Protein-containing complex assembly GO:0065003	rplF
+Protein-containing complex assembly GO:0065003	rpsN
+Protein-containing complex assembly GO:0065003	rplX
+Protein-containing complex assembly GO:0065003	rpmC
+Protein-containing complex assembly GO:0065003	rplB
+Protein-containing complex assembly GO:0065003	rplW
+Protein-containing complex assembly GO:0065003	rpsG
+Nucleoside monophosphate metabolic process GO:0009123	tmk
+Nucleoside monophosphate metabolic process GO:0009123	dcd
+Nucleoside monophosphate metabolic process GO:0009123	thyA
+Nucleoside monophosphate metabolic process GO:0009123	gmk
+Molecular adaptor activity GO:0060090	nlpI
+Maintenance of translational fidelity GO:1990145	tsaB
+Maintenance of translational fidelity GO:1990145	rpsE
+Phosphotransferase activity, phosphate group as acceptor GO:0016776	tmk
+Phosphotransferase activity, phosphate group as acceptor GO:0016776	gmk
+Lipid glycosylation GO:0030259	murG
+S-adenosylmethionine biosynthetic process GO:0006556	metK
+Cellular stress response to acidic pH GO:1990451	rcsB
+Cellular stress response to acidic pH GO:1990451	gadE
+Cardiolipin biosynthetic process GO:0032049	pssA
+ATP-dependent activity, acting on DNA GO:0008094	ftsK
+ATP-dependent activity, acting on DNA GO:0008094	gyrA
+ATP-dependent activity, acting on DNA GO:0008094	parE
+ATP-dependent activity, acting on DNA GO:0008094	gyrB
+ATP-dependent activity, acting on DNA GO:0008094	dnaB
+Glycogen catabolic process GO:0005980	glgP
+3-oxoacyl-[acyl-carrier-protein] reductase (NADPH) activity GO:0004316	fabG
+Regulation of localization GO:0032879	proQ
+Regulation of localization GO:0032879	crr
+Biotin carboxylase activity GO:0004075	accC
+Intracellular membrane-bounded organelle GO:0043231	dnaE
+Intracellular membrane-bounded organelle GO:0043231	nusG
+Intracellular membrane-bounded organelle GO:0043231	holD
+2-C-methyl-D-erythritol 2,4-cyclodiphosphate synthase activity GO:0008685	ispF
+Cellular response to organic substance GO:0071310	tolB
+Cellular response to organic substance GO:0071310	degS
+DNA duplex unwinding GO:0032508	ftsK
+DNA duplex unwinding GO:0032508	dnaG
+DNA duplex unwinding GO:0032508	dnaB
+Carbohydrate derivative transport GO:1901264	ftsW
+Carbohydrate derivative transport GO:1901264	mrdB
+Peptidoglycan catabolic process GO:0009253	slt
+Cell wall repair GO:0071433	mrcB
+Signal recognition particle GO:0048500	ffh
+Intracellular protein transmembrane transport GO:0065002	secF
+Intracellular protein transmembrane transport GO:0065002	tatA
+Intracellular protein transmembrane transport GO:0065002	secE
+RNA polymerase activity GO:0097747	dnaG
+GMP 5-nucleotidase activity GO:0050484	umpG
+Transcriptional attenuation GO:0031555	mgtL
+1,4-alpha-oligoglucan phosphorylase activity GO:0004645	glgP
+Cellular glucan metabolic process GO:0006073	glgP
+Cellular glucan metabolic process GO:0006073	glgA
+Cellular glucan metabolic process GO:0006073	glgC
+Cellular glucan metabolic process GO:0006073	glgB
+Lagging strand elongation GO:0006273	dnaE
+Double-stranded RNA binding GO:0003725	proQ
+Negative regulation of transmembrane transport GO:0034763	crr
+Pteridine-containing compound biosynthetic process GO:0042559	folE
+Pteridine-containing compound biosynthetic process GO:0042559	folC
+Protein transmembrane transporter activity GO:0008320	secF
+Protein transmembrane transporter activity GO:0008320	tatA
+Protein transmembrane transporter activity GO:0008320	secE
+Gene expression GO:0010467	rpsT
+Gene expression GO:0010467	tsf
+Gene expression GO:0010467	nusB
+Gene expression GO:0010467	glnS
+Gene expression GO:0010467	infA
+Gene expression GO:0010467	serS
+Gene expression GO:0010467	rpsA
+Gene expression GO:0010467	asnS
+Gene expression GO:0010467	tyrS
+Gene expression GO:0010467	infC
+Gene expression GO:0010467	tsaB
+Gene expression GO:0010467	rcsB
+Gene expression GO:0010467	rimM
+Gene expression GO:0010467	rpsP
+Gene expression GO:0010467	rpoS
+Gene expression GO:0010467	lysS
+Gene expression GO:0010467	prfB
+Gene expression GO:0010467	pnp
+Gene expression GO:0010467	infB
+Gene expression GO:0010467	rpsI
+Gene expression GO:0010467	rplM
+Gene expression GO:0010467	rpmD
+Gene expression GO:0010467	rpsE
+Gene expression GO:0010467	rplR
+Gene expression GO:0010467	rplF
+Gene expression GO:0010467	rpsN
+Gene expression GO:0010467	rplX
+Gene expression GO:0010467	rplN
+Gene expression GO:0010467	rpmC
+Gene expression GO:0010467	rplB
+Gene expression GO:0010467	rplW
+Gene expression GO:0010467	fusA
+Gene expression GO:0010467	rpsG
+Gene expression GO:0010467	crp
+Gene expression GO:0010467	gadX
+Gene expression GO:0010467	hupA
+Gene expression GO:0010467	prfC
+Queuosine metabolic process GO:0046116	folE
+Lipid A metabolic process GO:0046493	lpxC
+Lipid A metabolic process GO:0046493	lpxA
+Pyrimidine ribonucleotide biosynthetic process GO:0009220	pyrG
+Protein-macromolecule adaptor activity GO:0030674	nlpI
+Monovalent inorganic cation homeostasis GO:0055067	nhaA
+Membrane-bounded organelle GO:0043227	dnaE
+Membrane-bounded organelle GO:0043227	nusG
+Membrane-bounded organelle GO:0043227	holD
+Membrane organization GO:0061024	secF
+Membrane organization GO:0061024	secE
+Protein insertion into membrane from inner side GO:0032978	secF
+Protein insertion into membrane from inner side GO:0032978	secE
+Lipooligosaccharide biosynthetic process GO:1901271	lpxC
+Lipooligosaccharide biosynthetic process GO:1901271	lpxA
+ATPase-coupled cation transmembrane transporter activity GO:0019829	mgtA
+mRNA binding GO:0003729	rpsA
+mRNA binding GO:0003729	proQ
+mRNA binding GO:0003729	rplM
+mRNA binding GO:0003729	rpsG
+DNA topological change GO:0006265	gyrA
+DNA topological change GO:0006265	parE
+DNA topological change GO:0006265	gyrB
+Negative regulation of maltose transport GO:1902344	crr
+Cellular response to nutrient GO:0031670	crp
+Glucan metabolic process GO:0044042	glgP
+Glucan metabolic process GO:0044042	glgA
+Glucan metabolic process GO:0044042	glgC
+Glucan metabolic process GO:0044042	glgB
+Serine hydrolase activity GO:0017171	mrcB
+Serine hydrolase activity GO:0017171	degP
+Serine hydrolase activity GO:0017171	clpP
+Serine hydrolase activity GO:0017171	mrdA
+Serine hydrolase activity GO:0017171	lepB
+Serine hydrolase activity GO:0017171	degS
+Serine hydrolase activity GO:0017171	lexA
+Chromosome segregation GO:0007059	ftsK
+Chromosome segregation GO:0007059	minD
+Chromosome segregation GO:0007059	parE
+Pyrimidine-containing compound metabolic process GO:0072527	tmk
+Pyrimidine-containing compound metabolic process GO:0072527	dcd
+Pyrimidine-containing compound metabolic process GO:0072527	pyrG
+Pyrimidine-containing compound metabolic process GO:0072527	thyA

@@ -97,12 +97,12 @@ data[Row %in% c("A", "H"), Imipenem := NA]
 data <- data[!Column %in% c(1,12)]
 
 
-# data <- data[
-#   Imipenem %in% c(0, 0.5, 1) & !(is.na(Induced)),
-#   followup := "Moved to Second Competition"
-# ]
+data <- data[
+  Imipenem %in% c(0, 0.25, 0.5) & !(is.na(Induced)),
+  followup := "Moved to Second Competition"
+]
 
-# data <- data[is.na(followup), followup := "96-well Plate Only"] 
+data <- data[is.na(followup), followup := "96-well Plate Only"] 
 
 
 find_ncol <- function(n) {
@@ -140,7 +140,7 @@ growth_curve_plot <- ggplot(
   ) +
   scale_linetype_manual(values = c("FALSE" = "dashed", "TRUE" = "solid")) +
   scale_color_discrete(guide = guide_legend(row = ncol)) +
-  # facet_wrap(followup ~ .) +
+  facet_wrap(followup ~ .) +
   theme_minimal()
 
 print(growth_curve_plot)
