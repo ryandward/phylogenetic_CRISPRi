@@ -1,7 +1,24 @@
 library(tidyverse)
 library(data.table)
+library(pheatmap)
 
-data <- fread("Sequencing/IMI_Ecoli/ECimiRDW-growth-data.tsv") %>% melt(id.vars = c("Seconds", "Temp"), variable.name = "Well", value.name = "OD600")
+# Read the data
+data <- fread("Sequencing/IMI_Ecloacae/growth-data-2.tsv", header = TRUE)
+
+# Set the column names to the first row of the data
+setnames(data, as.character(unlist(data[1, ])))
+
+# Remove the first row (now that it's been used for column names)
+data <- data[-1, ]
+
+# Rename the 'Time [s]' column to 'Well'
+setnames(data, old = "Time [s]", new = "Well")
+
+# Filter rows where 'Well' matches the pattern [A-z][0-9]{1,2}
+data <- data[grep("[A-z][0-9]{1,2}", data$Well)]
+
+# Reshape the data from wide to long format
+data <- melt(data, id.vars = "Well", variable.name = "Seconds", value.name = "OD600", na.rm = TRUE)
 
 # Split Well into Row and Column
 data[, c("Row", "Column") := tstrsplit(Well, "(?<=^[A-Z])", perl = TRUE)]
@@ -67,11 +84,12 @@ data %>%
   print()
 
 # Remove wells without cells
-data <- data[!is.na(Imipenem) & !is.na(Induced)]
+# data <- data[!is.na(Imipenem) & !is.na(Induced)]
 
 
 # Remove 's' from Seconds and convert to numeric
 data[, Seconds := as.numeric(gsub("s", "", Seconds))]
+
 
 data[Row %in% c("A", "H"), Imipenem := NA_integer_]
 data[Row %in% c("A", "H"), Imipenem := NA]
@@ -80,13 +98,13 @@ data <- data[!Column %in% c(1,12)]
 
 
 data <- data[
-  Imipenem %in% c(0, 0.125, 0.25) & !(is.na(Induced)),
+  Imipenem %in% c(0, 0.5, 1) & !(is.na(Induced)),
   followup := "Moved to Second Competition"
 ]
 
 data <- data[is.na(followup), followup := "96-well Plate Only"] 
 
-# Function to find the largest divisor closest to the square root
+
 find_ncol <- function(n) {
   sqrt_n <- floor(sqrt(n))
   for (i in sqrt_n:2) {
@@ -114,14 +132,14 @@ growth_curve_plot <- ggplot(
   scale_y_log10() +
   stat_summary(fun = mean, geom = "line", aes(color = factor(Imipenem), linetype = factor(Induced))) +
   stat_summary(fun.data = mean_se, geom = "ribbon", aes(fill = factor(Imipenem)), alpha = 0.4) +
-  labs(title = "E. coli library growth", 
+  labs(title = "E. cloacae library growth", 
     x = "Seconds",
     y = "Growth (log OD600)",
     color = "Imipenem",
     linetype = "Induced", fill = "Imipenem"
   ) +
   scale_linetype_manual(values = c("FALSE" = "dashed", "TRUE" = "solid")) +
-  scale_color_discrete(guide = guide_legend(ncol = ncol)) +
+  scale_color_discrete(guide = guide_legend(row = ncol)) +
   facet_wrap(followup ~ .) +
   theme_minimal()
 
@@ -140,3 +158,27 @@ library(ggplot2)
 
 
 print(growth_curve_plot)
+
+
+endpoint <- data %>%
+  filter(Seconds == max(Seconds)) %>%
+  dcast(Row ~ Column, value.var = "OD600")
+
+endpoint_mat <- as.matrix(endpoint[, -1])
+
+rownames(endpoint_mat) <- endpoint$Row
+
+# draw matrix in ggplot with dose and induction in the boxes
+library(ggplot2)
+
+
+
+
+ggplot(data, aes(y = factor(Row, levels = rev(levels(factor(Row)))), x = factor(Column), fill = OD600)) +
+  geom_tile(color = "white") +
+  geom_text(aes(label = paste("Induced:", Induced, "\nDose:", Imipenem)), size = 3) +
+  scale_fill_gradient(low = "white", high = "steelblue") +
+  labs(title = "Endpoint Assay Map", x = "Row", y = "Column", fill = "Final OD600") +
+  theme_minimal() +
+  coord_fixed(ratio = 0.5) +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))

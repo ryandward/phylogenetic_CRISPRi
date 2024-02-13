@@ -1,9 +1,10 @@
 
 library(tidyverse)
 library(data.table)
+library(pheatmap)
 
 # Read the data
-data <- fread("Sequencing/Ecloacae_IMI/growth-data.tsv", header = TRUE)
+data <- fread("Sequencing/IMI_Ecloacae/growth-data.tsv", header = TRUE)
 
 # Set the column names to the first row of the data
 setnames(data, as.character(unlist(data[1,])))
@@ -108,4 +109,23 @@ growth_curve_plot <- ggplot(
 
 print(growth_curve_plot)
 
-ecl_data <- data
+endpoint <- data %>% 
+  filter(Seconds == max(Seconds)) %>%
+  dcast(Row ~ Column, value.var = "OD600") 
+
+endpoint_mat <- as.matrix(endpoint[, -1])
+
+rownames(endpoint_mat) <- endpoint$Row
+
+# draw matrix in ggplot with dose and induction in the boxes
+library(ggplot2)
+
+ggplot(data, aes(y = factor(Row, levels = rev(levels(factor(Row)))), x = factor(Column), fill = OD600)) +
+  geom_tile(color = "white") +
+  geom_text(aes(label = paste("Induced:", Induced, "\nDose:", Imipenem)), size = 3) +
+  scale_fill_gradient(low = "white", high = "steelblue") +
+  labs(title = "Endpoint Assay Map", x = "Row", y = "Column", fill = "Final OD600") +
+  theme_minimal() +
+  coord_fixed(ratio = 0.5) +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+
