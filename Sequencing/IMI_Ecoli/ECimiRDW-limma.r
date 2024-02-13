@@ -10,7 +10,7 @@ show_col(brewer.pal(12, "Paired"))
 
 # Load the data, first column is sample, second column is spacer, third column is count
 data <- fread(
-  "Sequencing/M005389/ECimiRDW1-12.tsv.gz",
+  "Sequencing/IMI_Ecoli/ECimiRDW1-12.tsv.gz",
   header = FALSE, sep = "\t", col.names = c("sample", "spacer", "count")
 ) %>% filter(!(spacer %like% "\\*"))
 
@@ -21,7 +21,7 @@ freezer_stock <- fread(
 
 # load the design
 design <- fread(
-  "Sequencing/M005389/design.tsv",
+  "Sequencing/IMI_Ecoli/design.tsv",
   header = TRUE, sep = "\t"
 )
 
@@ -466,7 +466,8 @@ all_sets <- lapply(colnames(contrasts), function(contrast_name) {
   contrast_column <- contrasts[, contrast_name]
   result <- camera(
     v,
-    index = spacers_in_sets_index, design = design_matrix,
+    index = spacers_in_sets_index, 
+    design = design_matrix,
     weights = v_targets$weight,
     # inter.gene.cor = 0.01,
     contrast = contrast_column
@@ -567,3 +568,5 @@ create_plot <- function(full_data, freezer_stock, targets, enrichments, sets, li
 # create_plot(full_data, freezer_stock, v_targets, enrichments, all_sets[term == "CL:35"])
 # create_plot(full_data, freezer_stock, v_targets, enrichments, all_sets[term == "GO:0004605"])
 # create_plot(full_data, freezer_stock, v_targets, enrichments, all_sets[term == "CL:110"])
+
+
