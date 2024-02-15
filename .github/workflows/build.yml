@@ -19,7 +19,7 @@ jobs:
         python-version: '3.x'
 
     - name: Add Front Matter
-      run: python generate_index.py
+      run: python genindex.py --recursive docs
 
     - name: Commit changes
       run: |
