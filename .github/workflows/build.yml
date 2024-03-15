@@ -1,36 +1,34 @@
-❯ cat build.yml 
-name: Add Front Matter
+name: Add Indexes
 
 on:
   push:
     paths:
-      - 'docs/**'
+      - "docs/**"
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.x'
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.x"
 
-    - name: Add Front Matter
-      run: python genindex.py --recursive docs
+      - name: Add Indexes
+        run: python genindex.py --recursive docs
 
-    - name: Commit changes
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add -A
-        if git diff --staged --quiet; then
-          echo "No changes to commit"
-          exit 0
-        else
-          git commit -m "Added front matter to HTML files"
-          git push
-        fi
-
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+            exit 0
+          else
+            git commit -m "Added Indexes"
+            git push
+          fi

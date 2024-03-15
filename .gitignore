@@ -3,4 +3,5 @@
 .RData
 .Ruserdata
 .nb.html
-.~lock.plots-and-code.odt#
+*.fastq
+*.fastq.gz
