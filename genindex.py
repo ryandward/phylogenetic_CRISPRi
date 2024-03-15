@@ -23,170 +23,173 @@
 import argparse
 import datetime
 import os
+import pathlib
 import re
 import sys
 from pathlib import Path
 from urllib.parse import quote
+import subprocess
 
-DEFAULT_OUTPUT_FILE = 'index.html'
+DEFAULT_OUTPUT_FILE = "index.html"
 
 EXTENSION_TYPES = {
-    'id_rsa': 'cert',
-    'LICENSE': 'license',
-    'README': 'license',
-    '.jpg': 'image',
-    '.jpeg': 'image',
-    '.png': 'image',
-    '.gif': 'image',
-    '.webp': 'image',
-    '.tiff': 'image',
-    '.bmp': 'image',
-    '.heif': 'image',
-    '.heic': 'image',
-    '.svg': 'image',
-    '.mp4': 'video',
-    '.mov': 'video',
-    '.mpeg': 'video',
-    '.avi': 'video',
-    '.ogv': 'video',
-    '.webm': 'video',
-    '.mkv': 'video',
-    '.vob': 'video',
-    '.gifv': 'video',
-    '.3gp': 'video',
-    '.mp3': 'audio',
-    '.m4a': 'audio',
-    '.aac': 'audio',
-    '.ogg': 'audio',
-    '.flac': 'audio',
-    '.wav': 'audio',
-    '.wma': 'audio',
-    '.midi': 'audio',
-    '.cda': 'audio',
-    '.aiff': 'audio',
-    '.aif': 'audio',
-    '.caf': 'audio',
-    '.pdf': 'pdf',
-    '.csv': 'csv',
-    '.txt': 'doc',
-    '.doc': 'doc',
-    '.docx': 'doc',
-    '.odt': 'doc',
-    '.fodt': 'doc',
-    '.rtf': 'doc',
-    '.abw': 'doc',
-    '.pages': 'doc',
-    '.xls': 'sheet',
-    '.xlsx': 'sheet',
-    '.ods': 'sheet',
-    '.fods': 'sheet',
-    '.numbers': 'sheet',
-    '.ppt': 'ppt',
-    '.pptx': 'ppt',
-    '.odp': 'ppt',
-    '.fodp': 'ppt',
-    '.zip': 'archive',
-    '.gz': 'archive',
-    '.xz': 'archive',
-    '.tar': 'archive',
-    '.7z': 'archive',
-    '.rar': 'archive',
-    '.zst': 'archive',
-    '.bz2': 'archive',
-    '.bzip': 'archive',
-    '.arj': 'archive',
-    '.z': 'archive',
-    '.deb': 'deb',
-    '.dpkg': 'deb',
-    '.rpm': 'dist',
-    '.exe': 'dist',
-    '.flatpak': 'dist',
-    '.appimage': 'dist',
-    '.jar': 'dist',
-    '.msi': 'dist',
-    '.apk': 'dist',
-    '.ps1': 'ps1',
-    '.py': 'py',
-    '.pyc': 'py',
-    '.pyo': 'py',
-    '.egg': 'py',
-    '.sh': 'sh',
-    '.bash': 'sh',
-    '.com': 'sh',
-    '.bat': 'sh',
-    '.dll': 'sh',
-    '.so': 'sh',
-    '.dmg': 'dmg',
-    '.iso': 'iso',
-    '.img': 'iso',
-    '.md': 'md',
-    '.mdown': 'md',
-    '.markdown': 'md',
-    '.ttf': 'font',
-    '.ttc': 'font',
-    '.otf': 'font',
-    '.woff': 'font',
-    '.woff2': 'font',
-    '.eof': 'font',
-    '.apf': 'font',
-    '.go': 'go',
-    '.html': 'html',
-    '.htm': 'html',
-    '.php': 'html',
-    '.php3': 'html',
-    '.asp': 'html',
-    '.aspx': 'html',
-    '.css': 'css',
-    '.scss': 'css',
-    '.less': 'css',
-    '.json': 'json',
-    '.json5': 'json',
-    '.jsonc': 'json',
-    '.ts': 'ts',
-    '.sql': 'sql',
-    '.db': 'db',
-    '.sqlite': 'db',
-    '.mdb': 'db',
-    '.odb': 'db',
-    '.eml': 'email',
-    '.email': 'email',
-    '.mailbox': 'email',
-    '.mbox': 'email',
-    '.msg': 'email',
-    '.crt': 'cert',
-    '.pem': 'cert',
-    '.x509': 'cert',
-    '.cer': 'cert',
-    '.der': 'cert',
-    '.ca-bundle': 'cert',
-    '.key': 'keystore',
-    '.keystore': 'keystore',
-    '.jks': 'keystore',
-    '.p12': 'keystore',
-    '.pfx': 'keystore',
-    '.pub': 'keystore',
-    'symlink': 'symlink',
-    'generic': 'generic'
+    "id_rsa": "cert",
+    "LICENSE": "license",
+    "README": "license",
+    ".jpg": "image",
+    ".jpeg": "image",
+    ".png": "image",
+    ".gif": "image",
+    ".webp": "image",
+    ".tiff": "image",
+    ".bmp": "image",
+    ".heif": "image",
+    ".heic": "image",
+    ".svg": "image",
+    ".mp4": "video",
+    ".mov": "video",
+    ".mpeg": "video",
+    ".avi": "video",
+    ".ogv": "video",
+    ".webm": "video",
+    ".mkv": "video",
+    ".vob": "video",
+    ".gifv": "video",
+    ".3gp": "video",
+    ".mp3": "audio",
+    ".m4a": "audio",
+    ".aac": "audio",
+    ".ogg": "audio",
+    ".flac": "audio",
+    ".wav": "audio",
+    ".wma": "audio",
+    ".midi": "audio",
+    ".cda": "audio",
+    ".aiff": "audio",
+    ".aif": "audio",
+    ".caf": "audio",
+    ".pdf": "pdf",
+    ".csv": "csv",
+    ".txt": "doc",
+    ".doc": "doc",
+    ".docx": "doc",
+    ".odt": "doc",
+    ".fodt": "doc",
+    ".rtf": "doc",
+    ".abw": "doc",
+    ".pages": "doc",
+    ".xls": "sheet",
+    ".xlsx": "sheet",
+    ".ods": "sheet",
+    ".fods": "sheet",
+    ".numbers": "sheet",
+    ".ppt": "ppt",
+    ".pptx": "ppt",
+    ".odp": "ppt",
+    ".fodp": "ppt",
+    ".zip": "archive",
+    ".gz": "archive",
+    ".xz": "archive",
+    ".tar": "archive",
+    ".7z": "archive",
+    ".rar": "archive",
+    ".zst": "archive",
+    ".bz2": "archive",
+    ".bzip": "archive",
+    ".arj": "archive",
+    ".z": "archive",
+    ".deb": "deb",
+    ".dpkg": "deb",
+    ".rpm": "dist",
+    ".exe": "dist",
+    ".flatpak": "dist",
+    ".appimage": "dist",
+    ".jar": "dist",
+    ".msi": "dist",
+    ".apk": "dist",
+    ".ps1": "ps1",
+    ".py": "py",
+    ".pyc": "py",
+    ".pyo": "py",
+    ".egg": "py",
+    ".sh": "sh",
+    ".bash": "sh",
+    ".com": "sh",
+    ".bat": "sh",
+    ".dll": "sh",
+    ".so": "sh",
+    ".dmg": "dmg",
+    ".iso": "iso",
+    ".img": "iso",
+    ".md": "md",
+    ".mdown": "md",
+    ".markdown": "md",
+    ".ttf": "font",
+    ".ttc": "font",
+    ".otf": "font",
+    ".woff": "font",
+    ".woff2": "font",
+    ".eof": "font",
+    ".apf": "font",
+    ".go": "go",
+    ".html": "html",
+    ".htm": "html",
+    ".php": "html",
+    ".php3": "html",
+    ".asp": "html",
+    ".aspx": "html",
+    ".css": "css",
+    ".scss": "css",
+    ".less": "css",
+    ".json": "json",
+    ".json5": "json",
+    ".jsonc": "json",
+    ".ts": "ts",
+    ".sql": "sql",
+    ".db": "db",
+    ".sqlite": "db",
+    ".mdb": "db",
+    ".odb": "db",
+    ".eml": "email",
+    ".email": "email",
+    ".mailbox": "email",
+    ".mbox": "email",
+    ".msg": "email",
+    ".crt": "cert",
+    ".pem": "cert",
+    ".x509": "cert",
+    ".cer": "cert",
+    ".der": "cert",
+    ".ca-bundle": "cert",
+    ".key": "keystore",
+    ".keystore": "keystore",
+    ".jks": "keystore",
+    ".p12": "keystore",
+    ".pfx": "keystore",
+    ".pub": "keystore",
+    "symlink": "symlink",
+    "generic": "generic",
 }
 
 
 def process_dir(top_dir, opts):
-    glob_patt = opts.filter or '*'
+    glob_patt = opts.filter or "*"
 
     path_top_dir = Path(top_dir)
 
     index_path = Path(path_top_dir, opts.output_file)
 
     if opts.verbose:
-        print(f'Traversing dir {path_top_dir.absolute()}')
+        print(f"Traversing dir {path_top_dir.absolute()}")
 
     try:
-        index_file = open(index_path, 'w')
+        index_file = open(index_path, "w")
     except Exception as e:
-        print('cannot create file %s %s' % (index_path, e))
+        print("cannot create file %s %s" % (index_path, e))
         return
 
-    index_file.write("""<!DOCTYPE html>
+    index_file.write(
+        """<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -734,8 +737,8 @@ def process_dir(top_dir, opts):
 </svg>
 <header>
     <h1>"""
-                     f'{path_top_dir.name}'
-                     """</h1>
+        f"{path_top_dir.name}"
+        """</h1>
                  </header>
                  <main>
                  <div class="listing">
@@ -764,20 +767,41 @@ def process_dir(top_dir, opts):
                              <td class="hideable">&mdash;</td>
                              <td class="hideable"></td>
                          </tr>
-                 """)
+                 """
+    )
 
     # sort dirs first
-    sorted_entries = sorted(path_top_dir.glob(glob_patt), key=lambda p: (not p.is_dir(), p.name))
 
+    # Get a list of file and directory names as strings
+    entries = [str(p) for p in path_top_dir.glob(glob_patt)]
+
+    # Join the names into a single string with newline characters
+    entries_str = "\n".join(entries)
+
+    # Run the 'sort -V' command
+    proc = subprocess.run(
+        ["sort", "-V"], input=entries_str, text=True, capture_output=True
+    )
+
+    # The sorted output from 'sort -V' is in proc.stdout
+    sorted_entries_str = proc.stdout
+
+    # Split the output back into a list of strings
+    sorted_entries = sorted_entries_str.splitlines()
+
+    # Convert the strings back to Path objects
+    sorted_entries = [pathlib.Path(p) for p in sorted_entries]
     entry: Path
     for entry in sorted_entries:
 
         # - don't include index.html in the file listing
         # - skip .hidden dot files unless explicitly requested
         # - skip by regex if defined
-        if (entry.name.lower() == opts.output_file.lower()) \
-                or (not opts.include_hidden and entry.name.startswith('.')) \
-                or (opts.exclude_regex and opts.exclude_regex.search(entry.name)):
+        if (
+            (entry.name.lower() == opts.output_file.lower())
+            or (not opts.include_hidden and entry.name.startswith("."))
+            or (opts.exclude_regex and opts.exclude_regex.search(entry.name))
+        ):
             continue
 
         if entry.is_dir() and opts.recursive:
@@ -785,28 +809,32 @@ def process_dir(top_dir, opts):
 
         # From Python 3.6, os.access() accepts path-like objects
         if (not entry.is_symlink()) and not os.access(str(entry), os.R_OK):
-            print(f"*** WARNING *** entry {entry.absolute()} is not readable! SKIPPING!")
+            print(
+                f"*** WARNING *** entry {entry.absolute()} is not readable! SKIPPING!"
+            )
             continue
         if opts.verbose:
-            print(f'{entry.absolute()}')
+            print(f"{entry.absolute()}")
 
         size_bytes = -1  # is a folder
-        size_pretty = '&mdash;'
-        last_modified = '-'
-        last_modified_human_readable = '-'
-        last_modified_iso = ''
+        size_pretty = "&mdash;"
+        last_modified = "-"
+        last_modified_human_readable = "-"
+        last_modified_iso = ""
         try:
             if entry.is_file():
                 size_bytes = entry.stat().st_size
                 size_pretty = pretty_size(size_bytes)
 
             if entry.is_dir() or entry.is_file():
-                last_modified = datetime.datetime.fromtimestamp(entry.stat().st_mtime).replace(microsecond=0)
+                last_modified = datetime.datetime.fromtimestamp(
+                    entry.stat().st_mtime
+                ).replace(microsecond=0)
                 last_modified_iso = last_modified.isoformat()
                 last_modified_human_readable = last_modified.strftime("%c")
 
         except Exception as e:
-            print('ERROR accessing file name:', e, entry)
+            print("ERROR accessing file name:", e, entry)
             continue
 
         entry_path = str(entry.name)
@@ -815,34 +843,35 @@ def process_dir(top_dir, opts):
         css_class_svg = ""
 
         if entry.is_dir() and not entry.is_symlink():
-            icon_xlink = 'folder'
+            icon_xlink = "folder"
             css_class_svg = "folder_filled"
 
-            if os.name not in ('nt',):
+            if os.name not in ("nt",):
                 # append trailing slash to dirs, unless it's windows
-                entry_path = os.path.join(entry.name, '')
+                entry_path = os.path.join(entry.name, "")
 
         elif entry.is_dir() and entry.is_symlink():
-            icon_xlink = 'folder-symlink'
+            icon_xlink = "folder-symlink"
 
-            print('dir-symlink', entry.absolute())
+            print("dir-symlink", entry.absolute())
 
         elif entry.is_file() and entry.is_symlink():
-            icon_xlink = 'symlink'
+            icon_xlink = "symlink"
 
-            print('file-symlink', entry.absolute())
+            print("file-symlink", entry.absolute())
 
         elif entry.is_file():
 
-            if '.' in entry.name:
+            if "." in entry.name:
                 icon_xlink = EXTENSION_TYPES.get(entry.suffix.lower())
             else:
                 icon_xlink = EXTENSION_TYPES.get(entry.name)
 
         if icon_xlink is None:
-            icon_xlink = 'generic'
+            icon_xlink = "generic"
 
-        index_file.write(f"""
+        index_file.write(
+            f"""
         <tr class="file">
             <td></td>
             <td>
@@ -856,27 +885,30 @@ def process_dir(top_dir, opts):
             <td class="hideable"><time datetime="{last_modified_iso}">{last_modified_human_readable}</time></td>
             <td class="hideable"></td>
         </tr>
-""")
+"""
+        )
 
-    index_file.write("""
+    index_file.write(
+        """
             </tbody>
         </table>
     </div>
 </main>
 </body>
-</html>""")
+</html>"""
+    )
     if index_file:
         index_file.close()
 
 
 # bytes pretty-printing
 UNITS_MAPPING = [
-    (1024 ** 5, ' PB'),
-    (1024 ** 4, ' TB'),
-    (1024 ** 3, ' GB'),
-    (1024 ** 2, ' MB'),
-    (1024 ** 1, ' KB'),
-    (1024 ** 0, (' byte', ' bytes')),
+    (1024**5, " PB"),
+    (1024**4, " TB"),
+    (1024**3, " GB"),
+    (1024**2, " MB"),
+    (1024**1, " KB"),
+    (1024**0, (" byte", " bytes")),
 ]
 
 
@@ -909,47 +941,66 @@ def type_regex(s):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description='''DESCRIPTION:
+    parser = argparse.ArgumentParser(
+        description="""DESCRIPTION:
     Generate directory index files (recursive is OFF by default).
     Start from current dir or from folder passed as first positional argument.
-    Optionally filter by file types with --filter "*.py". ''')
+    Optionally filter by file types with --filter "*.py". """
+    )
 
-    parser.add_argument('top_dir',
-                        nargs='?',
-                        action='store',
-                        help='top folder from which to start generating indexes, '
-                             'use current folder if not specified',
-                        default=os.getcwd())
+    parser.add_argument(
+        "top_dir",
+        nargs="?",
+        action="store",
+        help="top folder from which to start generating indexes, "
+        "use current folder if not specified",
+        default=os.getcwd(),
+    )
 
-    parser.add_argument('--filter', '-f',
-                        help='only include files matching glob',
-                        required=False)
+    parser.add_argument(
+        "--filter", "-f", help="only include files matching glob", required=False
+    )
 
-    parser.add_argument('--output-file', '-o',
-                        metavar='filename',
-                        default=DEFAULT_OUTPUT_FILE,
-                        help=f'Custom output file, by default "{DEFAULT_OUTPUT_FILE}"')
+    parser.add_argument(
+        "--output-file",
+        "-o",
+        metavar="filename",
+        default=DEFAULT_OUTPUT_FILE,
+        help=f'Custom output file, by default "{DEFAULT_OUTPUT_FILE}"',
+    )
 
-    parser.add_argument('--recursive', '-r',
-                        action='store_true',
-                        help="recursively process nested dirs (FALSE by default)",
-                        required=False)
+    parser.add_argument(
+        "--recursive",
+        "-r",
+        action="store_true",
+        help="recursively process nested dirs (FALSE by default)",
+        required=False,
+    )
 
-    parser.add_argument('--include-hidden', '-i',
-                        action='store_true',
-                        help="include dot hidden files (FALSE by default)",
-                        required=False)
+    parser.add_argument(
+        "--include-hidden",
+        "-i",
+        action="store_true",
+        help="include dot hidden files (FALSE by default)",
+        required=False,
+    )
 
-    parser.add_argument('--exclude-regex', '-x',
-                        type=type_regex,
-                        help="exclude files matching regular expression",
-                        required=False)
+    parser.add_argument(
+        "--exclude-regex",
+        "-x",
+        type=type_regex,
+        help="exclude files matching regular expression",
+        required=False,
+    )
 
-    parser.add_argument('--verbose', '-v',
-                        action='store_true',
-                        help='WARNING: can take longer time with complex file tree structures on slow terminals -'
-                             ' verbosely list every processed file',
-                        required=False)
+    parser.add_argument(
+        "--verbose",
+        "-v",
+        action="store_true",
+        help="WARNING: can take longer time with complex file tree structures on slow terminals -"
+        " verbosely list every processed file",
+        required=False,
+    )
 
     config = parser.parse_args(sys.argv[1:])
     process_dir(config.top_dir, config)
