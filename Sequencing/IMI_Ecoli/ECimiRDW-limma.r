@@ -482,8 +482,6 @@ all_sets <- lapply(colnames(contrasts), function(contrast_name) {
 
 ############################################
 
-
-
 create_plot <- function(full_data, freezer_stock, targets, enrichments, sets, limit) {
   set_name <- deparse(substitute(sets))
 
