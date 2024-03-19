@@ -152,7 +152,7 @@ generate_replicate_plot <- function(data, title) {
 
   cpm_block <- cpm_data %>%
     data.table() %>%
-    dcast(type + spacer + imipenem + induced ~ sample, value.var = "cpm", fill = 0) %>%
+    dcast(type + spacer + imipenem + induced ~ replicate, value.var = "cpm", fill = 0) %>%
     arrange(desc(type))
 
   replicate_plot <- cpm_block %>%
@@ -213,5 +213,10 @@ generate_replicate_plot(
     inner_join(kpn_types) %>%
     inner_join(kpn_design), "*Klebsiella pneumoniae* [**0x**, **1x**, **2x** imipenem]"
 )
+
+
+
+
+
 
 
