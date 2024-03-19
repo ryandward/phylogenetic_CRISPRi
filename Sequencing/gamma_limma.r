@@ -60,10 +60,6 @@ identify_essentials <- function(df) {
     filter(type == "mismatch") %>%
     pull(locus_tag) %>%
     unique()
-
-  df[locus_tag %in% essentials & type == "perfect", type := "perfect essential"]
-  df[spacer %in% df[type == "perfect essential"]$spacer & type == "perfect", type := "perfect essential"]
-  df
 }
 
 ## Extract types
@@ -213,10 +209,3 @@ generate_replicate_plot(
     inner_join(kpn_types) %>%
     inner_join(kpn_design), "*Klebsiella pneumoniae* [**0x**, **1x**, **2x** imipenem]"
 )
-
-
-
-
-
-
-
