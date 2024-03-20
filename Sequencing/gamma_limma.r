@@ -842,24 +842,21 @@ kpn_v_targets <- kpn_v$E |>
   )
 
 
-# something is bad here
-# eco_v_targets[y_pred == "None", y_pred := NA_integer_]
-# eco_v_targets$y_pred <- as.numeric(eco_v_targets$y_pred)
-# eco_v_targets[is.na(target) | target == "None", weight := min(eco_v_targets$y_pred, na.rm = TRUE)]
-# eco_v_targets[spacer == target, weight := max(eco_v_targets$y_pred, na.rm = TRUE)]
-# eco_v_targets[type == "mismatch", weight := y_pred]
-# eco_v_targets$weight <- rescale(as.numeric(eco_v_targets$weight), to = c(1, 100))
+# Weight based on y_pred seems to be working
+eco_v_targets$y_pred <- as.numeric(eco_v_targets$y_pred)
+eco_v_targets[is.na(target) | target == "None", weight := min(eco_v_targets$y_pred, na.rm = TRUE)]
+eco_v_targets[spacer == target, weight := max(eco_v_targets$y_pred, na.rm = TRUE)]
+eco_v_targets[type == "mismatch", weight := y_pred]
+eco_v_targets$weight <- rescale(as.numeric(eco_v_targets$weight), to = c(1, 100))
 
-# ecl_v_targets[y_pred == "None", y_pred := NA_integer_]
-# ecl_v_targets$y_pred <- as.numeric(ecl_v_targets$y_pred)
-# ecl_v_targets[is.na(target) | target == "None", weight := min(ecl_v_targets$y_pred, na.rm = TRUE)]
-# ecl_v_targets[spacer == target, weight := max(ecl_v_targets$y_pred, na.rm = TRUE)]
-# ecl_v_targets[type == "mismatch", weight := y_pred]
-# ecl_v_targets$weight <- rescale(as.numeric(ecl_v_targets$weight), to = c(1, 100))
+ecl_v_targets$y_pred <- as.numeric(ecl_v_targets$y_pred)
+ecl_v_targets[is.na(target) | target == "None", weight := min(ecl_v_targets$y_pred, na.rm = TRUE)]
+ecl_v_targets[spacer == target, weight := max(ecl_v_targets$y_pred, na.rm = TRUE)]
+ecl_v_targets[type == "mismatch", weight := y_pred]
+ecl_v_targets$weight <- rescale(as.numeric(ecl_v_targets$weight), to = c(1, 100))
 
-# kpn_v_targets[y_pred == "None", y_pred := NA_integer_]
-# kpn_v_targets$y_pred <- as.numeric(kpn_v_targets$y_pred)
-# kpn_v_targets[is.na(target) | target == "None", weight := min(kpn_v_targets$y_pred, na.rm = TRUE)]
-# kpn_v_targets[spacer == target, weight := max(kpn_v_targets$y_pred, na.rm = TRUE)]
-# kpn_v_targets[type == "mismatch", weight := y_pred]
-# kpn_v_targets$weight <- rescale(as.numeric(kpn_v_targets$weight), to = c(1, 100))
+kpn_v_targets$y_pred <- as.numeric(kpn_v_targets$y_pred)
+kpn_v_targets[is.na(target) | target == "None", weight := min(kpn_v_targets$y_pred, na.rm = TRUE)]
+kpn_v_targets[spacer == target, weight := max(kpn_v_targets$y_pred, na.rm = TRUE)]
+kpn_v_targets[type == "mismatch", weight := y_pred]
+kpn_v_targets$weight <- rescale(as.numeric(kpn_v_targets$weight), to = c(1, 100))
