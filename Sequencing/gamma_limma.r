@@ -488,7 +488,6 @@ kpn_results <- lapply(colnames(contrasts), function(contrast) {
   rbindlist()
 
 
-
 create_volcano_plot <- function(results, title, print_plot = TRUE) {
   volcano_plots <- results |>
     filter(
@@ -562,3 +561,305 @@ create_volcano_plot <- function(results, title, print_plot = TRUE) {
 create_volcano_plot(eco_results, "E. coli", print_plot = FALSE)
 create_volcano_plot(ecl_results, "E. cloacae", print_plot = FALSE)
 create_volcano_plot(kpn_results, "K. pneumoniae", print_plot = FALSE)
+
+eco_results_median <- eco_results |>
+  group_by(contrast, type, locus_tag, gene) |>
+  summarise(
+    logFC = median(logFC),
+    adj.P.Val = poolr::stouffer(adj.P.Val)$p
+  )
+
+ecl_results_median <- ecl_results |>
+  group_by(contrast, type, locus_tag, gene) |>
+  summarise(
+    logFC = median(logFC),
+    adj.P.Val = poolr::stouffer(adj.P.Val)$p
+  )
+
+kpn_results_median <- kpn_results |>
+  group_by(contrast, type, locus_tag, gene) |>
+  summarise(
+    logFC = median(logFC),
+    adj.P.Val = poolr::stouffer(adj.P.Val)$p
+  )
+
+create_volcano_plot(eco_results_median, "E. coli (median)", print_plot = TRUE)
+create_volcano_plot(ecl_results_median, "E. cloacae (median)", print_plot = TRUE)
+create_volcano_plot(kpn_results_median, "K. pneumoniae (median)", print_plot = TRUE)
+
+# StringDB Operations
+## Load StringDB
+
+eco_string <- fread("Organisms/511145.protein.enrichment.terms.v12.0.txt.gz") |>
+  mutate(locus_tag = str_replace(`#string_protein_id`, ".*\\.", "")) |>
+  unique()
+
+ecl_string <- fread("Organisms/STRG0A99CYX.protein.enrichment.terms.v12.0.txt.gz") |>
+  mutate(locus_tag = str_replace(`#string_protein_id`, ".*\\.", "")) |>
+  unique()
+
+kpn_string <- fread("Organisms/STRG0A57EUR.protein.enrichment.terms.v12.0.txt.gz") |>
+  mutate(locus_tag = str_replace(`#string_protein_id`, ".*\\.", "")) |>
+  unique()
+
+## Group by category, term, and description
+create_gene_groups <- function(df) {
+  gene_groups <- df |>
+    group_by(category, term, description) |>
+    summarise(
+      gene_count = n(),
+      locus_tag = list(sort(unique(locus_tag)))
+    ) |>
+    mutate(
+      locus_tag_group = vapply(
+        locus_tag,
+        paste,
+        collapse = ",",
+        FUN.VALUE = character(1)
+      )
+    )
+  return(gene_groups)
+}
+
+find_complete_terms <- function(gene_groups, targets) {
+  complete_terms <- gene_groups |>
+    unnest(locus_tag) |>
+    inner_join(
+      targets |>
+        select(locus_tag) |>
+        unique()
+    ) |>
+    group_by(term, gene_count) |>
+    summarize(genes_targeted = n()) |>
+    filter(gene_count == genes_targeted)
+  return(complete_terms)
+}
+
+eco_gene_groups <- create_gene_groups(eco_string)
+ecl_gene_groups <- create_gene_groups(ecl_string)
+kpn_gene_groups <- create_gene_groups(kpn_string)
+
+eco_complete_terms <- find_complete_terms(eco_gene_groups, eco_targets)
+ecl_complete_terms <- find_complete_terms(ecl_gene_groups, ecl_targets)
+kpn_complete_terms <- find_complete_terms(kpn_gene_groups, kpn_targets)
+
+# only perform enrichments where all genes are available
+eco_gene_groups <- eco_gene_groups |>
+  inner_join(eco_complete_terms)
+
+ecl_gene_groups <- ecl_gene_groups |>
+  inner_join(ecl_complete_terms)
+
+kpn_gene_groups <- kpn_gene_groups |>
+  inner_join(kpn_complete_terms)
+
+# Enrichment groups mapping genes to terms
+
+eco_enrichments <- eco_gene_groups |>
+  ungroup() |>
+  distinct(locus_tag_group, .keep_all = TRUE) |>
+  unnest(locus_tag)
+
+ecl_enrichments <- ecl_gene_groups |>
+  ungroup() |>
+  distinct(locus_tag_group, .keep_all = TRUE) |>
+  unnest(locus_tag)
+
+kpn_enrichments <- kpn_gene_groups |>
+  ungroup() |>
+  distinct(locus_tag_group, .keep_all = TRUE) |>
+  unnest(locus_tag)
+
+# Make a list of all the enrichments
+
+## Make sure there are at least 4 guides in the enrichment set
+eco_measurable_terms <- eco_enrichments |>
+  inner_join(
+    eco_targets,
+    relationship = "many-to-many"
+  ) |>
+  unique() |>
+  group_by(term) |>
+  tally() |>
+  filter(n >= 4) |>
+  filter(
+    !term %in% (eco_enrichments |>
+      full_join(
+        eco_targets,
+        relationship = "many-to-many"
+      ) |>
+      filter(is.na(spacer)) |>
+      pull(term) |>
+      unique())
+  ) |>
+  unique() |>
+  arrange(n) |>
+  inner_join(
+    eco_enrichments |>
+      select(term, description) |>
+      unique()
+  )
+
+ecl_measurable_terms <- ecl_enrichments |>
+  inner_join(
+    ecl_targets,
+    relationship = "many-to-many"
+  ) |>
+  unique() |>
+  group_by(term) |>
+  tally() |>
+  filter(n >= 4) |>
+  filter(
+    !term %in% (ecl_enrichments |>
+      full_join(
+        ecl_targets,
+        relationship = "many-to-many"
+      ) |>
+      filter(is.na(spacer)) |>
+      pull(term) |>
+      unique())
+  ) |>
+  unique() |>
+  arrange(n) |>
+  inner_join(
+    ecl_enrichments |>
+      select(term, description) |>
+      unique()
+  )
+
+kpn_measurable_terms <- kpn_enrichments |>
+  inner_join(
+    kpn_targets,
+    relationship = "many-to-many"
+  ) |>
+  unique() |>
+  group_by(term) |>
+  tally() |>
+  filter(n >= 4) |>
+  filter(
+    !term %in% (kpn_enrichments |>
+      full_join(
+        kpn_targets,
+        relationship = "many-to-many"
+      ) |>
+      filter(is.na(spacer)) |>
+      pull(term) |>
+      unique())
+  ) |>
+  unique() |>
+  arrange(n) |>
+  inner_join(
+    kpn_enrichments |>
+      select(term, description) |>
+      unique()
+  )
+
+## Unique terms
+eco_unique_terms <- eco_measurable_terms |>
+  select(term, description) |>
+  unique()
+
+ecl_unique_terms <- ecl_measurable_terms |>
+  select(term, description) |>
+  unique()
+
+kpn_unique_terms <- kpn_measurable_terms |>
+  select(term, description) |>
+  unique()
+
+## Spacers in these terms
+
+eco_spacers_for_terms <- eco_measurable_terms |>
+  inner_join(eco_enrichments, relationship = "many-to-many") |>
+  inner_join(eco_targets, relationship = "many-to-many")
+
+ecl_spacers_for_terms <- ecl_measurable_terms |>
+  inner_join(ecl_enrichments, relationship = "many-to-many") |>
+  inner_join(ecl_targets, relationship = "many-to-many")
+
+kpn_spacers_for_terms <- kpn_measurable_terms |>
+  inner_join(kpn_enrichments, relationship = "many-to-many") |>
+  inner_join(kpn_targets, relationship = "many-to-many")
+
+# Split the spacer column by term
+eco_spacers_in_sets <- split(eco_spacers_for_terms$spacer, eco_spacers_for_terms$term)
+ecl_spacers_in_sets <- split(ecl_spacers_for_terms$spacer, ecl_spacers_for_terms$term)
+kpn_spacers_in_sets <- split(kpn_spacers_for_terms$spacer, kpn_spacers_for_terms$term)
+
+# Find the indices of each set of locus tags in rownames(dge)
+eco_spacers_in_sets_index <- lapply(eco_spacers_in_sets, match, rownames(eco_dge))
+ecl_spacers_in_sets_index <- lapply(ecl_spacers_in_sets, match, rownames(ecl_dge))
+kpn_spacers_in_sets_index <- lapply(kpn_spacers_in_sets, match, rownames(kpn_dge))
+
+# Voom again?
+eco_v <- voomWithQualityWeights(eco_dge, eco_design_matrix, plot = TRUE)
+ecl_v <- voomWithQualityWeights(ecl_dge, ecl_design_matrix, plot = TRUE)
+kpn_v <- voomWithQualityWeights(kpn_dge, kpn_design_matrix, plot = TRUE)
+
+eco_v_targets <- eco_v$E |>
+  data.table(keep.rownames = "spacer") |>
+  select(spacer) |>
+  left_join(
+    eco_targets |>
+      filter(locus_tag %in% eco_string$locus_tag) |>
+      group_by(spacer) |>
+      filter(
+        is.na(target) |
+          target == "None" |
+          (sp_dir != tar_dir & abs(as.numeric(offset)) == min(abs(as.numeric(offset))) & overlap == max(overlap))
+      ) |>
+      group_by(target)
+  )
+
+ecl_v_targets <- ecl_v$E |>
+  data.table(keep.rownames = "spacer") |>
+  select(spacer) |>
+  left_join(
+    ecl_targets |>
+      filter(locus_tag %in% ecl_string$locus_tag) |>
+      group_by(spacer) |>
+      filter(
+        is.na(target) |
+          target == "None" |
+          (sp_dir != tar_dir & abs(as.numeric(offset)) == min(abs(as.numeric(offset))) & overlap == max(overlap))
+      ) |>
+      group_by(target)
+  )
+
+kpn_v_targets <- kpn_v$E |>
+  data.table(keep.rownames = "spacer") |>
+  select(spacer) |>
+  left_join(
+    kpn_targets |>
+      filter(locus_tag %in% kpn_string$locus_tag) |>
+      group_by(spacer) |>
+      filter(
+        is.na(target) |
+          target == "None" |
+          (sp_dir != tar_dir & abs(as.numeric(offset)) == min(abs(as.numeric(offset))) & overlap == max(overlap))
+      ) |>
+      group_by(target)
+  )
+
+
+# something is bad here
+# eco_v_targets[y_pred == "None", y_pred := NA_integer_]
+# eco_v_targets$y_pred <- as.numeric(eco_v_targets$y_pred)
+# eco_v_targets[is.na(target) | target == "None", weight := min(eco_v_targets$y_pred, na.rm = TRUE)]
+# eco_v_targets[spacer == target, weight := max(eco_v_targets$y_pred, na.rm = TRUE)]
+# eco_v_targets[type == "mismatch", weight := y_pred]
+# eco_v_targets$weight <- rescale(as.numeric(eco_v_targets$weight), to = c(1, 100))
+
+# ecl_v_targets[y_pred == "None", y_pred := NA_integer_]
+# ecl_v_targets$y_pred <- as.numeric(ecl_v_targets$y_pred)
+# ecl_v_targets[is.na(target) | target == "None", weight := min(ecl_v_targets$y_pred, na.rm = TRUE)]
+# ecl_v_targets[spacer == target, weight := max(ecl_v_targets$y_pred, na.rm = TRUE)]
+# ecl_v_targets[type == "mismatch", weight := y_pred]
+# ecl_v_targets$weight <- rescale(as.numeric(ecl_v_targets$weight), to = c(1, 100))
+
+# kpn_v_targets[y_pred == "None", y_pred := NA_integer_]
+# kpn_v_targets$y_pred <- as.numeric(kpn_v_targets$y_pred)
+# kpn_v_targets[is.na(target) | target == "None", weight := min(kpn_v_targets$y_pred, na.rm = TRUE)]
+# kpn_v_targets[spacer == target, weight := max(kpn_v_targets$y_pred, na.rm = TRUE)]
+# kpn_v_targets[type == "mismatch", weight := y_pred]
+# kpn_v_targets$weight <- rescale(as.numeric(kpn_v_targets$weight), to = c(1, 100))
