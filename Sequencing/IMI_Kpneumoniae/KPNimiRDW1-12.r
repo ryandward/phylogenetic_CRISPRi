@@ -6,31 +6,22 @@ p_load(
   pheatmap, svglite, ggplot2, ggrepel, RColorBrewer, tidyverse, magrittr, ggpubr, ggallin
 )
 
-show_col(brewer.pal(12, "Paired"))
 
-# Load the data, first column is sample, second column is spacer, third column is count
-data <- fread(
-  "Sequencing/IMI_Ecoli/ECimiRDW1-12.tsv.gz",
+data <- fread("Sequencing/IMI_Kpneumoniae/KPNimiRDW1-12.tsv.gz",
   header = FALSE, sep = "\t", col.names = c("sample", "spacer", "count")
 ) %>% filter(!(spacer %like% "\\*"))
 
-freezer_stock <- fread(
-  "Sequencing/Freezer_Stocks/ECO_freezer.tsv.gz",
-  header = TRUE, sep = "\t", col.names = c("sample", "spacer", "count")
-) %>% filter(!(spacer %like% "\\*"))
 
 # load the design
 design <- fread(
-  "Sequencing/IMI_Ecoli/design.tsv",
+  "Sequencing/IMI_Kpneumoniae/design.tsv",
   header = TRUE, sep = "\t"
 )
 
-# inner_join the design with the data
 data <- data %>% inner_join(design, by = "sample")
 
-# load the targets
-targets <- fread(
-  "Organisms/A_E_coli.targets.tsv.gz",
+
+targets <- fread("Organisms/C_K_pneumoniae.targets.tsv.gz",
   header = TRUE, sep = "\t", na.strings = "None"
 ) %>%
   mutate(
@@ -41,16 +32,8 @@ targets <- fread(
     )
   )
 
-
-TU <- fread("Organisms/E_coli_TU.tsv")
-
-# targets <- targets %>%
-#   inner_join(TU, by = "locus_tag", relationship = "many-to-many")
-
 targets[type != "control", target := toupper(target)]
 
-# targets[sp_dir == tar_dir, type := "control"]
-# targets[overlap < 20, type := "control"]
 
 essentials <- targets %>%
   filter(type == "mismatch") %>%
@@ -58,6 +41,7 @@ essentials <- targets %>%
   unique()
 
 targets[locus_tag %in% essentials & type == "perfect", type := "perfect essential"]
+
 targets[spacer %in% targets[type == "perfect essential"]$spacer & type == "perfect", type := "perfect essential"]
 
 # create a data.table with the types for each spacer, i.e., perfect, mismatch, control
@@ -67,16 +51,24 @@ types <- targets %>%
 
 data <- data %>% inner_join(types, by = c("spacer"))
 
+
 # draw a log CPM replicate correlation plot
 replicate_plot <- data %>%
   group_by(sample) %>%
-  mutate(cpm = 1e6 * count / sum(count)) %>%
+  mutate(
+    cpm = 1e6 * count / sum(count)
+  ) %>%
   data.table() %>%
   dcast(type + spacer + imipenem + induced ~ replicate, value.var = "cpm", fill = 0) %>%
   arrange(desc(type)) %>%
   ggplot(aes(x = A, y = B)) +
   geom_abline(intercept = 0, slope = 1, linetype = "dashed", color = "grey50") +
-  geom_point(aes(color = type), size = 1, alpha = 0.5, shape = 16) +
+  geom_point(
+    aes(color = type),
+    size = 1,
+    alpha = 0.5,
+    shape = 16
+  ) +
   scale_color_manual(
     values = c(
       "control" = "#bbbbbb",
@@ -85,7 +77,13 @@ replicate_plot <- data %>%
       "perfect essential" = "#E31A1C"
     )
   ) +
-  stat_cor(method = "pearson", aes(label = after_stat(label)), label.x = 0, label.y = 5, na.rm = TRUE) +
+  stat_cor(
+    method = "pearson",
+    aes(label = after_stat(label)),
+    label.x = 0,
+    label.y = 5,
+    na.rm = TRUE
+  ) +
   scale_x_continuous(
     trans = scales::pseudo_log_trans(base = 10, sigma = 0.1),
     breaks = c(0, 1, 10^(1:6))
@@ -102,13 +100,16 @@ replicate_plot <- data %>%
   )) +
   theme_bw() +
   labs(color = "Type") +
-  theme(strip.text.y = element_text(angle = 0)) +
-  ggtitle("Escherichia coli")
+  theme(
+    strip.text.y = element_text(angle = 0)
+  ) +
+  ggtitle("Klebsiella pneumoniae")
 
 print(replicate_plot)
 
-# 0.25 looks bad, so we'll remove it
-data <- data %>% filter(!(imipenem == 0.25))
+# 0.5 looks bad, so we'll remove it
+data <- data %>%
+  filter(!(imipenem == 0.5))
 
 # fill in missing values with 0
 full_data <- data %>%
@@ -121,9 +122,10 @@ full_data <- full_data %>%
   inner_join(design, by = "sample") %>%
   inner_join(types, by = "spacer")
 
+
 # create names for the samples based on the design
 design_names <- full_data %>%
-  select(sample, induced, imipenem, replicate, doublings) %>%
+  select(sample, induced, imipenem, replicate) %>%
   unique() %>%
   mutate(induction = ifelse(induced == "TRUE", "induced", "uninduced")) %>%
   arrange(imipenem, desc(induction), replicate) %>%
@@ -154,9 +156,6 @@ full_data <- design_names %>%
   inner_join(full_data) %>%
   arrange(group)
 
-
-# full_data <- full_data %>% inner_join(median_spacers)
-
 # list of spacer names
 spacers <- full_data %>%
   select(spacer) %>%
@@ -165,13 +164,23 @@ spacers <- full_data %>%
 
 # create a matrix of counts for edgeR
 full_data_matrix <- full_data %>%
-  dcast(spacer ~ factor(verbose, levels = unique(verbose)), value.var = "count") %>%
+  dcast(
+    spacer ~ factor(
+      verbose,
+      levels = unique(verbose)
+    ),
+    value.var = "count"
+  ) %>%
   select(-spacer) %>%
   data.matrix() %>%
   set_rownames(spacers)
 
 # create a DGEList object
-dge <- DGEList(counts = full_data_matrix, group = design_names$group, samples = design_names$verbose)
+dge <- DGEList(
+  counts = full_data_matrix,
+  group = design_names$group,
+  samples = design_names$verbose
+)
 
 # # normalize
 dge <- calcNormFactors(dge)
@@ -185,44 +194,51 @@ v <- voomWithQualityWeights(dge, design_matrix)
 # fit the model
 voom_fit <- lmFit(v, design_matrix, method = "robust")
 
-# voom_fit <- voomLmFit(dge, design_matrix, sample.weights = TRUE, plot = TRUE)
-
-# create a list of contrasts
+# these are the single-level "contrasts" we want to test
 contrasts <- makeContrasts(
-  # intercept = intercept,
+  intercept = intercept,
   induced = induced,
-  imipenem = imipenem,
   induced_imipenem = induced_imipenem,
-  imipenem_isolated = induced_imipenem - induced - imipenem,
+  imipenem = imipenem,
   levels = design_matrix
 )
 
-# create a single data.table with all the results, going through each contrast, one at a time
-results <- lapply(colnames(contrasts), function(contrast) {
-  fit <- contrasts.fit(voom_fit, contrasts = contrasts[, contrast])
-
-  topTable(eBayes(fit), n = Inf) %>%
-    # use_series(table) %>%
-    data.table(keep.rownames = "spacer") %>%
-    inner_join(targets) %>%
-    mutate(contrast = contrast)
-}) %>%
+# create a single data.table with all the results, going through each level of the contrasts
+results <- lapply(
+  colnames(contrasts),
+  function(level) {
+    topTable(
+      eBayes(
+        contrasts.fit(
+          voom_fit,
+          contrasts = contrasts[, level]
+        )
+      ),
+      n = Inf
+    ) %>%
+      data.table(keep.rownames = "spacer") %>%
+      inner_join(targets) %>%
+      mutate(contrast = level)
+  }
+) %>%
   rbindlist()
 
-# add the coef as a factor, so that the order is preserved
-results$contrast <- factor(results$contrast, levels = colnames(contrasts))
+# factor the contrast
+results$contrast <- factor(
+  results$contrast,
+  levels = colnames(contrasts)
+)
 
 # draw volcano plots with facets
 volcano_plots <- results %>%
   filter(contrast %in% c("induced", "induced_imipenem")) %>%
   arrange(desc(type)) %>%
-  ggplot(aes(x = logFC, y = adj.P.Val)) +
-  scale_y_continuous(trans = scales::reverse_trans() %of% scales::log10_trans()) +
+  ggplot(aes(y = logFC, x = adj.P.Val)) +
+  scale_x_continuous(trans = scales::reverse_trans() %of% scales::log10_trans()) +
   geom_point(aes(color = type), size = 2, alpha = 0.5) +
-  # draw lines at 0.05  adj.P.Val and abs(logFC) of 1
-  geom_hline(yintercept = 0.05, linetype = "dashed", color = "black", size = 0.5) +
-  geom_vline(xintercept = -1, linetype = "dashed", color = "#814b4b", size = 0.5) +
-  geom_vline(xintercept = 1, linetype = "dashed", color = "black", size = 0.5) +
+  geom_vline(xintercept = 0.05, linetype = "dashed", color = "black", size = 0.5) +
+  geom_hline(yintercept = -1, linetype = "dashed", color = "black", size = 0.5) +
+  geom_hline(yintercept = 1, linetype = "dashed", color = "black", size = 0.5) +
   scale_color_manual(
     values = c(
       "control" = "#bbbbbb",
@@ -238,114 +254,10 @@ volcano_plots <- results %>%
 
 print(volcano_plots)
 
-ggplotly(volcano_plots)
-
-
-definitions <- fread("Organisms/E_coli_genes_from_string.tsv",
-  header = TRUE,
-  sep = "\t",
-  col.names = c("string_id", "gene_name", "size", "annotation")
-) %>%
-  mutate(locus_tag = gsub(".*\\.", "", string_id))
-
-# results_summary <- results %>%
-#   filter(target != "None") %>%
-#   # filter(type %in% c("perfect", "perfect essential")) %>%
-#   dcast(locus_tag + type ~ coef, value.var = "logFC", fun.aggregate = median) %>%
-#   left_join(definitions %>% select(-annotation))
-
-median_spacers <- data %>%
-  select(sample, spacer, count) %>%
-  # rbind(freezer_stock) %>% inner_join(targets %>% select(spacer, target) %>% unique()) %>%
-  inner_join(types) %>%
-  group_by(sample) %>%
-  mutate(cpm = cpm(count), lcpm = log(cpm)) %>%
-  filter(type %in% c("mismatch", "perfect")) %>%
-  group_by(target) %>%
-  mutate(LMT_count = log(median(cpm)), t_deviance = lcpm - LMT_count, t_sd = sd(cpm)) %>%
-  filter(abs(t_deviance) == min(abs(t_deviance)) & t_sd == min(t_sd)) %>%
-  inner_join(targets %>% filter(sp_dir != tar_dir & overlap == 20 & offset >= 0)) %>%
-  group_by(locus_tag) %>%
-  mutate(LMG_count = log(median(cpm)), g_deviance = t_deviance - LMG_count, g_sd = sd(cpm)) %>%
-  filter(abs(g_deviance) == min(abs(g_deviance)) & g_sd == min(g_sd)) %>%
-  ungroup() %>%
-  select(locus_tag, spacer) %>%
-  unique()
-
-overall_median_results <- results %>%
-  inner_join(median_spacers) %>%
-  filter(!is.na(target)) %>%
-  data.table() %>%
-  dcast(locus_tag + type ~ contrast, value.var = "logFC", fun.aggregate = median) %>%
-  left_join(definitions %>% select(-annotation)) %>%
-  arrange(induced_imipenem)
-
-median_results <- results %>%
-  group_by(contrast, locus_tag, type) %>%
-  summarise(logFC = median(logFC), adj.P.Val = poolr::stouffer(adj.P.Val)$p)
-
-
-volcano_plots <- median_results %>%
-  inner_join(targets %>% select(locus_tag, gene) %>% unique()) %>%
-  filter(contrast %in% c("induced_imipenem")) %>%
-  mutate(adj.P.Val = ifelse(adj.P.Val == 1, 0.99999, adj.P.Val)) %>%
-  # mutate(adj.P.Val = signif(adj.P.Val, 2)) %>%
-  mutate(logFC = signif(logFC, 2)) %>%
-  group_by(contrast) %>%
-  arrange(contrast, logFC) %>%
-  mutate(index_asc = row_number()) %>%
-  arrange(contrast, desc(logFC)) %>%
-  mutate(index_desc = row_number()) %>%
-  ungroup() %>%
-  mutate(gene_html = ifelse(is.na(gene), paste0("<b>", locus_tag, "</b>"), paste0("<i>", gene, "</i>"))) %>%
-  mutate(gene = ifelse(is.na(gene), sprintf("bold('%s')", locus_tag), sprintf("italic('%s')", gene))) %>%
-  mutate(type = ifelse(type %in% c("mismatch", "perfect essential"), "essential", "nonessential")) %>%
-  ggplot(aes(text = paste(gene_html, logFC, sep = "<br>"), y = logFC, x = adj.P.Val)) +
-  geom_hline(yintercept = 0, linetype = "solid", color = "grey50", size = 1.5) +
-  scale_x_continuous(trans = scales::reverse_trans() %of% scales::log10_trans()) +
-  geom_point(aes(fill = type, color = type), size = 2, alpha = 0.5, shape = 16) +
-  scale_color_manual(values = c("nonessential" = "#1F78B4", "essential" = "#E31A1C")) +
-  scale_fill_manual(values = c("nonessential" = "#1F78B4", "essential" = "#E31A1C")) +
-  theme_bw() +
-  facet_wrap(~contrast, scales = "free") +
-  theme(strip.text.y = element_text(angle = 0)) +
-  # geom_point(
-  #   data = . %>% filter(adj.P.Val < 0.01 & abs(logFC) >= 1 & (index_asc <= 20 | index_desc <= 20)),
-  #   aes(color = type),
-  #   size = 4,
-  #   shape = 21,
-  #   alpha = 0.75,
-  #   stroke = 1
-  # ) +
-  geom_hline(yintercept = -1, linetype = "dashed", color = "#814b4b", size = 0.5) +
-  geom_hline(yintercept = 1, linetype = "dashed", color = "black", size = 0.5) +
-  geom_vline(xintercept = 0.05, linetype = "dashed", color = "black", size = 0.5) +
-  # geom_label_repel(
-  #   data = . %>% filter(adj.P.Val < 0.01 & abs(logFC) >= 1 & (index_asc <= 20 | index_desc <= 20)),
-  #   aes(label = gene),
-  #   size = 3,
-  #   segment.size = 0.5,
-  #   segment.color = "black",
-  #   segment.alpha = 0.5,
-  #   box.padding = 0.5,
-  #   point.padding = 0.5,
-  #   force = 10,
-  #   nudge_x = 0,
-  #   nudge_y = 0,
-  #   parse = TRUE
-  # ) +
-  labs(x = "Confidence (adj.P.Val)", y = "Relative Fitness Score (log2FC)", color = "Type", fill = "Type")
-
-# volcano_plotly <- ggplotly(volcano_plots, tooltip = "text")  # ensure 'text' is specified here
-
-# volcano_plotly
-
-# print(volcano_plots)
-
 ################
 
 
-all_string <- fread("Organisms/511145.protein.enrichment.terms.v12.0.txt.gz") %>%
+all_string <- fread("Organisms/STRG0A57EUR.protein.enrichment.terms.v12.0.txt.gz") %>%
   mutate(locus_tag = str_replace(`#string_protein_id`, ".*\\.", "")) %>%
   unique()
 
@@ -398,6 +310,7 @@ ranked_annotations <- repeated_gene_groups %>%
   group_by(locus_tag_group) %>%
   filter(category_rank == min(category_rank))
 
+
 enrichments <- ranked_annotations %>%
   ungroup() %>%
   distinct(locus_tag_group, .keep_all = TRUE) %>%
@@ -426,6 +339,7 @@ target_spacers_for_terms <- enrichments_with_enough_spacers %>%
 
 #########################################################################################
 
+
 # Split the spacer column by term
 spacers_in_sets <- split(target_spacers_for_terms$spacer, target_spacers_for_terms$term)
 
@@ -450,15 +364,10 @@ v_targets <- v$E %>%
   )
 
 v_targets[y_pred == "None", y_pred := NA_integer_]
-
 v_targets$y_pred <- as.numeric(v_targets$y_pred)
-
 v_targets[is.na(target) | target == "None", weight := min(v_targets$y_pred, na.rm = TRUE)]
-
 v_targets[spacer == target, weight := max(v_targets$y_pred, na.rm = TRUE)]
-
 v_targets[type == "mismatch", weight := y_pred]
-
 v_targets$weight <- rescale(as.numeric(v_targets$weight), to = c(1, 100))
 
 
@@ -467,7 +376,7 @@ all_sets <- lapply(colnames(contrasts), function(contrast_name) {
   contrast_column <- contrasts[, contrast_name]
   result <- camera(
     v,
-    index = spacers_in_sets_index, 
+    index = spacers_in_sets_index,
     design = design_matrix,
     weights = v_targets$weight,
     # inter.gene.cor = 0.01,
@@ -483,7 +392,8 @@ all_sets <- lapply(colnames(contrasts), function(contrast_name) {
 
 ############################################
 
-create_plot <- function(full_data, freezer_stock, targets, enrichments, sets, limit) {
+
+create_plot <- function(full_data, targets, enrichments, sets, limit) {
   set_name <- deparse(substitute(sets))
 
   plot_data <- full_data %>%
@@ -493,20 +403,16 @@ create_plot <- function(full_data, freezer_stock, targets, enrichments, sets, li
     mutate(imipenem = factor(imipenem, levels = c("Stock", "0", "0.125", "0.25"))) %>%
     mutate(induced = factor(induced, levels = c("Stock", "FALSE", "TRUE"))) %>%
     mutate(cpm = cpm(count)) %>%
-    # filter(type %like% "perfect") %>%
     ungroup() %>%
     inner_join(targets, by = "spacer", relationship = "many-to-many") %>%
     inner_join(enrichments, relationship = "many-to-many") %>%
     inner_join(
       rbind(
-        # sets %>% filter(Direction == "Down") %>% arrange(FDR) %>% head(12),
-        # sets %>% filter(Direction == "Up") %>% arrange(FDR) %>% head(12)
         sets %>%
           arrange(FDR) %>%
           head(limit)
       )
     ) %>%
-    # filter(FDR <= 0.05) %>%
     group_by(factor(imipenem), factor(induced), term) %>%
     ungroup() %>%
     arrange(FDR)
@@ -519,17 +425,62 @@ create_plot <- function(full_data, freezer_stock, targets, enrichments, sets, li
 
   plot_data <- plot_data %>%
     mutate(description = stringr::str_wrap(description, width = 30)) %>%
-    mutate(facet_title = paste0("**", term, "**", " — ", Direction, "<br>", description)) %>%
+    mutate(
+      facet_title = paste0("**", term, "**", " — ", Direction, "<br>", description)
+    ) %>%
     # mutate(facet_title = sub("([^ \n]+)", "**\\1**", facet_title)) %>%
-    mutate(facet_title = gsub("\n", "<br>", facet_title)) %>%
-    mutate(facet_title = paste(facet_title, paste0("**FDR** = ", signif(FDR, 2), ", *genes* = **", NGenes, "**(", NGuides, ")"), paste0("**[", contrast, "]**"), sep = "<br>")) %>%
-    mutate(facet_title = factor(facet_title, levels = facet_title %>% unique()))
+    mutate(
+      facet_title = gsub("\n", "<br>", facet_title)
+    ) %>%
+    mutate(
+      facet_title = paste(
+        facet_title,
+        paste0("**FDR** = ", signif(FDR, 2), ", *genes* = **", NGenes, "**(", NGuides, " guides)"),
+        paste0("**[", contrast, "]**"),
+        sep = "<br>"
+      )
+    ) %>%
+    mutate(
+      facet_title = factor(
+        facet_title,
+        levels = facet_title %>% unique()
+      )
+    )
 
   ggplot(plot_data, aes(y = cpm, x = factor(induced), group = interaction(factor(imipenem), factor(induced)))) +
-    geom_tile(data = data.frame(induced = "TRUE"), aes(x = induced, y = 0), width = 1, height = Inf, fill = "grey50", alpha = 0.2, inherit.aes = FALSE) +
-    geom_sina(aes(color = factor(imipenem), size = weight, weight = weight), alpha = 0.5, shape = 16) +
-    geom_violin(aes(weight = as.numeric(weight)), alpha = 0.25, draw_quantiles = c(0.25, 0.5, 0.75), position = "dodge") +
-    facet_wrap(~facet_title, nrow = 3, scales = "free_y") +
+    geom_tile(
+      data = data.frame(induced = "TRUE"),
+      aes(
+        x = induced,
+        y = 0
+      ),
+      width = 1,
+      height = Inf,
+      fill = "grey50",
+      alpha = 0.2,
+      inherit.aes = FALSE
+    ) +
+    geom_sina(
+      aes(
+        color = factor(imipenem),
+        size = weight,
+        weight = weight
+      ),
+      alpha = 0.5, shape = 16
+    ) +
+    geom_violin(
+      aes(
+        weight = as.numeric(weight)
+      ),
+      alpha = 0.25,
+      draw_quantiles = c(0.25, 0.5, 0.75),
+      position = "dodge"
+    ) +
+    facet_wrap(
+      ~facet_title,
+      nrow = 3,
+      scales = "free_y"
+    ) +
     scale_size(range = c(0.25, 2.5)) +
     # use some nice colors for fill and color
     scale_fill_manual(values = c("0" = "#1F78B4", "0.125" = "#FF7F00", "0.25" = "#E31A1C")) +
@@ -551,30 +502,9 @@ create_plot <- function(full_data, freezer_stock, targets, enrichments, sets, li
     )
 }
 
-# create_plot(full_data, freezer_stock, v_targets, enrichments, all_sets[contrast == "induced" & term %like% "GO:", ], 12)
-
-# create_plot(full_data, freezer_stock, v_targets, enrichments, all_sets[contrast == "imipenem" & term %like% "GO:", ], 12)
-
-# create_plot(full_data, freezer_stock, v_targets, enrichments, all_sets[contrast == "induced_imipenem" & term %like% "GO:", ], 12)
-
-
-# create_plot(full_data, freezer_stock, v_targets, enrichments, all_sets[contrast == "induced_imipenem", ])
-
-# create_plot(full_data, freezer_stock, v_targets, enrichments, all_sets[contrast == "induced_imipenem" & term %like% "^PF", ])
-
-# create_plot(full_data, freezer_stock, v_targets, enrichments, all_sets[contrast == "imipenem_isolated", ])
-
-# create_plot(full_data, freezer_stock, v_targets, enrichments, all_sets[term == "CL:35"])
-# create_plot(full_data, freezer_stock, v_targets, enrichments, all_sets[term == "GO:0004605"])
-# create_plot(full_data, freezer_stock, v_targets, enrichments, all_sets[term == "CL:110"])
-
-
-
-
-
-
-
-
-
-
-
+create_plot(full_data, v_targets, enrichments, all_sets[contrast == "induced_imipenem" & term == "CL:1801"], 12)
+create_plot(full_data, v_targets, enrichments, all_sets[contrast == "induced_imipenem" & term == "CL:1801"], 12)
+create_plot(full_data, v_targets, enrichments, all_sets[contrast == "induced_imipenem" & term == "GO:0006352"], 12)
+create_plot(full_data, v_targets, enrichments, all_sets[contrast == "induced_imipenem" & term == "CL:1306"], 12)
+create_plot(full_data, v_targets, enrichments, all_sets[contrast == "induced_imipenem" & term == "CL:1803"], 12)
+create_plot(full_data, v_targets, enrichments, all_sets[contrast == "induced_imipenem" & term == "KW-0699"], 12)
