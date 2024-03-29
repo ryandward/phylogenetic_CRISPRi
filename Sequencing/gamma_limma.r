@@ -100,7 +100,16 @@ orthologs <- fread_tsv("Sequencing/Orthology_N0.tsv") |>
 
 # Load the data, first column is sample, second column is spacer, third column is count
 eco_counts <- load_counts("Sequencing/IMI_Ecoli/ECimiRDW1-12.tsv.gz") |> filter_artifacts()
-ecl_counts <- load_counts("Sequencing/IMI_Ecloacae/ECLimiRDW1-12.tsv.gz") |> filter_artifacts()
+
+ecl_1_counts <- load_counts("Sequencing/IMI_Ecloacae/ECLimiRDW1-12.tsv.gz") |> filter_artifacts()
+ecl_2_counts <- load_counts("Sequencing/IMI_Ecloacae/ECL_2_imiRDW1-12.tsv.gz") |> filter_artifacts()
+
+ecl_counts <- ecl_1_counts |>
+  rbind(ecl_2_counts) |>
+  group_by(sample, spacer) |>
+  summarise(count = sum(count)) |> 
+  data.table()
+
 kpn_counts <- load_counts("Sequencing/IMI_Kpneumoniae/KPNimiRDW1-12.tsv.gz") |> filter_artifacts()
 
 # Load experimental design
@@ -1049,3 +1058,17 @@ create_plot(kpn_full, kpn_v_targets, kpn_enrichments, kpn_sets[contrast == "indu
 create_plot(eco_full, eco_v_targets, eco_enrichments, eco_sets[contrast == "induced_imipenem_x1" & term == "GO:0032153", ], 12, "E. coli")
 create_plot(ecl_full, ecl_v_targets, ecl_enrichments, ecl_sets[contrast == "induced_imipenem_x1" & term == "GO:0032153", ], 12, "Enterobacter")
 create_plot(kpn_full, kpn_v_targets, kpn_enrichments, kpn_sets[contrast == "induced_imipenem_x1" & term == "GO:0032153", ], 12, "Klebsiella")
+
+create_plot(kpn_full, kpn_v_targets, kpn_enrichments, kpn_sets[contrast == "induced_imipenem_x1" & term == "GO:0051128", ], 12, "Klebsiella")
+create_plot(eco_full, eco_v_targets, eco_enrichments, eco_sets[contrast == "induced_imipenem_x1" & term == "GO:0051128", ], 12, "E. coli")
+
+eco_sets %>%
+  rbind(ecl_sets) %>%
+  rbind(kpn_sets) %>%
+  inner_join(orthologs |> filter(HOG == "N0.HOG0001087"))
+
+eco_sets |>
+  inner_join(eco_enrichments) %>%
+  rbind(ecl_sets |> inner_join(ecl_enrichments)) %>%
+  rbind(kpn_sets |> inner_join(kpn_enrichments)) %>%
+  inner_join(orthologs |> filter(HOG == "N0.HOG0001087"))
