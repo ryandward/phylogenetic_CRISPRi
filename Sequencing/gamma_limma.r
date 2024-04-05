@@ -266,27 +266,27 @@ eco_full <- eco_counts |>
   inner_join(eco_types) |>
   inner_join(eco_design)
 
-eco_high_dropped <- eco_full |>
-  drop_high_dose()
+# eco_full <- eco_full |>
+#   drop_high_dose()
 
 
 ecl_full <- ecl_counts |>
   inner_join(ecl_types) |>
   inner_join(ecl_design)
 
-ecl_high_dropped <- ecl_full |>
-  drop_high_dose()
+# ecl_full <- ecl_full |>
+#   drop_high_dose()
 
 
 kpn_full <- kpn_counts |>
   inner_join(kpn_types) |>
   inner_join(kpn_design)
 
-kpn_high_dropped <- kpn_full |>
-  drop_high_dose()
+# kpn_full <- kpn_full |>
+#   drop_high_dose()
 
 # Create names for the samples
-eco_names <- eco_high_dropped |>
+eco_names <- eco_full |>
   select(sample, induced, imipenem, replicate) |>
   unique() |>
   mutate(
@@ -300,7 +300,7 @@ eco_names <- eco_high_dropped |>
   mutate(group = gsub("\\.", "_", group)) |>
   select(-induction)
 
-ecl_names <- ecl_high_dropped |>
+ecl_names <- ecl_full |>
   select(sample, induced, imipenem, replicate) |>
   unique() |>
   mutate(
@@ -314,7 +314,7 @@ ecl_names <- ecl_high_dropped |>
   mutate(group = gsub("\\.", "_", group)) |>
   select(-induction)
 
-kpn_names <- kpn_high_dropped |>
+kpn_names <- kpn_full |>
   select(sample, induced, imipenem, replicate) |>
   unique() |>
   mutate(
@@ -345,11 +345,13 @@ kpn_names$sample <- factor(kpn_names$sample, levels = unique(kpn_names$sample))
 
 # Experiment Level Names
 contrast_levels <- c(
-  "intercept",
-  "induced",
-  "imipenem_x1",
-  "induced_imipenem_x1"
-)
+  "intercept", 
+  "induced", 
+  "imipenem_1x", 
+  "imipenem_2x", 
+  "induced_imipenem_1x", 
+  "induced_imipenem_2x"
+  )
 
 # create design matrix for edgeR with the groups
 eco_design_matrix <- model.matrix(
@@ -375,15 +377,15 @@ kpn_design_matrix <- model.matrix(
 
 # explicitly reorder the full data by the design groups
 eco_full <- eco_names |>
-  inner_join(eco_high_dropped) |>
+  inner_join(eco_full) |>
   arrange(group)
 
 ecl_full <- ecl_names |>
-  inner_join(ecl_high_dropped) |>
+  inner_join(ecl_full) |>
   arrange(group)
 
 kpn_full <- kpn_names |>
-  inner_join(kpn_high_dropped) |>
+  inner_join(kpn_full) |>
   arrange(group)
 
 # list of spacer names
@@ -471,9 +473,12 @@ kpn_fit <- lmFit(kpn_voom, design = kpn_design_matrix, method = "robust")
 
 # common contrasts for all organisms
 contrasts <- makeContrasts(
-  "induced" = "induced",
-  "imipenem_x1" = "imipenem_x1",
-  "induced_imipenem_x1" = "induced_imipenem_x1",
+  intercept = intercept,
+  induced = induced,
+  imipenem_1x = imipenem_1x,
+  imipenem_2x = imipenem_2x,
+  induced_imipenem_1x = induced_imipenem_1x,
+  induced_imipenem_2x = induced_imipenem_2x,
   levels = contrast_levels
 )
 
@@ -507,12 +512,6 @@ kpn_results <- lapply(colnames(contrasts), function(contrast) {
 
 create_volcano_plot <- function(results, title, print_plot = TRUE, label_top = 10) {
   volcano_plots <- results |>
-    filter(
-      contrast %in% c(
-        "induced",
-        "induced_imipenem_x1"
-      )
-    ) |>
     arrange(desc(type)) |>
     ggplot(
       aes(
@@ -589,9 +588,9 @@ create_volcano_plot <- function(results, title, print_plot = TRUE, label_top = 1
   }
 }
 
-create_volcano_plot(eco_results, "E. coli", print_plot = FALSE)
-create_volcano_plot(ecl_results, "E. cloacae", print_plot = FALSE)
-create_volcano_plot(kpn_results, "K. pneumoniae", print_plot = FALSE)
+create_volcano_plot(eco_results, "E. coli", print_plot = TRUE)
+create_volcano_plot(ecl_results, "E. cloacae", print_plot = TRUE)
+create_volcano_plot(kpn_results, "K. pneumoniae", print_plot = TRUE)
 
 eco_results_median <- eco_results |>
   group_by(contrast, type, locus_tag, gene) |>
@@ -614,14 +613,46 @@ kpn_results_median <- kpn_results |>
     adj.P.Val = poolr::stouffer(adj.P.Val)$p
   )
 
-# create_volcano_plot(eco_results_median, "E. coli (median)", print_plot = TRUE)
-# create_volcano_plot(ecl_results_median, "E. cloacae (median)", print_plot = TRUE)
-# create_volcano_plot(kpn_results_median, "K. pneumoniae (median)", print_plot = TRUE)
+create_volcano_plot(
+  eco_results_median |> filter(
+    contrast %in% 
+    c(
+      "induced",
+      "induced_imipenem_1x",
+      "induced_imipenem_2x"
+    ))
+    , 
+    "E. coli (median)", 
+    print_plot = TRUE)
+
+create_volcano_plot(
+  ecl_results_median |> filter(
+    contrast %in% 
+    c(
+      "induced",
+      "induced_imipenem_1x",
+      "induced_imipenem_2x"
+    ))
+    , 
+    "E. cloacae (median)", 
+    print_plot = TRUE)
+    
+create_volcano_plot(
+  kpn_results_median |> filter(
+    contrast %in% 
+    c(
+      "induced",
+      "induced_imipenem_1x",
+      "induced_imipenem_2x"
+    ))
+    , 
+    "K. pneumoniae (median)", 
+    print_plot = TRUE)
 
 create_volcano_plot(
   eco_results_median |>
     filter(type != "mismatch" & type != "control") |>
-    filter(contrast %in% c("induced", "induced_imipenem_x1")) |>
+    filter(contrast %in% c("induced", "induced_imipenem_1x", "induced_imipenem_2x")) |>
     arrange(logFC), "E. coli (median)",
   print_plot = TRUE
 )
@@ -629,7 +660,7 @@ create_volcano_plot(
 create_volcano_plot(
   ecl_results_median |>
     filter(type != "mismatch" & type != "control") |>
-    filter(contrast %in% c("induced", "induced_imipenem_x1")) |>
+    filter(contrast %in% c("induced", "induced_imipenem_1x", "induced_imipenem_2x")) |>
     arrange(logFC), "E. cloacae (median)",
   print_plot = TRUE
 )
@@ -637,7 +668,7 @@ create_volcano_plot(
 create_volcano_plot(
   kpn_results_median |>
     filter(type != "mismatch" & type != "control") |>
-    filter(contrast %in% c("induced", "induced_imipenem_x1")) |>
+    filter(contrast %in% c("induced", "induced_imipenem_1x", "induced_imipenem_2x")) |>
     arrange(logFC), "K. pneumoniae (median)",
   print_plot = TRUE
 )
@@ -984,7 +1015,7 @@ kpn_sets <- lapply(colnames(contrasts), function(contrast_name) {
 
 
 imipenem_color_map <- c(
-  "0" = "black",
+  "0" = "grey50",
   "0.125" = "#33A02C",
   "0.25" = "#6A3D9A",
   "0.5" = "#FF7F00",
@@ -1027,13 +1058,13 @@ create_plot <- function(full_data, targets, enrichments, sets, limit, title) {
     mutate(facet_title = paste0("**", term, "**", " — ", Direction, "<br>", description)) %>%
     # mutate(facet_title = sub("([^ \n]+)", "**\\1**", facet_title)) %>%
     mutate(facet_title = gsub("\n", "<br>", facet_title)) %>%
-    mutate(facet_title = paste(facet_title, paste0("**FDR** = ", signif(FDR, 2), ", *genes* = **", NGenes, "**(", NGuides, ")"), paste0("**[", contrast, "]**"), sep = "<br>")) %>%
+    # mutate(facet_title = paste(facet_title, paste0("**FDR** = ", signif(FDR, 2), ", *genes* = **", NGenes, "**(", NGuides, ")"), paste0("**[", contrast, "]**"), sep = "<br>")) %>%
     mutate(facet_title = factor(facet_title, levels = facet_title %>% unique()))
 
   ggplot(plot_data, aes(y = cpm, x = factor(induced), group = interaction(factor(imipenem), factor(induced)))) +
     geom_tile(data = data.frame(induced = "TRUE"), aes(x = induced, y = 0), width = 1, height = Inf, fill = "grey50", alpha = 0.2, inherit.aes = FALSE) +
     geom_sina(aes(color = factor(imipenem), size = weight, weight = weight), alpha = 0.5, shape = 16) +
-    geom_violin(aes(weight = as.numeric(weight)), alpha = 0.25, draw_quantiles = c(0.25, 0.5, 0.75), position = "dodge") +
+    geom_violin(aes(weight = weight), alpha = 0.25, draw_quantiles = c(0.25, 0.5, 0.75), position = "dodge", lwd = 1) +
     facet_wrap(~facet_title, nrow = 3, scales = "free_y") +
     scale_size(range = c(0.25, 2.5)) +
     scale_fill_manual(values = imipenem_color_map) +
@@ -1055,20 +1086,24 @@ create_plot <- function(full_data, targets, enrichments, sets, limit, title) {
     ggtitle(title)
 }
 
-create_plot(eco_full, eco_v_targets, eco_enrichments, eco_sets[contrast == "induced_imipenem_x1" & term == "GOCC:0030428", ], 12, "E. coli")
-create_plot(ecl_full, ecl_v_targets, ecl_enrichments, ecl_sets[contrast == "induced_imipenem_x1" & term == "GOCC:0030428", ], 12, "Enterobacter")
-create_plot(kpn_full, kpn_v_targets, kpn_enrichments, kpn_sets[contrast == "induced_imipenem_x1" & term == "GOCC:0030428", ], 12, "Klebsiella")
+create_plot(eco_full, eco_v_targets, eco_enrichments, eco_sets[contrast == "induced_imipenem_2x" & term == "GOCC:0030428", ], 12, "E. coli")
+create_plot(ecl_full, ecl_v_targets, ecl_enrichments, ecl_sets[contrast == "induced_imipenem_2x" & term == "GOCC:0030428", ], 12, "Enterobacter")
+create_plot(kpn_full, kpn_v_targets, kpn_enrichments, kpn_sets[contrast == "induced_imipenem_2x" & term == "GOCC:0030428", ], 12, "Klebsiella")
 
-create_plot(eco_full, eco_v_targets, eco_enrichments, eco_sets[contrast == "induced_imipenem_x1" & term == "KW-0874", ], 12, "E. coli")
-create_plot(ecl_full, ecl_v_targets, ecl_enrichments, ecl_sets[contrast == "induced_imipenem_x1" & term == "KW-0874", ], 12, "Enterobacter")
-create_plot(kpn_full, kpn_v_targets, kpn_enrichments, kpn_sets[contrast == "induced_imipenem_x1" & term == "KW-0874", ], 12, "Klebsiella")
 
-create_plot(eco_full, eco_v_targets, eco_enrichments, eco_sets[contrast == "induced_imipenem_x1" & term == "GO:0032153", ], 12, "E. coli")
-create_plot(ecl_full, ecl_v_targets, ecl_enrichments, ecl_sets[contrast == "induced_imipenem_x1" & term == "GO:0032153", ], 12, "Enterobacter")
-create_plot(kpn_full, kpn_v_targets, kpn_enrichments, kpn_sets[contrast == "induced_imipenem_x1" & term == "GO:0032153", ], 12, "Klebsiella")
 
-create_plot(kpn_full, kpn_v_targets, kpn_enrichments, kpn_sets[contrast == "induced_imipenem_x1" & term == "GO:0051128", ], 12, "Klebsiella")
-create_plot(eco_full, eco_v_targets, eco_enrichments, eco_sets[contrast == "induced_imipenem_x1" & term == "GO:0051128", ], 12, "E. coli")
+create_plot(eco_full, eco_v_targets, eco_enrichments, eco_sets[contrast == "induced_imipenem_2x" & term == "KW-0874", ], 12, "E. coli")
+create_plot(ecl_full, ecl_v_targets, ecl_enrichments, ecl_sets[contrast == "induced_imipenem_2x" & term == "KW-0874", ], 12, "Enterobacter")
+create_plot(kpn_full, kpn_v_targets, kpn_enrichments, kpn_sets[contrast == "induced_imipenem_2x" & term == "KW-0874", ], 12, "Klebsiella")
+
+create_plot(eco_full, eco_v_targets, eco_enrichments, eco_sets[contrast == "induced_imipenem_2x" & term == "GO:0032153", ], 12, "E. coli")
+create_plot(ecl_full, ecl_v_targets, ecl_enrichments, ecl_sets[contrast == "induced_imipenem_2x" & term == "GO:0032153", ], 12, "Enterobacter")
+create_plot(kpn_full, kpn_v_targets, kpn_enrichments, kpn_sets[contrast == "induced_imipenem_2x" & term == "GO:0032153", ], 12, "Klebsiella")
+
+create_plot(kpn_full, kpn_v_targets, kpn_enrichments, kpn_sets[contrast == "induced_imipenem_2x" & term == "GO:0051128", ], 12, "Klebsiella")
+create_plot(eco_full, eco_v_targets, eco_enrichments, eco_sets[contrast == "induced_imipenem_2x" & term == "GO:0051128", ], 12, "E. coli")
+
+create_plot(kpn_full, kpn_v_targets, kpn_enrichments, kpn_sets[contrast == "induced_imipenem_2x" & term == "CL:2718", ], 12, "Klebsiella")
 
 eco_sets %>%
   rbind(ecl_sets) %>%
