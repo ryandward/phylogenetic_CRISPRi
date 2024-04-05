@@ -1090,21 +1090,34 @@ create_plot <- function(design_matrix, full_data, targets, enrichments, sets, li
       paste0("**[", contrast, "]**"),
       sep = "<br>"
     )) %>%
-    select(group_title, induced, imipenem, FDR, Direction, NGuides, NGenes) %>%
+    select(group_title, induced, imipenem, FDR, Direction, NGuides, NGenes, group) %>%
     unique() %>%
     mutate(cpm = max_cpm * 1.5) %>%
     mutate(mini_label = paste(Direction, "\n", signif(FDR, 2))) %>%
     mutate(mini_label = ifelse(FDR <= 0.05, mini_label, "")) %>%
     mutate(mini_label = factor(mini_label, levels = mini_label %>% unique()))
 
+  # quantiles <- plot_data %>%
+  #   group_by(imipenem, induced, facet_title, group) %>%
+  #   arrange(facet_title) %>%
+  #   summarise(weighted_density = list(ewcdf(cpm, weight)), .groups = "drop") %>%
+  #   mutate(cpm = map_dbl(weighted_density, ~ quantile(.x, 0.5))) %>%
+  #   inner_join(group_labels %>% select(-cpm))
 
+  quantiles <- plot_data %>%
+    group_by(imipenem, induced, facet_title, group) %>%
+    arrange(facet_title) %>%
+    summarise(cpm = wtd.quantile(cpm, weights = weight, probs = c(0.5)))
+
+  print(quantiles)
   print(group_labels)
 
 
   ggplot(
     plot_data,
     aes(
-      y = cpm, x = factor(induced),
+      y = cpm,
+      x = factor(induced),
       group = interaction(
         factor(imipenem),
         factor(induced)
@@ -1125,15 +1138,15 @@ create_plot <- function(design_matrix, full_data, targets, enrichments, sets, li
         color = factor(imipenem),
         size = weight, weight = weight
       ),
-      alpha = 0.5,
-      shape = 16
+      alpha = 0.35,
+      shape = 20,
     ) +
-    geom_violin(
+    geom_boxplot(
       aes(weight = weight),
-      alpha = 0.25,
-      draw_quantiles = c(0.25, 0.5, 0.75),
-      position = "dodge",
-      lwd = 1
+      width = 0.9,
+      outlier.shape = NA,
+      position = position_dodge2(preserve = "single"),
+      fill = NA
     ) +
     facet_wrap(~facet_title) +
     scale_size(range = c(0.25, 2.5)) +
@@ -1165,6 +1178,14 @@ create_plot <- function(design_matrix, full_data, targets, enrichments, sets, li
       position = position_dodge2(width = 0.9, preserve = "single"),
       size = 2.5
     ) +
+    geom_label(
+      data = quantiles,
+      aes(label = round(cpm, 2)),
+      position = position_dodge2(width = 0.9, preserve = "single"),
+      alpha = 0.75,
+      size = 2.5
+    ) + 
+
     ggtitle(title)
 }
 
