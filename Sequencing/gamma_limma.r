@@ -264,21 +264,29 @@ generate_replicate_plot(
 # Annotate the count data with experimental design and type
 eco_full <- eco_counts |>
   inner_join(eco_types) |>
-  inner_join(eco_design) |>
+  inner_join(eco_design)
+
+eco_high_dropped <- eco_full |>
   drop_high_dose()
+
 
 ecl_full <- ecl_counts |>
   inner_join(ecl_types) |>
-  inner_join(ecl_design) |>
+  inner_join(ecl_design)
+
+ecl_high_dropped <- ecl_full |>
   drop_high_dose()
+
 
 kpn_full <- kpn_counts |>
   inner_join(kpn_types) |>
-  inner_join(kpn_design) |>
+  inner_join(kpn_design)
+
+kpn_high_dropped <- kpn_full |>
   drop_high_dose()
 
 # Create names for the samples
-eco_names <- eco_full |>
+eco_names <- eco_high_dropped |>
   select(sample, induced, imipenem, replicate) |>
   unique() |>
   mutate(
@@ -292,7 +300,7 @@ eco_names <- eco_full |>
   mutate(group = gsub("\\.", "_", group)) |>
   select(-induction)
 
-ecl_names <- ecl_full |>
+ecl_names <- ecl_high_dropped |>
   select(sample, induced, imipenem, replicate) |>
   unique() |>
   mutate(
@@ -306,7 +314,7 @@ ecl_names <- ecl_full |>
   mutate(group = gsub("\\.", "_", group)) |>
   select(-induction)
 
-kpn_names <- kpn_full |>
+kpn_names <- kpn_high_dropped |>
   select(sample, induced, imipenem, replicate) |>
   unique() |>
   mutate(
@@ -367,15 +375,15 @@ kpn_design_matrix <- model.matrix(
 
 # explicitly reorder the full data by the design groups
 eco_full <- eco_names |>
-  inner_join(eco_full) |>
+  inner_join(eco_high_dropped) |>
   arrange(group)
 
 ecl_full <- ecl_names |>
-  inner_join(ecl_full) |>
+  inner_join(ecl_high_dropped) |>
   arrange(group)
 
 kpn_full <- kpn_names |>
-  inner_join(kpn_full) |>
+  inner_join(kpn_high_dropped) |>
   arrange(group)
 
 # list of spacer names
