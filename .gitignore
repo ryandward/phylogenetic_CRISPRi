@@ -5,3 +5,4 @@
 .nb.html
 *.fastq
 *.fastq.gz
+Targeted_Orthology/*
