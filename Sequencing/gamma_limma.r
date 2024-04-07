@@ -875,10 +875,30 @@ eco_spacers_in_sets <- split(eco_spacers_for_terms$spacer, eco_spacers_for_terms
 ecl_spacers_in_sets <- split(ecl_spacers_for_terms$spacer, ecl_spacers_for_terms$term)
 kpn_spacers_in_sets <- split(kpn_spacers_for_terms$spacer, kpn_spacers_for_terms$term)
 
+# make control set
+make_control_set <- function(targets_df) {
+  control_df <- targets_df %>%
+    filter(type == "control") %>%
+    pull(spacer) %>%
+    data.table(spacer = ., term = "control")
+
+  split(control_df$spacer, control_df$term)
+}
+
+eco_control_spacers_in_sets <- make_control_set(eco_targets)
+ecl_control_spacers_in_sets <- make_control_set(ecl_targets)
+kpn_control_spacers_in_sets <- make_control_set(kpn_targets)
+
+
 # Find the indices of each set of locus tags in rownames(dge)
-eco_spacers_in_sets_index <- lapply(eco_spacers_in_sets, match, rownames(eco_dge))
-ecl_spacers_in_sets_index <- lapply(ecl_spacers_in_sets, match, rownames(ecl_dge))
-kpn_spacers_in_sets_index <- lapply(kpn_spacers_in_sets, match, rownames(kpn_dge))
+eco_spacers_in_sets_index <- lapply(eco_control_spacers_in_sets, match, rownames(eco_dge))
+ecl_spacers_in_sets_index <- lapply(eco_control_spacers_in_sets, match, rownames(ecl_dge))
+kpn_spacers_in_sets_index <- lapply(eco_control_spacers_in_sets, match, rownames(kpn_dge))
+
+# Find the indices of each control
+eco_control_spacers_in_sets_index <- lapply(eco_control_spacers_in_sets, match, rownames(eco_dge))
+ecl_control_spacers_in_sets_index <- lapply(ecl_control_spacers_in_sets, match, rownames(ecl_dge))
+kpn_control_spacers_in_sets_index <- lapply(kpn_control_spacers_in_sets, match, rownames(kpn_dge))
 
 # Voom again?
 eco_v <- voomWithQualityWeights(eco_dge, eco_design_matrix, plot = TRUE)
@@ -972,6 +992,25 @@ eco_sets <- lapply(colnames(contrasts), function(contrast_name) {
   rename(NGuides = NGenes) |>
   left_join(eco_unique_terms)
 
+eco_control_set <- lapply(colnames(contrasts), function(contrast_name) {
+  contrast_column <- contrasts[, contrast_name]
+  result <- camera(
+    y = eco_v,
+    index = eco_control_spacers_in_sets_index,
+    design = eco_design_matrix,
+    contrast = contrast_column
+  ) |>
+    data.table(keep.rownames = "term") |>
+    mutate(
+      term = factor(term, levels = "control"),
+      contrast = contrast_name
+    )
+  result
+}) %>%
+  do.call(rbind, .) |>
+  rename(NGuides = NGenes) |>
+  mutate(description = "Control")
+
 ## E. cloacae
 ecl_sets <- lapply(colnames(contrasts), function(contrast_name) {
   contrast_column <- contrasts[, contrast_name]
@@ -992,6 +1031,25 @@ ecl_sets <- lapply(colnames(contrasts), function(contrast_name) {
   do.call(rbind, .) |>
   rename(NGuides = NGenes) |>
   left_join(ecl_unique_terms)
+
+ecl_control_set <- lapply(colnames(contrasts), function(contrast_name) {
+  contrast_column <- contrasts[, contrast_name]
+  result <- camera(
+    y = ecl_v,
+    index = ecl_control_spacers_in_sets_index,
+    design = ecl_design_matrix,
+    contrast = contrast_column
+  ) |>
+    data.table(keep.rownames = "term") |>
+    mutate(
+      term = factor(term, levels = "control"),
+      contrast = contrast_name
+    )
+  result
+}) %>%
+  do.call(rbind, .) |>
+  rename(NGuides = NGenes) |>
+  mutate(description = "Control")
 
 ## K. pneumoniae
 kpn_sets <- lapply(colnames(contrasts), function(contrast_name) {
@@ -1014,6 +1072,25 @@ kpn_sets <- lapply(colnames(contrasts), function(contrast_name) {
   rename(NGuides = NGenes) |>
   left_join(kpn_unique_terms)
 
+kpn_control_set <- lapply(colnames(contrasts), function(contrast_name) {
+  contrast_column <- contrasts[, contrast_name]
+  result <- camera(
+    y = kpn_v,
+    index = kpn_control_spacers_in_sets_index,
+    design = kpn_design_matrix,
+    contrast = contrast_column
+  ) |>
+    data.table(keep.rownames = "term") |>
+    mutate(
+      term = factor(term, levels = "control"),
+      contrast = contrast_name
+    )
+  result
+}) %>%
+  do.call(rbind, .) |>
+  rename(NGuides = NGenes) |>
+  mutate(description = "Control")
+
 ## Create a plot for each organism
 
 
@@ -1030,7 +1107,6 @@ create_plot <- function(design_matrix, full_data, targets, enrichments, sets, li
   set_name <- deparse(substitute(sets))
 
   plot_data <- full_data %>%
-    select(-type) %>%
     mutate(imipenem = ifelse(is.na(imipenem), "Stock", imipenem), induced = ifelse(is.na(induced), "Stock", induced)) %>%
     group_by(sample) %>%
     mutate(imipenem = factor(imipenem, levels = c("Stock", "0", "0.125", "0.25", "0.5", "1"))) %>%
@@ -1136,10 +1212,13 @@ create_plot <- function(design_matrix, full_data, targets, enrichments, sets, li
     geom_sina(
       aes(
         color = factor(imipenem),
-        size = weight, weight = weight
+        size = weight,
+        weight = weight
       ),
       alpha = 0.35,
       shape = 20,
+      scale = "width",
+      width = 0.9
     ) +
     geom_boxplot(
       aes(weight = weight),
@@ -1161,7 +1240,7 @@ create_plot <- function(design_matrix, full_data, targets, enrichments, sets, li
     ) +
     guides(color = guide_legend(override.aes = list(size = 4))) +
     scale_y_continuous(
-      trans = scales::pseudo_log_trans(base = 10),
+      trans = scales::pseudo_log_trans(base = 10, sigma = 0.1),
       breaks = c(10^(0:5)),
       labels = scales::label_number(scale_cut = scales::cut_short_scale())
     ) +
@@ -1184,30 +1263,83 @@ create_plot <- function(design_matrix, full_data, targets, enrichments, sets, li
       position = position_dodge2(width = 0.9, preserve = "single"),
       alpha = 0.75,
       size = 2.5
-    ) + 
-
+    ) +
     ggtitle(title)
 }
 
-create_plot(eco_design_matrix, eco_full, eco_v_targets, eco_enrichments, eco_sets[term == "GOCC:0030428", ], 12, "E. coli")
-create_plot(ecl_design_matrix, ecl_full, ecl_v_targets, ecl_enrichments, ecl_sets[term == "GOCC:0030428", ], 12, "Enterobacter")
-create_plot(kpn_design_matrix, kpn_full, kpn_v_targets, kpn_enrichments, kpn_sets[term == "GOCC:0030428", ], 12, "Klebsiella")
+# Add zero values to the full data
+# create a full data frame with the verbose names and add zeros for missing spacers
+eco_full_with_zeros <- eco_full_casted %>% 
+  melt(id.vars = "spacer", variable.name = "verbose", value.name = "count") %>% 
+  inner_join(eco_names) %>% 
+  inner_join(eco_design) %>%
+  inner_join(eco_targets %>% select(spacer) %>% unique())
 
-create_plot(eco_design_matrix, eco_full, eco_v_targets, eco_enrichments, eco_sets[term == "KW-0874", ], 12, "E. coli")
-create_plot(ecl_design_matrix, ecl_full, ecl_v_targets, ecl_enrichments, ecl_sets[term == "KW-0874", ], 12, "Enterobacter")
-create_plot(kpn_design_matrix, kpn_full, kpn_v_targets, kpn_enrichments, kpn_sets[term == "KW-0874", ], 12, "Klebsiella")
+ecl_full_with_zeros <- ecl_full_casted %>%
+  melt(id.vars = "spacer", variable.name = "verbose", value.name = "count") %>%
+  inner_join(ecl_names) %>%
+  inner_join(ecl_design) %>%
+  inner_join(ecl_targets %>% select(spacer) %>% unique())
+  
+kpn_full_with_zeros <- kpn_full_casted %>%
+  melt(id.vars = "spacer", variable.name = "verbose", value.name = "count") %>%
+  inner_join(kpn_names) %>%
+  inner_join(kpn_design) %>%
+  inner_join(kpn_targets %>% select(spacer) %>% unique())
 
-create_plot(eco_design_matrix, eco_full, eco_v_targets, eco_enrichments, eco_sets[term == "GO:0032153", ], 12, "E. coli")
-create_plot(ecl_design_matrix, ecl_full, ecl_v_targets, ecl_enrichments, ecl_sets[term == "GO:0032153", ], 12, "Enterobacter")
-create_plot(kpn_design_matrix, kpn_full, kpn_v_targets, kpn_enrichments, kpn_sets[term == "GO:0032153", ], 12, "Klebsiella")
+# Plot the controls for each organism
+create_plot(
+  eco_design_matrix,
+  eco_full_with_zeros,
+  eco_targets %>% filter(type == "control") %>% mutate(weight = 1),
+  eco_targets %>% filter(type == "control") %>% mutate(term = "control", description = "Control"),
+  eco_control_set %>% mutate(FDR = PValue),
+  12,
+  "E. coli"
+)
+
+create_plot(
+  ecl_design_matrix,
+  ecl_full_with_zeros,
+  ecl_targets %>% filter(type == "control") %>% mutate(weight = 1),
+  ecl_targets %>% filter(type == "control") %>% mutate(term = "control", description = "Control"),
+  ecl_control_set %>% mutate(FDR = PValue),
+  12,
+  "Enterobacter"
+)
+
+create_plot(
+  kpn_design_matrix,
+  kpn_full_with_zeros,
+  kpn_targets %>% filter(type == "control") %>% mutate(weight = 1),
+  kpn_targets %>% filter(type == "control") %>% mutate(term = "control", description = "Control"),
+  kpn_control_set %>% mutate(FDR = PValue),
+  12,
+  "Klebsiella"
+)
+
+
+create_plot(eco_design_matrix, eco_full_with_zeros, eco_v_targets, eco_enrichments, eco_sets[term == "GOCC:0030428", ], 12, "E. coli")
+create_plot(ecl_design_matrix, ecl_full_with_zeros, ecl_v_targets, ecl_enrichments, ecl_sets[term == "GOCC:0030428", ], 12, "Enterobacter")
+create_plot(kpn_design_matrix, kpn_full_with_zeros, kpn_v_targets, kpn_enrichments, kpn_sets[term == "GOCC:0030428", ], 12, "Klebsiella")
+
+create_plot(eco_design_matrix, eco_full_with_zeros, eco_v_targets, eco_enrichments, eco_sets[term == "GO:1905153", ], 12, "E. coli")
+
+create_plot(eco_design_matrix, eco_full_with_zeros, eco_v_targets, eco_enrichments, eco_sets[term == "KW-0874", ], 12, "E. coli")
+create_plot(ecl_design_matrix, ecl_full_with_zeros, ecl_v_targets, ecl_enrichments, ecl_sets[term == "KW-0874", ], 12, "Enterobacter")
+create_plot(kpn_design_matrix, kpn_full_with_zeros, kpn_v_targets, kpn_enrichments, kpn_sets[term == "KW-0874", ], 12, "Klebsiella")
+
+create_plot(eco_design_matrix, eco_full_with_zeros, eco_v_targets, eco_enrichments, eco_sets[term == "GO:0032153", ], 12, "E. coli")
+create_plot(ecl_design_matrix, ecl_full_with_zeros, ecl_v_targets, ecl_enrichments, ecl_sets[term == "GO:0032153", ], 12, "Enterobacter")
+create_plot(kpn_design_matrix, kpn_full_with_zeros, kpn_v_targets, kpn_enrichments, kpn_sets[term == "GO:0032153", ], 12, "Klebsiella")
 
 # draw plots for GO:0044391
-create_plot(eco_design_matrix, eco_full, eco_v_targets, eco_enrichments, eco_sets[term == "GO:0044391", ], 12, "E. coli")
-create_plot(ecl_design_matrix, ecl_full, ecl_v_targets, ecl_enrichments, ecl_sets[term == "GO:0044391", ], 12, "Enterobacter")
-create_plot(kpn_design_matrix, kpn_full, kpn_v_targets, kpn_enrichments, kpn_sets[term == "GO:0044391", ], 12, "Klebsiella")
+create_plot(eco_design_matrix, eco_full_with_zeros, eco_v_targets, eco_enrichments, eco_sets[term == "GO:0044391", ], 12, "E. coli")
+create_plot(ecl_design_matrix, ecl_full_with_zeros, ecl_v_targets, ecl_enrichments, ecl_sets[term == "GO:0044391", ], 12, "Enterobacter")
+create_plot(kpn_design_matrix, kpn_full_with_zeros, kpn_v_targets, kpn_enrichments, kpn_sets[term == "GO:0044391", ], 12, "Klebsiella")
 
 # draw plots for IPR012338
-create_plot(eco_design_matrix, eco_full, eco_v_targets, eco_enrichments, eco_sets[term == "IPR012338", ], 12, "E. coli")
+create_plot(eco_design_matrix, eco_full_with_zeros, eco_v_targets, eco_enrichments, eco_sets[term == "IPR012338", ], 12, "E. coli")
 # does not exist in Enterobacter or Klebsiella. So find orthologs
 
 # eco_sets %>%
