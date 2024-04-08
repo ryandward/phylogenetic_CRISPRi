@@ -3,7 +3,8 @@ require(pacman)
 # Load the packages
 p_load(
   plotly, data.table, scales, edgeR, statmod, poolr, ggtext, viridis, ggforce, igraph,
-  pheatmap, svglite, ggplot2, ggrepel, RColorBrewer, tidyverse, magrittr, ggpubr, ggallin
+  pheatmap, svglite, ggplot2, ggrepel, RColorBrewer, tidyverse, magrittr, ggpubr, ggallin,
+  Hmisc
 )
 
 # Auxiliary functions
