@@ -74,6 +74,10 @@ drop_high_dose <- function(df) {
   df |> filter(imipenem != max(imipenem))
 }
 
+drop_treated_uninduced <- function(df) {
+  df |> filter((imipenem == 0 & induced == FALSE) | induced == TRUE)
+}
+
 # Auxiliary mappings
 color_type_map <- c(
   "control" = "#bbbbbb",
@@ -285,6 +289,16 @@ kpn_full <- kpn_counts |>
 # kpn_full <- kpn_full |>
 #   drop_high_dose()
 
+eco_full <- eco_full |>
+  drop_treated_uninduced()
+
+ecl_full <- ecl_full |>
+  drop_treated_uninduced()
+
+kpn_full <- kpn_full |>
+  drop_treated_uninduced()
+ 
+
 # Create names for the samples
 eco_names <- eco_full |>
   select(sample, induced, imipenem, replicate) |>
@@ -347,29 +361,29 @@ kpn_names$sample <- factor(kpn_names$sample, levels = unique(kpn_names$sample))
 contrast_levels <- c(
   "intercept",
   "induced",
-  "imipenem_1x",
-  "imipenem_2x",
+  # "imipenem_1x",
+  # "imipenem_2x",
   "induced_imipenem_1x",
   "induced_imipenem_2x"
 )
 
 # create design matrix for edgeR with the groups
 eco_design_matrix <- model.matrix(
-  ~ factor(induced) * factor(imipenem),
+  ~ factor(induced) + factor(imipenem),
   data = eco_names
 ) |>
   set_rownames(eco_names$verbose) |>
   set_colnames(contrast_levels)
 
 ecl_design_matrix <- model.matrix(
-  ~ factor(induced) * factor(imipenem),
+  ~ factor(induced) + factor(imipenem),
   data = ecl_names
 ) |>
   set_rownames(ecl_names$verbose) |>
   set_colnames(contrast_levels)
 
 kpn_design_matrix <- model.matrix(
-  ~ factor(induced) * factor(imipenem),
+  ~ factor(induced) + factor(imipenem),
   data = kpn_names
 ) |>
   set_rownames(kpn_names$verbose) |>
@@ -475,8 +489,8 @@ kpn_fit <- lmFit(kpn_voom, design = kpn_design_matrix, method = "robust")
 contrasts <- makeContrasts(
   intercept = intercept,
   induced = induced,
-  imipenem_1x = imipenem_1x,
-  imipenem_2x = imipenem_2x,
+  # imipenem_1x = imipenem_1x,
+  # imipenem_2x = imipenem_2x,
   induced_imipenem_1x = induced_imipenem_1x,
   induced_imipenem_2x = induced_imipenem_2x,
   levels = contrast_levels
@@ -891,9 +905,9 @@ kpn_control_spacers_in_sets <- make_control_set(kpn_targets)
 
 
 # Find the indices of each set of locus tags in rownames(dge)
-eco_spacers_in_sets_index <- lapply(eco_control_spacers_in_sets, match, rownames(eco_dge))
-ecl_spacers_in_sets_index <- lapply(eco_control_spacers_in_sets, match, rownames(ecl_dge))
-kpn_spacers_in_sets_index <- lapply(eco_control_spacers_in_sets, match, rownames(kpn_dge))
+eco_spacers_in_sets_index <- lapply(eco_spacers_in_sets, match, rownames(eco_dge))
+ecl_spacers_in_sets_index <- lapply(ecl_spacers_in_sets, match, rownames(ecl_dge))
+kpn_spacers_in_sets_index <- lapply(kpn_spacers_in_sets, match, rownames(kpn_dge))
 
 # Find the indices of each control
 eco_control_spacers_in_sets_index <- lapply(eco_control_spacers_in_sets, match, rownames(eco_dge))
@@ -908,47 +922,17 @@ kpn_v <- voomWithQualityWeights(kpn_dge, kpn_design_matrix, plot = TRUE)
 eco_v_targets <- eco_v$E |>
   data.table(keep.rownames = "spacer") |>
   select(spacer) |>
-  left_join(
-    eco_targets |>
-      filter(locus_tag %in% eco_string$locus_tag) |>
-      group_by(spacer) |>
-      filter(
-        is.na(target) |
-          target == "None" |
-          (sp_dir != tar_dir & abs(as.numeric(offset)) == min(abs(as.numeric(offset))) & overlap == max(overlap))
-      ) |>
-      group_by(target)
-  )
+  left_join(eco_targets)
 
 ecl_v_targets <- ecl_v$E |>
   data.table(keep.rownames = "spacer") |>
   select(spacer) |>
-  left_join(
-    ecl_targets |>
-      filter(locus_tag %in% ecl_string$locus_tag) |>
-      group_by(spacer) |>
-      filter(
-        is.na(target) |
-          target == "None" |
-          (sp_dir != tar_dir & abs(as.numeric(offset)) == min(abs(as.numeric(offset))) & overlap == max(overlap))
-      ) |>
-      group_by(target)
-  )
+  left_join(ecl_targets)
 
 kpn_v_targets <- kpn_v$E |>
   data.table(keep.rownames = "spacer") |>
   select(spacer) |>
-  left_join(
-    kpn_targets |>
-      filter(locus_tag %in% kpn_string$locus_tag) |>
-      group_by(spacer) |>
-      filter(
-        is.na(target) |
-          target == "None" |
-          (sp_dir != tar_dir & abs(as.numeric(offset)) == min(abs(as.numeric(offset))) & overlap == max(overlap))
-      ) |>
-      group_by(target)
-  )
+  left_join(kpn_targets)
 
 
 # Weight based on y_pred seems to be working
@@ -956,19 +940,19 @@ eco_v_targets$y_pred <- as.numeric(eco_v_targets$y_pred)
 eco_v_targets[is.na(target) | target == "None", weight := min(eco_v_targets$y_pred, na.rm = TRUE)]
 eco_v_targets[spacer == target, weight := max(eco_v_targets$y_pred, na.rm = TRUE)]
 eco_v_targets[type == "mismatch", weight := y_pred]
-eco_v_targets$weight <- rescale(as.numeric(eco_v_targets$weight), to = c(1, 100))
+eco_v_targets$weight <- scales::rescale(as.numeric(eco_v_targets$weight), to = c(1, 100))
 
 ecl_v_targets$y_pred <- as.numeric(ecl_v_targets$y_pred)
 ecl_v_targets[is.na(target) | target == "None", weight := min(ecl_v_targets$y_pred, na.rm = TRUE)]
 ecl_v_targets[spacer == target, weight := max(ecl_v_targets$y_pred, na.rm = TRUE)]
 ecl_v_targets[type == "mismatch", weight := y_pred]
-ecl_v_targets$weight <- rescale(as.numeric(ecl_v_targets$weight), to = c(1, 100))
+ecl_v_targets$weight <- scales::rescale(as.numeric(ecl_v_targets$weight), to = c(1, 100))
 
 kpn_v_targets$y_pred <- as.numeric(kpn_v_targets$y_pred)
 kpn_v_targets[is.na(target) | target == "None", weight := min(kpn_v_targets$y_pred, na.rm = TRUE)]
 kpn_v_targets[spacer == target, weight := max(kpn_v_targets$y_pred, na.rm = TRUE)]
 kpn_v_targets[type == "mismatch", weight := y_pred]
-kpn_v_targets$weight <- rescale(as.numeric(kpn_v_targets$weight), to = c(1, 100))
+kpn_v_targets$weight <- scales::rescale(as.numeric(kpn_v_targets$weight), to = c(1, 100))
 
 # Get sets for each organism
 ## E. coli
@@ -978,7 +962,7 @@ eco_sets <- lapply(colnames(contrasts), function(contrast_name) {
     y = eco_v,
     index = eco_spacers_in_sets_index,
     design = eco_design_matrix,
-    weights = eco_v_targets$weight,
+    weights = eco_v$E %>% data.table(keep.rownames = "spacer") %>% select(spacer) %>% inner_join(eco_v_targets %>% select(spacer, weight) %>% unique()) %>% `$`(weight),
     contrast = contrast_column
   ) |>
     data.table(keep.rownames = "term") |>
@@ -1018,7 +1002,7 @@ ecl_sets <- lapply(colnames(contrasts), function(contrast_name) {
     y = ecl_v,
     index = ecl_spacers_in_sets_index,
     design = ecl_design_matrix,
-    weights = ecl_v_targets$weight,
+    weights = ecl_v$E %>% data.table(keep.rownames = "spacer") %>% select(spacer) %>% inner_join(ecl_v_targets %>% select(spacer, weight) %>% unique()) %>% `$`(weight),
     contrast = contrast_column
   ) |>
     data.table(keep.rownames = "term") |>
@@ -1058,7 +1042,7 @@ kpn_sets <- lapply(colnames(contrasts), function(contrast_name) {
     y = kpn_v,
     index = kpn_spacers_in_sets_index,
     design = kpn_design_matrix,
-    weights = kpn_v_targets$weight,
+    weights = kpn_v$E %>% data.table(keep.rownames = "spacer") %>% select(spacer) %>% inner_join(kpn_v_targets %>% select(spacer, weight) %>% unique()) %>% `$`(weight),
     contrast = contrast_column
   ) |>
     data.table(keep.rownames = "term") |>
@@ -1091,9 +1075,27 @@ kpn_control_set <- lapply(colnames(contrasts), function(contrast_name) {
   rename(NGuides = NGenes) |>
   mutate(description = "Control")
 
+# Add zero values to the full data
+# create a full data frame with the verbose names and add zeros for missing spacers
+eco_full_with_zeros <- eco_full_casted %>% 
+  melt(id.vars = "spacer", variable.name = "verbose", value.name = "count") %>% 
+  inner_join(eco_names) %>% 
+  inner_join(eco_design) %>%
+  inner_join(eco_targets %>% select(spacer) %>% unique())
+
+ecl_full_with_zeros <- ecl_full_casted %>%
+  melt(id.vars = "spacer", variable.name = "verbose", value.name = "count") %>%
+  inner_join(ecl_names) %>%
+  inner_join(ecl_design) %>%
+  inner_join(ecl_targets %>% select(spacer) %>% unique())
+  
+kpn_full_with_zeros <- kpn_full_casted %>%
+  melt(id.vars = "spacer", variable.name = "verbose", value.name = "count") %>%
+  inner_join(kpn_names) %>%
+  inner_join(kpn_design) %>%
+  inner_join(kpn_targets %>% select(spacer) %>% unique())
+
 ## Create a plot for each organism
-
-
 imipenem_color_map <- c(
   "0" = "grey50",
   "0.125" = "#33A02C",
@@ -1193,16 +1195,13 @@ create_plot <- function(design_matrix, full_data, targets, enrichments, sets, li
     plot_data,
     aes(
       y = cpm,
-      x = factor(induced),
-      group = interaction(
-        factor(imipenem),
-        factor(induced)
-      )
+      # x = factor(induced),
+      x = group
     )
   ) +
     geom_tile(
-      data = data.frame(induced = "TRUE"),
-      aes(x = induced, y = 0),
+      data = data.frame(induced = "FALSE"),
+      aes(x = "uninduced_0", y = 0),
       width = 1,
       height = Inf,
       fill = "grey50",
@@ -1216,9 +1215,7 @@ create_plot <- function(design_matrix, full_data, targets, enrichments, sets, li
         weight = weight
       ),
       alpha = 0.35,
-      shape = 20,
-      scale = "width",
-      width = 0.9
+      shape = 20,      
     ) +
     geom_boxplot(
       aes(weight = weight),
@@ -1264,28 +1261,12 @@ create_plot <- function(design_matrix, full_data, targets, enrichments, sets, li
       alpha = 0.75,
       size = 2.5
     ) +
+    scale_x_discrete(labels = c("Uninduced 0x", "Induced 0x", "Induced 1x", "Induced 2x")) +
+
     ggtitle(title)
 }
 
-# Add zero values to the full data
-# create a full data frame with the verbose names and add zeros for missing spacers
-eco_full_with_zeros <- eco_full_casted %>% 
-  melt(id.vars = "spacer", variable.name = "verbose", value.name = "count") %>% 
-  inner_join(eco_names) %>% 
-  inner_join(eco_design) %>%
-  inner_join(eco_targets %>% select(spacer) %>% unique())
 
-ecl_full_with_zeros <- ecl_full_casted %>%
-  melt(id.vars = "spacer", variable.name = "verbose", value.name = "count") %>%
-  inner_join(ecl_names) %>%
-  inner_join(ecl_design) %>%
-  inner_join(ecl_targets %>% select(spacer) %>% unique())
-  
-kpn_full_with_zeros <- kpn_full_casted %>%
-  melt(id.vars = "spacer", variable.name = "verbose", value.name = "count") %>%
-  inner_join(kpn_names) %>%
-  inner_join(kpn_design) %>%
-  inner_join(kpn_targets %>% select(spacer) %>% unique())
 
 # Plot the controls for each organism
 create_plot(
@@ -1341,14 +1322,3 @@ create_plot(kpn_design_matrix, kpn_full_with_zeros, kpn_v_targets, kpn_enrichmen
 # draw plots for IPR012338
 create_plot(eco_design_matrix, eco_full_with_zeros, eco_v_targets, eco_enrichments, eco_sets[term == "IPR012338", ], 12, "E. coli")
 # does not exist in Enterobacter or Klebsiella. So find orthologs
-
-# eco_sets %>%
-#   rbind(ecl_sets) %>%
-#   rbind(kpn_sets) %>%
-#   inner_join(orthologs |> filter(HOG == "N0.HOG0001087"))
-
-# eco_sets |>
-#   inner_join(eco_enrichments) %>%
-#   rbind(ecl_sets |> inner_join(ecl_enrichments)) %>%
-#   rbind(kpn_sets |> inner_join(kpn_enrichments)) %>%
-#   inner_join(orthologs |> filter(HOG == "N0.HOG0001087"))
