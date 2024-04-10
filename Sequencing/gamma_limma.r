@@ -583,13 +583,23 @@ create_volcano_plot <- function(results, title, print_plot = TRUE, label_top = 1
       strip.text = element_markdown()
     ) +
     geom_text_repel(
-      data = results |>
-        arrange(type, adj.P.Val) |>
+      data = rbind(
+        results |>
+        arrange(type, ((logFC))) |>
         group_by(contrast, type) |>
         slice_min(
           n = label_top,
-          order_by = adj.P.Val
+          order_by = ((logFC))
         ),
+        results |>
+        arrange(type, (logFC)) |>
+        group_by(contrast, type) |>
+        slice_max(
+          n = label_top,
+          order_by = (logFC)
+          )
+        
+      ),
       aes(label = gene),
       size = 3,
       segment.color = "grey50",
@@ -726,18 +736,16 @@ create_gene_groups <- function(df) {
 }
 
 find_complete_terms <- function(gene_groups, targets) {
-  complete_terms <- gene_groups |>
-    unnest(locus_tag) |>
-    inner_join(
-      targets |>
-        select(locus_tag) |>
-        unique()
-    ) |>
-    group_by(term, gene_count) |>
-    summarize(genes_targeted = n()) |>
+  gene_groups %>%
+    unnest(locus_tag) %>%
+    inner_join(targets %>% select(locus_tag) %>% unique()) %>%
+    group_by(term, gene_count) %>%
+    summarise(genes_targeted = n()) %>%
     filter(gene_count == genes_targeted)
-  return(complete_terms)
 }
+
+
+
 
 eco_gene_groups <- create_gene_groups(eco_string)
 ecl_gene_groups <- create_gene_groups(ecl_string)
@@ -1110,10 +1118,10 @@ create_plot <- function(design_matrix, full_data, targets, enrichments, sets, li
   set_name <- deparse(substitute(sets))
 
   plot_data <- full_data %>%
-    mutate(imipenem = ifelse(is.na(imipenem), "Stock", imipenem), induced = ifelse(is.na(induced), "Stock", induced)) %>%
+    # mutate(imipenem = ifelse(is.na(imipenem), "Stock", imipenem), induced = ifelse(is.na(induced), "Stock", induced)) %>%
     group_by(sample) %>%
-    mutate(imipenem = factor(imipenem, levels = c("Stock", "0", "0.125", "0.25", "0.5", "1"))) %>%
-    mutate(induced = factor(induced, levels = c("Stock", "FALSE", "TRUE"))) %>%
+    # mutate(imipenem = factor(imipenem, levels = c("Stock", "0", "0.125", "0.25", "0.5", "1"))) %>%
+    # mutate(induced = factor(induced, levels = c("Stock", "FALSE", "TRUE"))) %>%
     mutate(cpm = cpm(count)) %>%
     ungroup() %>%
     inner_join(targets, by = "spacer", relationship = "many-to-many") %>%
@@ -1125,8 +1133,7 @@ create_plot <- function(design_matrix, full_data, targets, enrichments, sets, li
       )
     ) %>%
     group_by(factor(imipenem), factor(induced), term) %>%
-    ungroup() %>%
-    arrange(FDR)
+    ungroup()
 
   group_evidence <- design_matrix %>%
     data.table(keep.rownames = "verbose") |>
@@ -1150,8 +1157,10 @@ create_plot <- function(design_matrix, full_data, targets, enrichments, sets, li
 
 
   plot_data <- plot_data %>%
+    mutate(all_genes = max(NGenes)) %>%
+    mutate(all_guides = max(NGuides)) %>%
     mutate(description = stringr::str_wrap(description, width = 30)) %>%
-    mutate(facet_title = paste0("**", term, "**", " — ", description)) %>%
+    mutate(facet_title = paste0("**", term, "**", " — ", description, " — ", all_genes, " gene(s), ", all_guides, " guides" )) %>%
     # mutate(facet_title = sub("([^ \n]+)", "**\\1**", facet_title)) %>%
     mutate(facet_title = gsub("\n", "<br>", facet_title)) %>%
     mutate(facet_title = factor(facet_title, levels = facet_title %>% unique()))
@@ -1171,17 +1180,11 @@ create_plot <- function(design_matrix, full_data, targets, enrichments, sets, li
     )) %>%
     select(group_title, induced, imipenem, FDR, Direction, NGuides, NGenes, group) %>%
     unique() %>%
-    mutate(cpm = max_cpm * 1.5) %>%
-    mutate(mini_label = paste(Direction, "\n", signif(FDR, 2))) %>%
+    mutate(cpm = max_cpm * 1.75) %>%
+    mutate(mini_label = paste0(Direction, " (", signif(FDR, 2), ")")) %>%
     mutate(mini_label = ifelse(FDR <= 0.05, mini_label, "")) %>%
     mutate(mini_label = factor(mini_label, levels = mini_label %>% unique()))
 
-  # quantiles <- plot_data %>%
-  #   group_by(imipenem, induced, facet_title, group) %>%
-  #   arrange(facet_title) %>%
-  #   summarise(weighted_density = list(ewcdf(cpm, weight)), .groups = "drop") %>%
-  #   mutate(cpm = map_dbl(weighted_density, ~ quantile(.x, 0.5))) %>%
-  #   inner_join(group_labels %>% select(-cpm))
 
   quantiles <- plot_data %>%
     group_by(imipenem, induced, facet_title, group) %>%
@@ -1190,6 +1193,7 @@ create_plot <- function(design_matrix, full_data, targets, enrichments, sets, li
 
   print(quantiles)
   print(group_labels)
+
 
 
   ggplot(
@@ -1201,8 +1205,8 @@ create_plot <- function(design_matrix, full_data, targets, enrichments, sets, li
     )
   ) +
     geom_tile(
-      data = data.frame(induced = "FALSE"),
-      aes(x = "uninduced_0", y = 0),
+      data = data.frame(induced = FALSE, group = "uninduced_0"),
+      aes(x = 1, y = 0),
       width = 1,
       height = Inf,
       fill = "grey50",
@@ -1216,7 +1220,7 @@ create_plot <- function(design_matrix, full_data, targets, enrichments, sets, li
         weight = weight
       ),
       alpha = 0.35,
-      shape = 20,      
+      shape = 20,
     ) +
     geom_boxplot(
       aes(weight = weight),
@@ -1300,6 +1304,22 @@ create_plot(
   "Klebsiella"
 )
 
+# create_plot(eco_design_matrix, eco_full_with_zeros, eco_v_targets, eco_enrichments, eco_sets[term == "GO:0015155", ], 12, "E. coli")
+# create_plot(eco_design_matrix, eco_full_with_zeros, eco_v_targets, eco_enrichments, eco_sets[term == "GO:0008509", ], 12, "E. coli")
+# create_plot(eco_design_matrix, eco_full_with_zeros, eco_v_targets, eco_enrichments, eco_sets[term == "GO:0008514", ], 12, "E. coli")
+# create_plot(eco_design_matrix, eco_full_with_zeros, eco_v_targets, eco_enrichments, eco_sets[term == "IPR014286", ], 12, "E. coli")
+# create_plot(eco_design_matrix, eco_full_with_zeros, eco_v_targets, eco_enrichments, eco_sets[term == "GO:0009245", ], 12, "E. coli")
+
+create_plot(eco_design_matrix, eco_full_with_zeros, eco_v_targets, eco_enrichments, eco_sets[term == "GO:0032153", ], 12, "E. coli")
+create_plot(ecl_design_matrix, ecl_full_with_zeros, ecl_v_targets, ecl_enrichments, ecl_sets[term == "GO:0032153", ], 12, "Enterobacter")
+create_plot(kpn_design_matrix, kpn_full_with_zeros, kpn_v_targets, kpn_enrichments, kpn_sets[term == "GO:0032153", ], 12, "Klebsiella")
+
+create_plot(eco_design_matrix, eco_full_with_zeros, eco_v_targets, eco_enrichments, eco_sets[term == "GO:0007231", ], 12, "E. coli")
+
+create_plot(eco_design_matrix, eco_full_with_zeros, eco_v_targets, eco_enrichments, eco_sets[term == "GO:0009254", ], 12, "E. coli")
+create_plot(ecl_design_matrix, ecl_full_with_zeros, ecl_v_targets, ecl_enrichments, ecl_sets[term == "GO:0009254", ], 12, "Enterobacter")
+create_plot(kpn_design_matrix, kpn_full_with_zeros, kpn_v_targets, kpn_enrichments, kpn_sets[term == "GO:0009254", ], 12, "Klebsiella")
+
 
 create_plot(eco_design_matrix, eco_full_with_zeros, eco_v_targets, eco_enrichments, eco_sets[term == "GOCC:0030428", ], 12, "E. coli")
 create_plot(ecl_design_matrix, ecl_full_with_zeros, ecl_v_targets, ecl_enrichments, ecl_sets[term == "GOCC:0030428", ], 12, "Enterobacter")
@@ -1307,9 +1327,9 @@ create_plot(kpn_design_matrix, kpn_full_with_zeros, kpn_v_targets, kpn_enrichmen
 
 create_plot(eco_design_matrix, eco_full_with_zeros, eco_v_targets, eco_enrichments, eco_sets[term == "GO:1905153", ], 12, "E. coli")
 
-create_plot(eco_design_matrix, eco_full_with_zeros, eco_v_targets, eco_enrichments, eco_sets[term == "KW-0874", ], 12, "E. coli")
-create_plot(ecl_design_matrix, ecl_full_with_zeros, ecl_v_targets, ecl_enrichments, ecl_sets[term == "KW-0874", ], 12, "Enterobacter")
-create_plot(kpn_design_matrix, kpn_full_with_zeros, kpn_v_targets, kpn_enrichments, kpn_sets[term == "KW-0874", ], 12, "Klebsiella")
+create_plot(eco_design_matrix, eco_full_with_zeros, eco_v_targets, eco_enrichments, eco_sets[term == "GOCC:0045271", ], 12, "E. coli")
+create_plot(ecl_design_matrix, ecl_full_with_zeros, ecl_v_targets, ecl_enrichments, ecl_sets[term == "GOCC:0045271", ], 12, "Enterobacter")
+create_plot(kpn_design_matrix, kpn_full_with_zeros, kpn_v_targets, kpn_enrichments, kpn_sets[term == "GOCC:0045271", ], 12, "Klebsiella")
 
 create_plot(eco_design_matrix, eco_full_with_zeros, eco_v_targets, eco_enrichments, eco_sets[term == "GO:0032153", ], 12, "E. coli")
 create_plot(ecl_design_matrix, ecl_full_with_zeros, ecl_v_targets, ecl_enrichments, ecl_sets[term == "GO:0032153", ], 12, "Enterobacter")
@@ -1323,3 +1343,7 @@ create_plot(kpn_design_matrix, kpn_full_with_zeros, kpn_v_targets, kpn_enrichmen
 # draw plots for IPR012338
 create_plot(eco_design_matrix, eco_full_with_zeros, eco_v_targets, eco_enrichments, eco_sets[term == "IPR012338", ], 12, "E. coli")
 # does not exist in Enterobacter or Klebsiella. So find orthologs
+create_plot(eco_design_matrix, eco_full_with_zeros, eco_v_targets, eco_enrichments, eco_sets[term == "GO:0010958", ], 12, "E. coli")
+
+
+GO:0010958
