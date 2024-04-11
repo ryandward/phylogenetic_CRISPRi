@@ -1344,6 +1344,3 @@ create_plot(kpn_design_matrix, kpn_full_with_zeros, kpn_v_targets, kpn_enrichmen
 create_plot(eco_design_matrix, eco_full_with_zeros, eco_v_targets, eco_enrichments, eco_sets[term == "IPR012338", ], 12, "E. coli")
 # does not exist in Enterobacter or Klebsiella. So find orthologs
 create_plot(eco_design_matrix, eco_full_with_zeros, eco_v_targets, eco_enrichments, eco_sets[term == "GO:0010958", ], 12, "E. coli")
-
-
-GO:0010958
