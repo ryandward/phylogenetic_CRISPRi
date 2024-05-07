@@ -1,10 +1,10 @@
-require(pacman)
+require("pacman")
 
 # Load the packages
 p_load(
   plotly, data.table, scales, edgeR, statmod, poolr, ggtext, viridis, ggforce, igraph,
   pheatmap, svglite, ggplot2, ggrepel, RColorBrewer, tidyverse, magrittr, ggpubr, ggallin,
-  Hmisc
+  Hmisc, httpgd
 )
 
 # Auxiliary functions
@@ -1180,7 +1180,7 @@ create_plot <- function(design_matrix, full_data, targets, enrichments, sets, li
     )) %>%
     select(group_title, induced, imipenem, FDR, Direction, NGuides, NGenes, group) %>%
     unique() %>%
-    mutate(cpm = max_cpm * 1.75) %>%
+    # mutate(cpm = max_cpm * 1.75) %>%
     mutate(mini_label = paste0(Direction, " (", signif(FDR, 2), ")")) %>%
     mutate(mini_label = ifelse(FDR <= 0.05, mini_label, "")) %>%
     mutate(mini_label = factor(mini_label, levels = mini_label %>% unique()))
@@ -1330,7 +1330,7 @@ create_plot(eco_design_matrix, eco_full_with_zeros, eco_v_targets, eco_enrichmen
 create_plot(eco_design_matrix, eco_full_with_zeros, eco_v_targets, eco_enrichments, eco_sets[term == "GOCC:0045271", ], 12, "E. coli")
 create_plot(ecl_design_matrix, ecl_full_with_zeros, ecl_v_targets, ecl_enrichments, ecl_sets[term == "GOCC:0045271", ], 12, "Enterobacter")
 create_plot(kpn_design_matrix, kpn_full_with_zeros, kpn_v_targets, kpn_enrichments, kpn_sets[term == "GOCC:0045271", ], 12, "Klebsiella")
-
+!
 create_plot(eco_design_matrix, eco_full_with_zeros, eco_v_targets, eco_enrichments, eco_sets[term == "GO:0032153", ], 12, "E. coli")
 create_plot(ecl_design_matrix, ecl_full_with_zeros, ecl_v_targets, ecl_enrichments, ecl_sets[term == "GO:0032153", ], 12, "Enterobacter")
 create_plot(kpn_design_matrix, kpn_full_with_zeros, kpn_v_targets, kpn_enrichments, kpn_sets[term == "GO:0032153", ], 12, "Klebsiella")
