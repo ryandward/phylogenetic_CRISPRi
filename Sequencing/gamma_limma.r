@@ -1180,7 +1180,7 @@ create_plot <- function(design_matrix, full_data, targets, enrichments, sets, li
     )) %>%
     select(group_title, induced, imipenem, FDR, Direction, NGuides, NGenes, group) %>%
     unique() %>%
-    # mutate(cpm = max_cpm * 1.75) %>%
+    mutate(cpm = max_cpm * 1.5) %>%
     mutate(mini_label = paste0(Direction, " (", signif(FDR, 2), ")")) %>%
     mutate(mini_label = ifelse(FDR <= 0.05, mini_label, "")) %>%
     mutate(mini_label = factor(mini_label, levels = mini_label %>% unique()))
@@ -1244,7 +1244,7 @@ create_plot <- function(design_matrix, full_data, targets, enrichments, sets, li
     scale_y_continuous(
       trans = scales::pseudo_log_trans(base = 10, sigma = 0.1),
       breaks = c(10^(0:5)),
-      labels = scales::label_number(scale_cut = scales::cut_short_scale())
+      labels = scales::label_number(scale_cut = append(scales::cut_short_scale(), 1, 1)),
     ) +
     scale_x_discrete(labels = c("TRUE" = "Induced", "FALSE" = "Uninduced")) +
     theme_minimal() +
@@ -1267,8 +1267,9 @@ create_plot <- function(design_matrix, full_data, targets, enrichments, sets, li
       size = 2.5
     ) +
     scale_x_discrete(labels = c("Uninduced 0x", "Induced 0x", "Induced 1x", "Induced 2x")) +
-
-    ggtitle(title)
+    # add upper limit to the y-axis = max_cpm
+    coord_cartesian(ylim = c(0, max_cpm * 2)) +
+    ggtitle(title) 
 }
 
 
