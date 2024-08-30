@@ -298,7 +298,7 @@ ecl_full <- ecl_full |>
 
 kpn_full <- kpn_full |>
   drop_treated_uninduced()
- 
+
 
 # Create names for the samples
 eco_names <- eco_full |>
@@ -585,20 +585,19 @@ create_volcano_plot <- function(results, title, print_plot = TRUE, label_top = 1
     geom_text_repel(
       data = rbind(
         results |>
-        arrange(type, ((logFC))) |>
-        group_by(contrast, type) |>
-        slice_min(
-          n = label_top,
-          order_by = ((logFC))
-        ),
+          arrange(type, ((logFC))) |>
+          group_by(contrast, type) |>
+          slice_min(
+            n = label_top,
+            order_by = ((logFC))
+          ),
         results |>
-        arrange(type, (logFC)) |>
-        group_by(contrast, type) |>
-        slice_max(
-          n = label_top,
-          order_by = (logFC)
+          arrange(type, (logFC)) |>
+          group_by(contrast, type) |>
+          slice_max(
+            n = label_top,
+            order_by = (logFC)
           )
-        
       ),
       aes(label = gene),
       size = 3,
@@ -613,9 +612,9 @@ create_volcano_plot <- function(results, title, print_plot = TRUE, label_top = 1
   }
 }
 
-create_volcano_plot(eco_results, "E. coli", print_plot = TRUE)
-create_volcano_plot(ecl_results, "E. cloacae", print_plot = TRUE)
-create_volcano_plot(kpn_results, "K. pneumoniae", print_plot = TRUE)
+create_volcano_plot(eco_results %>% filter(contrast != "intercept") %>% filter(type != "mismatch"), "E. coli", print_plot = TRUE)
+create_volcano_plot(ecl_results %>% filter(contrast != "intercept") %>% filter(type != "mismatch"), "E. cloacae", print_plot = TRUE)
+create_volcano_plot(kpn_results %>% filter(contrast != "intercept") %>% filter(type != "mismatch"), "K. pneumoniae", print_plot = TRUE)
 
 eco_results_median <- eco_results |>
   group_by(contrast, type, locus_tag, gene) |>
@@ -733,6 +732,25 @@ create_gene_groups <- function(df) {
       )
     )
   return(gene_groups)
+}
+
+create_HOG_groups <- function(orthologs, df) {
+  HOG_groups <- orthologs |>
+    inner_join(df, by = c("locus_tag" = "locus_tag")) |>
+    group_by(term, description) |>
+    summarise(
+      HOG_count = n(),
+      HOG = list(sort(unique(HOG)))
+    ) |>
+    mutate(
+      HOG_group = vapply(
+        HOG,
+        paste,
+        collapse = ",",
+        FUN.VALUE = character(1)
+      )
+    )
+  return(HOG_groups)
 }
 
 find_complete_terms <- function(gene_groups, targets) {
@@ -1086,9 +1104,9 @@ kpn_control_set <- lapply(colnames(contrasts), function(contrast_name) {
 
 # Add zero values to the full data
 # create a full data frame with the verbose names and add zeros for missing spacers
-eco_full_with_zeros <- eco_full_casted %>% 
-  melt(id.vars = "spacer", variable.name = "verbose", value.name = "count") %>% 
-  inner_join(eco_names) %>% 
+eco_full_with_zeros <- eco_full_casted %>%
+  melt(id.vars = "spacer", variable.name = "verbose", value.name = "count") %>%
+  inner_join(eco_names) %>%
   inner_join(eco_design) %>%
   inner_join(eco_targets %>% select(spacer) %>% unique())
 
@@ -1097,7 +1115,7 @@ ecl_full_with_zeros <- ecl_full_casted %>%
   inner_join(ecl_names) %>%
   inner_join(ecl_design) %>%
   inner_join(ecl_targets %>% select(spacer) %>% unique())
-  
+
 kpn_full_with_zeros <- kpn_full_casted %>%
   melt(id.vars = "spacer", variable.name = "verbose", value.name = "count") %>%
   inner_join(kpn_names) %>%
@@ -1160,7 +1178,7 @@ create_plot <- function(design_matrix, full_data, targets, enrichments, sets, li
     mutate(all_genes = max(NGenes)) %>%
     mutate(all_guides = max(NGuides)) %>%
     mutate(description = stringr::str_wrap(description, width = 30)) %>%
-    mutate(facet_title = paste0("**", term, "**", " — ", description, " — ", all_genes, " gene(s), ", all_guides, " guides" )) %>%
+    mutate(facet_title = paste0("**", term, "**", " — ", description, " — ", all_genes, " gene(s), ", all_guides, " guides")) %>%
     # mutate(facet_title = sub("([^ \n]+)", "**\\1**", facet_title)) %>%
     mutate(facet_title = gsub("\n", "<br>", facet_title)) %>%
     mutate(facet_title = factor(facet_title, levels = facet_title %>% unique()))
@@ -1250,6 +1268,7 @@ create_plot <- function(design_matrix, full_data, targets, enrichments, sets, li
     theme_minimal() +
     theme(
       strip.text = element_markdown(),
+      plot.title = element_markdown(),
       axis.text.x = element_text(size = rel(1.3), color = "black", angle = 45, hjust = 1),
       axis.title.y = element_text(size = rel(1.3), color = "black")
     ) +
@@ -1269,7 +1288,7 @@ create_plot <- function(design_matrix, full_data, targets, enrichments, sets, li
     scale_x_discrete(labels = c("Uninduced 0x", "Induced 0x", "Induced 1x", "Induced 2x")) +
     # add upper limit to the y-axis = max_cpm
     coord_cartesian(ylim = c(0, max_cpm * 2)) +
-    ggtitle(title) 
+    ggtitle(title)
 }
 
 
@@ -1345,3 +1364,5 @@ create_plot(kpn_design_matrix, kpn_full_with_zeros, kpn_v_targets, kpn_enrichmen
 create_plot(eco_design_matrix, eco_full_with_zeros, eco_v_targets, eco_enrichments, eco_sets[term == "IPR012338", ], 12, "E. coli")
 # does not exist in Enterobacter or Klebsiella. So find orthologs
 create_plot(eco_design_matrix, eco_full_with_zeros, eco_v_targets, eco_enrichments, eco_sets[term == "GO:0010958", ], 12, "E. coli")
+
+create_plot(eco_design_matrix, eco_full_with_zeros, eco_v_targets, eco_enrichments, eco_sets[term == "GO:0003725", ], 12, "E. coli")
