@@ -4,8 +4,10 @@ require("pacman")
 p_load(
   plotly, data.table, scales, edgeR, statmod, poolr, ggtext, viridis, ggforce, igraph,
   pheatmap, svglite, ggplot2, ggrepel, RColorBrewer, tidyverse, magrittr, ggpubr, ggallin,
-  Hmisc, httpgd
+  Hmisc, httpgd, conflicted
 )
+
+conflicted::conflicts_prefer(dplyr::summarize)
 
 # Auxiliary functions
 ## fread_tsv
