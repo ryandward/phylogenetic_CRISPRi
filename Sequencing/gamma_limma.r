@@ -101,8 +101,12 @@ orthologs <- fread_tsv("Sequencing/Orthology_N0.tsv") |>
     names = c("locus_tag", "protein"),
     too_many = "merge",
     too_few = "align_start"
-  )
-
+  ) %>%
+  mutate(organism = case_when(
+    assembly == "GCA_000005845.2" ~ "E. coli",
+    assembly == "GCA_000025565.1" ~ "E. cloacae",
+    assembly == "GCA_000742755.1" ~ "K. pneumoniae"
+  ))
 # Load the data, first column is sample, second column is spacer, third column is count
 eco_counts <- load_counts("Sequencing/IMI_Ecoli/ECimiRDW1-12.tsv.gz") |> filter_artifacts()
 
@@ -615,6 +619,7 @@ create_volcano_plot <- function(results, title, print_plot = TRUE, label_top = 1
 create_volcano_plot(eco_results %>% filter(contrast != "intercept") %>% filter(type != "mismatch"), "E. coli", print_plot = TRUE)
 create_volcano_plot(ecl_results %>% filter(contrast != "intercept") %>% filter(type != "mismatch"), "E. cloacae", print_plot = TRUE)
 create_volcano_plot(kpn_results %>% filter(contrast != "intercept") %>% filter(type != "mismatch"), "K. pneumoniae", print_plot = TRUE)
+
 
 eco_results_median <- eco_results |>
   group_by(contrast, type, locus_tag, gene) |>
