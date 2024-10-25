@@ -1,0 +1,97 @@
+Well	Chemical	Dose
+A1	Amikacin	1
+A2	Amikacin	2
+A3	Amikacin	3
+A4	Amikacin	4
+A5	Chlortetracycline	1
+A6	Chlortetracycline	2
+A7	Chlortetracycline	3
+A8	Chlortetracycline	4
+A9	Lincomycin	1
+A10	Lincomycin	2
+A11	Lincomycin	3
+A12	Lincomycin	4
+B1	Amoxicillin	1
+B2	Amoxicillin	2
+B3	Amoxicillin	3
+B4	Amoxicillin	4
+B5	Cloxacillin	1
+B6	Cloxacillin	2
+B7	Cloxacillin	3
+B8	Cloxacillin	4
+B9	Lomefloxacin	1
+B10	Lomefloxacin	2
+B11	Lomefloxacin	3
+B12	Lomefloxacin	4
+C1	Bleomycin	1
+C2	Bleomycin	2
+C3	Bleomycin	3
+C4	Bleomycin	4
+C5	Colistin	1
+C6	Colistin	2
+C7	Colistin	3
+C8	Colistin	4
+C9	Minocycline	1
+C10	Minocycline	2
+C11	Minocycline	3
+C12	Minocycline	4
+D1	Capreomycin	1
+D2	Capreomycin	2
+D3	Capreomycin	3
+D4	Capreomycin	4
+D5	Demecycline	1
+D6	Demecycline	2
+D7	Demecycline	3
+D8	Demecycline	4
+D9	Nafcillin	1
+D10	Nafcillin	2
+D11	Nafcillin	3
+D12	Nafcillin	4
+E1	Cefazolin	1
+E2	Cefazolin	2
+E3	Cefazolin	3
+E4	Cefazolin	4
+E5	Enoxacin	1
+E6	Enoxacin	2
+E7	Enoxacin	3
+E8	Enoxacin	4
+E9	Nalidixic acid	1
+E10	Nalidixic acid	2
+E11	Nalidixic acid	3
+E12	Nalidixic acid	4
+F1	Chloramphenicol	1
+F2	Chloramphenicol	2
+F3	Chloramphenicol	3
+F4	Chloramphenicol	4
+F5	Erythromycin	1
+F6	Erythromycin	2
+F7	Erythromycin	3
+F8	Erythromycin	4
+F9	Neomycin	1
+F10	Neomycin	2
+F11	Neomycin	3
+F12	Neomycin	4
+G1	Ceftriaxone	1
+G2	Ceftriaxone	2
+G3	Ceftriaxone	3
+G4	Ceftriaxone	4
+G5	Gentamicin	1
+G6	Gentamicin	2
+G7	Gentamicin	3
+G8	Gentamicin	4
+G9	Potassium Tellurite	1
+G10	Potassium Tellurite	2
+G11	Potassium Tellurite	3
+G12	Potassium Tellurite	4
+H1	Cephalothin	1
+H2	Cephalothin	2
+H3	Cephalothin	3
+H4	Cephalothin	4
+H5	Kanamycin	1
+H6	Kanamycin	2
+H7	Kanamycin	3
+H8	Kanamycin	4
+H9	Ofloxacin	1
+H10	Ofloxacin	2
+H11	Ofloxacin	3
+H12	Ofloxacin	4
