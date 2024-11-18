@@ -152,37 +152,44 @@ p <- ggplot(data, aes(x = x_pos, y = GFP, fill = IPTG, group = IPTG)) +
   # Add labels for "induced" bars with the ratio values
   geom_richtext(
     data = data,
-    aes(label = ratio_formatted, y = GFP + SEM + data[, median(GFP + SEM) * 0.05]),
+    aes(label = ratio_formatted, y = (GFP + SEM) * (1 + data[, median(GFP - SEM) * 0.25])),
     stat = "identity",
     position = position_dodge(width = 0.9),
     color = "black",
     fill = NA,
     label.colour = NA,
     hjust = 0,
-    size = 6,
+    # size = 6,
     angle = 90
   ) +
   # Horizontal lines under organism groups with visible breaks
   geom_segment(
     data = organism_positions,
-    aes(x = x_start - 0.5, xend = x_end + 0.5, y = -0.05, yend = -0.05),
-    inherit.aes = FALSE, color = "black", size = 1
+    aes(
+      x = x_start - 0.5,
+      xend = x_end + 0.5,
+      y = data[, min(GFP - SEM) * 0.9],
+      yend = data[, min(GFP - SEM) * 0.9]
+    ),
+    inherit.aes = FALSE, color = "black", linewidth = 2
   ) +
   # Organism labels below the line using ggtext
   geom_richtext(
     data = organism_positions,
     fill = NA,
     label.colour = NA,
-    aes(x = (x_start + x_end) / 2, y = -0.1, label = Organism),
-    inherit.aes = FALSE, size = 7, vjust = 0.5
+    aes(x = (x_start + x_end) / 2, y = data[, min(GFP - SEM) * 0.7], label = Organism),
+    inherit.aes = FALSE,
+    size = 7,
+    vjust = 0.5
   ) +
   scale_x_continuous(breaks = data$x_pos, labels = data$Promoter_dCas9) +
   scale_fill_manual(values = c("grey", "#db281c")) +
   geom_hline(yintercept = 1, linetype = "dashed", color = "black") +
   # write
-  theme_bw() +
+  theme_minimal() +
   theme(
-    axis.text.x = element_markdown(angle = 45, hjust = 1, size = 20, color = "black"),
+    axis.text.x = element_markdown(angle = 45, hjust = 1, size = 16, color = "black"),
     plot.title = element_markdown(size = 16), # Enable markdown for the title
 
     # change title.x sizes but not using markdown
@@ -199,7 +206,12 @@ p <- ggplot(data, aes(x = x_pos, y = GFP, fill = IPTG, group = IPTG)) +
     fill = "CRISPRi Induction"
   ) +
   # capitalize the key in legends,
-  guides(fill = guide_legend(title.theme = element_text(face = "bold")))
+  guides(fill = guide_legend(title.theme = element_text(face = "bold"))) +
+  # Scale continuous on log10 y
+  scale_y_log10()
+
+
+
 
 
 print(p)
