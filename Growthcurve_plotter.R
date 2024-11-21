@@ -1,17 +1,4 @@
-source("Sequencing/IMI_Ecloacae/growthcurve-2.R")
-
-eco_data <- data %>% mutate(Organism = "E. coli")
-
-source("Sequencing/IMI_Kpneumoniae/growthcurve2A.R")
-
-kpn_data <- data %>% mutate(Organism = "K. pneumoniae")
-
-source("Sequencing/IMI_Ecoli/ECimiRDW-growthcurve.R")
-
-ecl_data <- data %>% mutate(Organism = "E. cloacae")
-
-
-all_data <- rbind(eco_data, kpn_data, ecl_data, fill = TRUE) %>% filter(!is.na(Imipenem))
+all_data <- fread("Growthcurves/Initial_growthcurves.tsv")
 
 median_dose <- all_data %>%
   pull(Imipenem) %>%
