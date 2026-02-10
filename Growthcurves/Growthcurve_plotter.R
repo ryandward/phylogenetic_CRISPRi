@@ -1,4 +1,4 @@
-all_data <- fread("Growthcurves/Initial_growthcurves.tsv")
+all_data <- fread("Initial_growthcurves.tsv")
 
 median_dose <- all_data %>%
   pull(Imipenem) %>%
